@@ -23,7 +23,7 @@ const ahora = [
     company: "para creadores, empresas o particulares",
     period: "2018–presente",
     description:
-      "Narrativa, construcción de comunidad y monetización de audiencias.",
+      "Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias.",
     logo: "/logo-freelance.png",
     logoFallback: "FL",
   },
