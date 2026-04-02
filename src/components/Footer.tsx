@@ -19,7 +19,7 @@ export default function Footer() {
           <p className="text-xs text-neutral-400 mt-1">© 2025 Alejandro Marcos</p>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {socials.map((s) => (
             <a
               key={s.label}

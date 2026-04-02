@@ -46,7 +46,7 @@ export default function Nav() {
         </div>
 
         {/* Mobile */}
-        <div className="flex md:hidden items-center gap-5">
+        <div className="flex md:hidden items-center flex-wrap gap-x-4 gap-y-2">
           <a href="#biblioteca" className="text-sm text-neutral-500 hover:text-[#00e05a] transition-colors">
             Biblioteca
           </a>

@@ -95,8 +95,8 @@ function CoverImage({ src }: { src: string }) {
     return (
       <div
         style={{
-          width: 72,
-          height: 108,
+          width: 120,
+          height: 180,
           borderRadius: 2,
           background: "#e8e8e8",
           flexShrink: 0,
