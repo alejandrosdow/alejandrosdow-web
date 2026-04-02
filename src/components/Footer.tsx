@@ -11,7 +11,7 @@ export default function Footer() {
       id="contacto"
       className="px-6 md:px-8 py-12 border-t border-neutral-100"
     >
-      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <p className="text-sm text-black font-medium">
             Alejandro Marcos · Madrid, España
