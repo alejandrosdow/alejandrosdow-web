@@ -9,6 +9,7 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   title: "Alejandro Marcos — Internet Surfer",
+  icons: { icon: "/favicon.jpg" },
   description:
     "CMO, builder y fundador. 15 años construyendo comunidades en internet. Reserva una sesión de 30 minutos.",
   openGraph: {
