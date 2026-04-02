@@ -110,8 +110,8 @@ function CoverImage({ src }: { src: string }) {
       alt=""
       onError={() => setError(true)}
       style={{
-        width: 72,
-        height: 108,
+        width: 120,
+        height: 180,
         objectFit: "cover",
         borderRadius: 2,
         boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
