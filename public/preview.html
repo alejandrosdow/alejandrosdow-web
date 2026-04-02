@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro Marcos — Internet Surfer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; scroll-behavior: smooth; background: #fafafa; color: #0a0a0a; }
+    body { background: #fafafa; }
+
+    /* Nav */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      transition: background 0.2s, box-shadow 0.2s;
+      background: transparent;
+    }
+    header.scrolled { background: #fafafa; box-shadow: 0 1px 0 0 #e8e8e8; }
+    nav { max-width: 896px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-weight: 600; color: #000; font-size: 14px; letter-spacing: -0.01em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-link { font-size: 14px; text-decoration: none; color: #737373; transition: color 0.15s; }
+    .nav-link:hover { color: #00e05a; }
+    .nav-link.accent { color: #00e05a; font-weight: 500; }
+    .nav-link.accent:hover { color: #00c44e; }
+    .nav-mobile { display: none; align-items: center; gap: 20px; }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+      .nav-mobile { display: flex; }
+    }
+
+    /* Hero */
+    .hero { padding-top: 56px; padding-left: 24px; padding-right: 24px; }
+    .hero-inner { max-width: 896px; margin: 0 auto; width: 100%; padding-top: 48px; padding-bottom: 48px; }
+    .hero-row { display: flex; flex-direction: column; gap: 32px; }
+    .hero-avatar-wrap { order: -1; align-self: center; }
+    .hero-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; background: #e5e5e5; display: block; }
+    .hero-avatar-fallback { width: 80px; height: 80px; border-radius: 50%; background: #e5e5e5; }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero-tag { font-size: 14px; color: #a3a3a3; margin-bottom: 24px; letter-spacing: 0.05em; }
+    .hero-h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1.0; font-weight: 900; letter-spacing: -0.02em; color: #000; margin-bottom: 8px; }
+    .hero-h2 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1.0; font-weight: 400; letter-spacing: -0.02em; color: #00e05a; margin-bottom: 40px; }
+    .hero-ctas { display: flex; flex-direction: column; gap: 12px; }
+    .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: #00e05a; color: #000; font-weight: 500; font-size: 14px; border-radius: 2px; text-decoration: none; transition: background 0.15s; }
+    .btn-primary:hover { background: #00c44e; }
+    .btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; color: #737373; font-size: 14px; border: 1px solid #e5e5e5; border-radius: 2px; text-decoration: none; transition: border-color 0.15s; }
+    .btn-secondary:hover { border-color: #a3a3a3; }
+    @media (min-width: 640px) {
+      .hero-ctas { flex-direction: row; }
+      .btn-primary, .btn-secondary { width: auto; }
+    }
+    @media (min-width: 768px) {
+      .hero-inner { padding-top: 80px; padding-bottom: 64px; padding-left: 32px; padding-right: 32px; }
+      .hero { padding-left: 32px; padding-right: 32px; }
+      .hero-row { flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 40px; }
+      .hero-avatar-wrap { order: 1; align-self: flex-start; flex-shrink: 0; padding-top: 4px; }
+      .hero-avatar { width: 120px; height: 120px; }
+      .hero-avatar-fallback { width: 120px; height: 120px; }
+    }
+
+    /* Sections */
+    section { padding: 56px 24px; border-top: 1px solid #f5f5f5; }
+    @media (min-width: 768px) { section { padding: 80px 32px; } }
+    .section-inner { max-width: 768px; margin: 0 auto; }
+    .section-inner-wide { max-width: 896px; margin: 0 auto; }
+
+    /* Labels */
+    .section-label { font-size: 10px; font-weight: 600; color: #a3a3a3; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; }
+    .section-label-sm { font-size: 12px; color: #a3a3a3; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 40px; }
+    .section-label-xs { font-size: 10px; color: #a3a3a3; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 40px; }
+
+    /* About */
+    .about-text { color: #404040; font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
+    .about-text:last-child { margin-bottom: 0; }
+    .about-final { color: #0a0a0a; font-weight: 500; }
+    @media (min-width: 768px) { .about-text { font-size: 18px; } }
+
+    /* InternetSurfer */
+    .is-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 32px; color: #000; }
+    @media (min-width: 768px) { .is-title { font-size: 30px; } }
+    .is-text { color: #525252; font-size: 16px; line-height: 1.7; margin-bottom: 24px; }
+    @media (min-width: 768px) { .is-text { font-size: 18px; } }
+    .is-mantras { color: #525252; font-size: 16px; line-height: 1.7; }
+    @media (min-width: 768px) { .is-mantras { font-size: 18px; } }
+    .is-mantras strong { color: #000; font-weight: 700; }
+
+    /* Session */
+    .session-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    @media (min-width: 768px) { .session-title { font-size: 30px; } }
+    .session-sub { color: #737373; font-size: 14px; margin-bottom: 40px; }
+    .session-cols { display: flex; flex-direction: column; gap: 48px; }
+    @media (min-width: 768px) { .session-cols { flex-direction: row; align-items: flex-start; } }
+    .session-col { flex: 1; }
+    .session-body { color: #404040; font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+    .session-list { display: flex; flex-direction: column; gap: 8px; }
+    .session-list-item { display: flex; align-items: flex-start; gap: 12px; }
+    .arrow-icon { color: #a3a3a3; font-size: 14px; margin-top: 2px; flex-shrink: 0; }
+    .session-list-text { font-size: 14px; color: #525252; }
+    .session-form { background: #f7f7f7; border-radius: 2px; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .form-input { width: 100%; background: #fafafa; border: 1px solid #e8e8e8; border-radius: 2px; padding: 12px 16px; font-size: 14px; color: #000; font-family: inherit; outline: none; transition: border-color 0.15s; resize: none; }
+    .form-input::placeholder { color: #a3a3a3; }
+    .form-input:focus { border-color: #a3a3a3; }
+    .btn-green { width: 100%; background: #00e05a; color: #000; font-weight: 500; font-size: 14px; padding: 12px; border-radius: 2px; border: none; cursor: pointer; font-family: inherit; transition: background 0.15s; }
+    .btn-green:hover { background: #00c44e; }
+    .btn-green:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success { background: #f7f7f7; border-radius: 2px; padding: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 300px; }
+    .success-check { width: 32px; height: 32px; border-radius: 50%; background: #00e05a; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: #000; font-weight: 700; font-size: 14px; }
+    .form-error { font-size: 12px; color: #ef4444; text-align: center; }
+
+    /* Experience */
+    .exp-block { margin-bottom: 40px; }
+    .exp-block:last-child { margin-bottom: 0; }
+    .exp-list { border-top: 1px solid #f5f5f5; }
+    .exp-item { padding: 20px 0; border-bottom: 1px solid #f5f5f5; }
+    .exp-item-inner { display: flex; align-items: flex-start; gap: 16px; }
+    .exp-logo { flex-shrink: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+    .exp-logo img { width: 32px; height: 32px; object-fit: contain; }
+    .exp-logo-fallback { font-size: 12px; font-weight: 600; color: #a3a3a3; }
+    .exp-content { flex: 1; min-width: 0; }
+    .exp-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-bottom: 6px; }
+    .exp-role { font-weight: 600; font-size: 14px; color: #000; }
+    .exp-company { color: #737373; font-size: 14px; }
+    .exp-period { font-size: 12px; color: #a3a3a3; flex-shrink: 0; }
+    .exp-desc { font-size: 14px; color: #737373; line-height: 1.6; }
+    .proj-item { padding: 20px 0; border-bottom: 1px solid #f5f5f5; }
+    .proj-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-bottom: 6px; }
+    .proj-name { font-weight: 600; font-size: 14px; color: #000; }
+    .proj-period { font-size: 12px; color: #a3a3a3; }
+    .proj-desc { font-size: 14px; color: #737373; line-height: 1.6; }
+
+    /* Teaching */
+    .teaching-text { color: #404040; font-size: 16px; line-height: 1.7; margin-bottom: 48px; max-width: 448px; }
+    @media (min-width: 768px) { .teaching-text { font-size: 18px; } }
+    .schools { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; }
+    @media (min-width: 768px) { .schools { gap: 48px; } }
+    .school-logo { height: 40px; width: auto; object-fit: contain; filter: grayscale(1); opacity: 0.5; transition: opacity 0.15s; }
+    .school-logo:hover { opacity: 0.8; }
+    .school-fallback { font-size: 14px; color: #a3a3a3; font-weight: 500; }
+
+    /* Book */
+    .book-card { background: #f5f5f5; border-radius: 2px; padding: 32px; }
+    @media (min-width: 768px) { .book-card { padding: 40px; } }
+    .book-cols { display: flex; flex-direction: column; gap: 32px; }
+    @media (min-width: 768px) { .book-cols { flex-direction: row; gap: 48px; } }
+    .book-cover-wrap { order: -1; align-self: center; flex-shrink: 0; }
+    @media (min-width: 768px) { .book-cover-wrap { order: 1; width: 38%; } }
+    .book-cover { width: 100%; max-width: 200px; object-fit: cover; border-radius: 2px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    @media (min-width: 768px) { .book-cover { max-width: 100%; } }
+    .book-cover-fallback { width: 100%; max-width: 200px; aspect-ratio: 2/3; background: #e5e5e5; border-radius: 2px; display: flex; align-items: center; justify-content: center; }
+    @media (min-width: 768px) { .book-cover-fallback { max-width: 100%; } }
+    .book-content { flex: 1; min-width: 0; }
+    .book-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; }
+    @media (min-width: 768px) { .book-title { font-size: 30px; } }
+    .book-desc { color: #525252; font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+    @media (min-width: 768px) { .book-desc { font-size: 16px; } }
+    .book-note { font-size: 12px; color: #a3a3a3; margin-bottom: 28px; }
+    .book-features { display: flex; flex-direction: column; gap: 6px; margin-bottom: 32px; }
+    .book-feature { display: flex; align-items: flex-start; gap: 12px; }
+    .book-feature-text { font-size: 14px; color: #525252; }
+    .book-form { display: flex; flex-direction: column; gap: 8px; }
+    @media (min-width: 640px) { .book-form { flex-direction: row; } }
+    .book-input { flex: 1; background: #fafafa; border: 1px solid #e8e8e8; border-radius: 2px; padding: 10px 16px; font-size: 14px; color: #000; font-family: inherit; outline: none; transition: border-color 0.15s; }
+    .book-input::placeholder { color: #a3a3a3; }
+    .book-input:focus { border-color: #a3a3a3; }
+    .book-btn { background: #00e05a; color: #000; font-weight: 500; font-size: 14px; padding: 10px 24px; border-radius: 2px; border: none; cursor: pointer; font-family: inherit; transition: background 0.15s; white-space: nowrap; }
+    .book-btn:hover { background: #00c44e; }
+    @media (min-width: 1024px) { .book-btn { margin-left: auto; display: block; } }
+    .book-success { display: flex; align-items: center; gap: 12px; }
+    .book-success-check { width: 24px; height: 24px; border-radius: 50%; background: #00e05a; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #000; font-size: 12px; font-weight: 700; }
+
+    /* Biblioteca */
+    .bib-covers { display: flex; flex-direction: row; gap: 12px; margin-bottom: 32px; }
+    .bib-cover { width: 72px; height: 108px; object-fit: cover; border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); flex-shrink: 0; }
+    .bib-cover-fallback { width: 72px; height: 108px; border-radius: 2px; background: #e8e8e8; flex-shrink: 0; display: inline-block; }
+
+    /* Press */
+    .press-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: #f5f5f5; }
+    @media (min-width: 640px) { .press-grid { grid-template-columns: 1fr 1fr; } }
+    .press-card { background: #fafafa; padding: 24px; }
+    .press-outlet { font-size: 12px; color: #a3a3a3; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .press-title { font-size: 14px; font-weight: 500; color: #000; line-height: 1.4; margin-bottom: 16px; }
+    .press-link { font-size: 12px; color: #a3a3a3; text-decoration: none; transition: color 0.15s; }
+    .press-link:hover { color: #000; }
+    .press-note { font-size: 12px; color: #d4d4d4; margin-top: 24px; text-align: center; }
+
+    /* Footer */
+    footer { padding: 48px 24px; border-top: 1px solid #f5f5f5; }
+    @media (min-width: 768px) { footer { padding: 48px 32px; } }
+    .footer-inner { max-width: 896px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    @media (min-width: 640px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
+    .footer-name { font-size: 14px; color: #000; font-weight: 500; }
+    .footer-copy { font-size: 12px; color: #a3a3a3; margin-top: 4px; }
+    .footer-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-link { font-size: 12px; color: #737373; text-decoration: none; transition: color 0.15s; }
+    .footer-link:hover { color: #000; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="main-header">
+  <nav>
+    <a href="#" class="nav-logo">Alejandro Marcos</a>
+
+    <!-- Desktop -->
+    <div class="nav-links">
+      <a href="#biblioteca" class="nav-link">Biblioteca</a>
+      <a href="#libro" class="nav-link">Internet Surfer</a>
+      <a href="#sesion" class="nav-link accent">Agendar sesión</a>
+    </div>
+
+    <!-- Mobile -->
+    <div class="nav-mobile">
+      <a href="#biblioteca" class="nav-link">Biblioteca</a>
+      <a href="#libro" class="nav-link">Internet Surfer</a>
+      <a href="#sesion" class="nav-link accent">Agendar sesión</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-top: none;">
+  <div class="hero-inner">
+    <div class="hero-row">
+
+      <!-- Avatar -->
+      <div class="hero-avatar-wrap">
+        <img
+          src="./foto-alejandro.jpg"
+          alt="Alejandro Marcos"
+          class="hero-avatar"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <div class="hero-avatar-fallback" style="display:none;"></div>
+      </div>
+
+      <!-- Text -->
+      <div class="hero-text">
+        <p class="hero-tag">CMO · Builder · Internet Surfer</p>
+        <h1 class="hero-h1" style="margin-bottom:40px;">Alejandro Marcos</h1>
+        <div class="hero-ctas">
+          <a href="#sesion" class="btn-primary">Reservar sesión de 30 min →</a>
+          <a href="#libro" class="btn-secondary">Descarga manual para surfear internet gratis</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-label-xs">Sobre mí</h2>
+    <div>
+      <p class="about-text">
+        Nací en Colmenarejo, un pueblo de la sierra de Madrid. Me crié entre
+        el campo e internet, lo que significa que aprendí más en foros, chats
+        y comunidades online que en muchos libros de texto.
+      </p>
+      <p class="about-text">
+        Desde que tengo uso de razón, me he apuntado a cualquier aventura
+        ligada al contenido, las marcas y la cultura digital. He sido jugador
+        profesional de Call of Duty, creador de contenido y productor en
+        televisión. He trabajado con algunos de los influencers más importantes
+        del mundo hispanohablante y he lanzado proyectos de todo tipo. Desde
+        2018 soy CMO de Team Heretics, donde lidero la marca y la comunidad.
+        Además, sigo ayudando a empresas y creadores, lanzando proyectos y
+        disfrutando de construir en internet.
+      </p>
+      <p class="about-text">
+        Estoy convencido de que cualquier persona, marca o empresa que quiera
+        dejar huella en su tiempo tiene una obligación: tejer una comunidad
+        sana, comprometida y alineada con su visión del mundo. Sin ella, una
+        marca está condenada a desvanecerse.
+      </p>
+      <p class="about-text about-final">
+        Eso es lo que construyo. Y lo que te enseño a construir.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNET SURFER -->
+<section>
+  <div class="section-inner">
+    <h2 class="is-title">¿Qué es Internet Surfer?</h2>
+    <p class="is-text">
+      Internet es un océano lleno de olas. Algunas se ven venir de lejos,
+      otras te pillan por sorpresa. La pregunta no es si vas a surfear, es
+      si lo harás con maestría o te hundirás intentando nadar contra la
+      corriente. Internet Surfer es mi forma de ver y hacer las cosas:
+      entender el zeitgeist, leer la cultura del momento y construir marcas,
+      comunidades y negocios que conectan de verdad.
+    </p>
+    <p class="is-mantras" style="margin-bottom:24px;">
+      <strong>Conectar &gt; Llegar</strong><br />
+      <strong>Meme &gt; Media</strong>
+    </p>
+    <p class="is-text" style="margin-bottom:0;">
+      Este es el manual que me hubiera gustado tener cuando empecé a
+      construir en internet.
+    </p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-label-xs" style="margin-bottom: 48px;">Trayectoria</h2>
+
+    <!-- Ahora -->
+    <div class="exp-block">
+      <p class="section-label">Ahora</p>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-item-inner">
+            <div class="exp-logo">
+              <img src="./logo-heretics.png" alt="Team Heretics" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <span class="exp-logo-fallback" style="display:none;">TH</span>
+            </div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <div><span class="exp-role">CMO</span><span class="exp-company"> — Team Heretics</span></div>
+                <span class="exp-period">2018–presente</span>
+              </div>
+              <p class="exp-desc">Lidero la marca y comunidad global de Team Heretics y trabajo de forma transversal con el Holding. Monetización de audiencias en internet a través del B2B o B2C.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-item-inner">
+            <div class="exp-logo">
+              <img src="./logo-genlayer.png" alt="GenLayer" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <span class="exp-logo-fallback" style="display:none;">GL</span>
+            </div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <div><span class="exp-role">Brand &amp; Marketing Advisor</span><span class="exp-company"> — GenLayer</span></div>
+                <span class="exp-period">2025–presente</span>
+              </div>
+              <p class="exp-desc">IA + Blockchain. Estrategia de marca y go-to-market.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-item-inner">
+            <div class="exp-logo">
+              <img src="./logo-freelance.png" alt="Freelance" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+              <span class="exp-logo-fallback" style="display:none;">FL</span>
+            </div>
+            <div class="exp-content">
+              <div class="exp-header">
+                <div><span class="exp-role">Freelance</span><span class="exp-company"> — para creadores, empresas o particulares</span></div>
+                <span class="exp-period">2018–presente</span>
+              </div>
+              <p class="exp-desc">Narrativa, construcción de comunidad y monetización de audiencias.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Empresa -->
+    <div class="exp-block">
+      <p class="section-label">Empresa</p>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-content">
+            <div class="exp-header">
+              <div><span class="exp-role">CMO</span><span class="exp-company"> — Cooler Master Iberia</span></div>
+              <span class="exp-period">2017–2019</span>
+            </div>
+            <p class="exp-desc">Estrategia, plan y ejecución de marca en España y Portugal para una de las marcas de hardware más reconocidas del sector gaming.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-content">
+            <div class="exp-header">
+              <div><span class="exp-role">Productor &amp; Presentador</span><span class="exp-company"> — Movistar / GAME TV</span></div>
+              <span class="exp-period">2016–2017</span>
+            </div>
+            <p class="exp-desc">Producción, guión y cara del primer canal de gaming/esports en televisión.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-content">
+            <div class="exp-header">
+              <div><span class="exp-role">Head of Publishers, Talents &amp; Esports</span><span class="exp-company"> — GAME Stores</span></div>
+              <span class="exp-period">2015–2016</span>
+            </div>
+            <p class="exp-desc">Gestioné las relaciones con publishers internacionales, creadores de contenido y ayudé a construir el área de esports de la cadena de tiendas más importante de videojuegos en España y UK. Parte del equipo responsable de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun'n'Serious Bilbao.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-content">
+            <div class="exp-header">
+              <div><span class="exp-role">Marketing Manager</span><span class="exp-company"> — SocialNAT</span></div>
+              <span class="exp-period">2013–2015</span>
+            </div>
+            <p class="exp-desc">Primeros años gestionando campañas y comunidades digitales. También como narrador y cara de la compañía.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-content">
+            <div class="exp-header">
+              <div><span class="exp-role">Creador de contenido</span><span class="exp-company"> — Machinima / LVP / ESL</span></div>
+              <span class="exp-period">2008–2013</span>
+            </div>
+            <p class="exp-desc">Todo empieza aquí. Una webcam, un micrófono y un portátil. Uno de los primeros contratos de Machinima en España y colaborador habitual de LVP y ESL.</p>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-content">
+            <div class="exp-header">
+              <div><span class="exp-role">Jugador profesional</span><span class="exp-company"> — Call of Duty · Pain Gaming</span></div>
+              <span class="exp-period">2011</span>
+            </div>
+            <p class="exp-desc">Campeón nacional. 9º en el Mundial de Los Ángeles en 2011.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Fundador & Inversor -->
+    <div class="exp-block" style="margin-bottom: 0;">
+      <p class="section-label">Fundador &amp; Inversor</p>
+      <div class="exp-list">
+
+        <div class="proj-item">
+          <div class="proj-header">
+            <span class="proj-name">JULIO</span>
+            <span class="proj-period">2025</span>
+          </div>
+          <p class="proj-desc">Lanzamos la primera memebrand hispanohablante. Un proyecto que desarrolló un estilo de vida y filosofía basada en el Mediterráneo a través de la imagen de JULIO, monetizando con productos, servicios y la construcción de una comunidad.</p>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-header">
+            <span class="proj-name">SCALELAB</span>
+            <span class="proj-period">2024</span>
+          </div>
+          <p class="proj-desc">Ayudé al equipo fundador en el boom de las formaciones online e infoproductos para creadores de contenido. Construimos el ciclo completo: producto, plataforma, marketing y equipos de ventas.</p>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-header">
+            <span class="proj-name">Zhander App</span>
+            <span class="proj-period">2020–2023</span>
+          </div>
+          <p class="proj-desc">Aplicación para ocio nocturno para digitalizar el rol del PR tradicional. Lanzamos la plataforma y creamos nuestro propio evento 'Algodón' de la mano de Antídoto.</p>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-header">
+            <span class="proj-name">OLAGG</span>
+            <span class="proj-period">2020</span>
+          </div>
+          <p class="proj-desc">Inversor minoritario. Apuesta early en la intersección de blockchain, gaming y esports.</p>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-header">
+            <span class="proj-name">XYON Agency</span>
+            <span class="proj-period">2015–2016</span>
+          </div>
+          <p class="proj-desc">Lanzamos una agencia en España especializada en marcas gaming y management de creadores. Antes de que fuera un negocio evidente.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-label-xs">Docencia</h2>
+    <p class="teaching-text">
+      Llevo años trasladando al aula todo lo que aprendo en la calle y en
+      internet. He impartido formación sobre marketing digital, construcción
+      de comunidades, estrategia de marca y cultura de internet en algunas
+      de las escuelas de negocios más importantes de España, tanto como
+      profesor como a través de masterclasses y ponencias.
+    </p>
+    <div class="schools">
+      <img src="./logo-isdi.png" alt="ISDI" class="school-logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;school-fallback&quot;>ISDI</span>');" />
+      <img src="./logo-esade.png" alt="ESADE" class="school-logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;school-fallback&quot;>ESADE</span>');" />
+      <img src="./logo-nebrija.png" alt="Nebrija" class="school-logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;school-fallback&quot;>Nebrija</span>');" />
+      <img src="./logo-thecore.png" alt="The Core" class="school-logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;school-fallback&quot;>The Core</span>');" />
+      <img src="./logo-unie.png" alt="Unie" class="school-logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;school-fallback&quot;>Unie</span>');" />
+      <img src="./logo-mondragon.png" alt="Mondragon Unibertsitatea" class="school-logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<span class=&quot;school-fallback&quot;>Mondragon Unibertsitatea</span>');" />
+    </div>
+  </div>
+</section>
+
+<!-- BIBLIOTECA -->
+<section id="biblioteca">
+  <div class="section-inner">
+    <h2 class="is-title">Para crear y pensar mejor</h2>
+
+    <!-- Portadas -->
+    <div class="bib-covers">
+      <img src="./book-cover-1.jpg" class="bib-cover" alt="" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=&quot;bib-cover-fallback&quot;></div>');" />
+      <img src="./book-cover-2.jpg" class="bib-cover" alt="" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=&quot;bib-cover-fallback&quot;></div>');" />
+      <img src="./book-cover-3.jpg" class="bib-cover" alt="" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=&quot;bib-cover-fallback&quot;></div>');" />
+      <img src="./book-cover-4.jpg" class="bib-cover" alt="" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=&quot;bib-cover-fallback&quot;></div>');" />
+      <img src="./book-cover-5.jpg" class="bib-cover" alt="" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=&quot;bib-cover-fallback&quot;></div>');" />
+    </div>
+
+    <p class="is-text" style="margin-bottom:32px;">
+      Libros, recursos y referencias que han formado mi manera de pensar
+      sobre marcas, comunidades e internet. Todo lo que leo, releo y
+      recomiendo cuando alguien me pregunta por dónde empezar.
+    </p>
+
+    <div id="bib-form-wrap">
+      <form class="book-form" onsubmit="handleBibSubmit(event)">
+        <input type="email" placeholder="tu@email.com" required class="book-input" />
+        <button type="submit" class="book-btn">Recibir biblioteca →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section id="libro">
+  <div class="section-inner">
+    <div class="book-card">
+      <div class="book-cols">
+
+        <!-- Cover -->
+        <div class="book-cover-wrap">
+          <img
+            src="./libro-cover.jpg"
+            alt="Internet Surfer — El libro"
+            class="book-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="book-cover-fallback" style="display:none;">
+            <span style="font-size:12px; color:#a3a3a3; text-align:center; padding: 0 16px;">Internet Surfer<br />El libro</span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="book-content">
+          <h2 class="book-title">Internet Surfer — El libro</h2>
+          <p class="book-desc">
+            Manual para crear comunidades en la era digital. 10 mandamientos
+            construidos desde 15 años de experiencia real: Team Heretics,
+            memebrands, creator economy, Web3 y cultura de internet.
+          </p>
+          <p class="book-note">Lo comparto gratis porque creo en construir en público.</p>
+
+          <div class="book-features">
+            <div class="book-feature"><span class="arrow-icon">→</span><span class="book-feature-text">Zeitgeist: cómo leer el espíritu del tiempo</span></div>
+            <div class="book-feature"><span class="arrow-icon">→</span><span class="book-feature-text">Los 10 mandamientos para construir comunidad</span></div>
+            <div class="book-feature"><span class="arrow-icon">→</span><span class="book-feature-text">El funnel de Beyoncé aplicado a cualquier marca</span></div>
+            <div class="book-feature"><span class="arrow-icon">→</span><span class="book-feature-text">De audiencia a comunidad: la pirámide</span></div>
+            <div class="book-feature"><span class="arrow-icon">→</span><span class="book-feature-text">Casos reales: Team Heretics, Patagonia, memebrands</span></div>
+            <div class="book-feature"><span class="arrow-icon">→</span><span class="book-feature-text">Cómo surfear internet sin perder tu esencia</span></div>
+          </div>
+
+          <div id="book-form-wrap">
+            <form class="book-form" onsubmit="handleBookSubmit(event)">
+              <input type="email" placeholder="tu@email.com" required class="book-input" id="book-email" />
+              <button type="submit" class="book-btn" id="book-btn">Descargar gratis →</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION -->
+<section id="sesion">
+  <div class="section-inner">
+    <h2 class="session-title">Hablemos 30 minutos</h2>
+    <p class="session-sub">Gratis. Sin compromiso. Con foco.</p>
+
+    <div class="session-cols">
+      <div class="session-col">
+        <p class="session-body">
+          Si estás construyendo una marca, un negocio o intentando encontrar
+          tu posición en internet y no sabes por dónde empezar, esto es para
+          ti.
+        </p>
+        <p class="session-body">
+          En 30 minutos hablaremos para identificar dónde estás en el mapa y
+          darte los primeros pasos concretos para construir y poder ejecutar
+          tu visión en algo que conecte de verdad.
+        </p>
+        <div class="session-list">
+          <div class="session-list-item"><span class="arrow-icon">→</span><span class="session-list-text">Creadores que quieren escalar y monetizar su comunidad.</span></div>
+          <div class="session-list-item"><span class="arrow-icon">→</span><span class="session-list-text">Empresas que necesitan mejorar su marca en internet.</span></div>
+          <div class="session-list-item"><span class="arrow-icon">→</span><span class="session-list-text">Profesionales que quieren construir marca personal.</span></div>
+          <div class="session-list-item"><span class="arrow-icon">→</span><span class="session-list-text">Proyectos que buscan estrategia antes de escalar.</span></div>
+        </div>
+      </div>
+
+      <div class="session-col">
+        <div class="calendly-inline-widget"
+          data-url="https://calendly.com/alejandro-marcos-teamheretics/30min?hide_gdpr_banner=1&primary_color=00e05a"
+          style="width:100%;height:700px;overflow:visible;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section>
+  <div class="section-inner">
+    <h2 class="section-label-sm">Prensa &amp; apariciones</h2>
+    <div class="press-grid">
+      <div class="press-card">
+        <p class="press-outlet">Podcast</p>
+        <p class="press-title">Cómo construir comunidades en internet</p>
+        <a href="#" class="press-link">Leer →</a>
+      </div>
+      <div class="press-card">
+        <p class="press-outlet">Entrevista</p>
+        <p class="press-title">El futuro del marketing de comunidad</p>
+        <a href="#" class="press-link">Leer →</a>
+      </div>
+      <div class="press-card">
+        <p class="press-outlet">Artículo</p>
+        <p class="press-title">Team Heretics: la marca detrás del equipo</p>
+        <a href="#" class="press-link">Leer →</a>
+      </div>
+      <div class="press-card">
+        <p class="press-outlet">Masterclass</p>
+        <p class="press-title">Internet Surfer: leyendo el zeitgeist digital</p>
+        <a href="#" class="press-link">Leer →</a>
+      </div>
+    </div>
+    <p class="press-note">Próximamente más menciones y apariciones</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-name">Alejandro Marcos · Madrid, España</p>
+      <p class="footer-copy">© 2025 Alejandro Marcos</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://x.com/alejandrosdow" target="_blank" rel="noopener noreferrer" class="footer-link">X / Twitter</a>
+      <a href="https://www.linkedin.com/in/alejandromarcosmoraga/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+      <a href="https://www.instagram.com/alejandrosdow" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+      <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noopener noreferrer" class="footer-link">Substack</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Book form
+  async function handleBookSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    const email = document.getElementById('book-email').value;
+    try {
+      const res = await fetch('https://formspree.io/f/xaqldllk', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email })
+      });
+      if (res.ok) {
+        document.getElementById('book-form-wrap').innerHTML = `
+          <div class="book-success">
+            <div class="book-success-check">✓</div>
+            <p style="font-size:14px;color:#404040;">¡Perfecto! Te enviamos el libro a tu email ahora mismo.</p>
+          </div>`;
+      } else {
+        btn.insertAdjacentHTML('afterend', '<p class="text-xs" style="color:#ef4444;margin-top:8px;">Algo ha ido mal, inténtalo de nuevo.</p>');
+        btn.disabled = false; btn.textContent = 'Descargar gratis →';
+      }
+    } catch {
+      btn.insertAdjacentHTML('afterend', '<p class="text-xs" style="color:#ef4444;margin-top:8px;">Algo ha ido mal, inténtalo de nuevo.</p>');
+      btn.disabled = false; btn.textContent = 'Descargar gratis →';
+    }
+  }
+
+  // Biblioteca form
+  async function handleBibSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    const email = e.target.querySelector('input[type="email"]').value;
+    try {
+      const res = await fetch('https://formspree.io/f/mlgowooy', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, _subject: 'Biblioteca — nueva solicitud de descarga' })
+      });
+      if (res.ok) {
+        document.getElementById('bib-form-wrap').innerHTML = `
+          <div class="book-success">
+            <div class="book-success-check">✓</div>
+            <p style="font-size:14px;color:#404040;">¡Perfecto! Te la enviamos ahora mismo.</p>
+          </div>`;
+      } else {
+        btn.insertAdjacentHTML('afterend', '<p class="text-xs" style="color:#ef4444;margin-top:8px;">Algo ha ido mal, inténtalo de nuevo.</p>');
+        btn.disabled = false; btn.textContent = 'Recibir biblioteca →';
+      }
+    } catch {
+      btn.insertAdjacentHTML('afterend', '<p class="text-xs" style="color:#ef4444;margin-top:8px;">Algo ha ido mal, inténtalo de nuevo.</p>');
+      btn.disabled = false; btn.textContent = 'Recibir biblioteca →';
+    }
+  }
+</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>

@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Alejandro Marcos — Internet Surfer",
+  description:
+    "CMO, builder y fundador. 15 años construyendo comunidades en internet. Reserva una sesión de 30 minutos.",
+  openGraph: {
+    title: "Alejandro Marcos — Internet Surfer",
+    description:
+      "CMO, builder y fundador. 15 años construyendo comunidades en internet.",
+    url: "https://alejandromarcos.com",
+    siteName: "Alejandro Marcos",
+    locale: "es_ES",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="es" className={`${geist.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-[#fafafa] text-black">
+        {children}
+      </body>
     </html>
   );
 }

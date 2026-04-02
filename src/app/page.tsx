@@ -1,9 +1,31 @@
+import Nav from "@/components/Nav";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import InternetSurfer from "@/components/InternetSurfer";
+import Session from "@/components/Session";
+import Experience from "@/components/Experience";
+import Teaching from "@/components/Teaching";
+import Book from "@/components/Book";
+import Biblioteca from "@/components/Biblioteca";
+import Press from "@/components/Press";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <InternetSurfer />
+        <Experience />
+        <Teaching />
+        <Biblioteca />
+        <Book />
+        <Session />
+        <Press />
+      </main>
+      <Footer />
+    </>
   );
 }
