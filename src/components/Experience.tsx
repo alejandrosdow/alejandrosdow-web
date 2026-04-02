@@ -102,7 +102,7 @@ const fundador = [
     name: "XYON Agency",
     period: "2015–2016",
     description:
-      "Lanzamos una agencia en España especializada en marcas gaming y management de creadores. Antes de que fuera un negocio evidente.",
+      "Lanzamos una agencia en España especializada en marcas gaming y management de creadores antes de que fuera un negocio evidente.",
   },
 ];
 
