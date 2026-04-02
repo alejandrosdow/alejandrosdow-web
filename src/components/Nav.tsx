@@ -23,7 +23,7 @@ export default function Nav() {
         scrolled ? "bg-[#fafafa] shadow-[0_1px_0_0_#e8e8e8]" : "bg-transparent"
       }`}
     >
-      <nav className="max-w-4xl mx-auto px-6 md:px-8 h-14 flex items-center justify-between">
+      <nav className="w-full px-6 md:px-8 h-14 flex items-center justify-between">
         <a href="#" className="font-semibold text-black text-sm tracking-tight">
           Alejandro Marcos
         </a>
