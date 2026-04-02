@@ -6,12 +6,12 @@ export default function Hero() {
   const [photoError, setPhotoError] = useState(false);
 
   return (
-    <section className="min-h-screen pt-14 px-6 md:px-12 flex flex-col justify-center">
-      <div className="w-full max-w-[1280px] mx-auto pt-12 pb-12 md:pt-[80px] md:pb-16">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+    <section className="pt-14 px-6 md:px-8">
+      <div className="max-w-4xl mx-auto w-full pt-12 pb-12 md:pt-20 md:pb-16">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-10">
 
           {/* Avatar — centered above text on mobile, right column on desktop */}
-          <div className="order-first self-center md:order-last md:self-center md:shrink-0">
+          <div className="order-first self-center md:order-last md:self-start md:shrink-0 md:pt-1">
             {!photoError ? (
               <img
                 src="/foto-alejandro.jpg"
@@ -27,7 +27,7 @@ export default function Hero() {
           {/* Text */}
           <div className="flex-1 min-w-0">
             <p className="text-sm text-neutral-400 mb-6 tracking-wide">
-              CMO · Builder · Internet Surfer
+              CMO · Strategy · Internet Surfer
             </p>
 
             <h1 className="text-[clamp(3rem,8vw,6rem)] leading-[1.0] font-black tracking-tight text-black mb-10">
