@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://alejandrosdow.com/og-image.jpg",
+        url: "https://alejandrosdow.com/og",
         width: 1200,
         height: 630,
         alt: "Alejandro Marcos — Internet Surfer",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Alejandro Marcos — Internet Surfer",
     description:
       "CMO, builder y fundador. 15 años construyendo comunidades en internet.",
-    images: ["https://alejandrosdow.com/og-image.jpg"],
+    images: ["https://alejandrosdow.com/og"],
   },
 };
 
