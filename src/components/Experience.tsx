@@ -6,7 +6,7 @@ const ahora = [
     company: "Team Heretics",
     period: "2018–presente",
     description:
-      "Lidero la marca y comunidad global de Team Heretics y trabajo de forma transversal con el Holding. Monetización de audiencias en internet a través del B2B o B2C.",
+      "Lidero la marca y comunidad global de Team Heretics. Trabajo de forma transversal con el Holding. Monetización de audiencias en internet a través del B2B o B2C.",
     logo: "/logo-heretics.png",
     logoFallback: "TH",
   },
