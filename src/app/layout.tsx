@@ -15,10 +15,25 @@ export const metadata: Metadata = {
     title: "Alejandro Marcos — Internet Surfer",
     description:
       "CMO, builder y fundador. 15 años construyendo comunidades en internet.",
-    url: "https://alejandromarcos.com",
+    url: "https://alejandrosdow.com",
     siteName: "Alejandro Marcos",
     locale: "es_ES",
     type: "website",
+    images: [
+      {
+        url: "https://alejandrosdow.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alejandro Marcos — Internet Surfer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alejandro Marcos — Internet Surfer",
+    description:
+      "CMO, builder y fundador. 15 años construyendo comunidades en internet.",
+    images: ["https://alejandrosdow.com/og-image.jpg"],
   },
 };
 
