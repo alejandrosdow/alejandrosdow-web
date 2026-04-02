@@ -6,8 +6,8 @@ export default function Hero() {
   const [photoError, setPhotoError] = useState(false);
 
   return (
-    <section className="pt-14 px-6 md:px-8">
-      <div className="max-w-4xl mx-auto w-full pt-12 pb-12 md:pt-20 md:pb-16">
+    <section className="min-h-screen pt-14 px-6 md:px-8 flex flex-col justify-center">
+      <div className="w-full pt-12 pb-12 md:pt-20 md:pb-16">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-10">
 
           {/* Avatar — centered above text on mobile, right column on desktop */}
