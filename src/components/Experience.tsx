@@ -14,7 +14,7 @@ const ahora = [
     role: "Brand & Marketing Advisor",
     company: "GenLayer",
     period: "2025–presente",
-    description: "IA + Blockchain. Estrategia de marca",
+    description: "IA + Blockchain. Estrategia de marca.",
     logo: "/logo-genlayer.png",
     logoFallback: "GL",
   },
@@ -69,7 +69,7 @@ const empresa = [
     role: "Jugador profesional",
     company: "Call of Duty · Pain Gaming",
     period: "2011",
-    description: "Campeón nacional. 9º en el Mundial de Los Ángeles en 2011. Competí desde 2008 hasta 2013 en diferentes equipos y tuve uno de los primeros contratos firmados en España como jugador",
+    description: "Campeón nacional. 9º en el Mundial de Los Ángeles en 2011. Competí desde 2008 hasta 2013 en diferentes equipos y tuve uno de los primeros contratos firmados en España como jugador.",
   },
 ];
 
@@ -78,7 +78,7 @@ const fundador = [
     name: "JULIO",
     period: "2025",
     description:
-      "Lanzamos la primera memebrand hispanohablante. Un proyecto de estilo de vida y filosofía basada en el Mediterráneo a través de la imagen de JULIO, monetizando a través de productos y su comunidad. Es un proyecto de poner en práctica discurso y viralidad, sin ánimo de sacar un rédito económico. Hicimos sold out en 30 minutos del único drop que lanzamos",
+      "Lanzamos la primera memebrand hispanohablante. Un proyecto de estilo de vida y filosofía basada en el Mediterráneo a través de la imagen de JULIO, monetizando a través de productos y su comunidad. Es un proyecto de poner en práctica discurso y viralidad, sin ánimo de sacar un rédito económico. Hicimos sold out en 30 minutos del único drop que lanzamos.",
   },
   {
     name: "SCALELAB",
@@ -102,7 +102,7 @@ const fundador = [
     name: "XYON Agency",
     period: "2015–2016",
     description:
-      "Lanzamos una agencia en España especializada en marcas gaming y management de creadores de contenido",
+      "Lanzamos una agencia en España especializada en marcas gaming y management de creadores de contenido.",
   },
 ];
 
