@@ -216,7 +216,7 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* FUNDADOR & INVERSOR */}
+        {/* FUNDADOR/INVERSOR */}
         <div>
           <SectionLabel label="Fundador & Inversor" />
           <div className="border-t border-neutral-100">

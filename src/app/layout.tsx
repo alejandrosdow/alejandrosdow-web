@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Alejandro Marcos — Internet Surfer",
     description:
-      "CMO, builder y fundador. 15 años construyendo comunidades en internet.",
+      "Construyo marcas y comunidades en internet desde hace 15 años.",
     url: "https://alejandrosdow.com",
     siteName: "Alejandro Marcos",
     locale: "es_ES",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alejandro Marcos — Internet Surfer",
     description:
-      "CMO, builder y fundador. 15 años construyendo comunidades en internet.",
+      "Construyo marcas y comunidades en internet desde hace 15 años.",
     images: ["https://alejandrosdow.com/og"],
   },
 };
