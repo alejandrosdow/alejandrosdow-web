@@ -40,7 +40,7 @@ export default function Biblioteca() {
         </h2>
 
         {/* Portadas */}
-        <div className="flex flex-row flex-wrap gap-3 mb-8 overflow-hidden">
+        <div className="flex flex-row flex-nowrap gap-3 mb-8 overflow-x-auto md:overflow-visible pb-1">
           {covers.map((src, i) => (
             <CoverImage key={i} src={src} />
           ))}
