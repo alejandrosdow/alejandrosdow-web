@@ -48,7 +48,7 @@ export default function Solucion() {
         </div>
 
         <p className="text-sm md:text-[15px] text-neutral-500 leading-relaxed mt-10 pt-8 border-t border-neutral-100">
-          Podemos trabajar de tres formas: a través de sesiones individuales, integrándome part-time en tu proyecto o formando un equipo con los mejores profesionales a medida para resolver necesidades específicas.
+          Podemos trabajar de tres formas: a través de sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida para resolver necesidades específicas con los mejores perfiles. Por mi rol principal como CMO en Team Heretics, cojo muy pocos proyectos al año, pero siempre podemos encontrar la mejor manera de ayudarte.
         </p>
       </div>
     </section>
