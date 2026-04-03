@@ -16,7 +16,7 @@ export default function Footer() {
           <p className="text-sm text-black font-medium">
             Alejandro Marcos · Madrid, España
           </p>
-          <p className="text-xs text-neutral-400 mt-1">© 2025 Alejandro Marcos</p>
+          <p className="text-xs text-neutral-400 mt-1">© 2026 @AlejandroSdOw</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">

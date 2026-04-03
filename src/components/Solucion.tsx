@@ -35,7 +35,6 @@ export default function Solucion() {
             El problema no es la visibilidad, llegar es sencillo. El problema es hacer que se queden.
           </p>
           <p className="text-base md:text-lg font-medium text-[#0a0a0a] leading-relaxed">
-            Eso es exactamente en lo que trabajo.
           </p>
         </div>
 
