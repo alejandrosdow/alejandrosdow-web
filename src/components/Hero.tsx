@@ -27,7 +27,7 @@ export default function Hero() {
           {/* Text */}
           <div className="flex-1 min-w-0">
             <h1 className="text-[clamp(2.75rem,9vw,5.5rem)] leading-[1.0] font-black tracking-tight text-black mb-6">
-              <span className="text-[#00e05a]">Conectar</span> &gt; Llegar
+              <span className="text-[#00e05a]">Conectar</span>{" "}&gt; Llegar
             </h1>
 
             <p className="text-base md:text-[17px] text-neutral-600 leading-relaxed mb-4 max-w-lg">
