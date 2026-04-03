@@ -63,12 +63,10 @@ export default function Book() {
                 Internet Surfer — El libro
               </h2>
               <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-2">
-                Manual para crear comunidades en la era digital. 10 mandamientos
-                construidos desde 15 años de experiencia real: Team Heretics,
-                memebrands, creator economy, Web3 y cultura de internet.
+                Internet es un océano lleno de olas. Algunas se ven venir de lejos y otras te pillan por sorpresa. La pregunta no es si vas a surfear, sino cómo vas a hacerlo. Internet Surfer recoge mi forma de entender y construir en internet: un manual con 10 mandamientos nacidos de la experiencia y la ejecución real en Team Heretics, memebrands, creator economy, Web3 y cultura de internet.
               </p>
               <p className="text-xs text-neutral-400 mb-7">
-                Lo comparto gratis porque creo en construir en público.
+              
               </p>
 
               <div className="space-y-1.5 mb-8">

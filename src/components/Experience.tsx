@@ -6,7 +6,7 @@ const ahora = [
     company: "Team Heretics",
     period: "2018–presente",
     description:
-      "Lidero la marca y comunidad global de Team Heretics. Trabajo de forma transversal con el Holding. Monetización de audiencias en internet a través del B2B o B2C.",
+      "Lidero la marca y comunidad global de Team Heretics.",
     logo: "/logo-heretics.png",
     logoFallback: "TH",
   },
@@ -14,13 +14,13 @@ const ahora = [
     role: "Brand & Marketing Advisor",
     company: "GenLayer",
     period: "2025–presente",
-    description: "IA + Blockchain. Estrategia de marca y go-to-market.",
+    description: "IA + Blockchain. Estrategia de marca",
     logo: "/logo-genlayer.png",
     logoFallback: "GL",
   },
   {
     role: "Freelance",
-    company: "para creadores, empresas o particulares",
+    company: "para creadores y empresas",
     period: "2018–presente",
     description:
       "Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias.",
@@ -49,7 +49,7 @@ const empresa = [
     company: "GAME Stores",
     period: "2015–2016",
     description:
-      "Gestioné las relaciones con publishers internacionales, creadores de contenido y ayudé a construir el área de esports de la cadena de tiendas más importante de videojuegos en España y UK. Parte del equipo responsable de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun'n'Serious Bilbao.",
+      "Gestioné las relaciones con publishers internacionales, creadores de contenido, equipos y ayudé a construir el área de esports de la cadena de tiendas más importante de videojuegos en España y UK. Parte del equipo responsable de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun'n'Serious Bilbao.",
   },
   {
     role: "Marketing Manager",
@@ -63,13 +63,13 @@ const empresa = [
     company: "Machinima / LVP / ESL",
     period: "2008–2013",
     description:
-      "Todo empieza aquí. Una webcam, un micrófono y un portátil. Uno de los primeros contratos de Machinima en España y colaborador habitual de LVP y ESL.",
+      "Todo empieza aquí. Una webcam, un micrófono y un portátil. Uno de los primeros contratos de Machinima (YouTunbe) en España y colaborador habitual de LVPes y ESL.",
   },
   {
     role: "Jugador profesional",
     company: "Call of Duty · Pain Gaming",
     period: "2011",
-    description: "Campeón nacional. 9º en el Mundial de Los Ángeles en 2011.",
+    description: "Campeón nacional. 9º en el Mundial de Los Ángeles en 2011. Competí desde 2008 hasta 2013 en diferentes equipos y tuve uno de los primeros contratos firmados en España como jugador",
   },
 ];
 
@@ -78,13 +78,13 @@ const fundador = [
     name: "JULIO",
     period: "2025",
     description:
-      "Lanzamos la primera memebrand hispanohablante. Un proyecto que desarrolló un estilo de vida y filosofía basada en el Mediterráneo a través de la imagen de JULIO, monetizando con productos, servicios y la construcción de una comunidad.",
+      "Lanzamos la primera memebrand hispanohablante. Un proyecto de estilo de vida y filosofía basada en el Mediterráneo a través de la imagen de JULIO, monetizando a través de productos y su comunidad. Es un proyecto de poner en práctica discurso y viralidad, sin ánimo de sacar un rédito económico. Hicimos sold out en 30 minutos del único drop que lanzamos",
   },
   {
     name: "SCALELAB",
     period: "2024",
     description:
-      "Ayudé al equipo fundador en el boom de las formaciones online e infoproductos para creadores de contenido. Construimos el ciclo completo: producto, plataforma, marketing y equipos de ventas.",
+      "Ayudé al equipo fundador en el boom de las formaciones online e infoproductos para creadores de contenido a construir el ciclo completo: producto, plataforma, marketing y equipos de ventas.",
   },
   {
     name: "Zhander App",
@@ -102,7 +102,7 @@ const fundador = [
     name: "XYON Agency",
     period: "2015–2016",
     description:
-      "Lanzamos una agencia en España especializada en marcas gaming y management de creadores antes de que fuera un negocio evidente.",
+      "Lanzamos una agencia en España especializada en marcas gaming y management de creadores de contenido",
   },
 ];
 

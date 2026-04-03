@@ -21,7 +21,7 @@ export default function Teaching() {
           Llevo años trasladando al aula todo lo que aprendo en la calle y en
           internet. He impartido formación sobre marketing digital, construcción
           de comunidades, estrategia de marca y cultura de internet en algunas
-          de las escuelas de negocios más importantes de España, tanto como
+          de las escuelas más importantes de España, tanto como
           profesor como a través de masterclasses y ponencias.
         </p>
 

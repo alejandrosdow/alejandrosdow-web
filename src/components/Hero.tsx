@@ -31,7 +31,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-base md:text-[17px] text-neutral-600 leading-relaxed mb-4 max-w-lg">
-              Ayudo a marcas y creadores a construir, hacer crecer y monetizar comunidades en internet. Entender el zeitgeist y construir marcas, comunidades y negocios que conectan de verdad.
+              Ayudo a marcas y creadores a construir, escalar y monetizar sus comunidades en internet. Entender el zeitgeist para crear negocios que conectan de verdad.
             </p>
 
             <p className="text-[13px] text-neutral-400 leading-relaxed mb-9">
@@ -49,7 +49,7 @@ export default function Hero() {
                 href="#libro"
                 className="inline-flex items-center justify-center px-6 py-3 text-neutral-500 text-sm border border-neutral-200 rounded-sm hover:border-neutral-400 transition-colors"
               >
-                Descarga el libro gratis
+                Descarga el libro para construir en internet gratis
               </a>
             </div>
           </div>

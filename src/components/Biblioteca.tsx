@@ -47,9 +47,9 @@ export default function Biblioteca() {
         </div>
 
         <p className="text-base md:text-lg text-neutral-600 leading-relaxed mb-8">
-          Libros, recursos y referencias que han formado mi manera de pensar
-          sobre marcas, comunidades e internet. Todo lo que leo, releo y
-          recomiendo cuando alguien me pregunta por dónde empezar.
+          Una pequeña biblioteca de libros, recursos y referencias que han formado mi manera de pensar
+          sobre marcas, comunidades e internet. Se actualiza constantemente.
+        
         </p>
 
         {status === "ok" ? (
