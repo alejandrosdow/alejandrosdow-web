@@ -33,9 +33,11 @@ export default function Session() {
             <div className="space-y-2">
               {[
                 "Para creadores que quieren escalar y monetizar su comunidad.",
-                "Para empresas que necesitan mejorar su marca en internet.",
+                "Para empresas que necesitan construir relevancia y posicionamiento en internet.",
                 "Para profesionales que quieren construir marca personal.",
-                "Para proyectos que buscan estrategia antes de escalar.",
+                "Para proyectos que buscan estrategia y estructura antes de escalar.",
+                "Para founders que necesitan convertir su visión en narrativa, estructura y decisiones claras de marketing y equipo.",
+                "Para creadores que necesitan claridad para definir su contenido, elegir su camino y construir con dirección."
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <span className="text-neutral-400 text-sm mt-0.5">→</span>

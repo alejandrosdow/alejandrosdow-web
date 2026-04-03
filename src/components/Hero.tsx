@@ -31,7 +31,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-base md:text-[17px] text-neutral-600 leading-relaxed mb-4 max-w-lg">
-              Ayudo a marcas y creadores a construir, escalar y monetizar sus comunidades en internet. Entender el zeitgeist para crear negocios que conectan de verdad.
+              Ayudo a marcas y creadores a construir, escalar y monetizar su audiencia en internet, entendiendo el zeitgeist para crear comunidades y negocios que conectan de verdad.
             </p>
 
             <p className="text-[13px] text-neutral-400 leading-relaxed mb-9">

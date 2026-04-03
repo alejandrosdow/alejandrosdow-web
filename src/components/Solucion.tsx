@@ -1,15 +1,15 @@
 const bloques = [
   {
     titulo: "Narrativa",
-    desc: "Tu posición en el mundo, tu cosmovisión y cómo la articulas. Sin una narrativa clara, todo lo demás es ruido.",
+    desc: "Trabajamos tu posición en el mundo, tu cosmovisión y cómo la articulas. Sin una narrativa clara, todo lo demás es ruido.",
   },
   {
     titulo: "Comunidad",
-    desc: "Convertir audiencia en gente que quiere formar parte de lo que construyes. No seguidores. Personas comprometidas con tu visión.",
+    desc: "No se trata de seguidores, sino de pertenencia. Vamos a convertir audiencia en personas que entienden, comparten y defienden lo que construyes.",
   },
   {
     titulo: "Sistemas",
-    desc: "Contenido, distribución y crecimiento con estructura. No publicar por publicar. Una lógica que escala.",
+    desc: "Dirección creativa, contenido, distribución y crecimiento con estructura. No se trata de publicar por publicar, sino de construir con una lógica que escala.",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function Solucion() {
         </div>
 
         <p className="text-sm md:text-[15px] text-neutral-500 leading-relaxed mt-10 pt-8 border-t border-neutral-100">
-          Podemos trabajar de varias formas: te ayudo en sesiones individuales, como un part-time CMO o CBO, o formando un equipo de trabajo con profesionales para darte la ayuda específica que necesitas.
+          Podemos trabajar de tres formas: a través de sesiones individuales, integrándome part-time como parte de tu equipo o formando un equipo con los mejores profesionales a medida para resolver necesidades específicas.
         </p>
       </div>
     </section>
