@@ -35,7 +35,7 @@ export default function Hero() {
             </p>
 
             <p className="text-[13px] text-neutral-400 leading-relaxed mb-9">
-              CMO en Team Heretics. +15 años en la industria. Lo que comparto sale de ejecución real, no de teoría.
+              CMO en Team Heretics. +15 años en la industria.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
