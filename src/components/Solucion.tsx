@@ -23,7 +23,7 @@ export default function Solucion() {
 
         <div className="space-y-5 mb-12">
           <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
-            La mayoría de las marcas no fallan por falta de producto.
+            La mayoría de las marcas no fallan por falta de producto o contenido.
           </p>
           <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
             Fallan porque no tienen una narrativa clara. Publican sin sistema, sin una visión correctamente articulada. Confunden alcance con impacto y seguidores con comunidad.
@@ -48,7 +48,7 @@ export default function Solucion() {
         </div>
 
         <p className="text-sm md:text-[15px] text-neutral-500 leading-relaxed mt-10 pt-8 border-t border-neutral-100">
-          Podemos trabajar de tres formas: a través de sesiones individuales, integrándome part-time como parte de tu equipo o formando un equipo con los mejores profesionales a medida para resolver necesidades específicas.
+          Podemos trabajar de tres formas: a través de sesiones individuales, integrándome part-time en tu proyecto o formando un equipo con los mejores profesionales a medida para resolver necesidades específicas.
         </p>
       </div>
     </section>
