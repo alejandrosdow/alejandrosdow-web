@@ -17,7 +17,7 @@ export default function About() {
             Estoy convencido de que cualquier marca que quiera dejar huella tiene una obligación: tejer una comunidad sana, comprometida y alineada con su visión. Sin ella, una marca está condenada a desvanecerse.
           </p>
           <p className="text-base md:text-lg leading-relaxed font-medium text-[#0a0a0a]">
-            Eso es lo que construyo. Y lo que te enseño a construir.
+            Eso es lo que construyo y lo que te ayudo a hacer.
           </p>
         </div>
       </div>
