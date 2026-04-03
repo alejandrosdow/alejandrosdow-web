@@ -1,13 +1,14 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import InternetSurfer from "@/components/InternetSurfer";
+import Problema from "@/components/Problema";
+import Solucion from "@/components/Solucion";
 import Session from "@/components/Session";
-import Experience from "@/components/Experience";
-import Teaching from "@/components/Teaching";
 import Book from "@/components/Book";
 import Biblioteca from "@/components/Biblioteca";
-import Press from "@/components/Press";
+import Experience from "@/components/Experience";
+import Teaching from "@/components/Teaching";
+import CtaFinal from "@/components/CtaFinal";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,13 +18,14 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <InternetSurfer />
+        <Problema />
+        <Solucion />
+        <Session />
+        <Book />
+        <Biblioteca />
         <Experience />
         <Teaching />
-        <Biblioteca />
-        <Book />
-        <Session />
-        <Press />
+        <CtaFinal />
       </main>
       <Footer />
     </>

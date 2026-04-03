@@ -26,26 +26,30 @@ export default function Hero() {
 
           {/* Text */}
           <div className="flex-1 min-w-0">
-            <p className="text-sm text-neutral-400 mb-6 tracking-wide">
-              CMO · Strategy · Internet Surfer
+            <h1 className="text-[clamp(2.75rem,9vw,5.5rem)] leading-[1.0] font-black tracking-tight text-black mb-6">
+              Llegar &lt; <span className="text-[#00e05a]">Conectar</span>
+            </h1>
+
+            <p className="text-base md:text-[17px] text-neutral-600 leading-relaxed mb-4 max-w-lg">
+              Ayudo a marcas y creadores a construir, hacer crecer y monetizar comunidades en internet. Entender el zeitgeist y construir marcas, comunidades y negocios que conectan de verdad.
             </p>
 
-            <h1 className="text-[clamp(3rem,8vw,6rem)] leading-[1.0] font-black tracking-tight text-black mb-10">
-              Alejandro Marcos
-            </h1>
+            <p className="text-[13px] text-neutral-400 leading-relaxed mb-9">
+              CMO en Team Heretics. +15 años en la industria. Lo que comparto sale de ejecución real, no de teoría.
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#sesion"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#00e05a] text-black font-medium text-sm rounded-sm hover:bg-[#00c44e] transition-colors w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#00e05a] text-black font-medium text-sm rounded-sm hover:bg-[#00c44e] transition-colors"
               >
                 Reservar sesión de 30 min →
               </a>
               <a
                 href="#libro"
-                className="inline-flex items-center justify-center px-6 py-3 text-neutral-500 text-sm border border-neutral-200 rounded-sm hover:border-neutral-400 transition-colors w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-6 py-3 text-neutral-500 text-sm border border-neutral-200 rounded-sm hover:border-neutral-400 transition-colors"
               >
-                Descarga manual para surfear internet gratis
+                Descarga el libro gratis
               </a>
             </div>
           </div>

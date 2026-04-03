@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 
 const navLinks = [
-  { href: "#biblioteca", label: "Biblioteca", accent: false },
-  { href: "#libro", label: "Internet Surfer", accent: false },
+  { href: "#libro", label: "Libro", accent: false },
   { href: "#sesion", label: "Agendar sesión", accent: true },
 ];
 
@@ -46,12 +45,9 @@ export default function Nav() {
         </div>
 
         {/* Mobile */}
-        <div className="flex md:hidden items-center flex-wrap gap-x-4 gap-y-2">
-          <a href="#biblioteca" className="text-sm text-neutral-500 hover:text-[#00e05a] transition-colors">
-            Biblioteca
-          </a>
+        <div className="flex md:hidden items-center gap-6">
           <a href="#libro" className="text-sm text-neutral-500 hover:text-[#00e05a] transition-colors">
-            Internet Surfer
+            Libro
           </a>
           <a href="#sesion" className="text-sm font-medium text-[#00e05a] hover:text-[#00c44e] transition-colors">
             Agendar sesión

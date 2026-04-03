@@ -10,6 +10,7 @@ const covers = [
   "/book-cover-3.jpg",
   "/book-cover-4.jpg",
   "/book-cover-5.jpg",
+  "/book-cover-6.jpg",
 ];
 
 export default function Biblioteca() {

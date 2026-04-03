@@ -17,32 +17,25 @@ export default function Session() {
       className="px-6 md:px-8 py-14 md:py-20 border-t border-neutral-100"
     >
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">
-          Hablemos 30 minutos
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-10">
+          Hablemos 30 minutos.
         </h2>
-        <p className="text-neutral-500 text-sm mb-10">
-          Gratis. Sin compromiso. Con foco.
-        </p>
 
         <div className="flex flex-col md:flex-row md:items-start gap-12">
           <div className="flex-1">
             <p className="text-base text-neutral-700 leading-relaxed mb-4">
-              Si estás construyendo una marca, un negocio o intentando encontrar
-              tu posición en internet y no sabes por dónde empezar, esto es para
-              ti.
+              No es una llamada genérica. Es una sesión de trabajo.
             </p>
             <p className="text-base text-neutral-700 leading-relaxed mb-8">
-              En 30 minutos hablaremos para identificar dónde estás en el mapa y
-              darte los primeros pasos concretos para construir y poder ejecutar
-              tu visión en algo que conecte de verdad.
+              En 30 minutos identificamos dónde estás, qué no está funcionando y cuáles son los primeros pasos concretos para avanzar.
             </p>
 
             <div className="space-y-2">
               {[
-                "Creadores que quieren escalar y monetizar su comunidad.",
-                "Empresas que necesitan mejorar su marca en internet.",
-                "Profesionales que quieren construir marca personal.",
-                "Proyectos que buscan estrategia antes de escalar.",
+                "Para creadores que quieren escalar y monetizar su comunidad.",
+                "Para empresas que necesitan mejorar su marca en internet.",
+                "Para profesionales que quieren construir marca personal.",
+                "Para proyectos que buscan estrategia antes de escalar.",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <span className="text-neutral-400 text-sm mt-0.5">→</span>
