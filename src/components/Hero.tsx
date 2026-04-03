@@ -27,11 +27,11 @@ export default function Hero() {
           {/* Text */}
           <div className="flex-1 min-w-0">
             <h1 className="text-[clamp(2.75rem,9vw,5.5rem)] leading-[1.0] font-black tracking-tight text-black mb-6">
-              <span className="text-[#00e05a]">Conectar</span>{" "}&gt; Llegar
+              <span className="text-[#00e05a]">Conectar</span>{" "}para llegar
             </h1>
 
             <p className="text-base md:text-[17px] text-neutral-600 leading-relaxed mb-4 max-w-lg">
-              Ayudo a marcas y creadores a construir, escalar y monetizar su audiencia en internet. Entendeder el zeitgeist para crear comunidades y negocios que conectan de verdad.
+              Ayudo a marcas y creadores a construir, escalar y monetizar su audiencia en internet. Entendeder el zeitgeist para crear omunidades y negocios que impactan en la cultura de verdad.
             </p>
 
             <p className="text-[13px] text-neutral-400 leading-relaxed mb-9">
