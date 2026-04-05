@@ -7,17 +7,14 @@ export default function About() {
         </h2>
 
         <div className="space-y-5">
-          <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
-            Nací en Colmenarejo, entre el campo e internet. Desde que tengo uso de razón, me he apuntado a cualquier aventura ligada al contenido, las marcas y la cultura digital. Aprendí más en foros y comunidades online que en libros de texto.
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 14 }}>
+            Nací en Colmenarejo, Madrid, entre el campo e internet. Mi carrera comenzó en los primeros años de la cultura digital, como jugador profesional de Call of Duty y creador de contenido.
           </p>
-          <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
-            Empecé como jugador profesional y creador de contenido cuando arrancaban las primeras plataformas digitales. He trabajado con los creadores más importantes de habla hispana y ayudado a lanzar proyectos de todo tipo. Desde 2018 soy CMO de Team Heretics, donde escalamos la marca y la comunidad desde el nicho hasta ser una de las más grandes a nivel mundial, con un equipo de marketing que pasó de dos personas a la veintena.
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 14 }}>
+            Hoy construyo y escalo marcas y proyectos en internet, en la <span style={{ color: 'var(--green)', fontWeight: 500 }}>intersección entre entretenimiento, tecnología y cultura digital</span>. Desde 2018 soy CMO de Team Heretics, donde he ayudado a transformar una marca de nicho en una referencia global.
           </p>
-          <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
-            Estoy convencido de que cualquier marca que quiera dejar huella tiene una obligación: tejer una comunidad sana, comprometida y alineada con su visión. Sin ella, una marca está condenada a desvanecerse.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed font-medium text-[#0a0a0a]">
-            Comunidad no es audiencia o seguidores, son clientes, colaboradores, proveedores, staff y todo el ecosistema que se construye alrededor de una empresa, marca o persona.
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 16 }}>
+            Creo en las marcas capaces de generar pertenencia, convertir comunidad en distribución y distribución en negocio.
           </p>
         </div>
       </div>

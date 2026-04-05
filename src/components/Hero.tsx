@@ -30,12 +30,12 @@ export default function Hero() {
               <span className="text-[#00e05a]">Conectar</span>{" "}para llegar
             </h1>
 
-            <p className="text-base md:text-[17px] text-neutral-600 leading-relaxed mb-4 max-w-lg">
-              Ayudo a marcas y creadores a construir, escalar y monetizar en internet. Entender el zeitgeist para crear comunidades y negocios que impactan en la cultura de verdad.
+            <p style={{ fontSize: 'clamp(14px,1.5vw,17px)', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 480, marginBottom: 8, fontWeight: 300 }}>
+              Construyo marcas culturales en internet.<br />
+              Convierto narrativa en comunidad, comunidad en distribución y distribución en negocio.
             </p>
-
-            <p className="text-[13px] text-neutral-400 leading-relaxed mb-9">
-              CMO en Team Heretics. +15 años en la industria.
+            <p style={{ fontSize: 'clamp(13px,1.2vw,15px)', lineHeight: 1.7, color: 'var(--text-dim)', maxWidth: 480, marginBottom: 32, fontWeight: 300 }}>
+              Entendiendo el zeitgeist para crear proyectos que conectan de verdad.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
