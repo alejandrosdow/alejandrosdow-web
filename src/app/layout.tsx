@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     title: 'Alejandro Marcos — Internet Surfer',
     description: 'CMO, en la intersección entre entretenimiento, tecnología y cultura digital.',
     url: 'https://alejandrosdow.com',
-    images: [{ url: 'https://alejandrosdow.com/og' }],
+    images: [{ url: 'https://alejandrosdow.com/og-image.jpg', width: 1200, height: 630, alt: 'Alejandro Marcos' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Alejandro Marcos — Internet Surfer',
     description: 'CMO, en la intersección entre entretenimiento, tecnología y cultura digital.',
-    images: ['https://alejandrosdow.com/og'],
+    images: ['https://alejandrosdow.com/og-image.jpg'],
   },
 }
 
