@@ -18,17 +18,17 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: 'Alejandro Marcos — Internet Surfer',
-  description: 'Construyo marcas y comunidades en internet desde hace 15 años.',
+  description: 'CMO, en la intersección entre entretenimiento, tecnología y cultura digital.',
   openGraph: {
     title: 'Alejandro Marcos — Internet Surfer',
-    description: 'CMO, builder y fundador. 15 años construyendo comunidades en internet.',
+    description: 'CMO, en la intersección entre entretenimiento, tecnología y cultura digital.',
     url: 'https://alejandrosdow.com',
     images: [{ url: 'https://alejandrosdow.com/og' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Alejandro Marcos — Internet Surfer',
-    description: 'CMO, builder y fundador. 15 años construyendo comunidades en internet.',
+    description: 'CMO, en la intersección entre entretenimiento, tecnología y cultura digital.',
     images: ['https://alejandrosdow.com/og'],
   },
 }
