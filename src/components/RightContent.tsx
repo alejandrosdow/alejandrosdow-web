@@ -209,8 +209,12 @@ export default function RightContent() {
         <h1 className="font-syne" style={{ fontSize: 'clamp(2.4rem, 5vw, 5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.0, color: 'var(--text)', marginBottom: 24 }}>
           <span style={{ color: 'var(--green)' }}>Conectar</span><br />para llegar.
         </h1>
-        <p style={{ fontSize: 'clamp(14px,1.5vw,16px)', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 480, marginBottom: 16, fontWeight: 300 }}>
-          Ayudo a marcas y creadores a construir, escalar y monetizar en internet. Entender el zeitgeist para crear comunidades y negocios que impactan en la cultura de verdad.
+        <p style={{ fontSize: 'clamp(14px,1.5vw,17px)', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 480, marginBottom: 8, fontWeight: 300 }}>
+          Construyo marcas culturales en internet.<br />
+          Convierto cultura en comunidad, comunidad en distribución y distribución en negocio.
+        </p>
+        <p style={{ fontSize: 'clamp(13px,1.2vw,15px)', lineHeight: 1.7, color: 'var(--text-dim)', maxWidth: 480, marginBottom: 32, fontWeight: 300 }}>
+          Entendiendo el zeitgeist para crear proyectos que realmente impactan en la cultura.
         </p>
         <p style={{ fontSize: 11, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 500, marginBottom: 32 }}>
           CMO en Team Heretics · +15 años en la industria
@@ -248,13 +252,13 @@ export default function RightContent() {
       <Section>
         <Label>// En qué trabajo</Label>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 28 }}>
-          La mayoría de las marcas no fallan por falta de producto. Fallan porque no tienen una <strong style={{ color: 'var(--text)', fontWeight: 500 }}>narrativa clara</strong>. El problema no es la visibilidad. <strong style={{ color: 'var(--green)', fontWeight: 600 }}>El problema es hacer que se queden.</strong>
+          La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad. <strong style={{ color: 'var(--green)', fontWeight: 600 }}>El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.</strong>
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginBottom: 20 }}>
           {[
             { n: '01', t: 'Narrativa', d: 'Tu posición en el mundo y cómo articularla. Sin narrativa, todo lo demás es ruido.' },
             { n: '02', t: 'Comunidad', d: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
-            { n: '03', t: 'Sistemas', d: 'Creación, distribución y crecimiento con estructura que escala sin perder el alma.' },
+            { n: '03', t: 'Sistemas', d: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
           ].map(b => (
             <div key={b.n}
               style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '24px 20px', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
