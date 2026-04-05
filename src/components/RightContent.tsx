@@ -90,7 +90,7 @@ function BookForm({ formId }: { formId: string }) {
   if (sent) return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
       <div style={{ width: 22, height: 22, borderRadius: '50%', background: 'var(--green)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#fff' }}>✓</div>
-      <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>¡Perfecto! Te lo enviamos ahora mismo.</p>
+      <p style={{ fontSize: 15, color: 'var(--text-muted)' }}>¡Perfecto! Te lo enviamos ahora mismo.</p>
     </div>
   )
   return (
@@ -127,7 +127,7 @@ function TrajectoryRow({ role, company, period, desc, logo }: { role: string; co
           <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text)' }}>{role}</span>
           <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>— {company}</span>
         </div>
-        <p style={{ fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.6, marginTop: 3 }}>{desc}</p>
+        <p style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.6, marginTop: 3 }}>{desc}</p>
       </div>
       <span style={{ fontSize: 11, color: 'var(--text-dim)', whiteSpace: 'nowrap', paddingTop: 2 }}>{period}</span>
     </div>
@@ -261,13 +261,12 @@ export default function RightContent() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,184,72,0.3)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLElement).style.transform = 'none' }}
             >
-              <div className="font-syne" style={{ fontSize: 40, fontWeight: 800, color: 'rgba(0,0,0,0.06)', lineHeight: 1, marginBottom: 14, letterSpacing: '-0.04em' }}>{b.n}</div>
               <div className="font-syne" style={{ fontSize: 15, fontWeight: 700, color: 'var(--text)', marginBottom: 8 }}>{b.t}</div>
-              <div style={{ fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.65 }}>{b.d}</div>
+              <div style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.65 }}>{b.d}</div>
             </div>
           ))}
         </div>
-        <div style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.7, padding: '14px 18px', borderRadius: 10, background: 'var(--surface)', borderLeft: '3px solid var(--green)' }}>
+        <div style={{ fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.7, padding: '14px 18px', borderRadius: 10, background: 'var(--surface)', borderLeft: '3px solid var(--green)' }}>
           Podemos trabajar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año.
         </div>
       </Section>
@@ -278,8 +277,8 @@ export default function RightContent() {
         <h2 className="font-syne" style={{ fontSize: 'clamp(1.3rem, 2.2vw, 1.8rem)', fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)', marginBottom: 10, lineHeight: 1.1 }}>
           Hablemos 30 minutos.
         </h2>
-        <p style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: 6, fontWeight: 300 }}>No es una llamada genérica. Es una sesión de trabajo real.</p>
-        <p style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: 20, fontWeight: 300 }}>En 30 minutos identificamos dónde estás, qué no está funcionando y cuáles son los primeros pasos concretos.</p>
+        <p style={{ fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: 6, fontWeight: 300 }}>No es una llamada genérica. Es una sesión de trabajo real.</p>
+        <p style={{ fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: 20, fontWeight: 300 }}>En 30 minutos identificamos dónde estás, qué no está funcionando y cuáles son los primeros pasos concretos.</p>
         <div style={{ borderTop: '1px solid var(--border)', marginBottom: 24 }}>
           {[
             'Para creadores que quieren escalar y monetizar su comunidad.',
@@ -293,7 +292,7 @@ export default function RightContent() {
               onMouseLeave={e => ((e.currentTarget as HTMLElement).style.paddingLeft = '0')}
             >
               <span style={{ color: 'var(--green)', fontSize: 11, marginTop: 2, flexShrink: 0 }}>→</span>
-              <span style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.6 }}>{item}</span>
+              <span style={{ fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.6 }}>{item}</span>
             </div>
           ))}
         </div>
@@ -315,7 +314,7 @@ export default function RightContent() {
         <Label>// Libro</Label>
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 28, borderLeft: '3px solid var(--green)' }}>
           <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-            <div style={{ width: 90, flexShrink: 0, aspectRatio: '2/3', background: 'linear-gradient(135deg,#1e1e1e,#111)', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 12px 32px rgba(0,0,0,0.18)', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ width: 140, flexShrink: 0, aspectRatio: '2/3', background: 'linear-gradient(135deg,#1e1e1e,#111)', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 12px 32px rgba(0,0,0,0.18)', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--green)', zIndex: 2 }} />
               <span style={{ fontSize: 28, position: 'absolute', zIndex: 0 }}>📖</span>
               <Image src="/libro-cover.jpg" alt="Internet Surfer" fill style={{ objectFit: 'cover', borderRadius: 8, zIndex: 1 }}
@@ -324,13 +323,13 @@ export default function RightContent() {
             </div>
             <div style={{ flex: 1, minWidth: 180 }}>
               <h2 className="font-syne" style={{ fontSize: 20, fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.02em', marginBottom: 4 }}>Internet Surfer</h2>
-              <p style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 4 }}>El arte de crear comunidades en la era digital.</p>
+              <p style={{ fontSize: 15, color: 'var(--text-muted)', marginBottom: 4 }}>El arte de crear comunidades en la era digital.</p>
               <p style={{ fontSize: 10, color: 'var(--green)', marginBottom: 18, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>PDF gratuito · Descarga directa</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 5, marginBottom: 20 }}>
                 {['Cómo construir comunidades que sobreviven al algoritmo', 'Narrativa, posicionamiento y zeitgeist', 'Los 10 mandamientos del creador moderno', 'Cases reales de Team Heretics y el mercado hispano'].map(f => (
                   <div key={f} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <div style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--green)', marginTop: 6, flexShrink: 0 }} />
-                    <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>{f}</span>
+                    <span style={{ fontSize: 14, color: 'var(--text-muted)' }}>{f}</span>
                   </div>
                 ))}
               </div>
@@ -359,7 +358,7 @@ export default function RightContent() {
             </div>
           ))}
         </div>
-        <p style={{ fontSize: 13, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 20 }}>
+        <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 20 }}>
           Una pequeña biblioteca de libros, recursos y referencias que han formado mi manera de pensar sobre marcas, comunidades e internet. Se actualiza constantemente.
         </p>
         <BookForm formId="bib" />
@@ -389,7 +388,7 @@ export default function RightContent() {
             >
               <div>
                 <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text)' }}>{p.name}</span>
-                <p style={{ fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.6, marginTop: 3 }}>{p.desc}</p>
+                <p style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.6, marginTop: 3 }}>{p.desc}</p>
               </div>
               <span style={{ fontSize: 11, color: 'var(--text-dim)', whiteSpace: 'nowrap', paddingTop: 2 }}>{p.period}</span>
             </div>
@@ -397,7 +396,7 @@ export default function RightContent() {
         </div>
 
         <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text-dim)', marginBottom: 12 }}>Docencia</p>
-        <p style={{ fontSize: 13, lineHeight: 1.7, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 24 }}>
+        <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 24 }}>
           Llevo años trasladando al aula todo lo que aprendo en la calle y en internet. Marketing digital, construcción de comunidades, estrategia de marca y cultura de internet en algunas de las escuelas más importantes de España.
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px 32px' }}>
@@ -412,11 +411,7 @@ export default function RightContent() {
             />
           ))}
         </div>
-      </Section>
-
-      <Section>
-        <Label>// Recursos</Label>
-        <div style={{ borderRadius: 14, overflow: 'hidden', border: '1px solid var(--border)', position: 'relative', aspectRatio: '16/9' }}>
+        <div style={{ marginTop: 24, borderRadius: 14, overflow: 'hidden', border: '1px solid var(--border)', position: 'relative', aspectRatio: '16/9' }}>
           <Image src="/foto-recursos.jpg" alt="Recursos" fill style={{ objectFit: 'cover' }}
             onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
           />
@@ -429,7 +424,7 @@ export default function RightContent() {
         <h2 className="font-syne" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--text)', lineHeight: 1.05, marginBottom: 12 }}>
           Si quieres construir algo<br />que de verdad <span style={{ color: 'var(--green)' }}>conecte.</span>
         </h2>
-        <p style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.7, fontWeight: 300, maxWidth: 400, marginBottom: 32 }}>
+        <p style={{ fontSize: 16, color: 'var(--text-muted)', lineHeight: 1.7, fontWeight: 300, maxWidth: 400, marginBottom: 32 }}>
           Una sesión de 30 minutos puede darte más claridad que meses dando vueltas solo.
         </p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -449,7 +444,7 @@ export default function RightContent() {
       {/* ── FOOTER ── */}
       <div style={{ borderTop: '1px solid var(--border)', padding: '28px 0 48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <p style={{ fontSize: 13, color: 'var(--text-muted)', fontWeight: 500 }}>Alejandro Marcos · Madrid, España</p>
+          <p style={{ fontSize: 15, color: 'var(--text-muted)', fontWeight: 500 }}>Alejandro Marcos · Madrid, España</p>
           <p style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 3 }}>© 2026 @AlejandroSdOw</p>
         </div>
         <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
@@ -460,7 +455,7 @@ export default function RightContent() {
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/alejandromarcosmoraga/' },
           ].map(l => (
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
-              style={{ fontSize: 12, color: 'var(--text-dim)', textDecoration: 'none', transition: 'color 0.2s' }}
+              style={{ fontSize: 14, color: 'var(--text-dim)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--green)')}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-dim)')}
             >{l.label}</a>
