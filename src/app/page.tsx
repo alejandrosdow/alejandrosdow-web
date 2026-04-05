@@ -1,31 +1,11 @@
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Solucion from "@/components/Solucion";
-import Session from "@/components/Session";
-import Book from "@/components/Book";
-import Biblioteca from "@/components/Biblioteca";
-import Experience from "@/components/Experience";
-import Teaching from "@/components/Teaching";
-import CtaFinal from "@/components/CtaFinal";
-import Footer from "@/components/Footer";
+import StickyPhoto from '@/components/StickyPhoto'
+import RightContent from '@/components/RightContent'
 
 export default function Home() {
   return (
-    <>
-      <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Solucion />
-        <Session />
-        <Book />
-        <Biblioteca />
-        <Experience />
-        <Teaching />
-        <CtaFinal />
-      </main>
-      <Footer />
-    </>
-  );
+    <main className="flex min-h-screen">
+      <StickyPhoto />
+      <RightContent />
+    </main>
+  )
 }

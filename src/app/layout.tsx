@@ -1,52 +1,44 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { DM_Sans, Syne } from 'next/font/google'
+import './globals.css'
 
-const geist = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+})
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['700', '800'],
+  variable: '--font-syne',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: "Alejandro Marcos — Internet Surfer",
-  icons: { icon: "/favicon.jpg" },
-  description: "Construyo marcas y comunidades en internet desde hace 15 años.",
+  title: 'Alejandro Marcos — Internet Surfer',
+  description: 'Construyo marcas y comunidades en internet desde hace 15 años.',
   openGraph: {
-    title: "Alejandro Marcos — Internet Surfer",
-    description:
-      "Construyo marcas y comunidades en internet desde hace 15 años.",
-    url: "https://alejandrosdow.com",
-    siteName: "Alejandro Marcos",
-    locale: "es_ES",
-    type: "website",
-    images: [
-      {
-        url: "https://alejandrosdow.com/og",
-        width: 1200,
-        height: 630,
-        alt: "Alejandro Marcos — Internet Surfer",
-      },
-    ],
+    title: 'Alejandro Marcos — Internet Surfer',
+    description: 'CMO, builder y fundador. 15 años construyendo comunidades en internet.',
+    url: 'https://alejandrosdow.com',
+    images: [{ url: 'https://alejandrosdow.com/og' }],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Alejandro Marcos — Internet Surfer",
-    description:
-      "Construyo marcas y comunidades en internet desde hace 15 años.",
-    images: ["https://alejandrosdow.com/og"],
+    card: 'summary_large_image',
+    title: 'Alejandro Marcos — Internet Surfer',
+    description: 'CMO, builder y fundador. 15 años construyendo comunidades en internet.',
+    images: ['https://alejandrosdow.com/og'],
   },
-};
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#fafafa] text-black">
+    <html lang="es" className={`${dmSans.variable} ${syne.variable}`}>
+      <body className="min-h-screen flex flex-col" style={{ fontFamily: 'var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif' }}>
         {children}
       </body>
     </html>
-  );
+  )
 }
