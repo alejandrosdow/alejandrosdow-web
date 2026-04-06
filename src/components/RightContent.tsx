@@ -189,7 +189,7 @@ export default function RightContent() {
       {/* ── HERO ── */}
       <div style={{ padding: 'clamp(40px,8vh,80px) 0 48px', borderBottom: '1px solid var(--border)' }}>
         {/* Foto mobile */}
-        <div className="mobile-only" style={{ justifyContent: 'center', marginBottom: 24 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }} className="md:hidden">
           <div style={{ width: 120, height: 120, borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--border)', position: 'relative', flexShrink: 0 }}>
             <Image src="/foto-mobile.jpg" alt="Alejandro Marcos" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
           </div>

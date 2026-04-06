@@ -102,9 +102,6 @@ body::before {
   .book-submit { display: flex; justify-content: flex-end; }
 }
 
-.mobile-only { display: flex; }
-@media (min-width: 768px) { .mobile-only { display: none !important; } }
-
 @media (min-width: 768px) {
   .cards-slider {
     display: grid !important;
