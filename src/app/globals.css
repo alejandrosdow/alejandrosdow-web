@@ -113,3 +113,6 @@ body::before {
     max-width: unset !important;
   }
 }
+
+.foto-mobile { display: none; }
+@media (max-width: 767px) { .foto-mobile { display: flex; justify-content: center; margin-bottom: 24px; } }
