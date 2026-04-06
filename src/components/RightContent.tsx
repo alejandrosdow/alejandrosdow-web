@@ -188,6 +188,12 @@ export default function RightContent() {
 
       {/* ── HERO ── */}
       <div style={{ padding: 'clamp(40px,8vh,80px) 0 48px', borderBottom: '1px solid var(--border)' }}>
+        {/* Foto mobile */}
+        <div className="md:hidden" style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
+          <div style={{ width: 120, height: 120, borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--border)', position: 'relative', flexShrink: 0 }}>
+            <Image src="/foto-alejandro.jpg" alt="Alejandro Marcos" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+          </div>
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 48, flexWrap: 'wrap', gap: 12 }}>
           <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--green)', display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ display: 'block', width: 16, height: 1, background: 'var(--green)' }} />
@@ -214,10 +220,7 @@ export default function RightContent() {
           Convierto narrativa en comunidad, comunidad en distribución y distribución en negocio.
         </p>
         <p style={{ fontSize: 'clamp(13px,1.2vw,15px)', lineHeight: 1.7, color: 'var(--text-dim)', maxWidth: 480, marginBottom: 32, fontWeight: 300 }}>
-          Entendiendo el zeitgeist para crear proyectos que conectan de verdad.
-        </p>
-        <p style={{ fontSize: 11, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 500, marginBottom: 32 }}>
-          CMO en Team Heretics · +15 años en la industria
+          Entendiendo el zeitgeist para crear proyectos que conectan de verdad. CMO en Team Heretics.
         </p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           <a href="#sesion"
@@ -254,19 +257,18 @@ export default function RightContent() {
         <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 28 }}>
           La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad. <strong style={{ color: 'var(--green)', fontWeight: 600 }}>El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.</strong>
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12, marginBottom: 20 }}>
+        <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8, marginBottom: 20, scrollSnapType: 'x mandatory' }}>
           {[
             { n: '01', t: 'Narrativa', d: 'Tu posición en el mundo y cómo articularla. Sin narrativa, todo lo demás es ruido.' },
             { n: '02', t: 'Comunidad', d: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
             { n: '03', t: 'Sistemas', d: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
           ].map(b => (
-            <div key={b.n}
-              style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '24px 20px', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
+            <div key={b.n} style={{ minWidth: 220, flexShrink: 0, scrollSnapAlign: 'start', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '24px 20px', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,184,72,0.3)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLElement).style.transform = 'none' }}
             >
-              <div className="font-syne" style={{ fontSize: 16, fontWeight: 700, color: 'var(--text)', marginBottom: 8 }}>{b.t}</div>
-              <div style={{ fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.65 }}>{b.d}</div>
+              <div className="font-syne" style={{ fontSize: 15, fontWeight: 700, color: 'var(--text)', marginBottom: 8 }}>{b.t}</div>
+              <div style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.65 }}>{b.d}</div>
             </div>
           ))}
         </div>
@@ -447,10 +449,7 @@ export default function RightContent() {
 
       {/* ── FOOTER ── */}
       <div style={{ borderTop: '1px solid var(--border)', padding: '28px 0 48px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-        <div>
-          <p style={{ fontSize: 16, color: 'var(--text-muted)', fontWeight: 500 }}>Alejandro Marcos · Madrid, España</p>
-          <p style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 3 }}>© 2026 @AlejandroSdOw</p>
-        </div>
+        <p style={{ fontSize: 13, color: 'var(--text-dim)', fontWeight: 500 }}>@AlejandroSdOw</p>
         <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
           {[
             { label: 'X / Twitter', href: 'https://x.com/alejandrosdow' },
@@ -459,7 +458,7 @@ export default function RightContent() {
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/alejandromarcosmoraga/' },
           ].map(l => (
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
-              style={{ fontSize: 15, color: 'var(--text-dim)', textDecoration: 'none', transition: 'color 0.2s' }}
+              style={{ fontSize: 12, color: 'var(--text-dim)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--green)')}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-dim)')}
             >{l.label}</a>
