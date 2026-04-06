@@ -197,11 +197,11 @@ export default function RightContent() {
         <h1 className="font-syne" style={{ fontSize: 'clamp(2.4rem, 5vw, 5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.0, color: 'var(--text)', marginBottom: 24 }}>
           <span style={{ color: 'var(--green)' }}>Conectar</span><br />para llegar.
         </h1>
-        <p style={{ fontSize: 'clamp(14px,1.5vw,17px)', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 480, marginBottom: 8, fontWeight: 300 }}>
+        <p style={{ fontSize: 'clamp(14px,1.5vw,17px)', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 600, marginBottom: 8, fontWeight: 300 }}>
           Construyo marcas culturales en internet.<br />
           Convierto narrativa en comunidad, comunidad en distribución y distribución en negocio.
         </p>
-        <p style={{ fontSize: 'clamp(13px,1.2vw,15px)', lineHeight: 1.7, color: 'var(--text-dim)', maxWidth: 480, marginBottom: 32, fontWeight: 300 }}>
+        <p style={{ fontSize: 'clamp(13px,1.2vw,15px)', lineHeight: 1.7, color: 'var(--text-dim)', maxWidth: 600, marginBottom: 32, fontWeight: 300 }}>
           Entendiendo el zeitgeist para crear proyectos que conectan de verdad. CMO en Team Heretics.
         </p>
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
