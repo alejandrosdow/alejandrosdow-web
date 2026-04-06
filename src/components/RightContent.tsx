@@ -191,27 +191,9 @@ export default function RightContent() {
         {/* Foto mobile */}
         <div className="md:hidden" style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
           <div style={{ width: 120, height: 120, borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--border)', position: 'relative', flexShrink: 0 }}>
-            <Image src="/foto-alejandro.jpg" alt="Alejandro Marcos" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            <Image src="/foto-mobile.jpg" alt="Alejandro Marcos" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
           </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 48, flexWrap: 'wrap', gap: 12 }}>
-          <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--green)', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <span style={{ display: 'block', width: 16, height: 1, background: 'var(--green)' }} />
-            @AlejandroSdOw
-          </span>
-          <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
-            <a href="#libro" style={{ fontSize: 14, color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'var(--text)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
-            >Libro</a>
-            <a href="#sesion"
-              style={{ fontSize: 14, fontWeight: 600, padding: '7px 16px', borderRadius: 100, background: 'var(--green-dim)', color: 'var(--green)', border: '1px solid rgba(0,184,72,0.25)', textDecoration: 'none', transition: 'all 0.2s' }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'var(--green)'; e.currentTarget.style.color = '#fff' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'var(--green-dim)'; e.currentTarget.style.color = 'var(--green)' }}
-            >Agendar sesión</a>
-          </div>
-        </div>
-
         <h1 className="font-syne" style={{ fontSize: 'clamp(2.4rem, 5vw, 5rem)', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.0, color: 'var(--text)', marginBottom: 24 }}>
           <span style={{ color: 'var(--green)' }}>Conectar</span><br />para llegar.
         </h1>
@@ -257,13 +239,13 @@ export default function RightContent() {
         <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 28 }}>
           La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad. <strong style={{ color: 'var(--green)', fontWeight: 600 }}>El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.</strong>
         </p>
-        <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8, marginBottom: 20, scrollSnapType: 'x mandatory' }}>
+        <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8, marginBottom: 20, scrollSnapType: 'x mandatory', scrollbarWidth: 'thin' }}>
           {[
             { n: '01', t: 'Narrativa', d: 'Tu posición en el mundo y cómo articularla. Sin narrativa, todo lo demás es ruido.' },
             { n: '02', t: 'Comunidad', d: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
             { n: '03', t: 'Sistemas', d: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
           ].map(b => (
-            <div key={b.n} style={{ minWidth: 220, flexShrink: 0, scrollSnapAlign: 'start', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '24px 20px', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
+            <div key={b.n} style={{ minWidth: 160, flexShrink: 0, scrollSnapAlign: 'start', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '18px 16px', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,184,72,0.3)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLElement).style.transform = 'none' }}
             >
