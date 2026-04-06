@@ -101,3 +101,15 @@ body::before {
 @media (min-width: 1024px) {
   .book-submit { display: flex; justify-content: flex-end; }
 }
+
+@media (min-width: 768px) {
+  .cards-slider {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    overflow-x: visible !important;
+  }
+  .cards-slider > * {
+    flex: unset !important;
+    max-width: unset !important;
+  }
+}

@@ -239,16 +239,13 @@ export default function RightContent() {
         <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 28 }}>
           La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad. <strong style={{ color: 'var(--green)', fontWeight: 600 }}>El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.</strong>
         </p>
-        <div style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 8, marginBottom: 20, scrollSnapType: 'x mandatory', scrollbarWidth: 'thin' }}>
+        <div className="cards-slider" style={{ display: 'flex', gap: 12, overflowX: 'auto', paddingBottom: 12, marginBottom: 20, scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
           {[
             { n: '01', t: 'Narrativa', d: 'Tu posición en el mundo y cómo articularla. Sin narrativa, todo lo demás es ruido.' },
             { n: '02', t: 'Comunidad', d: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
             { n: '03', t: 'Sistemas', d: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
           ].map(b => (
-            <div key={b.n} style={{ minWidth: 160, flexShrink: 0, scrollSnapAlign: 'start', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '18px 16px', transition: 'border-color 0.2s, transform 0.2s', cursor: 'default' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,184,72,0.3)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLElement).style.transform = 'none' }}
-            >
+            <div key={b.n} style={{ flex: '0 0 72%', maxWidth: 260, scrollSnapAlign: 'start', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px 16px' }}>
               <div className="font-syne" style={{ fontSize: 15, fontWeight: 700, color: 'var(--text)', marginBottom: 8 }}>{b.t}</div>
               <div style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.65 }}>{b.d}</div>
             </div>
