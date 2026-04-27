@@ -31,8 +31,8 @@ export default function Hero() {
             </h1>
 
             <p style={{ fontSize: 'clamp(14px,1.5vw,17px)', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 480, marginBottom: 8, fontWeight: 300 }}>
-              Construyo marcas culturales en internet.<br />
-              Convierto narrativa en comunidad, comunidad en distribución y distribución en negocio.
+              Construyendo marcas culturales en internet.<br />
+              Te ayudo a convertir narrativa en comunidad, comunidad en distribución y distribución en negocio.
             </p>
             <p style={{ fontSize: 'clamp(13px,1.2vw,15px)', lineHeight: 1.7, color: 'var(--text-dim)', maxWidth: 480, marginBottom: 32, fontWeight: 300 }}>
               Entendiendo el zeitgeist para crear proyectos que conectan de verdad.

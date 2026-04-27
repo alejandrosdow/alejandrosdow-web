@@ -197,8 +197,8 @@ export default function RightContent() {
           <span style={{ color: 'var(--green)' }}>Conectar</span><br />para llegar.
         </h1>
         <p style={{ fontSize: 'clamp(14px,1.5vw,17px)', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: '100%', marginBottom: 8, fontWeight: 300 }}>
-          Construyo marcas culturales en internet.<br />
-          Convierto narrativa en comunidad, comunidad en distribución y distribución en negocio.
+          Construyendo marcas culturales en internet.<br />
+          Te ayudo a convertir narrativa en comunidad, comunidad en distribución y distribución en negocio.
         </p>
         <p style={{ fontSize: 'clamp(13px,1.2vw,15px)', lineHeight: 1.7, color: 'var(--text-dim)', maxWidth: '100%', marginBottom: 32, fontWeight: 300 }}>
           Entendiendo el zeitgeist para crear proyectos que conectan de verdad. CMO en Team Heretics.
@@ -224,7 +224,7 @@ export default function RightContent() {
           Nací en Colmenarejo, Madrid, entre el campo e internet. Mi carrera comenzó en los primeros años de la cultura digital, como jugador profesional de Call of Duty y creador de contenido.
         </p>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 14 }}>
-          Hoy construyo y escalo marcas y proyectos en internet, en la <span style={{ color: 'var(--green)', fontWeight: 500 }}>intersección entre entretenimiento, tecnología y cultura digital</span>. Desde 2018 soy CMO de Team Heretics, donde he ayudado a transformar una marca de nicho en una referencia global.
+          Hoy construyo y escalo marcas en internet, en la <span style={{ color: 'var(--green)', fontWeight: 500 }}>intersección entre entretenimiento, tecnología y cultura digital</span>. Desde 2018 soy CMO de Team Heretics, donde he ayudado a transformar una marca de nicho en una referencia global.
         </p>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 16 }}>
           Creo en las marcas capaces de generar pertenencia, convertir comunidad en distribución y distribución en negocio.

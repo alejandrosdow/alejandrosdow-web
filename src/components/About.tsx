@@ -11,7 +11,7 @@ export default function About() {
             Nací en Colmenarejo, Madrid, entre el campo e internet. Mi carrera comenzó en los primeros años de la cultura digital, como jugador profesional de Call of Duty y creador de contenido.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 14 }}>
-            Hoy construyo y escalo marcas y proyectos en internet, en la <span style={{ color: 'var(--green)', fontWeight: 500 }}>intersección entre entretenimiento, tecnología y cultura digital</span>. Desde 2018 soy CMO de Team Heretics, donde he ayudado a transformar una marca de nicho en una referencia global.
+            Hoy construyo y escalo marcas en internet, en la <span style={{ color: 'var(--green)', fontWeight: 500 }}>intersección entre entretenimiento, tecnología y cultura digital</span>. Desde 2018 soy CMO de Team Heretics, donde he ayudado a transformar una marca de nicho en una referencia global.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--text-muted)', fontWeight: 300, marginBottom: 16 }}>
             Creo en las marcas capaces de generar pertenencia, convertir comunidad en distribución y distribución en negocio.
