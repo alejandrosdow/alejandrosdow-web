@@ -10,7 +10,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // ============ I18N DICTIONARY ============
 const I18N = {
   es: {
-    nav: { home: 'Home', cv: 'Trayectoria', blog: 'Blog' },
+    nav: { home: 'Home', cv: 'Trayectoria', blog: 'Blog', contact: 'Contacto' },
     facts: [
       "el 9º puesto en el mundial de cod los ángeles 2011 cambió mi vida",
       "llevo 18 años trabajando profesionalmente en internet",
@@ -156,10 +156,39 @@ const I18N = {
       { title: 'El Punto Clave', author: 'Malcolm Gladwell', note: 'El libro que en su día explicó por qué las cosas se vuelven virales. Sigue siendo la base para entender cómo se propagan ideas y marcas.', tag: 'Cultura · 2000', rating: '★★★★', cover: '/assets/book-punto-clave.webp' },
       { title: 'Made in Japan', author: 'Akio Morita', note: 'La autobiografía del fundador de Sony. Cómo se construye una empresa desde cero con visión cultural a largo plazo. Atemporal.', tag: 'Negocio · 1986', rating: '★★★★★', cover: '/assets/book-made-in-japan.webp' },
     ],
+    contact: {
+      sticker: '★ disponible',
+      kicker: '▸ /contacto · trabajemos juntos',
+      title: 'Contacto.',
+      lead1: 'Construimos marca, comunidad y narrativa para proyectos que quieren ir más allá del paid media.',
+      lead2: 'aquí abajo: cómo trabajo y para quién.',
+      workKicker: '// en qué trabajo',
+      workIntro1: 'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica.',
+      workIntro2: 'Creen que el problema es llegar. Pero el problema no es la visibilidad.',
+      workIntroHighlight: 'El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.',
+      pillars: [
+        { title: 'Narrativa', desc: 'Tu posición en el mundo y cómo articularla. Sin narrativa, todo lo demás es ruido.' },
+        { title: 'Comunidad', desc: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
+        { title: 'Sistemas', desc: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
+      ],
+      workNote: 'Podemos trabajar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año.',
+      sessionKicker: '// sesión gratuita',
+      sessionTitle: 'Hablemos 30 minutos.',
+      sessionLead1: 'No es una llamada genérica. Es una sesión de trabajo real.',
+      sessionLead2: 'En 30 minutos identificamos dónde estás, qué no está funcionando y cuáles son los primeros pasos concretos.',
+      sessionFor: [
+        'Para creadores que quieren escalar y monetizar su comunidad.',
+        'Para empresas que necesitan construir relevancia en internet.',
+        'Para profesionales que quieren construir marca personal.',
+        'Para founders que necesitan convertir su visión en narrativa y estructura.',
+        'Para proyectos que buscan estrategia antes de escalar.',
+      ],
+      sessionBtn: 'agendar sesión gratuita →',
+    },
     footer: { copy: '© 2008–2026', made: 'hand-coded en madrid' },
   },
   en: {
-    nav: { home: 'Home', cv: 'Career', blog: 'Blog' },
+    nav: { home: 'Home', cv: 'Career', blog: 'Blog', contact: 'Contact' },
     facts: [
       "9th place at the cod world championship in la 2011 changed my life",
       "i've been working professionally on the internet for 18 years",
@@ -305,6 +334,35 @@ const I18N = {
       { title: 'The Tipping Point', author: 'Malcolm Gladwell', note: 'The book that originally explained why things go viral. Still the foundation for understanding how ideas and brands spread.', tag: 'Culture · 2000', rating: '★★★★', cover: '/assets/book-punto-clave.webp' },
       { title: 'Made in Japan', author: 'Akio Morita', note: 'The autobiography of Sony\'s founder. How you build a company from scratch with long-term cultural vision. Timeless.', tag: 'Business · 1986', rating: '★★★★★', cover: '/assets/book-made-in-japan.webp' },
     ],
+    contact: {
+      sticker: '★ available',
+      kicker: '▸ /contact · let\'s work together',
+      title: 'Contact.',
+      lead1: 'We build brand, community and narrative for projects that want to go beyond paid media.',
+      lead2: 'below: how I work and who for.',
+      workKicker: '// what I work on',
+      workIntro1: 'Most brands don\'t fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can\'t build organically.',
+      workIntro2: 'They think the problem is reach. But the problem isn\'t visibility.',
+      workIntroHighlight: 'The problem is building something people understand, remember, and want to make their own.',
+      pillars: [
+        { title: 'Narrative', desc: 'Your position in the world and how to articulate it. Without narrative, everything else is noise.' },
+        { title: 'Community', desc: 'Belonging, not followers. An audience that understands, shares and defends your project.' },
+        { title: 'Systems', desc: 'Creative direction, distribution and growth with structure to scale with judgment without losing the soul.' },
+      ],
+      workNote: 'We can work three ways: individual sessions, part-time embedded into your project, or building a team tailored to you. Due to my role as CMO at Team Heretics, I only take a few projects per year.',
+      sessionKicker: '// free session',
+      sessionTitle: 'Let\'s talk for 30 minutes.',
+      sessionLead1: 'Not a generic call. A real working session.',
+      sessionLead2: 'In 30 minutes we identify where you are, what\'s not working and the concrete first steps.',
+      sessionFor: [
+        'For creators who want to scale and monetize their community.',
+        'For companies that need to build relevance on the internet.',
+        'For professionals who want to build a personal brand.',
+        'For founders who need to turn their vision into narrative and structure.',
+        'For projects looking for strategy before scale.',
+      ],
+      sessionBtn: 'book free session →',
+    },
     footer: { copy: '© 2008–2026', made: 'hand-coded in madrid' },
   },
 };
@@ -550,10 +608,11 @@ export default function Page() {
             data-text="alejandrosdow">
             alejandro<span style={{ background: '#c5f04a', padding: '0 4px' }}>sdow</span>
           </button>
-          <div className="flex gap-1 md:gap-2">
+          <div className="flex gap-1 md:gap-2 flex-wrap justify-end">
             <button className={`tab-btn ${route==='home'?'active':''}`} onClick={() => setRoute('home')}>{t.nav.home}</button>
             <button className={`tab-btn ${route==='cv'?'active':''}`} onClick={() => setRoute('cv')}>{t.nav.cv}</button>
             <button className={`tab-btn ${route==='blog'?'active':''}`} onClick={() => setRoute('blog')}>{t.nav.blog}</button>
+            <button className={`tab-btn ${route==='contact'?'active':''}`} onClick={() => setRoute('contact')}>{t.nav.contact}</button>
           </div>
         </div>
       </nav>
@@ -561,6 +620,7 @@ export default function Page() {
       {route === 'home' && <Home t={t} glitchTitle={glitchTitle} />}
       {route === 'cv' && <CV t={t} />}
       {route === 'blog' && <Blog t={t} />}
+      {route === 'contact' && <Contact t={t} />}
 
       {/* ============ BOTTOM MARQUEE ============ */}
       <div className="border-y-2 border-black overflow-hidden bg-[#c5f04a] text-[#0a0a0a]">
@@ -883,6 +943,101 @@ function Blog({ t }) {
           </div>
         </aside>
       </div>
+    </main>
+  );
+}
+
+// =============================================
+// CONTACT
+// =============================================
+function Contact({ t }) {
+  return (
+    <main className="max-w-5xl mx-auto px-4 md:px-6 pt-12 md:pt-20 pb-10 md:pb-16 relative">
+      <div className="sticker wobble" style={{ top: 30, right: 0, transform: 'rotate(6deg)' }}>{t.contact.sticker}</div>
+
+      <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6 mt-8">{t.contact.kicker}</div>
+      <h1 className="display text-5xl md:text-8xl leading-[0.85] mb-3">{t.contact.title}</h1>
+      <p className="display text-xl md:text-2xl italic text-black/60 mb-16 max-w-2xl">
+        {t.contact.lead1}<br/>{t.contact.lead2}
+      </p>
+
+      {/* === SECTION: WORK === */}
+      <section className="mb-20">
+        <div className="mono text-[12px] md:text-sm uppercase tracking-widest mb-6" style={{ color: '#5a8c2e' }}>
+          {t.contact.workKicker}
+        </div>
+
+        <p className="text-base md:text-lg leading-snug max-w-3xl mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
+          {t.contact.workIntro1}
+        </p>
+        <p className="text-base md:text-lg leading-snug max-w-3xl mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
+          {t.contact.workIntro2}
+        </p>
+        <p className="text-base md:text-lg leading-snug max-w-3xl mb-10" style={{ fontFamily: "'EB Garamond', serif" }}>
+          <span style={{ background: '#c5f04a', padding: '0 4px', fontWeight: 600 }}>{t.contact.workIntroHighlight}</span>
+        </p>
+
+        {/* 3 pillars */}
+        <div className="grid md:grid-cols-3 gap-5 mb-10">
+          {t.contact.pillars.map((p, i) => (
+            <article key={i} className="border-2 border-black p-5 bg-white card-skewed flex flex-col" style={{ transform: `rotate(${[-0.5, 0.4, -0.3][i]}deg)` }}>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="mono text-[10px] text-black/40 number-style border border-black/30 px-2 py-1">{String(i+1).padStart(2,'0')}</div>
+                <h3 className="display text-2xl italic flex-1">{p.title}</h3>
+              </div>
+              <p className="text-sm leading-snug text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
+                {p.desc}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        {/* Work note — left border accent */}
+        <div className="relative p-5 bg-[#0a0a0a]/[0.04]" style={{ borderLeft: '3px solid #c5f04a' }}>
+          <p className="text-sm md:text-base leading-relaxed text-black/85" style={{ fontFamily: "'EB Garamond', serif" }}>
+            {t.contact.workNote}
+          </p>
+        </div>
+      </section>
+
+      <AsciiDivider />
+
+      {/* === SECTION: FREE SESSION === */}
+      <section className="my-12 md:my-20">
+        <div className="mono text-[12px] md:text-sm uppercase tracking-widest mb-6" style={{ color: '#5a8c2e' }}>
+          {t.contact.sessionKicker}
+        </div>
+        <h2 className="display text-4xl md:text-6xl italic mb-6 leading-tight">
+          {t.contact.sessionTitle}
+        </h2>
+        <p className="text-base md:text-lg leading-snug max-w-3xl mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
+          {t.contact.sessionLead1}
+        </p>
+        <p className="text-base md:text-lg leading-snug max-w-3xl mb-10" style={{ fontFamily: "'EB Garamond', serif" }}>
+          {t.contact.sessionLead2}
+        </p>
+
+        <ul className="space-y-0 mb-10 max-w-3xl">
+          {t.contact.sessionFor.map((item, i) => (
+            <li key={i} className="flex items-start gap-4 border-b border-black/15 py-3 text-sm md:text-base group hover:bg-[#c5f04a]/10 transition-colors -mx-3 px-3" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <span className="mono text-[#5a8c2e] shrink-0 mt-0.5">→</span>
+              <span className="text-black/85">{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href="https://calendly.com/alejandro-marcos-teamheretics/30min"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-3 px-6 py-4 mono text-xs uppercase tracking-widest border-2 border-black transition-colors"
+          style={{ background: '#c5f04a', color: '#0a0a0a' }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.color = '#c5f04a'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = '#c5f04a'; e.currentTarget.style.color = '#0a0a0a'; }}
+        >
+          {t.contact.sessionBtn}
+        </a>
+      </section>
     </main>
   );
 }
