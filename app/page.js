@@ -1250,7 +1250,7 @@ function StatusMarquee() {
     { sym: '●', text: 'alejandro está conectado', blink: true },
     { sym: '▸', text: 'now playing: zeitgeist_radio.mp3' },
     { sym: '★', text: 'made for internet kids' },
-    { sym: '●', text: 'call of duty kids', blink: true },
+    { sym: '●', text: 'from cod to cmo', blink: true },
     { sym: '▸', text: 'narrativa > algoritmo' },
     { sym: '★', text: 'best viewed with curiosity' },
     { sym: '▸', text: 'downloading: ideas.zip', counter: true },
