@@ -454,6 +454,15 @@ export default function Page() {
         }
         .marquee-track { animation: scroll-marquee 35s linear infinite; }
         .marquee-track-rev { animation: scroll-marquee 50s linear infinite reverse; }
+        .marquee-status { animation: scroll-marquee 80s linear infinite; }
+        .marquee-status-wrap:hover .marquee-status { animation-play-state: paused; }
+
+        @keyframes status-blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+        .status-blink { animation: status-blink 2s ease-in-out infinite; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-status, .status-blink { animation: none !important; }
+        }
 
         @keyframes flicker {
           0%, 100% { opacity: 1 }
@@ -660,19 +669,7 @@ export default function Page() {
       </header>
 
       {/* ============ TOP MARQUEE ============ */}
-      <div className="border-b-2 border-black overflow-hidden bg-[#0a0a0a] text-[#ebe7d9] relative scanlines">
-        <div className="flex marquee-track mono text-[10px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
-          {Array(2).fill(null).map((_, k) => (
-            <div key={k} className="flex shrink-0">
-              {t.marqueeTop.map((s, i) => (
-                <span key={`${k}-${i}`} className="mx-8 flex items-center gap-3">
-                  <span className="text-[#c5f04a]">▪</span> {s}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      <StatusMarquee />
 
       {/* ============ NAV ============ */}
       <nav className="border-b-2 border-black sticky top-0 z-50 selection" style={{ background: '#ebe7d9' }}>
@@ -1236,6 +1233,50 @@ function Contact({ t }) {
         </a>
       </section>
     </main>
+  );
+}
+
+function StatusMarquee() {
+  const [pct, setPct] = React.useState(92);
+
+  React.useEffect(() => {
+    const id = setInterval(() => {
+      setPct(p => (p >= 99 ? 60 : p + 1));
+    }, 800);
+    return () => clearInterval(id);
+  }, []);
+
+  const items = [
+    { sym: '●', text: 'alejandro está conectado', blink: true },
+    { sym: '▸', text: 'now playing: zeitgeist_radio.mp3' },
+    { sym: '★', text: 'made for internet kids' },
+    { sym: '●', text: 'call of duty kids', blink: true },
+    { sym: '▸', text: 'narrativa > algoritmo' },
+    { sym: '★', text: 'best viewed with curiosity' },
+    { sym: '▸', text: 'downloading: ideas.zip', counter: true },
+  ];
+
+  return (
+    <div
+      className="marquee-status-wrap border-b-2 border-black overflow-hidden bg-[#0a0a0a] text-[#ebe7d9]"
+      aria-label="Estados de Alejandro"
+    >
+      <div className="flex marquee-status mono text-[10px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
+        {[0, 1].map(k => (
+          <div key={k} className="flex shrink-0">
+            {items.map((item, i) => (
+              <span key={`${k}-${i}`} className="mx-12 inline-flex items-center gap-3">
+                <span className={`text-[#c5f04a]${item.blink ? ' status-blink' : ''}`}>{item.sym}</span>
+                <span>
+                  {item.text}
+                  {item.counter && <span> [{pct}%]</span>}
+                </span>
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
