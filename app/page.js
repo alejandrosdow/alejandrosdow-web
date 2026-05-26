@@ -1206,7 +1206,7 @@ function Contact({ t }) {
                 {String(i+1).padStart(2,'0')}
               </div>
               <h3 className="display text-3xl italic mb-3 leading-tight">{p.title}</h3>
-              <p className="text-base leading-snug text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <p className="text-base leading-snug md:leading-[1.6] text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
                 {p.desc}
               </p>
             </article>
