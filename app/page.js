@@ -454,7 +454,7 @@ export default function Page() {
         }
         .marquee-track { animation: scroll-marquee 35s linear infinite; }
         .marquee-track-rev { animation: scroll-marquee 50s linear infinite reverse; }
-        .marquee-status { animation: scroll-marquee 80s linear infinite; }
+        .marquee-status { animation: scroll-marquee 55s linear infinite; }
         .marquee-status-wrap:hover .marquee-status { animation-play-state: paused; }
 
         @keyframes status-blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
