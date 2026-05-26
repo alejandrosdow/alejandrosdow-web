@@ -649,6 +649,14 @@ export default function Page() {
           cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><polygon points='0,0 24,12 12,14 8,24' fill='%23c5f04a' stroke='%230a0a0a' stroke-width='1.5'/></svg>") 2 2, pointer;
         }
 
+        /* ⚠ FOOTGUN: this override changes font-size only — line-height stays locked
+           at Tailwind's original value (e.g. text-base = 24px fixed). On multi-line
+           editorial text in desktop, this collapses the ratio (e.g. 18px/24px = 1.33,
+           tighter than leading-snug).
+
+           Rule: any multi-line text using these size classes MUST also include an
+           explicit leading-X or md:leading-[X] class. Single-line UI (buttons, tags,
+           labels) is fine as-is. */
         @media (min-width: 768px) {
           .text-\[8px\]  { font-size: 9px; }
           .text-\[9px\]  { font-size: 10px; }
@@ -1023,7 +1031,7 @@ function CV({ t }) {
         <div className="sticker" style={{ top: -18, right: -10, transform: 'rotate(10deg)' }}>{t.cv.contactSticker}</div>
         <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-3">{t.cv.contactKicker}</div>
         <p className="display text-3xl italic mb-4">{t.cv.contactTitle}</p>
-        <p className="text-base mb-6 max-w-xl" style={{ fontFamily: "'EB Garamond', serif" }}>{t.cv.contactDesc}</p>
+        <p className="text-base mb-6 max-w-xl md:leading-[1.6]" style={{ fontFamily: "'EB Garamond', serif" }}>{t.cv.contactDesc}</p>
         <div className="flex flex-wrap gap-3">
           <a href="https://calendly.com/alejandro-marcos-teamheretics/30min" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 bg-[#0a0a0a] text-[#c5f04a] mono text-xs uppercase tracking-widest border-2 border-black">
             {t.cv.contactBtn}
@@ -1110,7 +1118,7 @@ function Blog({ t }) {
           {status === 'error' && (
             <div className="border-2 border-black p-8 bg-white">
               <div className="mono text-[10px] uppercase tracking-widest text-[#5a8c2e] mb-3">▸ error</div>
-              <p className="text-base text-black/75 md:text-black/90 mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <p className="text-base text-black/75 md:text-black/90 mb-3 md:leading-[1.6]" style={{ fontFamily: "'EB Garamond', serif" }}>
                 {t.blog.errorDesc}
               </p>
               <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow">
@@ -1147,7 +1155,7 @@ function Blog({ t }) {
           <div className="border-2 border-black p-6 bg-[#0a0a0a] text-[#ebe7d9] sticky top-24 card-skewed" style={{ transform: 'rotate(1deg)' }}>
             <div className="mono text-[10px] uppercase tracking-widest text-[#c5f04a] mb-3">{t.blog.subKicker}</div>
             <h3 className="display text-3xl italic mb-3">{t.blog.subTitle1}<br/>{t.blog.subTitle2}</h3>
-            <p className="text-sm mb-5 text-white/70" style={{ fontFamily: "'EB Garamond', serif" }}>{t.blog.subDesc}</p>
+            <p className="text-sm mb-5 text-white/70 leading-relaxed" style={{ fontFamily: "'EB Garamond', serif" }}>{t.blog.subDesc}</p>
             <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="block text-center px-5 py-3 bg-[#c5f04a] text-[#0a0a0a] mono text-xs uppercase tracking-widest hover:bg-[#ebe7d9] transition-colors border-2 border-[#c5f04a]">
               {t.blog.subBtn}
             </a>
