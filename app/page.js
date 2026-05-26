@@ -453,7 +453,7 @@ export default function Page() {
           to { transform: translateX(-50%) }
         }
         .marquee-track { animation: scroll-marquee 35s linear infinite; }
-        .marquee-scroll { animation: scroll-marquee 14s linear infinite; }
+        .marquee-scroll { animation: scroll-marquee 10s linear infinite; }
         @media (min-width: 768px) { .marquee-scroll { animation-duration: 20s; } }
         .marquee-wrap:hover .marquee-scroll { animation-play-state: paused; }
 
