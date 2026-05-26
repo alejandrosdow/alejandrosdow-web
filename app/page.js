@@ -175,6 +175,12 @@ const I18N = {
       lead2: 'más allá del paid media. trabajamos de forma orgánica.',
       workKicker: '// en qué trabajo',
       workIntro: 'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
+      workIntroHighlight: 'El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.',
+      pillars: [
+        { title: 'Narrativa', desc: 'Tu posición en el mundo y cómo articularla. Sin narrativa, todo lo demás es ruido.' },
+        { title: 'Comunidad', desc: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
+        { title: 'Sistemas', desc: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
+      ],
       workNote: 'Podemos trabajar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año.',
       sessionKicker: '// sesión gratuita',
       sessionTitle: 'Hablemos 30 minutos.',
@@ -349,6 +355,12 @@ const I18N = {
       lead2: 'beyond paid media. we work organically.',
       workKicker: '// what I work on',
       workIntro: 'Most brands don\'t fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can\'t build organically. They think the problem is reach. But the problem isn\'t visibility.',
+      workIntroHighlight: 'The problem is building something people understand, remember, and want to make their own.',
+      pillars: [
+        { title: 'Narrative', desc: 'Your position in the world and how to articulate it. Without narrative, everything else is noise.' },
+        { title: 'Community', desc: 'Belonging, not followers. An audience that understands, shares and defends your project.' },
+        { title: 'Systems', desc: 'Creative direction, distribution and growth with structure to scale with judgment without losing the soul.' },
+      ],
       workNote: 'We can work three ways: individual sessions, part-time embedded into your project, or building a team tailored to you. Due to my role as CMO at Team Heretics, I only take a few projects per year.',
       sessionKicker: '// free session',
       sessionTitle: 'Let\'s talk for 30 minutes.',
@@ -895,7 +907,7 @@ function CV({ t }) {
                   <div className="font-medium"><span className="display italic text-lg">{it.role}</span></div>
                   <div className="mono text-[10px] uppercase tracking-widest text-black/60 flex items-center gap-2 mt-1">
                     {it.logo && (
-                      <img src={it.logo} alt={it.org} className="h-4 w-auto object-contain" style={{ filter: 'brightness(0)' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                      <img src={it.logo} alt={it.org} className="h-5 w-auto object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
                     )}
                     <span>{it.org}</span>
                   </div>
@@ -928,7 +940,6 @@ function CV({ t }) {
                 src={s.logo}
                 alt={s.name}
                 className="max-h-10 w-auto object-contain"
-                style={{ filter: 'brightness(0)' }}
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   e.currentTarget.parentElement.textContent = s.name;
@@ -1110,9 +1121,28 @@ function Contact({ t }) {
           {t.contact.workKicker}
         </div>
 
-        <p className="text-base md:text-lg leading-relaxed max-w-3xl mb-8" style={{ fontFamily: "'EB Garamond', serif" }}>
+        <p className="text-base md:text-lg leading-relaxed max-w-3xl mb-6" style={{ fontFamily: "'EB Garamond', serif" }}>
           {t.contact.workIntro}
         </p>
+
+        <p className="text-base md:text-lg leading-snug max-w-3xl mb-10" style={{ fontFamily: "'EB Garamond', serif" }}>
+          <span style={{ background: '#c5f04a', padding: '0 4px', fontWeight: 600 }}>{t.contact.workIntroHighlight}</span>
+        </p>
+
+        {/* 3 pillars */}
+        <div className="grid md:grid-cols-3 gap-5 mb-10">
+          {t.contact.pillars.map((p, i) => (
+            <article key={i} className="border-2 border-black p-5 bg-white card-skewed flex flex-col" style={{ transform: `rotate(${[-0.5, 0.4, -0.3][i]}deg)` }}>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="mono text-[10px] text-black/40 number-style border border-black/30 px-2 py-1">{String(i+1).padStart(2,'0')}</div>
+                <h3 className="display text-2xl italic flex-1">{p.title}</h3>
+              </div>
+              <p className="text-sm leading-snug text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
+                {p.desc}
+              </p>
+            </article>
+          ))}
+        </div>
 
         {/* Work note — underlined + left border accent */}
         <div className="relative p-5 bg-[#0a0a0a]/[0.04]" style={{ borderLeft: '3px solid #c5f04a' }}>
