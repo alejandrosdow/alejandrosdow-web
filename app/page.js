@@ -588,6 +588,48 @@ export default function Page() {
           .sticker { font-size: 10px; padding: 4px 10px; }
         }
 
+        /* CV inline logo chip — small pasted-sticker style next to role */
+        .logo-chip {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 52px;
+          height: 52px;
+          background: #fff;
+          border: 1.5px solid #0a0a0a;
+          box-shadow: 2px 2px 0 #0a0a0a;
+          padding: 6px;
+          transition: transform 0.25s cubic-bezier(.7,0,.3,1), box-shadow 0.25s;
+          flex-shrink: 0;
+        }
+        .logo-chip img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+        .logo-chip:hover {
+          transform: rotate(0deg) translateY(-2px) !important;
+          box-shadow: 3px 4px 0 #0a0a0a;
+        }
+
+        /* Schools docencia logos — bigger sticker with chunkier shadow */
+        .logo-sticker {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fff;
+          border: 2px solid #0a0a0a;
+          box-shadow: 4px 4px 0 #0a0a0a;
+          padding: 14px 10px;
+          height: 88px;
+          transition: transform 0.3s cubic-bezier(.7,0,.3,1), box-shadow 0.3s;
+        }
+        .logo-sticker:hover {
+          transform: rotate(0deg) translateY(-3px) !important;
+          box-shadow: 5px 6px 0 #0a0a0a;
+          background: #c5f04a;
+        }
+
         .selection::selection { background: #c5f04a; color: #0a0a0a; }
 
         a, button { cursor: inherit; }
@@ -903,13 +945,18 @@ function CV({ t }) {
             {sec.items.map((it, i) => (
               <div key={i} className="grid md:grid-cols-12 gap-4 group hover:bg-[#c5f04a]/20 -mx-3 px-3 py-3 transition-colors">
                 <div className="md:col-span-2 mono text-xs text-black/50 number-style pt-1">{it.date}</div>
-                <div className="md:col-span-3">
-                  <div className="font-medium"><span className="display italic text-lg">{it.role}</span></div>
-                  <div className="mono text-[10px] uppercase tracking-widest text-black/60 flex items-center gap-2 mt-1">
-                    {it.logo && (
-                      <img src={it.logo} alt={it.org} className="h-5 w-auto object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-                    )}
-                    <span>{it.org}</span>
+                <div className="md:col-span-3 flex items-start gap-3">
+                  {it.logo && (
+                    <div
+                      className="logo-chip shrink-0"
+                      style={{ transform: `rotate(${[-3, 2, -2, 3, -1.5, 2.5, -2.5, 1.5, -1, 2][i % 10]}deg)` }}
+                    >
+                      <img src={it.logo} alt={it.org} onError={(e) => { e.currentTarget.parentElement.style.display = 'none'; }} />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <div className="font-medium"><span className="display italic text-lg">{it.role}</span></div>
+                    <div className="mono text-[10px] uppercase tracking-widest text-black/60 mt-1">{it.org}</div>
                   </div>
                 </div>
                 <div className="md:col-span-7 text-sm text-black/80 leading-relaxed" style={{ fontFamily: "'EB Garamond', serif" }}>{it.desc}</div>
@@ -926,7 +973,7 @@ function CV({ t }) {
           <div className="flex-1 ascii-tiny text-right overflow-hidden">{'·'.repeat(80)}</div>
         </div>
         <p className="text-base mb-6 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{t.cv.docenciaDesc}</p>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-5 md:gap-4 mt-8 mb-4">
           {[
             { name: 'ISDI', logo: '/assets/logo-isdi.png' },
             { name: 'ESADE', logo: '/assets/logo-esade.png' },
@@ -935,14 +982,21 @@ function CV({ t }) {
             { name: 'UNIE', logo: '/assets/logo-unie.png' },
             { name: 'Mondragon', logo: '/assets/logo-mondragon.png' },
           ].map((s, i) => (
-            <div key={s.name} className="border-2 border-black p-4 h-20 flex items-center justify-center mono text-xs uppercase tracking-widest hover:bg-[#c5f04a] transition-colors card-tilt bg-white" style={{ transform: `rotate(${[-0.5, 0.3, -0.4, 0.4, -0.3, 0.5][i]}deg)` }}>
+            <div
+              key={s.name}
+              className="logo-sticker"
+              style={{ transform: `rotate(${[-4, 3, -2.5, 4, -3.5, 2.5][i]}deg)` }}
+            >
               <img
                 src={s.logo}
                 alt={s.name}
-                className="max-h-10 w-auto object-contain"
+                className="max-h-10 max-w-full w-auto object-contain"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
-                  e.currentTarget.parentElement.textContent = s.name;
+                  const span = document.createElement('span');
+                  span.textContent = s.name;
+                  span.className = 'mono text-xs uppercase tracking-widest font-bold';
+                  e.currentTarget.parentElement.appendChild(span);
                 }}
               />
             </div>
@@ -1129,15 +1183,15 @@ function Contact({ t }) {
           <span style={{ background: '#c5f04a', padding: '0 4px', fontWeight: 600 }}>{t.contact.workIntroHighlight}</span>
         </p>
 
-        {/* 3 pillars */}
-        <div className="grid md:grid-cols-3 gap-5 mb-10">
+        {/* 3 pillars — editorial index style */}
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mb-12 mt-2">
           {t.contact.pillars.map((p, i) => (
-            <article key={i} className="border-2 border-black p-5 bg-white card-skewed flex flex-col" style={{ transform: `rotate(${[-0.5, 0.4, -0.3][i]}deg)` }}>
-              <div className="flex items-start gap-3 mb-3">
-                <div className="mono text-[10px] text-black/40 number-style border border-black/30 px-2 py-1">{String(i+1).padStart(2,'0')}</div>
-                <h3 className="display text-2xl italic flex-1">{p.title}</h3>
+            <article key={i} className="flex flex-col">
+              <div className="hero-display text-7xl md:text-8xl leading-none mb-3" style={{ color: '#c5f04a', WebkitTextStroke: '0.5px #0a0a0a' }}>
+                {String(i+1).padStart(2,'0')}
               </div>
-              <p className="text-sm leading-snug text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <h3 className="display text-3xl italic mb-3 leading-tight">{p.title}</h3>
+              <p className="text-base leading-snug text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
                 {p.desc}
               </p>
             </article>
