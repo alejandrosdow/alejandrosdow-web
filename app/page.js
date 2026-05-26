@@ -970,11 +970,11 @@ function CV({ t }) {
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium"><span className="display italic text-lg">{it.role}</span></div>
+                    <div className="font-medium"><span className="display italic text-lg md:!text-[24px]">{it.role}</span></div>
                     <div className="mono text-[10px] uppercase tracking-widest text-black/60 mt-1">{it.org}</div>
                   </div>
                 </div>
-                <div className="md:col-span-7 text-sm text-black/80 leading-relaxed" style={{ fontFamily: "'EB Garamond', serif" }}>{it.desc}</div>
+                <div className="md:col-span-7 text-sm md:!text-[18px] text-black/80 leading-relaxed md:leading-[1.6]" style={{ fontFamily: "'EB Garamond', serif" }}>{it.desc}</div>
               </div>
             ))}
           </div>
