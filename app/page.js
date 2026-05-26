@@ -454,7 +454,7 @@ export default function Page() {
         }
         .marquee-track { animation: scroll-marquee 35s linear infinite; }
         .marquee-track-rev { animation: scroll-marquee 50s linear infinite reverse; }
-        .marquee-status { animation: scroll-marquee 13s linear infinite; }
+        .marquee-status { animation: scroll-marquee 9s linear infinite; }
         @media (min-width: 768px) { .marquee-status { animation-duration: 20s; } }
         .marquee-status-wrap:hover .marquee-status { animation-play-state: paused; }
 
@@ -540,7 +540,7 @@ export default function Page() {
           transition: all 0.2s;
         }
         @media (min-width: 768px) {
-          .tab-btn { padding: 6px 14px; font-size: 11px; }
+          .tab-btn { padding: 6px 14px; font-size: 13px; }
         }
         .tab-btn:hover { background: #0a0a0a; color: #ebe7d9; transform: rotate(-1deg); }
         .tab-btn.active { background: #c5f04a; color: #0a0a0a; }
@@ -648,6 +648,20 @@ export default function Page() {
         a, button { cursor: inherit; }
         a:hover, button:hover {
           cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><polygon points='0,0 24,12 12,14 8,24' fill='%23c5f04a' stroke='%230a0a0a' stroke-width='1.5'/></svg>") 2 2, pointer;
+        }
+
+        @media (min-width: 768px) {
+          .text-\[8px\]  { font-size: 9px; }
+          .text-\[9px\]  { font-size: 10px; }
+          .text-\[10px\] { font-size: 12px; }
+          .text-\[11px\] { font-size: 13px; }
+          .text-\[12px\] { font-size: 14px; }
+          .text-xs,   .md\:text-xs   { font-size: 0.875rem; }
+          .text-sm,   .md\:text-sm   { font-size: 1rem; }
+          .text-base, .md\:text-base { font-size: 1.125rem; }
+          .text-lg,   .md\:text-lg   { font-size: 1.3125rem; }
+          .text-xl,   .md\:text-xl   { font-size: 1.4375rem; }
+          .text-2xl,  .md\:text-2xl  { font-size: 1.75rem; }
         }
       `}</style>
 
@@ -1262,12 +1276,12 @@ function StatusMarquee() {
       className="marquee-status-wrap border-b-2 border-black overflow-hidden bg-[#0a0a0a] text-[#ebe7d9]"
       aria-label="Estados de Alejandro"
     >
-      <div className="flex marquee-status mono text-[10px] md:text-[11px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
+      <div className="flex marquee-status mono text-[10px] md:!text-[11px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
         {[0, 1].map(k => (
           <div key={k} className="flex shrink-0">
             {items.map((item, i) => (
-              <span key={`${k}-${i}`} className="mx-12 inline-flex items-center gap-3">
-                <span className={`text-[#c5f04a]${item.blink ? ' status-blink' : ''}`}>{item.sym}</span>
+              <span key={`${k}-${i}`} className="mx-6 inline-flex items-center gap-3">
+                <span className={`text-[1.4em] text-[#c5f04a]${item.blink ? ' status-blink' : ''}`}>{item.sym}</span>
                 <span>
                   {item.text}
                   {item.counter && <span> [{pct}%]</span>}
