@@ -1,50 +1,9 @@
-# Dependencies
 node_modules/
-.pnp
-.pnp.js
-
-# Build
 .next/
 out/
 build/
-dist/
-
-# Environment
-.env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# OS
+.env*.local
 .DS_Store
-Thumbs.db
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# Vercel
+*.log
 .vercel
-
-# Local settings (not project config)
-.claude/settings.local.json
-
-# User-specific skills (not part of the template)
-.claude/skills/customize/
-.claude/skills/release/
-
-# Local temp files
-temp/
-.github/
