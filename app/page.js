@@ -98,7 +98,7 @@ const I18N = {
       sticker: '★ la versión larga',
       kicker: '▸ /cv · the long version',
       title: 'Trayectoria.',
-      lead1: '18 años creando marca, comunidad y negocio.',
+      lead1: '18 años construyendo marca, comunidad y negocio.',
       lead2: 'aquí está todo, sin maquillar.',
       stats: [
         ['18 años', 'en internet profesional'],
@@ -115,15 +115,15 @@ const I18N = {
       contactBtn: 'reservar 30 min →',
       sections: [
         { num: '01', title: 'Ahora', items: [
-          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet. De ser dos personas en marketing a un equipo de más de veinte' },
-          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Estrategía de marca y comunidad para uno de los proyectos más ambiciosos en la intersección tecnología blockchain + IA' },
+          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet.' },
+          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Estrategía de marca y comunidad para uno de los proyectos más ambiciosos en la intersección tecnología blockchain + IA.' },
           { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/logo-freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias.' },
         ]},
         { num: '02', title: 'Empresa', items: [
-          { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Estrategia, plan y ejecución de marca en España y Portugal para una marca icónica en hardware. Elevando la facturación un 50% yoy' },
-          { date: '2016—17', role: 'Productor & Presentador', org: 'Movistar / GAME TV', desc: 'Producción especializada, contenidos y cara del primer canal de gaming y esports en televisión para Movistar' },
+          { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Estrategia, plan y ejecución de marca en España y Portugal para una marca icónica en hardware. Escalamos la facturación un 50% yoy.' },
+          { date: '2016—17', role: 'Productor & Presentador', org: 'Movistar / GAME TV', desc: 'Producción especializada, contenidos y cara del primer canal de gaming y esports en televisión para Movistar.' },
           { date: '2015—16', role: 'Head of Publishers, Talents & Esports', org: 'GAME Stores', desc: 'Relaciones con publishers internacionales, creadores de contenido y equipos de esports. Estuve liderando las activaciones y contenidos de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun & Serious Bilbao.' },
-          { date: '2013—15', role: 'Marketing Manager', org: 'SocialNAT', desc: 'Gestión de campañas y comunidades digitales. Narrador y host de la competición' },
+          { date: '2013—15', role: 'Marketing Manager', org: 'SocialNAT', desc: 'Gestión de campañas y comunidades digitales. Narrador y host de la competición.' },
           { date: '2008—13', role: 'Creador de contenido', org: 'Machinima · LVP · ESL', desc: 'Todo empieza aquí. Uno de los primeros contratos de Machinima en España y colaborador habitual de LVPes y ESL.' },
           { date: '2008—13', role: 'Jugador profesional', org: 'Call of Duty · Pain Gaming', desc: 'Campeón nacional. 9º en el Mundial de Los Ángeles 2011. Uno de los primeros contratos firmados en España como jugador profesional.' },
         ]},
@@ -132,7 +132,7 @@ const I18N = {
           { date: '2024', role: 'SCALELAB', org: 'Fundador', desc: 'Empresa de infoproductos. Hacía el ciclo completo para creadores: producto, plataforma, marketing y equipos de ventas.' },
           { date: '2020—23', role: 'Zhander App', org: 'Fundador', desc: 'App de ocio nocturno para digitalizar el rol del PR. Lanzamos nuestro evento propio "Algodón" con Antídoto. La pandemia anuló nuestros contratos y tratamos de pivotar el modelo sin éxito.' },
           { date: '2020', role: 'OLAGG', org: 'Inversor', desc: 'Inversor minoritario. Apuesta early en blockchain, gaming y esports.' },
-          { date: '2015—16', role: 'XYON Agency', org: 'Fundador', desc: 'Una de las primeras agencias especializadas en gaming de creadores de contenido cuando aún estaba muy poco profesinalizado, hicimos campañas y acuerdos con grandes marcas de gaming, pero no supimos escalarlo' },
+          { date: '2015—16', role: 'XYON Agency', org: 'Fundador', desc: 'Una de las primeras agencias especializadas en gaming de creadores de contenido cuando aún estaba muy poco profesinalizado, hicimos campañas y acuerdos con grandes marcas de gaming, pero no supimos escalarlo.' },
         ]},
       ],
     },
