@@ -117,7 +117,7 @@ const I18N = {
         { num: '01', title: 'Ahora', items: [
           { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho a referencia global del esports, con presencia en Madrid, Berlín y operaciones internacionales.' },
           { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'IA + Blockchain. Estrategia de marca para uno de los proyectos más ambiciosos en la intersección de ambas verticales.' },
-          { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias. Por mi rol en Heretics, cojo muy pocos proyectos al año.' },
+          { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/logo-freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias. Por mi rol en Heretics, cojo muy pocos proyectos al año.' },
         ]},
         { num: '02', title: 'Empresa', items: [
           { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Estrategia, plan y ejecución de marca en España y Portugal para una de las marcas de hardware más reconocidas del sector gaming.' },
@@ -297,7 +297,7 @@ const I18N = {
         { num: '01', title: 'Now', items: [
           { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From niche brand to global esports reference, with operations in Madrid, Berlin and international.' },
           { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'AI + Blockchain. Brand strategy for one of the most ambitious projects at the intersection of both verticals.' },
-          { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization. Due to my role at Heretics, I take very few projects per year.' },
+          { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/logo-freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization. Due to my role at Heretics, I take very few projects per year.' },
         ]},
         { num: '02', title: 'Companies', items: [
           { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Strategy, plan and execution of brand in Spain and Portugal for one of the most recognized hardware brands in gaming.' },
@@ -588,18 +588,15 @@ export default function Page() {
           .sticker { font-size: 10px; padding: 4px 10px; }
         }
 
-        /* CV inline logo chip — small pasted-sticker style next to role */
+        /* CV inline logo — no box, integrated on the cream bg */
         .logo-chip {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 52px;
-          height: 52px;
-          background: #fff;
-          border: 1.5px solid #0a0a0a;
-          box-shadow: 2px 2px 0 #0a0a0a;
-          padding: 6px;
-          transition: transform 0.25s cubic-bezier(.7,0,.3,1), box-shadow 0.25s;
+          width: 56px;
+          height: 56px;
+          padding: 4px;
+          transition: transform 0.25s cubic-bezier(.7,0,.3,1);
           flex-shrink: 0;
         }
         .logo-chip img {
@@ -608,26 +605,20 @@ export default function Page() {
           object-fit: contain;
         }
         .logo-chip:hover {
-          transform: rotate(0deg) translateY(-2px) !important;
-          box-shadow: 3px 4px 0 #0a0a0a;
+          transform: rotate(0deg) scale(1.08) !important;
         }
 
-        /* Schools docencia logos — bigger sticker with chunkier shadow */
+        /* Schools docencia logos — no box, slightly bigger, integrated */
         .logo-sticker {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #fff;
-          border: 2px solid #0a0a0a;
-          box-shadow: 4px 4px 0 #0a0a0a;
-          padding: 14px 10px;
-          height: 88px;
-          transition: transform 0.3s cubic-bezier(.7,0,.3,1), box-shadow 0.3s;
+          padding: 10px;
+          height: 80px;
+          transition: transform 0.3s cubic-bezier(.7,0,.3,1);
         }
         .logo-sticker:hover {
-          transform: rotate(0deg) translateY(-3px) !important;
-          box-shadow: 5px 6px 0 #0a0a0a;
-          background: #c5f04a;
+          transform: rotate(0deg) scale(1.08) !important;
         }
 
         .selection::selection { background: #c5f04a; color: #0a0a0a; }
@@ -949,7 +940,7 @@ function CV({ t }) {
                   {it.logo && (
                     <div
                       className="logo-chip shrink-0"
-                      style={{ transform: `rotate(${[-3, 2, -2, 3, -1.5, 2.5, -2.5, 1.5, -1, 2][i % 10]}deg)` }}
+                      style={{ transform: `rotate(${[-1.5, 1, -1, 1.5, -0.5, 1, -1, 0.5, -0.5, 1][i % 10]}deg)` }}
                     >
                       <img src={it.logo} alt={it.org} onError={(e) => { e.currentTarget.parentElement.style.display = 'none'; }} />
                     </div>
@@ -985,7 +976,7 @@ function CV({ t }) {
             <div
               key={s.name}
               className="logo-sticker"
-              style={{ transform: `rotate(${[-4, 3, -2.5, 4, -3.5, 2.5][i]}deg)` }}
+              style={{ transform: `rotate(${[-2, 1.5, -1, 2, -1.5, 1][i]}deg)` }}
             >
               <img
                 src={s.logo}
