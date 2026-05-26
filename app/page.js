@@ -454,7 +454,8 @@ export default function Page() {
         }
         .marquee-track { animation: scroll-marquee 35s linear infinite; }
         .marquee-track-rev { animation: scroll-marquee 50s linear infinite reverse; }
-        .marquee-status { animation: scroll-marquee 36s linear infinite; }
+        .marquee-status { animation: scroll-marquee 13s linear infinite; }
+        @media (min-width: 768px) { .marquee-status { animation-duration: 20s; } }
         .marquee-status-wrap:hover .marquee-status { animation-play-state: paused; }
 
         @keyframes status-blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
@@ -1252,7 +1253,7 @@ function StatusMarquee() {
     { sym: '★', text: 'made for internet kids' },
     { sym: '●', text: 'from cod to cmo', blink: true },
     { sym: '▸', text: 'narrativa > algoritmo' },
-    { sym: '★', text: 'best viewed with curiosity' },
+    { sym: '★', text: 'requires curiosity to load' },
     { sym: '▸', text: 'downloading: ideas.zip', counter: true },
   ];
 
@@ -1261,7 +1262,7 @@ function StatusMarquee() {
       className="marquee-status-wrap border-b-2 border-black overflow-hidden bg-[#0a0a0a] text-[#ebe7d9]"
       aria-label="Estados de Alejandro"
     >
-      <div className="flex marquee-status mono text-[10px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
+      <div className="flex marquee-status mono text-[10px] md:text-[11px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
         {[0, 1].map(k => (
           <div key={k} className="flex shrink-0">
             {items.map((item, i) => (
