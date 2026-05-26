@@ -837,14 +837,13 @@ function Home({ t, glitchTitle, setRoute }) {
         <div className="md:col-span-5">
           <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-3">{t.home.bookSection}</div>
           <div className="border-2 border-black p-3 bg-white card-skewed max-w-[240px] md:max-w-[340px] mx-auto md:mx-0 relative" style={{ transform: 'rotate(-2deg)' }}>
-            <div className="aspect-[3/4] relative overflow-hidden scanlines bg-white">
+            <div className="aspect-[3/4] relative scanlines bg-white">
               <img
                 src="/assets/internet-surfer-cover.png"
                 alt="Internet Surfer — book cover by Miguel CM"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain"
               />
               <div className="absolute top-3 right-3 w-4 h-4 rounded-full pulse-green z-10" style={{ background: '#c5f04a' }} />
-              <div className="absolute bottom-2 left-2 text-[#0a0a0a] mono text-[8px] z-10 bg-[#c5f04a] px-1">2024 · pdf</div>
             </div>
           </div>
         </div>
