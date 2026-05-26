@@ -453,16 +453,15 @@ export default function Page() {
           to { transform: translateX(-50%) }
         }
         .marquee-track { animation: scroll-marquee 35s linear infinite; }
-        .marquee-track-rev { animation: scroll-marquee 50s linear infinite reverse; }
-        .marquee-status { animation: scroll-marquee 9s linear infinite; }
-        @media (min-width: 768px) { .marquee-status { animation-duration: 20s; } }
-        .marquee-status-wrap:hover .marquee-status { animation-play-state: paused; }
+        .marquee-scroll { animation: scroll-marquee 14s linear infinite; }
+        @media (min-width: 768px) { .marquee-scroll { animation-duration: 20s; } }
+        .marquee-wrap:hover .marquee-scroll { animation-play-state: paused; }
 
         @keyframes status-blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
         .status-blink { animation: status-blink 2s ease-in-out infinite; }
 
         @media (prefers-reduced-motion: reduce) {
-          .marquee-status, .status-blink { animation: none !important; }
+          .marquee-scroll, .status-blink { animation: none !important; }
         }
 
         @keyframes flicker {
@@ -662,6 +661,7 @@ export default function Page() {
           .text-lg,   .md\:text-lg   { font-size: 1.3125rem; }
           .text-xl,   .md\:text-xl   { font-size: 1.4375rem; }
           .text-2xl,  .md\:text-2xl  { font-size: 1.75rem; }
+          .logo-sticker { height: 108px; }
         }
       `}</style>
 
@@ -709,20 +709,20 @@ export default function Page() {
       {route === 'contact' && <Contact t={t} />}
 
       {/* ============ BOTTOM MARQUEE ============ */}
-      <div className="border-y-2 border-black overflow-hidden bg-[#c5f04a] text-[#0a0a0a]">
-        <div className="flex marquee-track-rev mono text-[11px] font-bold uppercase tracking-[0.2em] py-3 whitespace-nowrap">
-          {Array(3).fill(null).map((_, k) => (
-            <div key={k} className="flex shrink-0 items-center">
-              {t.marqueeBottom.map((s, i) => (
-                <span key={`m2-${k}-${i}`} className="flex items-center">
-                  <span className="mx-5">{s}</span>
-                  <span className="text-[#0a0a0a]/40">◆</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      <Marquee
+        items={[
+          { sym: '▸', text: 'thanks for surfing' },
+          { sym: '★', text: '© alejandrosdow' },
+          { sym: '●', text: 'built with love + curiosity', blink: true },
+          { sym: '▸', text: 'powered by zeitgeist' },
+          { sym: '★', text: 'end of file_' },
+        ]}
+        bg="#c5f04a"
+        fg="#0a0a0a"
+        sym="#0a0a0a"
+        border="border-y-2"
+        label="Footer marquee"
+      />
 
       {/* ============ FOOTER (compact) ============ */}
       <footer className="bg-[#0a0a0a] text-[#ebe7d9]">
@@ -988,7 +988,7 @@ function CV({ t }) {
           <div className="flex-1 ascii-tiny text-right overflow-hidden">{'·'.repeat(80)}</div>
         </div>
         <p className="text-base mb-6 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{t.cv.docenciaDesc}</p>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-5 md:gap-4 mt-8 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-5 md:gap-2 mt-8 mb-4">
           {[
             { name: 'ISDI', logo: '/assets/logo-isdi.png' },
             { name: 'ESADE', logo: '/assets/logo-esade.png' },
@@ -1005,7 +1005,7 @@ function CV({ t }) {
               <img
                 src={s.logo}
                 alt={s.name}
-                className="max-h-10 max-w-full w-auto object-contain"
+                className="max-h-10 md:max-h-[54px] max-w-full w-auto object-contain"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const span = document.createElement('span');
@@ -1253,11 +1253,8 @@ function Contact({ t }) {
 
 function StatusMarquee() {
   const [pct, setPct] = React.useState(92);
-
   React.useEffect(() => {
-    const id = setInterval(() => {
-      setPct(p => (p >= 99 ? 60 : p + 1));
-    }, 800);
+    const id = setInterval(() => setPct(p => (p >= 99 ? 60 : p + 1)), 800);
     return () => clearInterval(id);
   }, []);
 
@@ -1268,24 +1265,28 @@ function StatusMarquee() {
     { sym: '●', text: 'from cod to cmo', blink: true },
     { sym: '▸', text: 'narrativa > algoritmo' },
     { sym: '★', text: 'requires curiosity to load' },
-    { sym: '▸', text: 'downloading: ideas.zip', counter: true },
+    { sym: '▸', text: `downloading: ideas.zip [${pct}%]` },
   ];
 
   return (
+    <Marquee items={items} bg="#0a0a0a" fg="#ebe7d9" sym="#c5f04a" border="border-b-2" label="Estados de Alejandro" />
+  );
+}
+
+function Marquee({ items, bg, fg, sym, border = 'border-b-2', label }) {
+  return (
     <div
-      className="marquee-status-wrap border-b-2 border-black overflow-hidden bg-[#0a0a0a] text-[#ebe7d9]"
-      aria-label="Estados de Alejandro"
+      className={`marquee-wrap ${border} border-black overflow-hidden`}
+      style={{ background: bg, color: fg }}
+      aria-label={label}
     >
-      <div className="flex marquee-status mono text-[10px] md:!text-[11px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
+      <div className="flex marquee-scroll mono text-[10px] md:!text-[11px] uppercase tracking-[0.25em] py-2 whitespace-nowrap">
         {[0, 1].map(k => (
           <div key={k} className="flex shrink-0">
             {items.map((item, i) => (
               <span key={`${k}-${i}`} className="mx-6 inline-flex items-center gap-3">
-                <span className={`text-[1.4em] text-[#c5f04a]${item.blink ? ' status-blink' : ''}`}>{item.sym}</span>
-                <span>
-                  {item.text}
-                  {item.counter && <span> [{pct}%]</span>}
-                </span>
+                <span className={`text-[1.4em]${item.blink ? ' status-blink' : ''}`} style={{ color: sym }}>{item.sym}</span>
+                <span>{item.text}</span>
               </span>
             ))}
           </div>
