@@ -774,7 +774,7 @@ function Home({ t, glitchTitle, setRoute }) {
           <p className="text-xl md:text-2xl leading-snug max-w-2xl mb-4" style={{ fontFamily: "'EB Garamond', serif" }}>
             {t.home.lead} <strong>{t.home.leadName}</strong> {t.home.leadDesc}
           </p>
-          <p className="text-lg md:text-xl leading-snug max-w-2xl text-black/70 italic mb-8" style={{ fontFamily: "'EB Garamond', serif" }}>
+          <p className="text-lg md:text-xl leading-snug max-w-2xl text-black/70 md:text-black/80 italic mb-8" style={{ fontFamily: "'EB Garamond', serif" }}>
             {t.home.sub}{' '}
             <button onClick={() => scrollToId('book-section')} className="hover:opacity-80 transition-opacity" style={{ background: '#c5f04a', padding: '0 4px', borderBottom: '2px solid #0a0a0a', fontStyle: 'italic' }}>
               {t.home.subA}
@@ -877,7 +877,7 @@ function Home({ t, glitchTitle, setRoute }) {
           </div>
         </div>
 
-        <p className="text-lg leading-snug max-w-3xl mb-12 text-black/75" style={{ fontFamily: "'EB Garamond', serif" }}>
+        <p className="text-lg leading-snug max-w-3xl mb-12 text-black/75 md:text-black/90" style={{ fontFamily: "'EB Garamond', serif" }}>
           {t.home.libDesc}
         </p>
 
@@ -900,7 +900,7 @@ function Home({ t, glitchTitle, setRoute }) {
                   <div className="mono text-[10px] uppercase tracking-widest text-black/60">{b.author}</div>
                 </div>
               </div>
-              <p className="text-sm leading-snug text-black/80 flex-1" style={{ fontFamily: "'EB Garamond', serif" }}>{b.note}</p>
+              <p className="text-sm leading-snug text-black/80 md:text-black/90 flex-1" style={{ fontFamily: "'EB Garamond', serif" }}>{b.note}</p>
               <div className="mono text-[10px] text-black/40 mt-4 uppercase tracking-widest border-t border-black/10 pt-3 flex justify-between">
                 <span>{b.tag}</span>
                 <span className="text-[#0a0a0a]" style={{ background: '#c5f04a', padding: '0 4px' }}>{b.rating}</span>
@@ -974,7 +974,7 @@ function CV({ t }) {
                     <div className="mono text-[10px] uppercase tracking-widest text-black/60 mt-1">{it.org}</div>
                   </div>
                 </div>
-                <div className="md:col-span-7 text-sm md:!text-[18px] text-black/80 leading-relaxed md:leading-[1.6]" style={{ fontFamily: "'EB Garamond', serif" }}>{it.desc}</div>
+                <div className="md:col-span-7 text-sm md:!text-[18px] text-black/80 md:text-black/90 leading-relaxed md:leading-[1.6]" style={{ fontFamily: "'EB Garamond', serif" }}>{it.desc}</div>
               </div>
             ))}
           </div>
@@ -1098,7 +1098,7 @@ function Blog({ t }) {
             <div className="border-2 border-black p-8 bg-white card-skewed" style={{ transform: 'rotate(-0.5deg)' }}>
               <div className="mono text-[10px] uppercase tracking-widest text-[#5a8c2e] mb-3">▸ status</div>
               <h3 className="display text-3xl italic mb-3">{t.blog.emptyTitle}</h3>
-              <p className="text-base leading-snug text-black/75 mb-4" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <p className="text-base leading-snug text-black/75 md:text-black/90 mb-4" style={{ fontFamily: "'EB Garamond', serif" }}>
                 {t.blog.emptyDesc}
               </p>
               <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow inline-block">
@@ -1110,7 +1110,7 @@ function Blog({ t }) {
           {status === 'error' && (
             <div className="border-2 border-black p-8 bg-white">
               <div className="mono text-[10px] uppercase tracking-widest text-[#5a8c2e] mb-3">▸ error</div>
-              <p className="text-base text-black/75 mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <p className="text-base text-black/75 md:text-black/90 mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
                 {t.blog.errorDesc}
               </p>
               <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow">
@@ -1137,7 +1137,7 @@ function Blog({ t }) {
                   {p.title}
                 </h2>
               </a>
-              <p className="text-base leading-snug text-black/80 mb-3 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{p.excerpt}...</p>
+              <p className="text-base leading-snug text-black/80 md:text-black/90 mb-3 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{p.excerpt}...</p>
               <a href={p.link} target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow">{t.blog.readMore}</a>
             </article>
           ))}
@@ -1206,7 +1206,7 @@ function Contact({ t }) {
                 {String(i+1).padStart(2,'0')}
               </div>
               <h3 className="display text-3xl italic mb-3 leading-tight">{p.title}</h3>
-              <p className="text-base leading-snug md:leading-[1.6] text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <p className="text-base leading-snug md:leading-[1.6] text-black/80 md:text-black/90" style={{ fontFamily: "'EB Garamond', serif" }}>
                 {p.desc}
               </p>
             </article>
@@ -1215,7 +1215,7 @@ function Contact({ t }) {
 
         {/* Work note — underlined + left border accent */}
         <div className="relative p-5 bg-[#0a0a0a]/[0.04]" style={{ borderLeft: '3px solid #c5f04a' }}>
-          <p className="text-sm md:text-base leading-relaxed text-black/85" style={{ fontFamily: "'EB Garamond', serif", textDecoration: 'underline', textDecorationColor: '#c5f04a', textDecorationThickness: '2px', textUnderlineOffset: '4px' }}>
+          <p className="text-sm md:text-base leading-relaxed text-black/85 md:text-black/90" style={{ fontFamily: "'EB Garamond', serif", textDecoration: 'underline', textDecorationColor: '#c5f04a', textDecorationThickness: '2px', textUnderlineOffset: '4px' }}>
             {t.contact.workNote}
           </p>
         </div>
