@@ -27,15 +27,23 @@ const I18N = {
     statusLeft: "escribiendo desde madrid",
     weatherLine: "madrid · 19°c · cielos despejados",
     marqueeTop: [
-      'now → construyendo team heretics como marca global',
-      'reading → status & culture, w. david marx',
-      'listening → arca, KICK i',
-      'eating → pulpo a la gallega en barriada',
-      'last drop → julio sold out en 30 min',
-      'mood → cautiously optimistic',
-      'currently building → esta web que estás leyendo',
+      'construyendo marcas de internet',
+      'cultura digital',
+      'creator economy',
+      'entretenimiento',
+      'estrategia con identidad',
+      'internet surfer',
+      'tecnología — conectando ideas con cultura',
+      'negocio digital',
+      'futuro',
     ],
-    marqueeBottom: ['◆◆◆ internet surfer since 2008 ◆◆◆', '◆◆◆ marca · comunidad · narrativa ◆◆◆', '◆◆◆ hand-coded with love en madrid ◆◆◆'],
+    marqueeBottom: [
+      'donde la tecnología se encuentra con el entretenimiento, la cultura y la comunidad',
+      'de narrativa a comunidad',
+      'de comunidad a negocio',
+      'cultura que mueve internet',
+      'conectar para llegar',
+    ],
     home: {
       kicker: 'file://home/index.html — cargando',
       title1: 'Construyo',
@@ -49,12 +57,15 @@ const I18N = {
       subA: 'mi libro',
       subAnd: 'y',
       subB: 'una pequeña biblioteca',
-      hintCV: '▸ para la trayectoria completa, pulsa Trayectoria arriba',
-      hintBlog: '▸ para artículos sin filtro, blog',
+      shortcuts: [
+        { label: 'para trayectoria completa', target: 'cv' },
+        { label: 'para contactar conmigo', target: 'contact' },
+        { label: 'para leer el blog', target: 'blog' },
+      ],
       photoLabel: 'alejandro · 2026',
       stickerNew: '! nuevo libro disponible',
       stickerFree: '★ gratis',
-      stickerLib: '★ updated weekly',
+      stickerLib: 'v0.4.2 · last build mayo 2026',
       stickerSlots: '! pocos slots/año',
       bookSection: '▸ 01 / libro',
       bookTitle1: 'Internet Surfer',
@@ -87,7 +98,7 @@ const I18N = {
       sticker: '★ la versión larga',
       kicker: '▸ /cv · the long version',
       title: 'Trayectoria.',
-      lead1: '18 años en internet, esports, marca y comunidad.',
+      lead1: '18 años creando marca, comunidad y negocio.',
       lead2: 'aquí está todo, sin maquillar.',
       stats: [
         ['18 años', 'en internet profesional'],
@@ -104,9 +115,9 @@ const I18N = {
       contactBtn: 'reservar 30 min →',
       sections: [
         { num: '01', title: 'Ahora', items: [
-          { date: '2018—', role: 'CMO', org: 'Team Heretics', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho a referencia global del esports, con presencia en Madrid, Berlín y operaciones internacionales.' },
-          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', desc: 'IA + Blockchain. Estrategia de marca para uno de los proyectos más ambiciosos en la intersección de ambas verticales.' },
-          { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias. Por mi rol en Heretics, cojo muy pocos proyectos al año.' },
+          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho a referencia global del esports, con presencia en Madrid, Berlín y operaciones internacionales.' },
+          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'IA + Blockchain. Estrategia de marca para uno de los proyectos más ambiciosos en la intersección de ambas verticales.' },
+          { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias. Por mi rol en Heretics, cojo muy pocos proyectos al año.' },
         ]},
         { num: '02', title: 'Empresa', items: [
           { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Estrategia, plan y ejecución de marca en España y Portugal para una de las marcas de hardware más reconocidas del sector gaming.' },
@@ -160,29 +171,14 @@ const I18N = {
       sticker: '★ disponible',
       kicker: '▸ /contacto · trabajemos juntos',
       title: 'Contacto.',
-      lead1: 'Construimos marca, comunidad y narrativa para proyectos que quieren ir más allá del paid media.',
-      lead2: 'aquí abajo: cómo trabajo y para quién.',
+      lead1: 'Te ayudo a construir una comunidad y monetizarla.',
+      lead2: 'más allá del paid media. trabajamos de forma orgánica.',
       workKicker: '// en qué trabajo',
-      workIntro1: 'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica.',
-      workIntro2: 'Creen que el problema es llegar. Pero el problema no es la visibilidad.',
-      workIntroHighlight: 'El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.',
-      pillars: [
-        { title: 'Narrativa', desc: 'Tu posición en el mundo y cómo articularla. Sin narrativa, todo lo demás es ruido.' },
-        { title: 'Comunidad', desc: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
-        { title: 'Sistemas', desc: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
-      ],
+      workIntro: 'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
       workNote: 'Podemos trabajar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año.',
       sessionKicker: '// sesión gratuita',
       sessionTitle: 'Hablemos 30 minutos.',
-      sessionLead1: 'No es una llamada genérica. Es una sesión de trabajo real.',
-      sessionLead2: 'En 30 minutos identificamos dónde estás, qué no está funcionando y cuáles son los primeros pasos concretos.',
-      sessionFor: [
-        'Para creadores que quieren escalar y monetizar su comunidad.',
-        'Para empresas que necesitan construir relevancia en internet.',
-        'Para profesionales que quieren construir marca personal.',
-        'Para founders que necesitan convertir su visión en narrativa y estructura.',
-        'Para proyectos que buscan estrategia antes de escalar.',
-      ],
+      sessionLead: 'No es una llamada genérica. Es una sesión de trabajo real. En 30 minutos identificamos dónde estás, qué no está funcionando y cuáles son los primeros pasos concretos.',
       sessionBtn: 'agendar sesión gratuita →',
     },
     footer: { copy: '© 2008–2026', made: 'hand-coded en madrid' },
@@ -205,15 +201,23 @@ const I18N = {
     statusLeft: "writing from madrid",
     weatherLine: "madrid · 19°c · clear skies",
     marqueeTop: [
-      'now → building team heretics into a global brand',
-      'reading → status & culture, w. david marx',
-      'listening → arca, KICK i',
-      'eating → pulpo a la gallega in barriada',
-      'last drop → julio sold out in 30 min',
-      'mood → cautiously optimistic',
-      'currently building → this website you are reading',
+      'building internet brands',
+      'digital culture',
+      'creator economy',
+      'entertainment',
+      'strategy with identity',
+      'internet surfer',
+      'technology — connecting ideas with culture',
+      'digital business',
+      'future',
     ],
-    marqueeBottom: ['◆◆◆ internet surfer since 2008 ◆◆◆', '◆◆◆ brand · community · narrative ◆◆◆', '◆◆◆ hand-coded with love in madrid ◆◆◆'],
+    marqueeBottom: [
+      'where technology meets entertainment, culture and community',
+      'from narrative to community',
+      'from community to business',
+      'culture that moves the internet',
+      'connect to reach',
+    ],
     home: {
       kicker: 'file://home/index.html — loading',
       title1: 'I build',
@@ -227,12 +231,15 @@ const I18N = {
       subA: 'my book',
       subAnd: 'and',
       subB: 'a small library',
-      hintCV: '▸ for the full career, hit Career above',
-      hintBlog: '▸ for unfiltered essays, blog',
+      shortcuts: [
+        { label: 'for the full career', target: 'cv' },
+        { label: 'to get in touch', target: 'contact' },
+        { label: 'to read the blog', target: 'blog' },
+      ],
       photoLabel: 'alejandro · 2026',
       stickerNew: '! new book available',
       stickerFree: '★ free',
-      stickerLib: '★ updated weekly',
+      stickerLib: 'v0.4.2 · last build may 2026',
       stickerSlots: '! few slots/year',
       bookSection: '▸ 01 / book',
       bookTitle1: 'Internet Surfer',
@@ -265,7 +272,7 @@ const I18N = {
       sticker: '★ the long version',
       kicker: '▸ /cv · the long version',
       title: 'Career.',
-      lead1: '18 years in internet, esports, brand and community.',
+      lead1: '18 years building brand, community and business.',
       lead2: 'it\'s all here, unfiltered.',
       stats: [
         ['18 yrs', 'in professional internet'],
@@ -282,9 +289,9 @@ const I18N = {
       contactBtn: 'book 30 min →',
       sections: [
         { num: '01', title: 'Now', items: [
-          { date: '2018—', role: 'CMO', org: 'Team Heretics', desc: 'I lead the global brand and community of Team Heretics. From niche brand to global esports reference, with operations in Madrid, Berlin and international.' },
-          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', desc: 'AI + Blockchain. Brand strategy for one of the most ambitious projects at the intersection of both verticals.' },
-          { date: '2018—', role: 'Freelance', org: 'Creators and companies', desc: 'Narrative, strategy, brand building, community and audience monetization. Due to my role at Heretics, I take very few projects per year.' },
+          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From niche brand to global esports reference, with operations in Madrid, Berlin and international.' },
+          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'AI + Blockchain. Brand strategy for one of the most ambitious projects at the intersection of both verticals.' },
+          { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization. Due to my role at Heretics, I take very few projects per year.' },
         ]},
         { num: '02', title: 'Companies', items: [
           { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Strategy, plan and execution of brand in Spain and Portugal for one of the most recognized hardware brands in gaming.' },
@@ -338,29 +345,14 @@ const I18N = {
       sticker: '★ available',
       kicker: '▸ /contact · let\'s work together',
       title: 'Contact.',
-      lead1: 'We build brand, community and narrative for projects that want to go beyond paid media.',
-      lead2: 'below: how I work and who for.',
+      lead1: 'I help you build a community and monetize it.',
+      lead2: 'beyond paid media. we work organically.',
       workKicker: '// what I work on',
-      workIntro1: 'Most brands don\'t fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can\'t build organically.',
-      workIntro2: 'They think the problem is reach. But the problem isn\'t visibility.',
-      workIntroHighlight: 'The problem is building something people understand, remember, and want to make their own.',
-      pillars: [
-        { title: 'Narrative', desc: 'Your position in the world and how to articulate it. Without narrative, everything else is noise.' },
-        { title: 'Community', desc: 'Belonging, not followers. An audience that understands, shares and defends your project.' },
-        { title: 'Systems', desc: 'Creative direction, distribution and growth with structure to scale with judgment without losing the soul.' },
-      ],
+      workIntro: 'Most brands don\'t fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can\'t build organically. They think the problem is reach. But the problem isn\'t visibility.',
       workNote: 'We can work three ways: individual sessions, part-time embedded into your project, or building a team tailored to you. Due to my role as CMO at Team Heretics, I only take a few projects per year.',
       sessionKicker: '// free session',
       sessionTitle: 'Let\'s talk for 30 minutes.',
-      sessionLead1: 'Not a generic call. A real working session.',
-      sessionLead2: 'In 30 minutes we identify where you are, what\'s not working and the concrete first steps.',
-      sessionFor: [
-        'For creators who want to scale and monetize their community.',
-        'For companies that need to build relevance on the internet.',
-        'For professionals who want to build a personal brand.',
-        'For founders who need to turn their vision into narrative and structure.',
-        'For projects looking for strategy before scale.',
-      ],
+      sessionLead: 'Not a generic call. A real working session. In 30 minutes we identify where you are, what\'s not working and the concrete first steps.',
       sessionBtn: 'book free session →',
     },
     footer: { copy: '© 2008–2026', made: 'hand-coded in madrid' },
@@ -529,6 +521,31 @@ export default function Page() {
         .lang-btn:hover { background: #0a0a0a; color: #ebe7d9; }
         .lang-btn.active { background: #0a0a0a; color: #c5f04a; }
 
+        .enter-key {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          padding: 2px 6px 3px 6px;
+          background: #ebe7d9;
+          color: #0a0a0a;
+          border: 1px solid #0a0a0a;
+          border-radius: 2px;
+          box-shadow: 0 2px 0 #0a0a0a;
+          transition: all 0.1s;
+          line-height: 1;
+          display: inline-block;
+        }
+        .group:hover .enter-key {
+          background: #c5f04a;
+          transform: translateY(1px);
+          box-shadow: 0 1px 0 #0a0a0a;
+        }
+        .group:active .enter-key {
+          transform: translateY(2px);
+          box-shadow: 0 0 0 #0a0a0a;
+        }
+
         .hero-display { font-family: 'Instrument Serif', serif; font-weight: 400; line-height: 0.82; letter-spacing: -0.04em; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         .display { font-family: 'Instrument Serif', serif; }
@@ -617,7 +634,7 @@ export default function Page() {
         </div>
       </nav>
 
-      {route === 'home' && <Home t={t} glitchTitle={glitchTitle} />}
+      {route === 'home' && <Home t={t} glitchTitle={glitchTitle} setRoute={setRoute} />}
       {route === 'cv' && <CV t={t} />}
       {route === 'blog' && <Blog t={t} />}
       {route === 'contact' && <Contact t={t} />}
@@ -626,9 +643,12 @@ export default function Page() {
       <div className="border-y-2 border-black overflow-hidden bg-[#c5f04a] text-[#0a0a0a]">
         <div className="flex marquee-track-rev mono text-[11px] font-bold uppercase tracking-[0.2em] py-3 whitespace-nowrap">
           {Array(3).fill(null).map((_, k) => (
-            <div key={k} className="flex shrink-0">
+            <div key={k} className="flex shrink-0 items-center">
               {t.marqueeBottom.map((s, i) => (
-                <span key={`m2-${k}-${i}`} className="mx-6">{s}</span>
+                <span key={`m2-${k}-${i}`} className="flex items-center">
+                  <span className="mx-5">{s}</span>
+                  <span className="text-[#0a0a0a]/40">◆</span>
+                </span>
               ))}
             </div>
           ))}
@@ -662,7 +682,11 @@ export default function Page() {
 // =============================================
 // HOME
 // =============================================
-function Home({ t, glitchTitle }) {
+function Home({ t, glitchTitle, setRoute }) {
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   return (
     <main className="max-w-7xl mx-auto px-4 md:px-6 pt-10 md:pt-16 pb-10 md:pb-16 relative">
       <div className="sticker wobble hidden md:block" style={{ top: 90, right: 30, transform: 'rotate(8deg)' }}>{t.home.stickerNew}</div>
@@ -682,11 +706,31 @@ function Home({ t, glitchTitle }) {
             {t.home.lead} <strong>{t.home.leadName}</strong> {t.home.leadDesc}
           </p>
           <p className="text-lg md:text-xl leading-snug max-w-2xl text-black/70 italic mb-8" style={{ fontFamily: "'EB Garamond', serif" }}>
-            {t.home.sub} <span style={{ background: '#c5f04a', padding: '0 4px' }}>{t.home.subA}</span> {t.home.subAnd} <span style={{ background: '#c5f04a', padding: '0 4px' }}>{t.home.subB}</span>.
+            {t.home.sub}{' '}
+            <button onClick={() => scrollToId('book-section')} className="hover:opacity-80 transition-opacity" style={{ background: '#c5f04a', padding: '0 4px', borderBottom: '2px solid #0a0a0a', fontStyle: 'italic' }}>
+              {t.home.subA}
+            </button>{' '}
+            {t.home.subAnd}{' '}
+            <button onClick={() => scrollToId('library-section')} className="hover:opacity-80 transition-opacity" style={{ background: '#c5f04a', padding: '0 4px', borderBottom: '2px solid #0a0a0a', fontStyle: 'italic' }}>
+              {t.home.subB}
+            </button>.
           </p>
-          <p className="mono text-xs text-black/60 max-w-md">
-            {t.home.hintCV}<br/>{t.home.hintBlog}
-          </p>
+
+          {/* Shortcuts list with ENTER keys */}
+          <ul className="space-y-2 max-w-md">
+            {t.home.shortcuts.map((s, i) => (
+              <li key={i}>
+                <button
+                  onClick={() => setRoute(s.target)}
+                  className="group flex items-center gap-3 mono text-xs text-black/70 hover:text-black transition-colors"
+                >
+                  <span className="text-[#c5f04a]">▸</span>
+                  <span className="underline-grow">{s.label}</span>
+                  <span className="enter-key">ENTER ↵</span>
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="md:col-span-4 relative flex justify-center md:justify-end items-start">
           <div className="bg-white card-skewed relative w-full max-w-[180px] md:max-w-[220px]" style={{ transform: 'rotate(2deg)', marginTop: '20px', padding: '8px 8px 36px 8px', boxShadow: '0 4px 18px rgba(0,0,0,0.12), 0 1px 0 rgba(0,0,0,0.08)' }}>
@@ -710,7 +754,7 @@ function Home({ t, glitchTitle }) {
 
       <AsciiDivider />
 
-      <section className="grid md:grid-cols-12 gap-8 my-16 md:my-32 relative pt-12">
+      <section id="book-section" className="grid md:grid-cols-12 gap-8 my-16 md:my-32 relative pt-12 scroll-mt-24">
         <div className="sticker" style={{ top: -30, right: 0, transform: 'rotate(-6deg)' }}>{t.home.stickerFree}</div>
 
         <div className="md:col-span-5">
@@ -749,7 +793,7 @@ function Home({ t, glitchTitle }) {
 
       <AsciiDivider />
 
-      <section className="my-16 md:my-32 relative pt-12">
+      <section id="library-section" className="my-16 md:my-32 relative pt-12 scroll-mt-24">
         <div className="sticker" style={{ top: -30, right: 20, transform: 'rotate(4deg)' }}>{t.home.stickerLib}</div>
 
         <div className="flex items-end justify-between mb-8 flex-wrap gap-6">
@@ -797,7 +841,7 @@ function Home({ t, glitchTitle }) {
         </div>
 
         <div className="mt-12 text-center">
-          <a href="#" className="mono text-xs uppercase tracking-widest underline-grow inline-block px-4 py-2 border border-black hover:bg-[#c5f04a]">
+          <a href="https://drive.google.com/file/d/1irBCHRJw61_qibNtq8GsBEPXS1u64mga/view?usp=sharing" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow inline-block px-4 py-2 border border-black hover:bg-[#c5f04a]">
             {t.home.libSeeAll}
           </a>
         </div>
@@ -849,7 +893,12 @@ function CV({ t }) {
                 <div className="md:col-span-2 mono text-xs text-black/50 number-style pt-1">{it.date}</div>
                 <div className="md:col-span-3">
                   <div className="font-medium"><span className="display italic text-lg">{it.role}</span></div>
-                  <div className="mono text-[10px] uppercase tracking-widest text-black/60">{it.org}</div>
+                  <div className="mono text-[10px] uppercase tracking-widest text-black/60 flex items-center gap-2 mt-1">
+                    {it.logo && (
+                      <img src={it.logo} alt={it.org} className="h-4 w-auto object-contain" style={{ filter: 'brightness(0)' }} onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                    )}
+                    <span>{it.org}</span>
+                  </div>
                 </div>
                 <div className="md:col-span-7 text-sm text-black/80 leading-relaxed" style={{ fontFamily: "'EB Garamond', serif" }}>{it.desc}</div>
               </div>
@@ -866,9 +915,25 @@ function CV({ t }) {
         </div>
         <p className="text-base mb-6 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{t.cv.docenciaDesc}</p>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
-          {['ISDI', 'ESADE', 'Nebrija', 'The Core', 'UNIE', 'Mondragon'].map((n, i) => (
-            <div key={n} className="border-2 border-black p-4 text-center mono text-xs uppercase tracking-widest hover:bg-[#c5f04a] transition-colors card-tilt bg-white" style={{ transform: `rotate(${[-0.5, 0.3, -0.4, 0.4, -0.3, 0.5][i]}deg)` }}>
-              {n}
+          {[
+            { name: 'ISDI', logo: '/assets/logo-isdi.png' },
+            { name: 'ESADE', logo: '/assets/logo-esade.png' },
+            { name: 'Nebrija', logo: '/assets/logo-nebrija.png' },
+            { name: 'The Core', logo: '/assets/logo-thecore.png' },
+            { name: 'UNIE', logo: '/assets/logo-unie.png' },
+            { name: 'Mondragon', logo: '/assets/logo-mondragon.png' },
+          ].map((s, i) => (
+            <div key={s.name} className="border-2 border-black p-4 h-20 flex items-center justify-center mono text-xs uppercase tracking-widest hover:bg-[#c5f04a] transition-colors card-tilt bg-white" style={{ transform: `rotate(${[-0.5, 0.3, -0.4, 0.4, -0.3, 0.5][i]}deg)` }}>
+              <img
+                src={s.logo}
+                alt={s.name}
+                className="max-h-10 w-auto object-contain"
+                style={{ filter: 'brightness(0)' }}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement.textContent = s.name;
+                }}
+              />
             </div>
           ))}
         </div>
@@ -896,34 +961,104 @@ function CV({ t }) {
 // BLOG
 // =============================================
 function Blog({ t }) {
+  const [posts, setPosts] = useState([]);
+  const [status, setStatus] = useState('loading'); // loading | ready | empty | error
+
+  useEffect(() => {
+    const FEED = 'https://alejandrosdow.substack.com/feed';
+    const URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED)}`;
+    let cancelled = false;
+    fetch(URL)
+      .then(r => r.json())
+      .then(data => {
+        if (cancelled) return;
+        if (data.status !== 'ok') {
+          setStatus('error');
+          return;
+        }
+        const items = (data.items || []).map(it => ({
+          title: it.title,
+          link: it.link,
+          date: new Date(it.pubDate).toISOString().slice(0, 10).replace(/-/g, '.'),
+          excerpt: stripHtml(it.description).slice(0, 220),
+          read: estimateRead(it.content || it.description),
+          tag: (it.categories && it.categories[0]) || 'post',
+        }));
+        if (items.length === 0) {
+          setStatus('empty');
+        } else {
+          setPosts(items);
+          setStatus('ready');
+        }
+      })
+      .catch(() => { if (!cancelled) setStatus('error'); });
+    return () => { cancelled = true; };
+  }, []);
+
   return (
     <main className="max-w-7xl mx-auto px-4 md:px-6 pt-12 md:pt-20 pb-10 md:pb-16 relative">
       <div className="sticker wobble" style={{ top: 30, right: 0, transform: 'rotate(6deg)' }}>{t.blog.sticker}</div>
 
       <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6 mt-8">{t.blog.kicker}</div>
       <h1 className="display text-5xl md:text-8xl leading-[0.85] mb-3">{t.blog.title}</h1>
-      <p className="display text-2xl italic text-black/60 mb-16 max-w-3xl">
+      <p className="display text-xl md:text-2xl italic text-black/60 mb-16 max-w-3xl">
         {t.blog.lead1}<br/>{t.blog.lead2}
       </p>
 
       <div className="grid md:grid-cols-12 gap-8">
         <div className="md:col-span-8 space-y-8">
-          {t.posts.map((p, i) => (
+
+          {status === 'loading' && (
+            <div className="border-2 border-dashed border-black/30 p-8 text-center mono text-xs uppercase tracking-widest text-black/50">
+              ▸ cargando desde substack<span className="blink">_</span>
+            </div>
+          )}
+
+          {status === 'empty' && (
+            <div className="border-2 border-black p-8 bg-white card-skewed" style={{ transform: 'rotate(-0.5deg)' }}>
+              <div className="mono text-[10px] uppercase tracking-widest text-[#5a8c2e] mb-3">▸ status</div>
+              <h3 className="display text-3xl italic mb-3">Todavía sin publicar.</h3>
+              <p className="text-base leading-snug text-black/75 mb-4" style={{ fontFamily: "'EB Garamond', serif" }}>
+                El blog vive en mi Substack y se sincroniza automáticamente con esta página. Cuando publique el primer artículo, aparecerá aquí.
+              </p>
+              <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow inline-block">
+                seguirme en substack →
+              </a>
+            </div>
+          )}
+
+          {status === 'error' && (
+            <div className="border-2 border-black p-8 bg-white">
+              <div className="mono text-[10px] uppercase tracking-widest text-[#5a8c2e] mb-3">▸ error</div>
+              <p className="text-base text-black/75 mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
+                No he podido cargar el feed del Substack ahora mismo. Mientras tanto, puedes leerlo directamente allí.
+              </p>
+              <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow">
+                abrir en substack →
+              </a>
+            </div>
+          )}
+
+          {status === 'ready' && posts.map((p, i) => (
             <article key={i} className="border-b-2 border-black pb-8 group">
               <div className="flex items-center gap-3 mono text-[10px] uppercase tracking-widest text-black/50 mb-3 flex-wrap">
                 <span className="number-style">{p.date}</span>
                 <span>·</span>
                 <span>{p.read} {t.blog.readMin}</span>
-                <span>·</span>
-                <span style={{ color: '#0a0a0a', background: '#c5f04a', padding: '1px 6px', border: '1px solid #0a0a0a' }}>{p.tag}</span>
-                <span>·</span>
-                <span className="text-black/30">{p.views} {t.blog.reads}</span>
+                {p.tag && (
+                  <>
+                    <span>·</span>
+                    <span style={{ color: '#0a0a0a', background: '#c5f04a', padding: '1px 6px', border: '1px solid #0a0a0a' }}>{p.tag}</span>
+                  </>
+                )}
               </div>
-              <h2 className="display text-4xl italic leading-tight mb-3 group-hover:underline decoration-1 group-hover:decoration-[#c5f04a] decoration-2">
-                {p.title}
-              </h2>
-              <p className="text-base leading-snug text-black/80 mb-3 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{p.excerpt}</p>
-              <a href="#" className="mono text-xs uppercase tracking-widest underline-grow">{t.blog.readMore}</a>
+              <a href={p.link} target="_blank" rel="noreferrer" className="block">
+                <h2 className="display text-3xl md:text-4xl italic leading-tight mb-3 group-hover:underline decoration-1 group-hover:decoration-[#c5f04a] decoration-2">
+                  {p.title}
+                </h2>
+              </a>
+              <p className="text-base leading-snug text-black/80 mb-3 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{p.excerpt}...</p>
+              <a href={p.link} target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow">{t.blog.readMore}</a>
             </article>
           ))}
         </div>
@@ -936,15 +1071,23 @@ function Blog({ t }) {
             <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="block text-center px-5 py-3 bg-[#c5f04a] text-[#0a0a0a] mono text-xs uppercase tracking-widest hover:bg-[#ebe7d9] transition-colors border-2 border-[#c5f04a]">
               {t.blog.subBtn}
             </a>
-            <div className="mono text-[10px] text-white/40 mt-4 flex justify-between">
-              <span>{t.blog.subStat}</span>
-              <span className="text-[#c5f04a]">{t.blog.subGrowth}</span>
-            </div>
           </div>
         </aside>
       </div>
     </main>
   );
+}
+
+// Helpers for the RSS feed
+function stripHtml(html) {
+  if (!html) return '';
+  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+}
+function estimateRead(content) {
+  if (!content) return 1;
+  const text = stripHtml(content);
+  const words = text.split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
 }
 
 // =============================================
@@ -962,39 +1105,18 @@ function Contact({ t }) {
       </p>
 
       {/* === SECTION: WORK === */}
-      <section className="mb-20">
+      <section className="mb-12 md:mb-16">
         <div className="mono text-[12px] md:text-sm uppercase tracking-widest mb-6" style={{ color: '#5a8c2e' }}>
           {t.contact.workKicker}
         </div>
 
-        <p className="text-base md:text-lg leading-snug max-w-3xl mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
-          {t.contact.workIntro1}
-        </p>
-        <p className="text-base md:text-lg leading-snug max-w-3xl mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
-          {t.contact.workIntro2}
-        </p>
-        <p className="text-base md:text-lg leading-snug max-w-3xl mb-10" style={{ fontFamily: "'EB Garamond', serif" }}>
-          <span style={{ background: '#c5f04a', padding: '0 4px', fontWeight: 600 }}>{t.contact.workIntroHighlight}</span>
+        <p className="text-base md:text-lg leading-relaxed max-w-3xl mb-8" style={{ fontFamily: "'EB Garamond', serif" }}>
+          {t.contact.workIntro}
         </p>
 
-        {/* 3 pillars */}
-        <div className="grid md:grid-cols-3 gap-5 mb-10">
-          {t.contact.pillars.map((p, i) => (
-            <article key={i} className="border-2 border-black p-5 bg-white card-skewed flex flex-col" style={{ transform: `rotate(${[-0.5, 0.4, -0.3][i]}deg)` }}>
-              <div className="flex items-start gap-3 mb-3">
-                <div className="mono text-[10px] text-black/40 number-style border border-black/30 px-2 py-1">{String(i+1).padStart(2,'0')}</div>
-                <h3 className="display text-2xl italic flex-1">{p.title}</h3>
-              </div>
-              <p className="text-sm leading-snug text-black/80" style={{ fontFamily: "'EB Garamond', serif" }}>
-                {p.desc}
-              </p>
-            </article>
-          ))}
-        </div>
-
-        {/* Work note — left border accent */}
+        {/* Work note — underlined + left border accent */}
         <div className="relative p-5 bg-[#0a0a0a]/[0.04]" style={{ borderLeft: '3px solid #c5f04a' }}>
-          <p className="text-sm md:text-base leading-relaxed text-black/85" style={{ fontFamily: "'EB Garamond', serif" }}>
+          <p className="text-sm md:text-base leading-relaxed text-black/85" style={{ fontFamily: "'EB Garamond', serif", textDecoration: 'underline', textDecorationColor: '#c5f04a', textDecorationThickness: '2px', textUnderlineOffset: '4px' }}>
             {t.contact.workNote}
           </p>
         </div>
@@ -1003,28 +1125,16 @@ function Contact({ t }) {
       <AsciiDivider />
 
       {/* === SECTION: FREE SESSION === */}
-      <section className="my-12 md:my-20">
+      <section className="my-12 md:my-16">
         <div className="mono text-[12px] md:text-sm uppercase tracking-widest mb-6" style={{ color: '#5a8c2e' }}>
           {t.contact.sessionKicker}
         </div>
         <h2 className="display text-4xl md:text-6xl italic mb-6 leading-tight">
           {t.contact.sessionTitle}
         </h2>
-        <p className="text-base md:text-lg leading-snug max-w-3xl mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
-          {t.contact.sessionLead1}
+        <p className="text-base md:text-lg leading-relaxed max-w-3xl mb-10" style={{ fontFamily: "'EB Garamond', serif" }}>
+          {t.contact.sessionLead}
         </p>
-        <p className="text-base md:text-lg leading-snug max-w-3xl mb-10" style={{ fontFamily: "'EB Garamond', serif" }}>
-          {t.contact.sessionLead2}
-        </p>
-
-        <ul className="space-y-0 mb-10 max-w-3xl">
-          {t.contact.sessionFor.map((item, i) => (
-            <li key={i} className="flex items-start gap-4 border-b border-black/15 py-3 text-sm md:text-base group hover:bg-[#c5f04a]/10 transition-colors -mx-3 px-3" style={{ fontFamily: "'EB Garamond', serif" }}>
-              <span className="mono text-[#5a8c2e] shrink-0 mt-0.5">→</span>
-              <span className="text-black/85">{item}</span>
-            </li>
-          ))}
-        </ul>
 
         <a
           href="https://calendly.com/alejandro-marcos-teamheretics/30min"
