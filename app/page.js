@@ -987,7 +987,7 @@ function CV({ t }) {
           <h2 className="display text-3xl italic">{t.cv.docencia}</h2>
           <div className="flex-1 ascii-tiny text-right overflow-hidden">{'·'.repeat(80)}</div>
         </div>
-        <p className="text-base mb-6 max-w-2xl" style={{ fontFamily: "'EB Garamond', serif" }}>{t.cv.docenciaDesc}</p>
+        <p className="text-base mb-6 max-w-2xl md:leading-[1.6]" style={{ fontFamily: "'EB Garamond', serif" }}>{t.cv.docenciaDesc}</p>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-5 md:gap-2 mt-8 mb-4">
           {[
             { name: 'ISDI', logo: '/assets/logo-isdi.png' },
