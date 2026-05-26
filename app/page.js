@@ -630,7 +630,7 @@ function Home({ t, glitchTitle }) {
         </div>
         <div className="md:col-span-4 relative flex justify-center md:justify-end">
           <div className="bg-white card-skewed relative w-full max-w-[180px] md:max-w-[220px]" style={{ transform: 'rotate(2deg)', marginTop: '20px', padding: '8px 8px 36px 8px', boxShadow: '0 4px 18px rgba(0,0,0,0.12), 0 1px 0 rgba(0,0,0,0.08)' }}>
-            <div className="aspect-[4/5] bg-[#0a0a0a] relative overflow-hidden scanlines">
+            <div className="aspect-square bg-[#0a0a0a] relative overflow-hidden scanlines">
               <img
                 src="/assets/alejandro-foto.jpg"
                 alt="Alejandro Marcos"
