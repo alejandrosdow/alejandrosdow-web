@@ -152,6 +152,12 @@ const I18N = {
       subBtn: 'suscribirse en substack →',
       subStat: '~2,400 suscriptores',
       subGrowth: '▲ +47 esta semana',
+      loading: '▸ cargando desde substack',
+      emptyTitle: 'Todavía sin publicar.',
+      emptyDesc: 'El blog vive en mi Substack y se sincroniza automáticamente con esta página. Cuando publique el primer artículo, aparecerá aquí.',
+      emptyFollow: 'seguirme en substack →',
+      errorDesc: 'No he podido cargar el feed del Substack ahora mismo. Mientras tanto, puedes leerlo directamente allí.',
+      errorOpen: 'abrir en substack →',
     },
     posts: [
       { date: '2026.05.18', read: 6, tag: 'Comunidad', views: '4.2k', title: 'la diferencia entre audiencia y comunidad es quién habla cuando tú callas.', excerpt: 'Pasamos demasiado tiempo midiendo seguidores y muy poco preguntándonos qué pasa en los grupos de WhatsApp, los discords y las DMs cuando la cuenta oficial no publica nada...' },
@@ -169,10 +175,10 @@ const I18N = {
     ],
     contact: {
       sticker: '★ disponible',
-      kicker: '▸ /contacto · trabajemos juntos',
+      kicker: '▸ /contacto · ¿charlamos?',
       title: 'Contacto.',
       lead1: 'Te ayudo a construir una comunidad y monetizarla.',
-      lead2: 'más allá del paid media. trabajamos de forma orgánica.',
+      lead2: 'trabajamos de forma orgánica.',
       workKicker: '// en qué trabajo',
       workIntro: 'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
       workIntroHighlight: 'El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.',
@@ -181,10 +187,10 @@ const I18N = {
         { title: 'Comunidad', desc: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
         { title: 'Sistemas', desc: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
       ],
-      workNote: 'Podemos trabajar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año.',
+      workNote: 'Podemos hablar sin compromisos, suelo colaborar con proyectos de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año, pero puedo ponerte en contacto con personas que admiro y pueden ayudarte',
       sessionKicker: '// sesión gratuita',
       sessionTitle: 'Hablemos 30 minutos.',
-      sessionLead: 'No es una llamada genérica. Es una sesión de trabajo real. En 30 minutos identificamos dónde estás, qué no está funcionando y cuáles son los primeros pasos concretos.',
+      sessionLead: 'En este tiempo vamos a charlar, conocernos y tratar de entender qué no está funcionando y cuáles pueden ser los siguientes pasos',
       sessionBtn: 'agendar sesión gratuita →',
     },
     footer: { copy: '© 2008–2026', made: 'hand-coded en madrid' },
@@ -243,7 +249,7 @@ const I18N = {
         { label: 'to read the blog', target: 'blog' },
       ],
       photoLabel: 'alejandro · 2026',
-      stickerNew: '! new book available',
+      stickerNew: '! book available to download',
       stickerFree: '★ free',
       stickerLib: 'v0.4.2 · last build may 2026',
       stickerSlots: '! few slots/year',
@@ -295,24 +301,24 @@ const I18N = {
       contactBtn: 'book 30 min →',
       sections: [
         { num: '01', title: 'Now', items: [
-          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From niche brand to global esports reference, with operations in Madrid, Berlin and international.' },
-          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'AI + Blockchain. Brand strategy for one of the most ambitious projects at the intersection of both verticals.' },
-          { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/logo-freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization. Due to my role at Heretics, I take very few projects per year.' },
+          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From a niche brand in esports to a global entertainment reference on the internet.' },
+          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Human trust infrastructure for the AI era. Brand and community strategy for one of the most ambitious projects at the intersection of blockchain technology + AI.' },
+          { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/logo-freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization.' },
         ]},
         { num: '02', title: 'Companies', items: [
-          { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Strategy, plan and execution of brand in Spain and Portugal for one of the most recognized hardware brands in gaming.' },
-          { date: '2016—17', role: 'Producer & Host', org: 'Movistar / GAME TV', desc: 'Production, scripting and on-camera for the first gaming and esports channel on Spanish television.' },
-          { date: '2015—16', role: 'Head of Publishers, Talents & Esports', org: 'GAME Stores', desc: 'Managed relationships with international publishers, creators and teams. Part of Madrid Gaming Experience team (+120K attendees), Barcelona Games World and Fun & Serious Bilbao.' },
-          { date: '2013—15', role: 'Marketing Manager', org: 'SocialNAT', desc: 'Campaign and digital community management. Narrator and face of the company.' },
+          { date: '2017—19', role: 'CMO', org: 'Cooler Master Iberia', desc: 'Strategy, plan and brand execution in Spain and Portugal for an iconic hardware brand. We scaled revenue 50% yoy.' },
+          { date: '2016—17', role: 'Producer & Host', org: 'Movistar / GAME TV', desc: 'Specialized production, content and on-camera for the first gaming and esports channel on television for Movistar.' },
+          { date: '2015—16', role: 'Head of Publishers, Talents & Esports', org: 'GAME Stores', desc: 'Relationships with international publishers, content creators and esports teams. I led the activations and content for Madrid Gaming Experience (+120K attendees), Barcelona Games World and Fun & Serious Bilbao.' },
+          { date: '2013—15', role: 'Marketing Manager', org: 'SocialNAT', desc: 'Campaign and digital community management. Narrator and host of the competition.' },
           { date: '2008—13', role: 'Content creator', org: 'Machinima · LVP · ESL', desc: 'Where it all began. One of the first Machinima contracts in Spain and regular collaborator with LVPes and ESL.' },
           { date: '2008—13', role: 'Pro player', org: 'Call of Duty · Pain Gaming', desc: 'National champion. 9th at the Los Angeles 2011 World Championship. One of the first professional player contracts signed in Spain.' },
         ]},
         { num: '03', title: 'Founder & Investor', items: [
           { date: '2025', role: 'JULIO', org: 'Memebrand', desc: 'First Spanish-speaking memebrand. Mediterranean philosophy, sold out in 30 minutes of its only drop.' },
-          { date: '2024', role: 'SCALELAB', org: 'Founder', desc: 'Full cycle for creators: product, platform, marketing and sales teams.' },
-          { date: '2020—23', role: 'Zhander App', org: 'Founder', desc: 'Nightlife app digitizing the role of the PR. Own event "Algodón" with Antídoto.' },
+          { date: '2024', role: 'SCALELAB', org: 'Founder', desc: 'Info-products company. Full cycle for creators: product, platform, marketing and sales teams.' },
+          { date: '2020—23', role: 'Zhander App', org: 'Founder', desc: 'Nightlife app to digitize the role of the PR. We launched our own event "Algodón" with Antídoto. The pandemic cancelled our contracts and we tried to pivot the model without success.' },
           { date: '2020', role: 'OLAGG', org: 'Investor', desc: 'Minority investor. Early bet on blockchain, gaming and esports.' },
-          { date: '2015—16', role: 'XYON Agency', org: 'Founder', desc: 'Gaming agency and creator management in Spain.' },
+          { date: '2015—16', role: 'XYON Agency', org: 'Founder', desc: 'One of the first agencies specialized in creator gaming content when it was still very unprofessionalized. We ran campaigns and deals with major gaming brands, but we couldn\'t scale it.' },
         ]},
       ],
     },
@@ -332,6 +338,12 @@ const I18N = {
       subBtn: 'subscribe on substack →',
       subStat: '~2,400 subscribers',
       subGrowth: '▲ +47 this week',
+      loading: '▸ loading from substack',
+      emptyTitle: 'Nothing published yet.',
+      emptyDesc: 'The blog lives on my Substack and syncs automatically with this page. When the first article is published, it will appear here.',
+      emptyFollow: 'follow me on substack →',
+      errorDesc: 'Couldn\'t load the Substack feed right now. In the meantime, you can read it there directly.',
+      errorOpen: 'open on substack →',
     },
     posts: [
       { date: '2026.05.18', read: 6, tag: 'Community', views: '4.2k', title: 'the difference between an audience and a community is who speaks when you go silent.', excerpt: 'We spend too much time measuring followers and too little asking what happens in the WhatsApp groups, the discords and the DMs when the official account posts nothing...' },
@@ -349,10 +361,10 @@ const I18N = {
     ],
     contact: {
       sticker: '★ available',
-      kicker: '▸ /contact · let\'s work together',
+      kicker: '▸ /contact · shall we chat?',
       title: 'Contact.',
       lead1: 'I help you build a community and monetize it.',
-      lead2: 'beyond paid media. we work organically.',
+      lead2: 'we work organically.',
       workKicker: '// what I work on',
       workIntro: 'Most brands don\'t fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can\'t build organically. They think the problem is reach. But the problem isn\'t visibility.',
       workIntroHighlight: 'The problem is building something people understand, remember, and want to make their own.',
@@ -361,10 +373,10 @@ const I18N = {
         { title: 'Community', desc: 'Belonging, not followers. An audience that understands, shares and defends your project.' },
         { title: 'Systems', desc: 'Creative direction, distribution and growth with structure to scale with judgment without losing the soul.' },
       ],
-      workNote: 'We can work three ways: individual sessions, part-time embedded into your project, or building a team tailored to you. Due to my role as CMO at Team Heretics, I only take a few projects per year.',
+      workNote: 'We can talk without commitment. I usually collaborate on projects in three ways: individual sessions, integrating part-time into your project or building a team tailored to you. Due to my role as CMO at Team Heretics, I only take a few projects per year, but I can put you in touch with people I admire and who can help you.',
       sessionKicker: '// free session',
       sessionTitle: 'Let\'s talk for 30 minutes.',
-      sessionLead: 'Not a generic call. A real working session. In 30 minutes we identify where you are, what\'s not working and the concrete first steps.',
+      sessionLead: 'In this time we\'ll chat, get to know each other and try to understand what\'s not working and what the next steps might be.',
       sessionBtn: 'book free session →',
     },
     footer: { copy: '© 2008–2026', made: 'hand-coded in madrid' },
@@ -1066,19 +1078,19 @@ function Blog({ t }) {
 
           {status === 'loading' && (
             <div className="border-2 border-dashed border-black/30 p-8 text-center mono text-xs uppercase tracking-widest text-black/50">
-              ▸ cargando desde substack<span className="blink">_</span>
+              {t.blog.loading}<span className="blink">_</span>
             </div>
           )}
 
           {status === 'empty' && (
             <div className="border-2 border-black p-8 bg-white card-skewed" style={{ transform: 'rotate(-0.5deg)' }}>
               <div className="mono text-[10px] uppercase tracking-widest text-[#5a8c2e] mb-3">▸ status</div>
-              <h3 className="display text-3xl italic mb-3">Todavía sin publicar.</h3>
+              <h3 className="display text-3xl italic mb-3">{t.blog.emptyTitle}</h3>
               <p className="text-base leading-snug text-black/75 mb-4" style={{ fontFamily: "'EB Garamond', serif" }}>
-                El blog vive en mi Substack y se sincroniza automáticamente con esta página. Cuando publique el primer artículo, aparecerá aquí.
+                {t.blog.emptyDesc}
               </p>
               <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow inline-block">
-                seguirme en substack →
+                {t.blog.emptyFollow}
               </a>
             </div>
           )}
@@ -1087,10 +1099,10 @@ function Blog({ t }) {
             <div className="border-2 border-black p-8 bg-white">
               <div className="mono text-[10px] uppercase tracking-widest text-[#5a8c2e] mb-3">▸ error</div>
               <p className="text-base text-black/75 mb-3" style={{ fontFamily: "'EB Garamond', serif" }}>
-                No he podido cargar el feed del Substack ahora mismo. Mientras tanto, puedes leerlo directamente allí.
+                {t.blog.errorDesc}
               </p>
               <a href="https://substack.com/@alejandrosdow" target="_blank" rel="noreferrer" className="mono text-xs uppercase tracking-widest underline-grow">
-                abrir en substack →
+                {t.blog.errorOpen}
               </a>
             </div>
           )}

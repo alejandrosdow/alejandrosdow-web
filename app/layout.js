@@ -2,27 +2,27 @@ import './globals.css';
 
 export const metadata = {
   title: 'Alejandro Marcos — Internet Surfer',
-  description: 'Construyo marcas culturales en internet. CMO de Team Heretics. Aquí: un libro y una pequeña biblioteca.',
+  description: 'I build cultural brands on the internet. CMO at Team Heretics. Here: a book and a small library.',
   metadataBase: new URL('https://alejandrosdow.com'),
   openGraph: {
     title: 'Alejandro Marcos — Internet Surfer',
-    description: 'Construyo marcas culturales en internet.',
+    description: 'I build cultural brands on the internet.',
     url: 'https://alejandrosdow.com',
     siteName: 'alejandrosdow',
-    locale: 'es_ES',
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Alejandro Marcos — Internet Surfer',
-    description: 'Construyo marcas culturales en internet.',
+    description: 'I build cultural brands on the internet.',
     creator: '@alejandrosdow',
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );
