@@ -67,6 +67,13 @@ const I18N = {
       stickerFree: '★ gratis',
       stickerLib: 'v0.4.2 · last build mayo 2026',
       stickerSlots: '! pocos slots/año',
+      manifestoLabel: 'QUÉ SIGNIFICA ESTO',
+      manifestoPre: '"Una marca cultural es la que trasciende su producto. Refleja el ',
+      manifestoZeitgeist: 'zeitgeist',
+      manifestoMid: ', unos valores, una forma de estar en el mundo, y por eso la gente se identifica, la defiende y la convierte en parte de su ',
+      manifestoId: 'identidad',
+      manifestoPost: '."',
+      manifestoCta: 'Conecta.',
       bookSection: '▸ 01 / libro',
       bookTitle1: 'Internet Surfer',
       bookTitle2: 'el arte de crear',
@@ -253,6 +260,13 @@ const I18N = {
       stickerFree: '★ free',
       stickerLib: 'v0.4.2 · last build may 2026',
       stickerSlots: '! few slots/year',
+      manifestoLabel: 'WHAT THIS MEANS',
+      manifestoPre: '"A cultural brand is one that transcends its product. It reflects the ',
+      manifestoZeitgeist: 'zeitgeist',
+      manifestoMid: ', a set of values, a way of being in the world, and that\'s why people identify with it, defend it and make it part of their ',
+      manifestoId: 'identity',
+      manifestoPost: '."',
+      manifestoCta: 'Connect.',
       bookSection: '▸ 01 / book',
       bookTitle1: 'Internet Surfer',
       bookTitle2: 'the art of building',
@@ -782,6 +796,26 @@ function Home({ t, glitchTitle, setRoute }) {
           <p className="text-xl md:text-2xl leading-snug max-w-2xl mb-4" style={{ fontFamily: "'EB Garamond', serif" }}>
             {t.home.lead} <strong>{t.home.leadName}</strong> {t.home.leadDesc}
           </p>
+
+          {/* ▸ MANIFESTO BLOCK */}
+          <div className="max-w-2xl mt-8 mb-8">
+            <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-4 flex items-center gap-3">
+              <span className="text-[#c5f04a]">▸</span> {t.home.manifestoLabel}
+            </div>
+            <p className="text-2xl md:text-[1.9rem] leading-snug mb-5" style={{ fontFamily: "'EB Garamond', serif" }}>
+              {t.home.manifestoPre}
+              <em style={{ color: '#0a0a0a', background: '#c5f04a', padding: '0 5px', fontStyle: 'italic' }}>{t.home.manifestoZeitgeist}</em>
+              {t.home.manifestoMid}
+              <span style={{ textDecoration: 'underline wavy #c5f04a', textUnderlineOffset: '6px' }}>{t.home.manifestoId}</span>
+              {t.home.manifestoPost}
+            </p>
+            <p className="text-xl md:text-2xl leading-snug" style={{ fontFamily: "'EB Garamond', serif" }}>
+              <span className="mono text-[0.7em] text-black/60">&lt;</span>{' '}
+              {t.home.manifestoCta}{' '}
+              <span className="mono text-[0.7em] text-black/60">/&gt;</span>
+            </p>
+          </div>
+
           <p className="text-lg md:text-xl leading-snug max-w-2xl text-black/70 md:text-black/80 italic mb-8" style={{ fontFamily: "'EB Garamond', serif" }}>
             {t.home.sub}{' '}
             <button onClick={() => scrollToId('book-section')} className="hover:opacity-80 transition-opacity" style={{ background: '#c5f04a', padding: '0 4px', borderBottom: '2px solid #0a0a0a', fontStyle: 'italic' }}>
@@ -908,9 +942,8 @@ function Home({ t, glitchTitle, setRoute }) {
                 </div>
               </div>
               <p className="text-sm leading-snug text-black/80 md:text-black/90 flex-1" style={{ fontFamily: "'EB Garamond', serif" }}>{b.note}</p>
-              <div className="mono text-[10px] text-black/40 mt-4 uppercase tracking-widest border-t border-black/10 pt-3 flex justify-between">
+              <div className="mono text-[10px] text-black/40 mt-4 uppercase tracking-widest border-t border-black/10 pt-3">
                 <span>{b.tag}</span>
-                <span className="text-[#0a0a0a]" style={{ background: '#c5f04a', padding: '0 4px' }}>{b.rating}</span>
               </div>
             </article>
           ))}
