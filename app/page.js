@@ -46,7 +46,7 @@ const I18N = {
     ],
     home: {
       kicker: 'file://home/index.html — cargando',
-      title1: 'Construyo',
+      title1: 'Construir',
       title2: 'marcas',
       title3: 'culturales',
       title4: 'en internet',
@@ -116,7 +116,7 @@ const I18N = {
       sections: [
         { num: '01', title: 'Ahora', items: [
           { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet.' },
-          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Estrategía de marca y comunidad para uno de los proyectos más ambiciosos en la intersección tecnología blockchain + IA.' },
+          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Intersección de blockchain + IA. Advisor estratégico de marca y comunnidad internacional.' },
           { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/logo-freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias.' },
         ]},
         { num: '02', title: 'Empresa', items: [
