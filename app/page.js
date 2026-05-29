@@ -47,8 +47,8 @@ const I18N = {
     home: {
       kicker: 'file://home/index.html — cargando',
       title1: 'Construir',
-      title2: 'marcas',
-      title3: 'culturales',
+      title2: 'marcas culturales',
+      title3: '',
       title4: 'en internet',
       lead: 'Soy',
       leadName: 'Alejandro Marcos,',
@@ -68,9 +68,9 @@ const I18N = {
       stickerLib: 'v0.4.2 · last build mayo 2026',
       stickerSlots: '! pocos slots/año',
       manifestoLabel: 'QUÉ SIGNIFICA ESTO',
-      manifestoPre: '"Una marca cultural es la que trasciende su producto. Refleja el ',
+      manifestoPre: '"Una marca cultural trasciende a su producto. Refleja el ',
       manifestoZeitgeist: 'zeitgeist',
-      manifestoMid: ', unos valores, una forma de estar en el mundo, y por eso la gente se identifica, la defiende y la convierte en parte de su ',
+      manifestoMid: ', una forma de estar en el mundo, y por eso la gente se identifica, la defiende y la convierte en parte de su ',
       manifestoId: 'identidad',
       manifestoPost: '."',
       manifestoCta: 'Conecta.',
@@ -240,8 +240,8 @@ const I18N = {
     home: {
       kicker: 'file://home/index.html — loading',
       title1: 'I build',
-      title2: 'cultural',
-      title3: 'brands',
+      title2: 'cultural brands',
+      title3: '',
       title4: 'on the internet',
       lead: "I'm",
       leadName: 'Alejandro Marcos,',
@@ -261,9 +261,9 @@ const I18N = {
       stickerLib: 'v0.4.2 · last build may 2026',
       stickerSlots: '! few slots/year',
       manifestoLabel: 'WHAT THIS MEANS',
-      manifestoPre: '"A cultural brand is one that transcends its product. It reflects the ',
+      manifestoPre: '"A cultural brand transcends its product. It reflects the ',
       manifestoZeitgeist: 'zeitgeist',
-      manifestoMid: ', a set of values, a way of being in the world, and that\'s why people identify with it, defend it and make it part of their ',
+      manifestoMid: ', a way of being in the world, and that\'s why people identify with it, defend it and make it part of their ',
       manifestoId: 'identity',
       manifestoPost: '."',
       manifestoCta: 'Connect.',
@@ -787,10 +787,9 @@ function Home({ t, glitchTitle, setRoute }) {
           <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6 flex items-center gap-3">
             <span className="text-[#c5f04a]">▸</span> {t.home.kicker}<span className="blink">_</span>
           </div>
-          <h1 className={`hero-display text-[clamp(44px,11vw,180px)] mb-8`}>
+          <h1 className={`hero-display text-[clamp(36px,7vw,96px)] mb-8`}>
             <span className={`glitch ${glitchTitle ? 'glitch-active' : ''}`} data-text={t.home.title1}>{t.home.title1}</span><br/>
-            <em style={{ color: '#0a0a0a', background: '#c5f04a', padding: '0 16px', fontStyle: 'italic', display: 'inline-block', transform: 'rotate(-1deg)' }}>{t.home.title2}</em><br/>
-            {t.home.title3}<br/>
+            <em style={{ color: '#0a0a0a', background: '#c5f04a', padding: '0 12px', fontStyle: 'italic', display: 'inline-block', transform: 'rotate(-1deg)' }}>{t.home.title2}</em><br/>
             <span className="mono text-[0.28em] align-top text-black/60">&lt;</span><span style={{ textDecoration: 'underline wavy #c5f04a', textUnderlineOffset: '10px' }}>{t.home.title4}</span><span className="mono text-[0.28em] align-top text-black/60">/&gt;</span>.
           </h1>
           <p className="text-xl md:text-2xl leading-snug max-w-2xl mb-4" style={{ fontFamily: "'EB Garamond', serif" }}>
@@ -798,18 +797,18 @@ function Home({ t, glitchTitle, setRoute }) {
           </p>
 
           {/* ▸ MANIFESTO BLOCK */}
-          <div className="max-w-2xl mt-8 mb-8">
-            <p className="text-2xl md:text-[1.9rem] leading-snug mb-5" style={{ fontFamily: "'EB Garamond', serif" }}>
+          <div className="max-w-2xl mt-5 mb-5">
+            <p className="text-xl md:text-2xl leading-snug" style={{ fontFamily: "'EB Garamond', serif", fontStyle: 'italic' }}>
               {t.home.manifestoPre}
               <em style={{ color: '#0a0a0a', background: '#c5f04a', padding: '0 5px', fontStyle: 'italic' }}>{t.home.manifestoZeitgeist}</em>
               {t.home.manifestoMid}
               <span style={{ textDecoration: 'underline wavy #c5f04a', textUnderlineOffset: '6px' }}>{t.home.manifestoId}</span>
-              {t.home.manifestoPost}
-            </p>
-            <p className="text-xl md:text-2xl leading-snug" style={{ fontFamily: "'EB Garamond', serif" }}>
-              <span className="mono text-[0.7em] text-black/60">&lt;</span>{' '}
-              {t.home.manifestoCta}{' '}
-              <span className="mono text-[0.7em] text-black/60">/&gt;</span>
+              {t.home.manifestoPost}{' '}
+              <span style={{ fontStyle: 'normal' }}>
+                <span className="mono text-[0.7em] text-black/60">&lt;</span>{' '}
+                {t.home.manifestoCta}{' '}
+                <span className="mono text-[0.7em] text-black/60">/&gt;</span>
+              </span>
             </p>
           </div>
 
@@ -840,8 +839,8 @@ function Home({ t, glitchTitle, setRoute }) {
             ))}
           </ul>
         </div>
-        <div className="md:col-span-4 relative flex justify-center md:justify-end items-start">
-          <div className="bg-white card-skewed relative w-full max-w-[180px] md:max-w-[220px]" style={{ transform: 'rotate(2deg)', marginTop: '20px', padding: '8px 8px 36px 8px', boxShadow: '0 4px 18px rgba(0,0,0,0.12), 0 1px 0 rgba(0,0,0,0.08)' }}>
+        <div className="md:col-span-4 relative flex flex-col items-center md:items-end">
+          <div className="bg-white card-skewed relative w-full max-w-[180px] md:max-w-[300px]" style={{ transform: 'rotate(2deg)', marginTop: '20px', padding: '8px', boxShadow: '0 4px 18px rgba(0,0,0,0.12), 0 1px 0 rgba(0,0,0,0.08)' }}>
             <div className="aspect-square bg-[#0a0a0a] relative overflow-hidden scanlines">
               <img
                 src="/assets/alejandro-foto.jpg"
@@ -853,9 +852,11 @@ function Home({ t, glitchTitle, setRoute }) {
               <div className="absolute bottom-2 right-2 text-[#c5f04a] mono text-[8px] number-style z-10">00:42:13</div>
               <div className="absolute bottom-2 left-2 text-[#c5f04a] mono text-[8px] z-10">ch. 01</div>
             </div>
-            <div className="mono text-[9px] uppercase tracking-widest text-black/60 text-center absolute left-0 right-0" style={{ bottom: '12px' }}>
-              {t.home.photoLabel}
-            </div>
+          </div>
+          <div className="mono text-[9px] uppercase tracking-widest text-black/60 mt-3 text-center md:text-right leading-relaxed">
+            <div>ALEJANDRO MARCOS</div>
+            <div>CMO · INTERNET CULTURE · BRAND BUILDING</div>
+            <div>MADRID, 2026</div>
           </div>
         </div>
       </section>
