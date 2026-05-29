@@ -783,11 +783,11 @@ function Home({ t, glitchTitle, setRoute }) {
       <div className="sticker wobble hidden md:block" style={{ top: 90, right: 30, transform: 'rotate(8deg)' }}>{t.home.stickerNew}</div>
 
       <section className="grid md:grid-cols-12 gap-6 mb-20 md:mb-32 pt-8 md:pt-12">
-        <div className="md:col-span-8">
+        <div className="md:col-span-9">
           <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6 flex items-center gap-3">
             <span className="text-[#c5f04a]">▸</span> {t.home.kicker}<span className="blink">_</span>
           </div>
-          <h1 className={`hero-display text-[clamp(36px,7vw,96px)] mb-8`}>
+          <h1 className={`hero-display text-[clamp(44px,10vw,140px)] mb-8`}>
             <span className={`glitch ${glitchTitle ? 'glitch-active' : ''}`} data-text={t.home.title1}>{t.home.title1}</span><br/>
             <em style={{ color: '#0a0a0a', background: '#c5f04a', padding: '0 12px', fontStyle: 'italic', display: 'inline-block', transform: 'rotate(-1deg)' }}>{t.home.title2}</em><br/>
             <span className="mono text-[0.28em] align-top text-black/60">&lt;</span><span style={{ textDecoration: 'underline wavy #c5f04a', textUnderlineOffset: '10px' }}>{t.home.title4}</span><span className="mono text-[0.28em] align-top text-black/60">/&gt;</span>.
@@ -839,8 +839,8 @@ function Home({ t, glitchTitle, setRoute }) {
             ))}
           </ul>
         </div>
-        <div className="md:col-span-4 relative flex flex-col items-center md:items-end">
-          <div className="bg-white card-skewed relative w-full max-w-[180px] md:max-w-[300px]" style={{ transform: 'rotate(2deg)', marginTop: '20px', padding: '8px', boxShadow: '0 4px 18px rgba(0,0,0,0.12), 0 1px 0 rgba(0,0,0,0.08)' }}>
+        <div className="md:col-span-3 relative flex justify-center md:justify-end items-start">
+          <div className="bg-white card-skewed relative w-full max-w-[180px] md:max-w-[220px]" style={{ transform: 'rotate(2deg)', marginTop: '20px', padding: '8px 8px 36px 8px', boxShadow: '0 4px 18px rgba(0,0,0,0.12), 0 1px 0 rgba(0,0,0,0.08)' }}>
             <div className="aspect-square bg-[#0a0a0a] relative overflow-hidden scanlines">
               <img
                 src="/assets/alejandro-foto.jpg"
@@ -852,11 +852,9 @@ function Home({ t, glitchTitle, setRoute }) {
               <div className="absolute bottom-2 right-2 text-[#c5f04a] mono text-[8px] number-style z-10">00:42:13</div>
               <div className="absolute bottom-2 left-2 text-[#c5f04a] mono text-[8px] z-10">ch. 01</div>
             </div>
-          </div>
-          <div className="mono text-[9px] uppercase tracking-widest text-black/60 mt-3 text-center md:text-right leading-relaxed">
-            <div>ALEJANDRO MARCOS</div>
-            <div>CMO · INTERNET CULTURE · BRAND BUILDING</div>
-            <div>MADRID, 2026</div>
+            <div className="mono text-[9px] uppercase tracking-widest text-black/60 text-center absolute left-0 right-0" style={{ bottom: '12px' }}>
+              {t.home.photoLabel}
+            </div>
           </div>
         </div>
       </section>
