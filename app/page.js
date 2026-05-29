@@ -799,9 +799,6 @@ function Home({ t, glitchTitle, setRoute }) {
 
           {/* ▸ MANIFESTO BLOCK */}
           <div className="max-w-2xl mt-8 mb-8">
-            <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-4 flex items-center gap-3">
-              <span className="text-[#c5f04a]">▸</span> {t.home.manifestoLabel}
-            </div>
             <p className="text-2xl md:text-[1.9rem] leading-snug mb-5" style={{ fontFamily: "'EB Garamond', serif" }}>
               {t.home.manifestoPre}
               <em style={{ color: '#0a0a0a', background: '#c5f04a', padding: '0 5px', fontStyle: 'italic' }}>{t.home.manifestoZeitgeist}</em>
