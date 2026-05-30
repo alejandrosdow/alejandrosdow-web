@@ -1081,31 +1081,15 @@ function Blog({ t }) {
   const [status, setStatus] = useState('loading'); // loading | ready | empty | error
 
   useEffect(() => {
-    const FEED = 'https://alejandrosdow.substack.com/feed';
-    const URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(FEED)}`;
     let cancelled = false;
-    fetch(URL)
+    fetch('/api/substack')
       .then(r => r.json())
       .then(data => {
         if (cancelled) return;
-        if (data.status !== 'ok') {
-          setStatus('error');
-          return;
-        }
-        const items = (data.items || []).map(it => ({
-          title: it.title,
-          link: it.link,
-          date: new Date(it.pubDate).toISOString().slice(0, 10).replace(/-/g, '.'),
-          excerpt: stripHtml(it.description).slice(0, 220),
-          read: estimateRead(it.content || it.description),
-          tag: (it.categories && it.categories[0]) || 'post',
-        }));
-        if (items.length === 0) {
-          setStatus('empty');
-        } else {
-          setPosts(items);
-          setStatus('ready');
-        }
+        if (data.error || !Array.isArray(data.items)) { setStatus('error'); return; }
+        if (data.items.length === 0) { setStatus('empty'); return; }
+        setPosts(data.items);
+        setStatus('ready');
       })
       .catch(() => { if (!cancelled) setStatus('error'); });
     return () => { cancelled = true; };
