@@ -66,7 +66,7 @@ const I18N = {
       stickerNew: '! pronto mi libro disponible para descargar',
       stickerFree: '★ gratis',
       stickerLib: 'v0.4.2 · last build mayo 2026',
-      stickerSlots: '! pocos slots/año',
+      stickerSlots: '¿Te puedo ayudar con algo?',
       manifestoLabel: 'QUÉ SIGNIFICA ESTO',
       manifestoPre: '"Una marca cultural trasciende a su producto. Refleja el ',
       manifestoZeitgeist: 'zeitgeist',
@@ -95,11 +95,11 @@ const I18N = {
       libDesc: 'Una pequeña biblioteca de libros, recursos y referencias que han formado mi manera de pensar sobre marcas, comunidades e internet. Se actualiza constantemente.',
       libSeeAll: 'ver biblioteca completa →',
       ctaKicker: '▸ end of page · ¿seguimos hablando?',
-      ctaTitle1: 'si quieres trabajar conmigo,',
+      ctaTitle1: '',
       ctaTitle2: 'hablemos',
       ctaTitle3: '30 minutos',
       ctaBtn: 'reservar sesión gratuita →',
-      ctaNote: 'no es una llamada genérica. por mi rol en team heretics, cojo muy pocos proyectos al año.',
+      ctaNote: '',
     },
     cv: {
       sticker: '★ la versión larga',
@@ -959,7 +959,7 @@ function Home({ t, glitchTitle, setRoute }) {
 
         <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6">{t.home.ctaKicker}</div>
         <h2 className="display text-4xl md:text-7xl leading-[0.9] max-w-3xl mx-auto mb-8">
-          {t.home.ctaTitle1}<br/>
+          {t.home.ctaTitle1 && <>{t.home.ctaTitle1}<br/></>}
           <em>{t.home.ctaTitle2} <span style={{ background: '#c5f04a', padding: '0 8px' }}>{t.home.ctaTitle3}</span>.</em>
         </h2>
         <a href="https://calendly.com/alejandro-marcos-teamheretics/30min" target="_blank" rel="noreferrer" className="inline-block px-8 py-4 bg-[#0a0a0a] text-[#c5f04a] mono text-xs uppercase tracking-widest hover:bg-[#c5f04a] hover:text-[#0a0a0a] transition-colors border-2 border-black">
