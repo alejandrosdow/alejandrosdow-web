@@ -63,7 +63,7 @@ const I18N = {
         { label: 'para leer el blog', target: 'blog' },
       ],
       photoLabel: 'alejandro · 2026',
-      stickerNew: '! pronto mi libro disponible para descargar',
+      stickerNew: '! mi libro disponible para descargar',
       stickerFree: '★ gratis',
       stickerLib: 'v0.4.2 · last build mayo 2026',
       stickerSlots: '¿Te puedo ayudar con algo?',
@@ -124,7 +124,7 @@ const I18N = {
       sections: [
         { num: '01', title: 'Ahora', items: [
           { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet.' },
-          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Intersección de blockchain + IA. Advisor estratégico de marca y comunnidad internacional.' },
+          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Intersección de blockchain + IA. Advisor estratégico de marca y comunidad internacional.' },
           { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/logo-freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias.' },
         ]},
         { num: '02', title: 'Empresa', items: [
@@ -135,12 +135,12 @@ const I18N = {
           { date: '2008—13', role: 'Creador de contenido', org: 'Machinima · LVP · ESL', desc: 'Todo empieza aquí. Uno de los primeros contratos de Machinima en España y colaborador habitual de LVPes y ESL.' },
           { date: '2008—13', role: 'Jugador profesional', org: 'Call of Duty · Pain Gaming', desc: 'Campeón nacional. 9º en el Mundial de Los Ángeles 2011. Uno de los primeros contratos firmados en España como jugador profesional.' },
         ]},
-        { num: '03', title: 'Fundador & Inversor', items: [
-          { date: '2025', role: 'JULIO', org: 'Memebrand', desc: 'Primera memebrand hispanohablante. Filosofía mediterránea, sold out en 30 minutos del único drop lanzado.' },
-          { date: '2024', role: 'SCALELAB', org: 'Fundador', desc: 'Empresa de infoproductos. Hacía el ciclo completo para creadores: producto, plataforma, marketing y equipos de ventas.' },
-          { date: '2020—23', role: 'Zhander App', org: 'Fundador', desc: 'App de ocio nocturno para digitalizar el rol del PR. Lanzamos nuestro evento propio "Algodón" con Antídoto. La pandemia anuló nuestros contratos y tratamos de pivotar el modelo sin éxito.' },
-          { date: '2020', role: 'OLAGG', org: 'Inversor', desc: 'Inversor minoritario. Apuesta early en blockchain, gaming y esports.' },
-          { date: '2015—16', role: 'XYON Agency', org: 'Fundador', desc: 'Una de las primeras agencias especializadas en gaming de creadores de contenido cuando aún estaba muy poco profesinalizado, hicimos campañas y acuerdos con grandes marcas de gaming, pero no supimos escalarlo.' },
+        { num: '03', title: 'Fundador / Inversor', items: [
+          { date: '2025', role: 'JULIO', org: '', desc: 'Primera memebrand hispanohablante. Filosofía mediterránea, sold out en 30 minutos del único drop lanzado.' },
+          { date: '2024', role: 'SCALELAB', org: '', desc: 'Empresa de infoproductos. Hacía el ciclo completo para creadores: producto, plataforma, marketing y equipos de ventas.' },
+          { date: '2020—23', role: 'Zhander App', org: '', desc: 'App de ocio nocturno para digitalizar el rol del PR. Lanzamos nuestro evento propio "Algodón" con Antídoto. La pandemia anuló nuestros contratos y tratamos de pivotar el modelo sin éxito.' },
+          { date: '2020', role: 'OLAGG', org: '', desc: 'Inversor minoritario. Apuesta early en blockchain, gaming y esports.' },
+          { date: '2015—16', role: 'XYON Agency', org: '', desc: 'Una de las primeras agencias especializadas en gaming de creadores de contenido cuando aún estaba muy poco profesionalizado, hicimos campañas y acuerdos con grandes marcas de gaming, pero no supimos escalarlo.' },
         ]},
       ],
     },
@@ -185,7 +185,7 @@ const I18N = {
       sticker: '★ disponible',
       kicker: '▸ /contacto · ¿charlamos?',
       title: 'Contacto.',
-      lead1: 'Te ayudo a construir una marca, comunidad y monetizarla.',
+      lead1: '',
       lead2: 'Construir marcas culturales implica trascender la venta de productos para crear iconos que reflejan valores, ideologías y contextos sociales. Conectar > Llegar.',
       workKicker: '// en qué trabajo',
       workIntro: 'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
@@ -260,7 +260,7 @@ const I18N = {
       stickerNew: '! book available to download',
       stickerFree: '★ free',
       stickerLib: 'v0.4.2 · last build may 2026',
-      stickerSlots: '! few slots/year',
+      stickerSlots: 'Can I help you with something?',
       manifestoLabel: 'WHAT THIS MEANS',
       manifestoPre: '"A cultural brand transcends its product. It reflects the ',
       manifestoZeitgeist: 'zeitgeist',
@@ -289,11 +289,11 @@ const I18N = {
       libDesc: 'A small library of books, resources and references that shaped the way I think about brands, communities and the internet. Updated constantly.',
       libSeeAll: 'see full library →',
       ctaKicker: '▸ end of page · shall we keep talking?',
-      ctaTitle1: 'if you want to work with me,',
+      ctaTitle1: '',
       ctaTitle2: 'let\'s chat for',
       ctaTitle3: '30 minutes',
       ctaBtn: 'book a free session →',
-      ctaNote: 'not a generic call. given my role at team heretics, i only take a few projects per year.',
+      ctaNote: '',
     },
     cv: {
       sticker: '★ the long version',
@@ -318,7 +318,7 @@ const I18N = {
       sections: [
         { num: '01', title: 'Now', items: [
           { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From a niche brand in esports to a global entertainment reference on the internet.' },
-          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Human trust infrastructure for the AI era. Brand and community strategy for one of the most ambitious projects at the intersection of blockchain technology + AI.' },
+          { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Human trust infrastructure for the AI era. Intersection of blockchain + AI. Strategic brand and international community advisor.' },
           { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/logo-freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization.' },
         ]},
         { num: '02', title: 'Companies', items: [
@@ -329,12 +329,12 @@ const I18N = {
           { date: '2008—13', role: 'Content creator', org: 'Machinima · LVP · ESL', desc: 'Where it all began. One of the first Machinima contracts in Spain and regular collaborator with LVPes and ESL.' },
           { date: '2008—13', role: 'Pro player', org: 'Call of Duty · Pain Gaming', desc: 'National champion. 9th at the Los Angeles 2011 World Championship. One of the first professional player contracts signed in Spain.' },
         ]},
-        { num: '03', title: 'Founder & Investor', items: [
-          { date: '2025', role: 'JULIO', org: 'Memebrand', desc: 'First Spanish-speaking memebrand. Mediterranean philosophy, sold out in 30 minutes of its only drop.' },
-          { date: '2024', role: 'SCALELAB', org: 'Founder', desc: 'Info-products company. Full cycle for creators: product, platform, marketing and sales teams.' },
-          { date: '2020—23', role: 'Zhander App', org: 'Founder', desc: 'Nightlife app to digitize the role of the PR. We launched our own event "Algodón" with Antídoto. The pandemic cancelled our contracts and we tried to pivot the model without success.' },
-          { date: '2020', role: 'OLAGG', org: 'Investor', desc: 'Minority investor. Early bet on blockchain, gaming and esports.' },
-          { date: '2015—16', role: 'XYON Agency', org: 'Founder', desc: 'One of the first agencies specialized in creator gaming content when it was still very unprofessionalized. We ran campaigns and deals with major gaming brands, but we couldn\'t scale it.' },
+        { num: '03', title: 'Founder / Investor', items: [
+          { date: '2025', role: 'JULIO', org: '', desc: 'First Spanish-speaking memebrand. Mediterranean philosophy, sold out in 30 minutes of its only drop.' },
+          { date: '2024', role: 'SCALELAB', org: '', desc: 'Info-products company. Full cycle for creators: product, platform, marketing and sales teams.' },
+          { date: '2020—23', role: 'Zhander App', org: '', desc: 'Nightlife app to digitize the role of the PR. We launched our own event "Algodón" with Antídoto. The pandemic cancelled our contracts and we tried to pivot the model without success.' },
+          { date: '2020', role: 'OLAGG', org: '', desc: 'Minority investor. Early bet on blockchain, gaming and esports.' },
+          { date: '2015—16', role: 'XYON Agency', org: '', desc: 'One of the first agencies specialized in creator gaming content when it was still very unprofessionalized. We ran campaigns and deals with major gaming brands, but we couldn\'t scale it.' },
         ]},
       ],
     },
@@ -379,8 +379,8 @@ const I18N = {
       sticker: '★ available',
       kicker: '▸ /contact · shall we chat?',
       title: 'Contact.',
-      lead1: 'I help you build a brand, community and monetize it.',
-      lead2: 'Building cultural brands means going beyond selling products to create icons that reflect values, ideologies and social contexts. Connect > Reach.',
+      lead1: '',
+      lead2: 'Building cultural brands means going beyond selling products to become icons that reflect values, ideologies and social contexts. Connect > Reach.',
       workKicker: '// what I work on',
       workIntro: 'Most brands don\'t fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can\'t build organically. They think the problem is reach. But the problem isn\'t visibility.',
       workIntroHighlight: 'The problem is building something people understand, remember, and want to make their own.',
@@ -1009,7 +1009,7 @@ function CV({ t }) {
                   )}
                   <div className="flex-1 min-w-0">
                     <div className="font-medium"><span className="display italic text-lg md:!text-[24px]">{it.role}</span></div>
-                    <div className="mono text-[10px] uppercase tracking-widest text-black/60 mt-1">{it.org}</div>
+                    {it.org && <div className="mono text-[10px] uppercase tracking-widest text-black/60 mt-1">{it.org}</div>}
                   </div>
                 </div>
                 <div className="md:col-span-7 text-sm md:!text-[18px] text-black/80 md:text-black/90 leading-relaxed md:leading-[1.6]" style={{ fontFamily: "'EB Garamond', serif" }}>{it.desc}</div>
@@ -1203,7 +1203,7 @@ function Contact({ t }) {
       <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6 mt-8">{t.contact.kicker}</div>
       <h1 className="display text-5xl md:text-8xl leading-[0.85] mb-3">{t.contact.title}</h1>
       <p className="display text-xl md:text-2xl italic text-black/60 mb-16 max-w-2xl">
-        {t.contact.lead1}<br/>{t.contact.lead2}
+        {t.contact.lead2}
       </p>
 
       {/* === SECTION: WORK === */}
