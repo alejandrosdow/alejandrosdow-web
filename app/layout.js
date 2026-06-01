@@ -1,21 +1,21 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Alejandro Marcos — Internet Surfer',
-  description: 'I build cultural brands on the internet. CMO at Team Heretics. Here: a book and a small library.',
+  title: 'Alejandro Marcos — alejandrosdow.com',
+  description: 'Soy Alejandro Marcos, CMO de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
   metadataBase: new URL('https://alejandrosdow.com'),
   openGraph: {
-    title: 'Alejandro Marcos — Internet Surfer',
-    description: 'I build cultural brands on the internet.',
+    title: 'Alejandro Marcos — alejandrosdow.com',
+    description: 'Soy Alejandro Marcos, CMO de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
     url: 'https://alejandrosdow.com',
     siteName: 'alejandrosdow',
-    locale: 'en_US',
+    locale: 'es_ES',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alejandro Marcos — Internet Surfer',
-    description: 'I build cultural brands on the internet.',
+    title: 'Alejandro Marcos — alejandrosdow.com',
+    description: 'Soy Alejandro Marcos, CMO de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
     creator: '@alejandrosdow',
   },
 };
