@@ -70,7 +70,7 @@ const I18N = {
       manifestoLabel: 'QUÉ SIGNIFICA ESTO',
       manifestoPre: '"Una marca cultural trasciende a su producto. Refleja el ',
       manifestoZeitgeist: 'zeitgeist',
-      manifestoMid: ', una forma de estar en el mundo, y por eso la gente se identifica, la defiende y la convierte en parte de su ',
+      manifestoMid: ', una forma de ser y estar en el mundo, y por eso la gente se identifica, la defiende y la convierte en parte de su ',
       manifestoId: 'identidad',
       manifestoPost: '."',
       manifestoCta: 'Conecta.',
@@ -107,6 +107,7 @@ const I18N = {
       title: 'Trayectoria.',
       lead1: '18 años construyendo marca, comunidad y negocio.',
       lead2: 'aquí está todo, sin maquillar.',
+      lead3: 'Construyendo en internet desde 2008.',
       stats: [
         ['18 años', 'en internet profesional'],
         ['8 años', 'como cmo de team heretics'],
@@ -185,7 +186,7 @@ const I18N = {
       kicker: '▸ /contacto · ¿charlamos?',
       title: 'Contacto.',
       lead1: 'Te ayudo a construir una marca, comunidad y monetizarla.',
-      lead2: 'Construir marcas culturales implica trascender la venta de productos para convertirse en iconos que reflejan valores, ideologías y contextos sociales, creando conexiones emocionales profundas, conectar.',
+      lead2: 'Construir marcas culturales implica trascender la venta de productos para crear iconos que reflejan valores, ideologías y contextos sociales. Conectar > Llegar.',
       workKicker: '// en qué trabajo',
       workIntro: 'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
       workIntroHighlight: 'El problema es construir algo que la gente entienda, recuerde y quiera hacer suyo.',
@@ -194,10 +195,10 @@ const I18N = {
         { title: 'Comunidad', desc: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
         { title: 'Sistemas', desc: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
       ],
-      workNote: 'Podemos hablar sin compromisos, suelo colaborar con proyectos de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año, pero puedo ponerte en contacto con personas que admiro y pueden ayudarte',
+      workNote: 'Podemos colaborar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año, pero puedo ponerte en contacto con personas que admiro y pueden ayudarte.',
       sessionKicker: '// sesión gratuita',
       sessionTitle: 'Hablemos 30 minutos.',
-      sessionLead: 'En este tiempo vamos a charlar, conocernos y tratar de entender qué no está funcionando y cuáles pueden ser los siguientes pasos',
+      sessionLead: 'En este tiempo vamos a charlar, conocernos y tratar de entender qué no está funcionando y cuáles pueden ser los siguientes pasos.',
       sessionBtn: 'agendar sesión gratuita →',
     },
     footer: { copy: '© 2008–2026', made: 'hand-coded en madrid' },
@@ -300,6 +301,7 @@ const I18N = {
       title: 'Career.',
       lead1: '18 years building brand, community and business.',
       lead2: 'it\'s all here, unfiltered.',
+      lead3: 'Building on the internet since 2008.',
       stats: [
         ['18 yrs', 'in professional internet'],
         ['8 yrs', 'as cmo of team heretics'],
@@ -377,8 +379,8 @@ const I18N = {
       sticker: '★ available',
       kicker: '▸ /contact · shall we chat?',
       title: 'Contact.',
-      lead1: 'I help you build a community and monetize it.',
-      lead2: 'we work organically.',
+      lead1: 'I help you build a brand, community and monetize it.',
+      lead2: 'Building cultural brands means going beyond selling products to create icons that reflect values, ideologies and social contexts. Connect > Reach.',
       workKicker: '// what I work on',
       workIntro: 'Most brands don\'t fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can\'t build organically. They think the problem is reach. But the problem isn\'t visibility.',
       workIntroHighlight: 'The problem is building something people understand, remember, and want to make their own.',
@@ -387,7 +389,7 @@ const I18N = {
         { title: 'Community', desc: 'Belonging, not followers. An audience that understands, shares and defends your project.' },
         { title: 'Systems', desc: 'Creative direction, distribution and growth with structure to scale with judgment without losing the soul.' },
       ],
-      workNote: 'We can talk without commitment. I usually collaborate on projects in three ways: individual sessions, integrating part-time into your project or building a team tailored to you. Due to my role as CMO at Team Heretics, I only take a few projects per year, but I can put you in touch with people I admire and who can help you.',
+      workNote: 'We can collaborate in three ways: individual sessions, integrating part-time into your project, or building a custom team. Due to my role as CMO at Team Heretics, I only take on a few projects per year, but I can put you in touch with people I admire and who can help you.',
       sessionKicker: '// free session',
       sessionTitle: 'Let\'s talk for 30 minutes.',
       sessionLead: 'In this time we\'ll chat, get to know each other and try to understand what\'s not working and what the next steps might be.',
@@ -982,7 +984,7 @@ function CV({ t }) {
       <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6 mt-8">{t.cv.kicker}</div>
       <h1 className="display text-5xl md:text-8xl leading-[0.85] mb-3">{t.cv.title}</h1>
       <p className="display text-2xl italic text-black/60 mb-16 max-w-2xl">
-        {t.cv.lead1}<br/>{t.cv.lead2}
+        {t.cv.lead1}<br/>{t.cv.lead2}<br/>{t.cv.lead3}
       </p>
 
       {t.cv.sections.map(sec => (
