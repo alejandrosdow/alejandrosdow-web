@@ -984,7 +984,7 @@ function CV({ t }) {
       <div className="mono text-[11px] uppercase tracking-widest text-black/60 mb-6 mt-8">{t.cv.kicker}</div>
       <h1 className="display text-5xl md:text-8xl leading-[0.85] mb-3">{t.cv.title}</h1>
       <p className="display text-2xl italic text-black/60 mb-16 max-w-2xl">
-        {t.cv.lead1}<br/>{t.cv.lead2}<br/>{t.cv.lead3}
+        {t.cv.lead3}
       </p>
 
       {t.cv.sections.map(sec => (
