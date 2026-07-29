@@ -123,7 +123,7 @@ const I18N = {
       contactBtn: 'reservar 30 min →',
       sections: [
         { num: '01', title: 'Ahora', items: [
-          { date: '2018—', role: 'Chief Brand Officer', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet.' },
+          { date: '2018—', role: 'Chief Brand Officer', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet. Posición transversal dentro del Holding de Heretics, trabajando con las empresas del grupo: PHTP, Nativo y MakeItHappen.' },
           { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Intersección de blockchain + IA. Advisor estratégico de marca y comunidad internacional.' },
           { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/logo-freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias.' },
         ]},
@@ -317,7 +317,7 @@ const I18N = {
       contactBtn: 'book 30 min →',
       sections: [
         { num: '01', title: 'Now', items: [
-          { date: '2018—', role: 'Chief Brand Officer', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From a niche brand in esports to a global entertainment reference on the internet.' },
+          { date: '2018—', role: 'Chief Brand Officer', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From a niche brand in esports to a global entertainment reference on the internet. A cross-functional role within the Heretics Holding, working with the group\'s companies: PHTP, Nativo and MakeItHappen.' },
           { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Human trust infrastructure for the AI era. Intersection of blockchain + AI. Strategic brand and international community advisor.' },
           { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/logo-freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization.' },
         ]},
