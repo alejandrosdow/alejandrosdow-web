@@ -30,11 +30,15 @@ const PROJECTS = [
     org: 'Fundador · Dirección creativa',
     type: { es: 'Marca · Música', en: 'Brand · Music' },
     title: 'Club113 + 113 Sessions',
-    metric: { n: 1, pre: '~', post: 'M€' },
-    metricText: { es: '~1M€ de facturación · adquirido por Samsung', en: '~€1M in revenue · acquired by Samsung' },
-    es: 'Creé y lideré Club113 sus dos primeros años: naming, identidad y gran parte de la ejecución. Un hito cultural mainstream en España — prensa, televisión y cerca de 1M€ de facturación. Con las 113 Sessions apostamos por el talento musical emergente: BarryB, Midas Alonso, LuchoRK, John Pollón. Samsung acabó comprando el proyecto entero.',
-    en: 'I created and led Club113 through its first two years: naming, identity and much of the execution. A mainstream cultural milestone in Spain — press, television and close to €1M in revenue. With 113 Sessions we bet on emerging musical talent: BarryB, Midas Alonso, LuchoRK, John Pollón. Samsung ended up acquiring the whole project.',
+    metric: { n: 579, pre: '+', post: 'M' },
+    metricText: { es: '+579M de impresiones y 645k seguidores en 11 meses', en: '+579M impressions and 645k followers in 11 months' },
+    es: 'Creé y lideré Club113 sus dos primeros años: naming, identidad y gran parte de la ejecución. Un hito cultural mainstream en España — prensa, televisión, invitados como David Bisbal o Belén Esteban y cerca de 1M€ de facturación. Con las 113 Sessions apostamos por el talento musical emergente: BarryB, Midas Alonso, LuchoRK, John Pollón. Samsung entró como primer patrocinador y acabó comprando el proyecto entero.',
+    en: 'I created and led Club113 through its first two years: naming, identity and much of the execution. A mainstream cultural milestone in Spain — press, television, guests like David Bisbal and Belén Esteban, and close to €1M in revenue. With 113 Sessions we bet on emerging musical talent: BarryB, Midas Alonso, LuchoRK, John Pollón. Samsung came in as first sponsor and ended up acquiring the whole project.',
     media: null,
+    videos: [
+      { id: 'yw4Wjv3advA', label: 'Club113 — Capítulo 15 con el Dudu' },
+      { id: 'hIEoaWvZDZE', label: '113 Sessions × BarryB' },
+    ],
   },
   {
     slug: 'mansion',
@@ -57,9 +61,9 @@ const PROJECTS = [
     title: 'Heretics Originals',
     metric: { n: 40, pre: '+', post: 'M' },
     metricText: { es: '+40M de visitas entre contenido principal y satélites', en: '+40M views across main and satellite content' },
-    es: 'Contenidos originales entendiendo la fórmula de YouTube antes que nadie en el mercado hispanohablante. Más de 40 millones de visitas entre el contenido principal y los satélites.',
-    en: 'Original content built on an understanding of the YouTube formula before anyone else in the Spanish-speaking market. Over 40 million views across main and satellite content.',
-    media: null,
+    es: 'Contenidos originales entendiendo la fórmula de YouTube antes que nadie en el mercado hispanohablante. Más de 40 millones de visitas entre el contenido principal y los satélites. Especiales como el de San Valentín: +100M de impresiones, 29,7M de audiencia sumada y cinco días seguidos en tendencias nacionales de YouTube.',
+    en: 'Original content built on an understanding of the YouTube formula before anyone else in the Spanish-speaking market. Over 40 million views across main and satellite content. Specials like San Valentín: +100M impressions, a combined audience of 29.7M and five straight days on national YouTube trending.',
+    media: '/assets/portfolio/originals/heretics-originals.jpg',
   },
   {
     slug: 'hereticsxp',
@@ -318,6 +322,18 @@ function YTEmbed({ id, title }) {
 
 // ============ MEDIA BLOCK (placeholder-aware) ============
 function Media({ project, aspect, t }) {
+  if (project.videos) {
+    return (
+      <div className="flex flex-col gap-4">
+        {project.videos.map((v) => (
+          <div key={v.id}>
+            <YTEmbed id={v.id} title={v.label} />
+            <div className="mono text-[10px] uppercase tracking-[0.14em] mt-2" style={{ color: 'var(--ink-35)' }}>{v.label}</div>
+          </div>
+        ))}
+      </div>
+    );
+  }
   if (project.video) {
     return <YTEmbed id={project.video} title={project.title} />;
   }
@@ -399,15 +415,17 @@ export default function PortfolioPage() {
           {t.lead}
         </p>
 
-        {/* ===== FEATURED ===== */}
+        {/* ===== FEATURED — media + texto lado a lado, alternando ===== */}
         {featured.map((p, i) => (
           <section key={p.slug} className="mb-20 md:mb-28">
-            <Reveal>
-              <Media project={p} aspect="aspect-[16/10] md:aspect-[16/9]" t={t} />
-            </Reveal>
-            <div className="grid md:grid-cols-12 gap-4 md:gap-8 mt-6">
-              <div className="md:col-span-5">
-                <Reveal delay={80}>
+            <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+              <div className={`md:col-span-7 ${i % 2 === 1 ? 'md:order-2' : ''}`}>
+                <Reveal>
+                  <Media project={p} aspect="aspect-[16/10]" t={t} />
+                </Reveal>
+              </div>
+              <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-1' : ''}`}>
+                <Reveal delay={100}>
                   <div className="mono text-[10px] uppercase tracking-[0.16em] mb-3 flex items-center gap-2 flex-wrap" style={{ color: 'var(--ink-35)' }}>
                     <span>{String(i + 1).padStart(2, '0')}</span>
                     <span>·</span>
@@ -415,27 +433,23 @@ export default function PortfolioPage() {
                     <span>·</span>
                     <span>{p.org}</span>
                   </div>
-                  <h2 className="display text-[clamp(28px,4vw,44px)]" style={{ color: 'var(--ink)', letterSpacing: '-0.025em' }}>
+                  <h2 className="display text-[clamp(28px,3.4vw,38px)]" style={{ color: 'var(--ink)', letterSpacing: '-0.025em' }}>
                     {p.title}
                   </h2>
-                  <div className="serif-i text-[17px] mt-1" style={{ color: 'var(--ink-50)' }}>{p.type[lang]}</div>
-                </Reveal>
-              </div>
-              <div className="md:col-span-7">
-                <Reveal delay={140}>
+                  <div className="serif-i text-[17px] mt-1 mb-5" style={{ color: 'var(--ink-50)' }}>{p.type[lang]}</div>
                   {p.metric ? (
-                    <div className="mono text-[13px] uppercase tracking-[0.1em] mb-4 flex items-baseline gap-2" style={{ color: 'var(--ink)' }}>
-                      <span className="text-[26px] md:text-[30px]" style={{ letterSpacing: 0 }}>
+                    <div className="mono text-[13px] uppercase tracking-[0.1em] mb-4" style={{ color: 'var(--ink)' }}>
+                      <span className="text-[24px] md:text-[28px] block mb-1" style={{ letterSpacing: 0 }}>
                         <CountUp n={p.metric.n} pre={p.metric.pre} post={p.metric.post} lang={lang} />
                       </span>
-                      <span style={{ color: 'var(--ink-50)' }}>— {p.metricText[lang]}</span>
+                      <span className="text-[11px]" style={{ color: 'var(--ink-50)' }}>{p.metricText[lang]}</span>
                     </div>
                   ) : (
-                    <div className="mono text-[12px] uppercase tracking-[0.12em] mb-4" style={{ color: 'var(--ink-50)' }}>
+                    <div className="mono text-[11px] uppercase tracking-[0.12em] mb-4" style={{ color: 'var(--ink-50)' }}>
                       {p.metricText[lang]}
                     </div>
                   )}
-                  <p className="text-[15px] md:text-[16px] leading-relaxed" style={{ color: 'var(--ink-70)' }}>{p[lang]}</p>
+                  <p className="text-[15px] leading-relaxed" style={{ color: 'var(--ink-70)' }}>{p[lang]}</p>
                 </Reveal>
               </div>
             </div>
