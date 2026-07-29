@@ -251,7 +251,7 @@ export default function BibliotecaPage() {
             <div className="hairline-b pb-5 mb-2">
               <div className="flex items-baseline gap-4">
                 <span className="mono text-[11px]" style={{ color: 'var(--ink-35)' }}>{String(ci + 1).padStart(2, '0')}</span>
-                <h2 className="serif-i text-[24px] md:text-[30px]" style={{ color: 'var(--ink)' }}>{cat[lang].title}</h2>
+                <h2 className="display text-[22px] md:text-[28px]" style={{ color: 'var(--ink)', fontWeight: 600 }}>{cat[lang].title}</h2>
               </div>
               <p className="text-[14px] leading-relaxed mt-2 max-w-2xl md:pl-10" style={{ color: 'var(--ink-50)' }}>{cat[lang].desc}</p>
             </div>
