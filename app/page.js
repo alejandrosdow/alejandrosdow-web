@@ -52,7 +52,7 @@ const I18N = {
       title4: 'en internet',
       lead: 'Soy',
       leadName: 'Alejandro Marcos,',
-      leadDesc: 'CMO de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
+      leadDesc: 'Chief Brand Officer de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
       sub: 'Aquí te dejo dos regalos:',
       subA: 'mi libro',
       subAnd: 'y',
@@ -123,7 +123,7 @@ const I18N = {
       contactBtn: 'reservar 30 min →',
       sections: [
         { num: '01', title: 'Ahora', items: [
-          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet.' },
+          { date: '2018—', role: 'Chief Brand Officer', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'Lidero la marca y comunidad global de Team Heretics. De marca de nicho en esports a referencia global de entretenimiento en internet.' },
           { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Infrastructura de confianza humana para la era de la IA. Intersección de blockchain + IA. Advisor estratégico de marca y comunidad internacional.' },
           { date: '2018—', role: 'Freelance', org: 'Creadores y empresas', logo: '/assets/logo-freelance.png', desc: 'Narrativa, estrategia, construcción de marca, comunidad y monetización de audiencias.' },
         ]},
@@ -195,7 +195,7 @@ const I18N = {
         { title: 'Comunidad', desc: 'Pertenencia, no seguidores. Audiencia que entiende, comparte y defiende tu proyecto.' },
         { title: 'Sistemas', desc: 'Dirección creativa, distribución y crecimiento con estructura para escalar con criterio sin perder el alma.' },
       ],
-      workNote: 'Podemos colaborar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como CMO en Team Heretics, cojo muy pocos proyectos al año, pero puedo ponerte en contacto con personas que admiro y pueden ayudarte.',
+      workNote: 'Podemos colaborar de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida. Por mi rol como Chief Brand Officer en Team Heretics, cojo muy pocos proyectos al año, pero puedo ponerte en contacto con personas que admiro y pueden ayudarte.',
       sessionKicker: '// sesión gratuita',
       sessionTitle: 'Hablemos 30 minutos.',
       sessionLead: 'En este tiempo vamos a charlar, conocernos y tratar de entender qué no está funcionando y cuáles pueden ser los siguientes pasos.',
@@ -246,7 +246,7 @@ const I18N = {
       title4: 'on the internet',
       lead: "I'm",
       leadName: 'Alejandro Marcos,',
-      leadDesc: 'CMO at Team Heretics. I work at the intersection of entertainment, technology and digital culture.',
+      leadDesc: 'Chief Brand Officer at Team Heretics. I work at the intersection of entertainment, technology and digital culture.',
       sub: 'Here are two gifts for you:',
       subA: 'my book',
       subAnd: 'and',
@@ -317,7 +317,7 @@ const I18N = {
       contactBtn: 'book 30 min →',
       sections: [
         { num: '01', title: 'Now', items: [
-          { date: '2018—', role: 'CMO', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From a niche brand in esports to a global entertainment reference on the internet.' },
+          { date: '2018—', role: 'Chief Brand Officer', org: 'Team Heretics', logo: '/assets/logo-heretics.png', desc: 'I lead the global brand and community of Team Heretics. From a niche brand in esports to a global entertainment reference on the internet.' },
           { date: '2025—', role: 'Brand Advisor', org: 'GenLayer', logo: '/assets/logo-genlayer.png', desc: 'Human trust infrastructure for the AI era. Intersection of blockchain + AI. Strategic brand and international community advisor.' },
           { date: '2018—', role: 'Freelance', org: 'Creators and companies', logo: '/assets/logo-freelance.png', desc: 'Narrative, strategy, brand building, community and audience monetization.' },
         ]},
@@ -389,7 +389,7 @@ const I18N = {
         { title: 'Community', desc: 'Belonging, not followers. An audience that understands, shares and defends your project.' },
         { title: 'Systems', desc: 'Creative direction, distribution and growth with structure to scale with judgment without losing the soul.' },
       ],
-      workNote: 'We can collaborate in three ways: individual sessions, integrating part-time into your project, or building a custom team. Due to my role as CMO at Team Heretics, I only take on a few projects per year, but I can put you in touch with people I admire and who can help you.',
+      workNote: 'We can collaborate in three ways: individual sessions, integrating part-time into your project, or building a custom team. Due to my role as Chief Brand Officer at Team Heretics, I only take on a few projects per year, but I can put you in touch with people I admire and who can help you.',
       sessionKicker: '// free session',
       sessionTitle: 'Let\'s talk for 30 minutes.',
       sessionLead: 'In this time we\'ll chat, get to know each other and try to understand what\'s not working and what the next steps might be.',
