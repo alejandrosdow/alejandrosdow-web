@@ -123,8 +123,8 @@ const I18N = {
       lead: 'Construir marcas culturales implica trascender la venta de productos para crear iconos que reflejan valores, ideologías y contextos sociales.',
       leadEmph: 'Conectar > Llegar.',
       workLabel: 'En qué trabajo',
-      roleA: 'Si tuviera que definir mi trabajo, sería este: construyo marca, cultura y comunidad como ',
-      roleB: 'estratega creativo',
+      roleA: 'Mi rol podría definirse como alguien que construye marca, cultura y comunidad desde la ',
+      roleB: 'estrategia creativa',
       roleC: '. Lo he hecho liderando la marca de Team Heretics, asesorando a empresas y creadores, y fundando mis propios proyectos.',
       workIntro:
         'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
@@ -258,8 +258,8 @@ const I18N = {
       lead: 'Building cultural brands means going beyond selling products to become icons that reflect values, ideologies and social contexts.',
       leadEmph: 'Connect > Reach.',
       workLabel: 'What I work on',
-      roleA: 'If I had to define my work, it would be this: I build brand, culture and community as a ',
-      roleB: 'creative strategist',
+      roleA: 'My role could be defined as someone who builds brand, culture and community through ',
+      roleB: 'creative strategy',
       roleC: ". I've done it leading the Team Heretics brand, advising companies and creators, and founding my own projects.",
       workIntro:
         "Most brands don't fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can't build organically. They think the problem is reach. But the problem isn't visibility.",
