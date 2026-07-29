@@ -75,6 +75,32 @@ const PROJECTS = [
     media: null,
   },
   {
+    slug: 'heretics-adidas',
+    featured: true,
+    year: '2020',
+    org: 'Team Heretics × adidas',
+    type: { es: 'Campaña', en: 'Campaign' },
+    title: 'Lo que somos',
+    metricText: { es: 'Spot de campaña — equipación 2020 con adidas', en: 'Campaign film — 2020 kit with adidas' },
+    es: 'Campaña creativa junto a adidas alrededor del spot «Lo que somos»: la identidad de Heretics traducida al lenguaje de una de las marcas más grandes del mundo.',
+    en: 'A creative campaign with adidas around the film "Lo que somos": the Heretics identity translated into the language of one of the biggest brands in the world.',
+    media: null,
+    video: '438elJJb2c0',
+  },
+  {
+    slug: 'hereticshub',
+    featured: true,
+    year: '2021—',
+    org: 'Team Heretics',
+    type: { es: 'Espacios físicos', en: 'Physical spaces' },
+    title: 'HereticsHUB',
+    metricText: { es: 'Dos espacios físicos en Madrid', en: 'Two physical spaces in Madrid' },
+    es: 'La marca convertida en espacio físico: apertura de dos hubs en Madrid, punto de encuentro entre Team Heretics y su comunidad.',
+    en: 'The brand turned into physical space: two hubs opened in Madrid as a meeting point between Team Heretics and its community.',
+    media: null,
+    video: 's83_1YhmnQ4',
+  },
+  {
     slug: 'genlayer',
     featured: false,
     year: '2025—',
@@ -249,8 +275,52 @@ function CountUp({ n, pre = '', post = '', lang }) {
   );
 }
 
+// ============ YOUTUBE EMBED (click-to-play) ============
+function YTEmbed({ id, title }) {
+  const [play, setPlay] = useState(false);
+  return (
+    <div className="rounded-[18px] overflow-hidden relative aspect-video" style={{ border: '1px solid var(--hairline)', background: '#0b0a09' }}>
+      {play ? (
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="absolute inset-0 w-full h-full"
+          style={{ border: 0 }}
+        />
+      ) : (
+        <button
+          onClick={() => setPlay(true)}
+          className="absolute inset-0 w-full h-full group"
+          style={{ cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}
+          aria-label={`Play — ${title}`}
+        >
+          <img
+            src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span
+              className="flex items-center gap-2.5 rounded-full px-6 py-3.5 transition-transform duration-300 group-hover:scale-105"
+              style={{ background: 'rgba(19,18,16,0.88)', backdropFilter: 'blur(6px)' }}
+            >
+              <span style={{ color: 'var(--green)', fontSize: 13 }} aria-hidden>▶</span>
+              <span className="mono text-[11px] uppercase tracking-[0.16em]" style={{ color: 'var(--dark-text)' }}>Play</span>
+            </span>
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 // ============ MEDIA BLOCK (placeholder-aware) ============
 function Media({ project, aspect, t }) {
+  if (project.video) {
+    return <YTEmbed id={project.video} title={project.title} />;
+  }
   if (project.media) {
     return (
       <div className={`img-clean ${aspect}`} style={{ border: '1px solid var(--hairline)' }}>
