@@ -388,18 +388,27 @@ export default function Page() {
         className="fixed top-0 left-0 right-0 z-50 hairline-b"
         style={{ background: 'rgba(230,229,225,0.85)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
       >
-        <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between gap-2">
           <button onClick={() => go('home')} className="flex items-baseline gap-0.5 shrink-0" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
-            <span className="display text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
+            <span className="display text-[15px] md:text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
             <sup className="mono text-[9px]" style={{ color: 'var(--green)', filter: 'brightness(0.75)' }}>®</sup>
           </button>
-          <div className="flex items-center gap-5 md:gap-7">
+          <div className="flex items-center gap-2.5 md:gap-7">
             {['home', 'cv', 'blog', 'contact'].map((r) => (
               <button key={r} onClick={() => go(r)} className={`nav-link ${route === r ? 'active' : ''} ${r === 'home' ? 'hidden md:inline' : ''}`}>
                 {t.nav[r]}
               </button>
             ))}
-            <div className="mono text-[11px] flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
+            {/* mobile: single toggle to the other language */}
+            <button
+              onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+              className="mono text-[11px] md:hidden"
+              style={{ background: 'none', border: '1px solid var(--hairline)', borderRadius: 999, padding: '4px 9px', cursor: 'pointer', color: 'var(--ink-50)' }}
+            >
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+            {/* desktop: ES / EN pair */}
+            <div className="mono text-[11px] hidden md:flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
               <button onClick={() => setLang('es')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'es' ? 'var(--ink)' : 'inherit' }}>ES</button>
               <span>/</span>
               <button onClick={() => setLang('en')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'en' ? 'var(--ink)' : 'inherit' }}>EN</button>

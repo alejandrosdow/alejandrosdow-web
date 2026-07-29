@@ -264,7 +264,7 @@ body {
 }
 
 .nav-link {
-  font-size: 13.5px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--ink-50);
   transition: color 0.2s ease;
@@ -278,6 +278,11 @@ body {
 }
 .nav-link.active {
   color: var(--ink);
+}
+@media (min-width: 768px) {
+  .nav-link {
+    font-size: 13.5px;
+  }
 }
 
 .hairline-t {
