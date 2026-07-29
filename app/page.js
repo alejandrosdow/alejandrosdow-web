@@ -119,7 +119,8 @@ const I18N = {
     contact: {
       kicker: '/contacto — ¿charlamos?',
       title: 'Contacto.',
-      lead: 'Construir marcas culturales implica trascender la venta de productos para crear iconos que reflejan valores, ideologías y contextos sociales. Conectar > Llegar.',
+      lead: 'Construir marcas culturales implica trascender la venta de productos para crear iconos que reflejan valores, ideologías y contextos sociales.',
+      leadEmph: 'Conectar > Llegar.',
       workLabel: 'En qué trabajo',
       roleA: 'Si tuviera que definir mi trabajo, sería este: construyo marcas, cultura y comunidad como ',
       roleB: 'estratega creativo',
@@ -252,7 +253,8 @@ const I18N = {
     contact: {
       kicker: '/contact — shall we chat?',
       title: 'Contact.',
-      lead: 'Building cultural brands means going beyond selling products to become icons that reflect values, ideologies and social contexts. Connect > Reach.',
+      lead: 'Building cultural brands means going beyond selling products to become icons that reflect values, ideologies and social contexts.',
+      leadEmph: 'Connect > Reach.',
       workLabel: 'What I work on',
       roleA: 'If I had to define my work, it would be this: I build brands, culture and community as a ',
       roleB: 'creative strategist',
@@ -861,8 +863,11 @@ function Contact({ t }) {
     <main className="max-w-5xl mx-auto px-5 md:px-8 pt-14 md:pt-24 pb-20 md:pb-28">
       <div className="microlabel mb-8 rise">{t.contact.kicker}</div>
       <h1 className="display text-[clamp(44px,7.5vw,96px)] rise" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.contact.title}</h1>
-      <p className="serif-i text-[clamp(20px,2.6vw,28px)] mt-4 mb-20 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
+      <p className="serif-i text-[clamp(20px,2.6vw,28px)] mt-4 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
         {t.contact.lead}
+      </p>
+      <p className="display text-[clamp(22px,3vw,32px)] mt-5 mb-20 rise" style={{ animationDelay: '300ms', color: 'var(--ink)', fontWeight: 600, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
+        {t.contact.leadEmph}
       </p>
 
       {/* Work */}
