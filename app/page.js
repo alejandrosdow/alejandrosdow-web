@@ -54,6 +54,7 @@ const I18N = {
       ctaA: 'Ayudo a personas, creadores y empresas a construir algo que la gente ',
       ctaB: 'entienda, recuerde y quiera hacer suyo',
       ctaC: '.',
+      ctaRole: 'Podemos definir mi trabajo como alguien que construye marcas, cultura y comunidad como estratega creativo. Lo he hecho desde dentro (Team Heretics), desde fuera (advisor y freelance) y fundando varios proyectos.',
       ctaSub: '¿Charlamos 30 minutos?',
       ctaBtn: 'Reservar sesión gratuita',
     },
@@ -189,6 +190,7 @@ const I18N = {
       ctaA: 'I help people, creators and companies build something people ',
       ctaB: 'understand, remember and want to make their own',
       ctaC: '.',
+      ctaRole: "You could define my work as someone who builds brands, culture and community as a creative strategist. I've done it from the inside (Team Heretics), from the outside (advisor and freelance) and by founding several projects.",
       ctaSub: 'Shall we talk for 30 minutes?',
       ctaBtn: 'Book a free session',
     },
@@ -640,12 +642,17 @@ function Home({ t, go }) {
               {t.home.ctaC}
             </h2>
           </Reveal>
-          <Reveal delay={120}>
+          <Reveal delay={100}>
+            <p className="text-[15px] md:text-[16px] leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: 'var(--ink-50)' }}>
+              {t.home.ctaRole}
+            </p>
+          </Reveal>
+          <Reveal delay={160}>
             <p className="serif-i text-[clamp(20px,2.6vw,28px)] mb-10" style={{ color: 'var(--ink-50)' }}>
               {t.home.ctaSub}
             </p>
           </Reveal>
-          <Reveal delay={220}>
+          <Reveal delay={240}>
             <a href={CALENDLY} target="_blank" rel="noreferrer" className="pill-dark">
               {t.home.ctaBtn} <span aria-hidden>→</span>
             </a>
