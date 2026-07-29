@@ -522,8 +522,8 @@ function Home({ t, go }) {
         <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
           <div className="md:col-span-4">
             <Reveal>
-              <div className="img-clean" style={{ background: 'var(--bg-soft)', border: '1px solid var(--hairline)' }}>
-                <img src="/assets/internet-surfer-cover.png" alt="Internet Surfer — portada del libro" style={{ objectFit: 'contain', aspectRatio: '3/4' }} />
+              <div className="img-clean" style={{ border: '1px solid var(--hairline)' }}>
+                <img src="/assets/internet-surfer-cover.png" alt="Internet Surfer — portada del libro" style={{ height: 'auto' }} />
               </div>
             </Reveal>
           </div>
