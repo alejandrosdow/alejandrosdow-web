@@ -121,6 +121,9 @@ const I18N = {
       title: 'Contacto.',
       lead: 'Construir marcas culturales implica trascender la venta de productos para crear iconos que reflejan valores, ideologías y contextos sociales. Conectar > Llegar.',
       workLabel: 'En qué trabajo',
+      roleA: 'Si tuviera que definir mi trabajo, sería este: construyo marcas, cultura y comunidad como ',
+      roleB: 'estratega creativo',
+      roleC: '. Lo he hecho desde dentro (Team Heretics), desde fuera (advisor y freelance) y desde cero (fundador). Esa mezcla es mi manera de trabajar.',
       workIntro:
         'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
       workIntroHighlight:
@@ -251,6 +254,9 @@ const I18N = {
       title: 'Contact.',
       lead: 'Building cultural brands means going beyond selling products to become icons that reflect values, ideologies and social contexts. Connect > Reach.',
       workLabel: 'What I work on',
+      roleA: 'If I had to define my work, it would be this: I build brands, culture and community as a ',
+      roleB: 'creative strategist',
+      roleC: ". I've done it from the inside (Team Heretics), from the outside (advisor and freelance) and from scratch (founder). That mix is the way I work.",
       workIntro:
         "Most brands don't fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can't build organically. They think the problem is reach. But the problem isn't visibility.",
       workIntroHighlight:
@@ -864,7 +870,14 @@ function Contact({ t }) {
         <Reveal>
           <div className="microlabel mb-10 hairline-t pt-6">{t.contact.workLabel}</div>
         </Reveal>
-        <Reveal delay={80}>
+        <Reveal delay={60}>
+          <p className="text-[17px] md:text-[19px] leading-relaxed max-w-3xl mb-8" style={{ color: 'var(--ink)' }}>
+            {t.contact.roleA}
+            <span className="serif-i">{t.contact.roleB}</span>
+            {t.contact.roleC}
+          </p>
+        </Reveal>
+        <Reveal delay={120}>
           <p className="text-[16px] md:text-[17px] leading-relaxed max-w-3xl mb-6" style={{ color: 'var(--ink-70)' }}>
             {t.contact.workIntro}
           </p>
