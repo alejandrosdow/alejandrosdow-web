@@ -28,7 +28,6 @@ const I18N = {
         { label: 'Leer el blog', target: 'blog' },
       ],
       photoLabel: 'alejandro — madrid, 2026',
-      stmtLabel: 'Manifiesto',
       stmtA: 'Soy Alejandro Marcos, ',
       stmtB: 'Chief Brand Officer',
       stmtC: ' de Team Heretics. Construyo marcas que viven en la ',
@@ -46,7 +45,6 @@ const I18N = {
         'Casos reales de Team Heretics y proyectos en los que he trabajado',
       ],
       bookCTA: 'Descargar gratis',
-      bookMeta: 'PDF · 2.4 MB · 2,841 descargas · sin email gate',
       libLabel: '02 — Biblioteca personal',
       libTitle1: 'Para crear y pensar',
       libTitle2: 'mejor.',
@@ -139,7 +137,7 @@ const I18N = {
         'En este tiempo vamos a charlar, conocernos y tratar de entender qué no está funcionando y cuáles pueden ser los siguientes pasos.',
       sessionBtn: 'Agendar sesión gratuita',
     },
-    footer: { status: 'Disponible para pocas colaboraciones al año', copy: '© 2008–2026', made: 'hand-coded en madrid' },
+    footer: { copy: '© 2008–2026' },
   },
   en: {
     nav: { home: 'Home', cv: 'Career', blog: 'Blog', contact: 'Contact' },
@@ -160,7 +158,6 @@ const I18N = {
         { label: 'Read the blog', target: 'blog' },
       ],
       photoLabel: 'alejandro — madrid, 2026',
-      stmtLabel: 'Manifesto',
       stmtA: "I'm Alejandro Marcos, ",
       stmtB: 'Chief Brand Officer',
       stmtC: ' at Team Heretics. I build brands that live in ',
@@ -178,7 +175,6 @@ const I18N = {
         "Real cases from Team Heretics and projects I've worked on",
       ],
       bookCTA: 'Download free',
-      bookMeta: 'PDF · 2.4 MB · 2,841 downloads · no email gate',
       libLabel: '02 — Personal library',
       libTitle1: 'To create and think',
       libTitle2: 'better.',
@@ -270,7 +266,7 @@ const I18N = {
         "In this time we'll chat, get to know each other and try to understand what's not working and what the next steps might be.",
       sessionBtn: 'Book free session',
     },
-    footer: { status: 'Available for a few collaborations a year', copy: '© 2008–2026', made: 'hand-coded in madrid' },
+    footer: { copy: '© 2008–2026' },
   },
 };
 
@@ -303,6 +299,67 @@ function Reveal({ children, delay = 0, className = '' }) {
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
+    </div>
+  );
+}
+
+// ============ HERO PHOTO — 3D tilt + inner parallax ============
+function HeroPhoto({ label }) {
+  const wrapRef = useRef(null);
+  const [tilt, setTilt] = useState({ rx: 0, ry: 0 });
+  const [hover, setHover] = useState(false);
+  const reduced = useRef(false);
+
+  useEffect(() => {
+    reduced.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }, []);
+
+  const onMove = (e) => {
+    if (reduced.current || !wrapRef.current) return;
+    const r = wrapRef.current.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    setTilt({ rx: -py * 9, ry: px * 9 });
+  };
+  const onLeave = () => {
+    setTilt({ rx: 0, ry: 0 });
+    setHover(false);
+  };
+
+  return (
+    <div>
+      <div
+        ref={wrapRef}
+        style={{ perspective: '900px' }}
+        onMouseMove={onMove}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={onLeave}
+      >
+        <div
+          className="img-clean aspect-square max-w-[340px] md:max-w-none mx-auto"
+          style={{
+            transform: `rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg) scale(${hover ? 1.015 : 1})`,
+            transformStyle: 'preserve-3d',
+            transition: 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease',
+            boxShadow: hover
+              ? '0 34px 70px -34px rgba(22,21,19,0.4)'
+              : '0 16px 44px -28px rgba(22,21,19,0.28)',
+            willChange: 'transform',
+          }}
+        >
+          <img
+            src="/assets/alejandro-foto.jpg"
+            alt="Alejandro Marcos"
+            style={{
+              transform: `scale(1.08) translateX(${tilt.ry * 1.4}px) translateY(${-tilt.rx * 1.4}px)`,
+              transition: 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+            }}
+          />
+        </div>
+      </div>
+      <div className="mono text-[10px] uppercase tracking-[0.16em] mt-4 text-center" style={{ color: 'var(--ink-35)' }}>
+        {label}
+      </div>
     </div>
   );
 }
@@ -361,11 +418,7 @@ export default function Page() {
 
       {/* ============ FOOTER ============ */}
       <footer className="hairline-t">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row md:items-center justify-between gap-5">
-          <div className="flex items-center gap-2.5 mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-50)' }}>
-            <span className="w-1.5 h-1.5 rounded-full pulse-dot inline-block" style={{ background: 'var(--green)', filter: 'brightness(0.85)' }} />
-            {t.footer.status}
-          </div>
+        <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-wrap items-center justify-between gap-5">
           <div className="flex items-center gap-5 mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-50)' }}>
             <a href="https://x.com/alejandrosdow" target="_blank" rel="noreferrer" className="link-u">X</a>
             <a href="https://instagram.com/alejandrosdow" target="_blank" rel="noreferrer" className="link-u">IG</a>
@@ -373,7 +426,7 @@ export default function Page() {
             <a href={SUBSTACK} target="_blank" rel="noreferrer" className="link-u">Substack</a>
           </div>
           <div className="mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-35)' }}>
-            {t.footer.copy} · {t.footer.made}
+            {t.footer.copy}
           </div>
         </div>
       </footer>
@@ -427,12 +480,7 @@ function Home({ t, go }) {
             </div>
           </div>
           <div className="md:col-span-4 rise" style={{ animationDelay: '400ms' }}>
-            <div className="img-clean aspect-square max-w-[340px] md:max-w-none mx-auto">
-              <img src="/assets/alejandro-foto.jpg" alt="Alejandro Marcos" />
-            </div>
-            <div className="mono text-[10px] uppercase tracking-[0.16em] mt-3 text-center" style={{ color: 'var(--ink-35)' }}>
-              {t.home.photoLabel}
-            </div>
+            <HeroPhoto label={t.home.photoLabel} />
           </div>
         </div>
       </section>
@@ -441,11 +489,6 @@ function Home({ t, go }) {
       <section style={{ background: 'var(--dark)' }}>
         <div className="max-w-4xl mx-auto px-5 md:px-8 py-24 md:py-36 text-center">
           <Reveal>
-            <div className="microlabel mb-10" style={{ color: 'var(--dark-muted)' }}>
-              {t.home.stmtLabel}
-            </div>
-          </Reveal>
-          <Reveal delay={100}>
             <p className="display text-[clamp(28px,4.6vw,52px)]" style={{ color: 'var(--dark-text)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
               {t.home.stmtA}
               <span className="serif-i">{t.home.stmtB}</span>
@@ -454,7 +497,7 @@ function Home({ t, go }) {
               {t.home.stmtE}
             </p>
           </Reveal>
-          <Reveal delay={200}>
+          <Reveal delay={150}>
             <p className="text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto mt-12" style={{ color: 'var(--dark-muted)' }}>
               {t.home.manifesto}
             </p>
@@ -493,11 +536,10 @@ function Home({ t, go }) {
               </ul>
             </Reveal>
             <Reveal delay={260}>
-              <div className="flex flex-wrap items-center gap-5 mt-10">
+              <div className="mt-10">
                 <a href="/assets/internet-surfer.pdf" download="Internet-Surfer-Alejandro-Marcos.pdf" className="pill-dark">
                   {t.home.bookCTA} <span aria-hidden>↓</span>
                 </a>
-                <span className="mono text-[11px] uppercase tracking-[0.12em]" style={{ color: 'var(--ink-35)' }}>{t.home.bookMeta}</span>
               </div>
             </Reveal>
           </div>

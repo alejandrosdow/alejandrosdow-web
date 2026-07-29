@@ -158,7 +158,6 @@ export default function BlogPage() {
       <footer className="hairline-t">
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-wrap items-center justify-between gap-4 mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-35)' }}>
           <span>© 2008–2026 alejandro marcos</span>
-          <span>hand-coded en madrid</span>
         </div>
       </footer>
     </div>
