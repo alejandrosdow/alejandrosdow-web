@@ -51,9 +51,10 @@ const I18N = {
       libDesc:
         'Una pequeña biblioteca de libros, recursos y referencias que han formado mi manera de pensar sobre marcas, comunidades e internet. Se actualiza constantemente.',
       libSeeAll: 'Ver biblioteca completa',
-      ctaLabel: '¿Seguimos hablando?',
-      ctaTitle1: 'Hablemos',
-      ctaTitle2: '30 minutos.',
+      ctaA: 'Ayudo a personas, creadores y empresas a construir algo que la gente ',
+      ctaB: 'entienda, recuerde y quiera hacer suyo',
+      ctaC: '.',
+      ctaSub: '¿Charlamos 30 minutos?',
       ctaBtn: 'Reservar sesión gratuita',
     },
     cv: {
@@ -181,9 +182,10 @@ const I18N = {
       libDesc:
         'A small library of books, resources and references that shaped the way I think about brands, communities and the internet. Updated constantly.',
       libSeeAll: 'See full library',
-      ctaLabel: 'Shall we keep talking?',
-      ctaTitle1: "Let's talk for",
-      ctaTitle2: '30 minutes.',
+      ctaA: 'I help people, creators and companies build something people ',
+      ctaB: 'understand, remember and want to make their own',
+      ctaC: '.',
+      ctaSub: 'Shall we talk for 30 minutes?',
       ctaBtn: 'Book a free session',
     },
     cv: {
@@ -622,16 +624,20 @@ function Home({ t, go }) {
 
       {/* ===== CTA ===== */}
       <section className="hairline-t">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 py-24 md:py-36 text-center">
+        <div className="max-w-4xl mx-auto px-5 md:px-8 py-24 md:py-36 text-center">
           <Reveal>
-            <div className="microlabel mb-8">{t.home.ctaLabel}</div>
-          </Reveal>
-          <Reveal delay={100}>
-            <h2 className="display text-[clamp(40px,6.5vw,84px)] mb-10" style={{ color: 'var(--ink)' }}>
-              {t.home.ctaTitle1} <span className="serif-i">{t.home.ctaTitle2}</span>
+            <h2 className="display text-[clamp(26px,4.2vw,48px)] mb-8" style={{ color: 'var(--ink)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
+              {t.home.ctaA}
+              <span className="serif-i">{t.home.ctaB}</span>
+              {t.home.ctaC}
             </h2>
           </Reveal>
-          <Reveal delay={200}>
+          <Reveal delay={120}>
+            <p className="serif-i text-[clamp(20px,2.6vw,28px)] mb-10" style={{ color: 'var(--ink-50)' }}>
+              {t.home.ctaSub}
+            </p>
+          </Reveal>
+          <Reveal delay={220}>
             <a href={CALENDLY} target="_blank" rel="noreferrer" className="pill-dark">
               {t.home.ctaBtn} <span aria-hidden>→</span>
             </a>
