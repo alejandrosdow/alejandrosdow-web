@@ -112,7 +112,7 @@ const I18N = {
       { title: 'Hitmakers', author: 'Ana Andjelic', note: 'Cómo las marcas influyen en la cultura y por qué los hits no son accidentes. Lectura obligatoria si construyes marca hoy.', tag: 'Branding · 2024', cover: '/assets/book-hitmakers.webp' },
       { title: 'Buena Estrategia, Mala Estrategia', author: 'Richard P. Rumelt', note: 'El libro que más me ha cambiado la forma de pensar en negocio. Distingue entre estrategia real y palabras vacías con autoridad.', tag: 'Estrategia · 2011', cover: '/assets/book-buena-mala-estrategia.webp' },
       { title: 'El Problema de los Tres Cuerpos', author: 'Cixin Liu', note: 'Ciencia ficción china que te explota la cabeza. Cuando construyes marcas necesitas ficción para imaginar futuros, y este libro entrena ese músculo.', tag: 'Ficción · 2008', cover: '/assets/book-tres-cuerpos.webp' },
-      { title: 'El Punto Clave', author: 'Malcolm Gladwell', note: 'El libro que en su día explicó por qué las cosas se vuelven virales. Sigue siendo la base para entender cómo se propagan ideas y marcas.', tag: 'Cultura · 2000', cover: '/assets/book-punto-clave.webp' },
+      { title: 'The Sovereign Individual', author: 'J. D. Davidson & W. Rees-Mogg', note: 'Escrito en 1997, predijo el mundo en el que vivimos: dinero digital, soberanía individual y el poder pasando de las instituciones a las personas. Cada año que pasa se lee más como un manual.', tag: 'Futuro · 1997', cover: '/assets/book-sovereign-individual.jpg' },
       { title: 'Made in Japan', author: 'Akio Morita', note: 'La autobiografía del fundador de Sony. Cómo se construye una empresa desde cero con visión cultural a largo plazo. Atemporal.', tag: 'Negocio · 1986', cover: '/assets/book-made-in-japan.webp' },
     ],
     contact: {
@@ -241,7 +241,7 @@ const I18N = {
       { title: 'Hitmakers', author: 'Ana Andjelic', note: "How brands influence culture and why hits aren't accidents. Mandatory reading if you build brand today.", tag: 'Branding · 2024', cover: '/assets/book-hitmakers.webp' },
       { title: 'Good Strategy, Bad Strategy', author: 'Richard P. Rumelt', note: 'The book that changed the way I think about business most. Distinguishes real strategy from authoritative-sounding empty words.', tag: 'Strategy · 2011', cover: '/assets/book-buena-mala-estrategia.webp' },
       { title: 'The Three-Body Problem', author: 'Cixin Liu', note: 'Chinese sci-fi that blows your mind. When you build brands you need fiction to imagine futures, and this book trains that muscle.', tag: 'Fiction · 2008', cover: '/assets/book-tres-cuerpos.webp' },
-      { title: 'The Tipping Point', author: 'Malcolm Gladwell', note: 'The book that originally explained why things go viral. Still the foundation for understanding how ideas and brands spread.', tag: 'Culture · 2000', cover: '/assets/book-punto-clave.webp' },
+      { title: 'The Sovereign Individual', author: 'J. D. Davidson & W. Rees-Mogg', note: 'Written in 1997, it predicted the world we live in: digital money, individual sovereignty and power shifting from institutions to people. Every year it reads more like a manual.', tag: 'Future · 1997', cover: '/assets/book-sovereign-individual.jpg' },
       { title: 'Made in Japan', author: 'Akio Morita', note: "The autobiography of Sony's founder. How you build a company from scratch with long-term cultural vision. Timeless.", tag: 'Business · 1986', cover: '/assets/book-made-in-japan.webp' },
     ],
     contact: {
