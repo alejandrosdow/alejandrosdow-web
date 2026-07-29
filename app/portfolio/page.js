@@ -32,6 +32,8 @@ const PROJECTS = [
     org: 'Fundador · Dirección creativa',
     type: { es: 'Marca · Música', en: 'Brand · Music' },
     title: 'Club113 + 113 Sessions',
+    titleImg: '/assets/portfolio/club113/club113-mascota.png',
+    titleImgH: 96,
     metric: { n: 579, pre: '+', post: 'M' },
     metricText: { es: '+579M de impresiones y 645k seguidores en 11 meses', en: '+579M impressions and 645k followers in 11 months' },
     es: 'Creé y lideré Club113 sus dos primeros años: naming, identidad y gran parte de la ejecución. Un hito cultural mainstream en España — prensa, televisión, invitados como David Bisbal o Belén Esteban y cerca de 1M€ de facturación. Con las 113 Sessions apostamos por el talento musical emergente: BarryB, Midas Alonso, LuchoRK, John Pollón. Samsung entró como primer patrocinador y acabó comprando el proyecto entero.',
@@ -67,7 +69,9 @@ const PROJECTS = [
     metricText: { es: '+40M de visitas entre contenido principal y satélites', en: '+40M views across main and satellite content' },
     es: 'Contenidos originales entendiendo la fórmula de YouTube antes que nadie en el mercado hispanohablante. Más de 40 millones de visitas entre el contenido principal y los satélites. Especiales como el de San Valentín: +100M de impresiones, 29,7M de audiencia sumada y cinco días seguidos en tendencias nacionales de YouTube.',
     en: 'Original content built on an understanding of the YouTube formula before anyone else in the Spanish-speaking market. Over 40 million views across main and satellite content. Specials like San Valentín: +100M impressions, a combined audience of 29.7M and five straight days on national YouTube trending.',
-    media: '/assets/portfolio/originals/heretics-originals.jpg',
+    titleImg: '/assets/portfolio/originals/originals-logo.png',
+    titleImgH: 64,
+    media: null,
     videos: [{ id: 'DUmFVeMArXY', label: 'Adivina el: Calvo / Preso / Virgen — Heretics Originals' }],
   },
   {
@@ -148,15 +152,27 @@ const PROJECTS = [
   },
   {
     slug: 'cool-kids-machine',
-    featured: false,
-    year: 'Concepto',
-    org: 'Proyecto propio',
+    featured: true,
+    year: '2025',
+    org: 'Proyecto propio · Concepto',
     type: { es: 'Moda · Gaming', en: 'Fashion · Gaming' },
     title: 'Cool Kids Machine',
+    titleImg: '/assets/portfolio/cool-kids-machine/ckm-logo.jpg',
+    titleImgH: 110,
+    titleImgBlend: true,
     metricText: { es: 'La marca que nunca salió', en: 'The brand that never launched' },
-    es: 'Una propuesta de marca de ropa para fusionar las culturas del gaming y de internet. Nunca llegó a salir — quedan los bocetos, los diseños y el documento de narrativa.',
-    en: 'A clothing brand concept to fuse gaming and internet culture. It never launched — the sketches, designs and narrative document remain.',
+    es: 'Cool Kids Machine es internet, gaming y cultura: la marca de ropa para los nacidos a partir de los 90, la generación que ve el gaming como el elemento más influyente de la cultura popular del siglo XXI. Streetwear con los códigos de ese imaginario — packaging en forma de juego de PS2 o memory card, colaboraciones soñadas con Tuenti, Konami o Blackberry. Nunca llegó a salir: quedan la narrativa, los diseños y este moodboard.',
+    en: 'Cool Kids Machine is internet, gaming and culture: the clothing brand for those born from the 90s on, the generation that sees gaming as the most influential force in 21st-century pop culture. Streetwear built on the codes of that imaginary — packaging shaped like a PS2 game or a memory card, dream collabs with Tuenti, Konami or Blackberry. It never launched: the narrative, the designs and this moodboard remain.',
     media: null,
+    collage: [
+      { src: '/assets/portfolio/cool-kids-machine/mood-referencias.jpg', span: 2 },
+      { src: '/assets/portfolio/cool-kids-machine/mood-tee-roja.jpg' },
+      { src: '/assets/portfolio/cool-kids-machine/mood-hoodie.jpg' },
+      { src: '/assets/portfolio/cool-kids-machine/mood-disenos.jpg', span: 2 },
+      { src: '/assets/portfolio/cool-kids-machine/mood-tee-graffiti.jpg' },
+      { src: '/assets/portfolio/cool-kids-machine/mood-pantone.jpg' },
+    ],
+    collageLabel: { es: 'Moodboard — narrativa, producto y referencias', en: 'Moodboard — narrative, product and references' },
   },
   {
     slug: 'eventos-game',
@@ -326,7 +342,23 @@ function YTEmbed({ id, title }) {
 }
 
 // ============ MEDIA BLOCK (placeholder-aware) ============
-function Media({ project, aspect, t }) {
+function Media({ project, aspect, t, lang }) {
+  if (project.collage) {
+    return (
+      <div>
+        <div className="grid grid-cols-2 gap-3">
+          {project.collage.map((c, i) => (
+            <div key={i} className={`img-clean ${c.span === 2 ? 'col-span-2' : ''}`} style={{ border: '1px solid var(--hairline)' }}>
+              <img src={c.src} alt={project.title} style={{ height: 'auto' }} />
+            </div>
+          ))}
+        </div>
+        {project.collageLabel && (
+          <div className="mono text-[10px] uppercase tracking-[0.14em] mt-2" style={{ color: 'var(--ink-35)' }}>{project.collageLabel[lang] || ''}</div>
+        )}
+      </div>
+    );
+  }
   if (project.videos || project.media || project.video) {
     return (
       <div className="flex flex-col gap-4">
@@ -437,7 +469,7 @@ export default function PortfolioPage() {
             <div className="grid md:grid-cols-12 gap-6 md:gap-10 items-start">
               <div className={`md:col-span-7 ${i % 2 === 1 ? 'md:order-2' : ''}`}>
                 <Reveal>
-                  <Media project={p} aspect="aspect-[16/10]" t={t} />
+                  <Media project={p} aspect="aspect-[16/10]" t={t} lang={lang} />
                 </Reveal>
               </div>
               <div className={`md:col-span-5 ${i % 2 === 1 ? 'md:order-1' : ''}`}>
@@ -449,9 +481,13 @@ export default function PortfolioPage() {
                     <span>·</span>
                     <span>{p.org}</span>
                   </div>
-                  <h2 className="display text-[clamp(28px,3.4vw,38px)]" style={{ color: 'var(--ink)', letterSpacing: '-0.025em' }}>
-                    {p.title}
-                  </h2>
+                  {p.titleImg ? (
+                    <img src={p.titleImg} alt={p.title} style={{ height: p.titleImgH || 64, width: 'auto', maxWidth: '100%', ...(p.titleImgBlend ? { mixBlendMode: 'multiply' } : {}) }} />
+                  ) : (
+                    <h2 className="display text-[clamp(28px,3.4vw,38px)]" style={{ color: 'var(--ink)', letterSpacing: '-0.025em' }}>
+                      {p.title}
+                    </h2>
+                  )}
                   <div className="serif-i text-[17px] mt-1 mb-5" style={{ color: 'var(--ink-50)' }}>{p.type[lang]}</div>
                   {p.metric ? (
                     <div className="mono text-[13px] uppercase tracking-[0.1em] mb-4" style={{ color: 'var(--ink)' }}>
