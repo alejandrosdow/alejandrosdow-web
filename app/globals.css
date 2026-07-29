@@ -202,9 +202,17 @@ body {
     box-shadow 0.25s ease;
 }
 .pill-dark:hover {
-  background: transparent;
+  background: var(--green);
+  border-color: var(--green);
   color: var(--ink);
   transform: translateY(-1px);
+}
+.pill-dark > span {
+  color: var(--green);
+  transition: color 0.25s ease;
+}
+.pill-dark:hover > span {
+  color: var(--ink);
 }
 
 /* pill on dark background */
@@ -228,8 +236,9 @@ body {
     transform 0.25s ease;
 }
 .pill-invert:hover {
-  background: transparent;
-  color: var(--dark-text);
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--dark);
   transform: translateY(-1px);
 }
 

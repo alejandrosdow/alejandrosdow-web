@@ -336,7 +336,7 @@ function HeroPhoto({ label }) {
         onMouseLeave={onLeave}
       >
         <div
-          className="img-clean aspect-square max-w-[340px] md:max-w-none mx-auto"
+          className="img-clean aspect-square max-w-[240px] md:max-w-none mx-auto"
           style={{
             transform: `rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg) scale(${hover ? 1.015 : 1})`,
             transformStyle: 'preserve-3d',
@@ -348,7 +348,7 @@ function HeroPhoto({ label }) {
           }}
         >
           <img
-            src="/assets/alejandro-foto.jpg"
+            src="/assets/foto-alejandro.jpg"
             alt="Alejandro Marcos"
             style={{
               transform: `scale(1.08) translateX(${tilt.ry * 1.4}px) translateY(${-tilt.rx * 1.4}px)`,
@@ -528,7 +528,7 @@ function Home({ t, go }) {
         <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
           <div className="md:col-span-4">
             <Reveal>
-              <div className="img-clean" style={{ border: '1px solid var(--hairline)' }}>
+              <div className="img-clean max-w-[240px] md:max-w-none mx-auto md:mx-0" style={{ border: '1px solid var(--hairline)' }}>
                 <img src="/assets/internet-surfer-cover.png" alt="Internet Surfer — portada del libro" style={{ height: 'auto' }} />
               </div>
             </Reveal>
