@@ -10,7 +10,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // ============ I18N DICTIONARY ============
 const I18N = {
   es: {
-    nav: { home: 'Home', cv: 'Trayectoria', blog: 'Blog', contact: 'Contacto' },
+    nav: { home: 'Home', cv: 'Trayectoria', blog: 'Blog', library: 'Biblioteca', contact: 'Contacto' },
     home: {
       kicker: 'Chief Brand Officer — Team Heretics',
       title1: 'Construir',
@@ -140,7 +140,7 @@ const I18N = {
     footer: { copy: '© 2008–2026' },
   },
   en: {
-    nav: { home: 'Home', cv: 'Career', blog: 'Blog', contact: 'Contact' },
+    nav: { home: 'Home', cv: 'Career', blog: 'Blog', library: 'Library', contact: 'Contact' },
     home: {
       kicker: 'Chief Brand Officer — Team Heretics',
       title1: 'Building',
@@ -388,17 +388,12 @@ export default function Page() {
         className="fixed top-0 left-0 right-0 z-50 hairline-b"
         style={{ background: 'rgba(230,229,225,0.85)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
       >
-        <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between gap-2">
-          <button onClick={() => go('home')} className="flex items-baseline gap-0.5 shrink-0" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
-            <span className="display text-[15px] md:text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
-            <sup className="mono text-[9px]" style={{ color: 'var(--green)', filter: 'brightness(0.75)' }}>®</sup>
-          </button>
-          <div className="flex items-center gap-2.5 md:gap-7">
-            {['home', 'cv', 'blog', 'contact'].map((r) => (
-              <button key={r} onClick={() => go(r)} className={`nav-link ${route === r ? 'active' : ''} ${r === 'home' ? 'hidden md:inline' : ''}`}>
-                {t.nav[r]}
-              </button>
-            ))}
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-0 md:h-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 md:gap-2">
+          <div className="flex items-center justify-between">
+            <button onClick={() => go('home')} className="flex items-baseline gap-0.5 shrink-0" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
+              <span className="display text-[16px] md:text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
+              <sup className="mono text-[9px]" style={{ color: 'var(--green)', filter: 'brightness(0.75)' }}>®</sup>
+            </button>
             {/* mobile: single toggle to the other language */}
             <button
               onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
@@ -406,6 +401,17 @@ export default function Page() {
               style={{ background: 'none', border: '1px solid var(--hairline)', borderRadius: 999, padding: '4px 9px', cursor: 'pointer', color: 'var(--ink-50)' }}
             >
               {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+          </div>
+          <div className="flex items-center gap-4 md:gap-7">
+            {['home', 'cv', 'blog'].map((r) => (
+              <button key={r} onClick={() => go(r)} className={`nav-link ${route === r ? 'active' : ''} ${r === 'home' ? 'hidden md:inline' : ''}`}>
+                {t.nav[r]}
+              </button>
+            ))}
+            <a href="/biblioteca" className="nav-link">{t.nav.library}</a>
+            <button onClick={() => go('contact')} className={`nav-link ${route === 'contact' ? 'active' : ''}`}>
+              {t.nav.contact}
             </button>
             {/* desktop: ES / EN pair */}
             <div className="mono text-[11px] hidden md:flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
@@ -418,7 +424,7 @@ export default function Page() {
       </nav>
 
       {/* ============ ROUTES ============ */}
-      <div key={`${route}-${lang}`} className="route-in flex-1 pt-16">
+      <div key={`${route}-${lang}`} className="route-in flex-1 pt-[92px] md:pt-16">
         {route === 'home' && <Home t={t} go={go} />}
         {route === 'cv' && <CV t={t} />}
         {route === 'blog' && <Blog t={t} />}
