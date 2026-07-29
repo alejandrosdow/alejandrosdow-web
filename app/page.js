@@ -125,7 +125,7 @@ const I18N = {
       workLabel: 'En qué trabajo',
       roleA: 'Si tuviera que definir mi trabajo, sería este: construyo marcas, cultura y comunidad como ',
       roleB: 'estratega creativo',
-      roleC: '. Lo he hecho desde dentro (Team Heretics), desde fuera (advisor y freelance) y desde cero (fundador). Esa mezcla es mi manera de trabajar.',
+      roleC: '. Lo he hecho liderando la marca de Team Heretics, asesorando a empresas y creadores, y fundando mis propios proyectos.',
       workIntro:
         'La mayoría de las marcas no fallan por falta de producto o contenido. Fallan por falta de narrativa clara. Confunden seguidores con comunidad y recurren al paid media para compensar lo que no logran construir de forma orgánica. Creen que el problema es llegar. Pero el problema no es la visibilidad.',
       workIntroHighlight:
@@ -260,7 +260,7 @@ const I18N = {
       workLabel: 'What I work on',
       roleA: 'If I had to define my work, it would be this: I build brands, culture and community as a ',
       roleB: 'creative strategist',
-      roleC: ". I've done it from the inside (Team Heretics), from the outside (advisor and freelance) and from scratch (founder). That mix is the way I work.",
+      roleC: ". I've done it leading the Team Heretics brand, advising companies and creators, and founding my own projects.",
       workIntro:
         "Most brands don't fail because of a product or content problem. They fail because of a clarity problem. They confuse followers with community and lean on paid media to make up for what they can't build organically. They think the problem is reach. But the problem isn't visibility.",
       workIntroHighlight:
