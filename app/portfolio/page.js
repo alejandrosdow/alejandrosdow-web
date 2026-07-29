@@ -18,10 +18,12 @@ const PROJECTS = [
     org: 'Team Heretics × Valorant',
     type: { es: 'Marca', en: 'Brand' },
     title: 'Los Niños',
-    metricText: { es: 'Millones de € en ventas · creciendo cada año', en: 'Millions of € in sales · growing every year' },
-    es: 'Un concepto que no nació en un brainstorming, sino en un vlog. Lo convertimos en personalidad, emoción y causa de la comunidad de Heretics — hasta hacerse skin oficial de Valorant con millones de euros en ventas creciendo año a año.',
-    en: "A concept that wasn't born in a brainstorm but in a vlog. We turned it into the personality, emotion and cause of the Heretics community — all the way to an official Valorant skin generating millions of euros in sales, growing year after year.",
-    media: null,
+    metric: { n: 94, pre: '+', post: 'M' },
+    metricText: { es: 'impresiones sociales en 2025 · ventas de la skin creciendo exponencialmente cada año', en: 'social impressions in 2025 · skin sales growing exponentially every year' },
+    es: 'Un concepto que no nació en un brainstorming, sino en un vlog. Lo convertimos en personalidad, emoción y causa de la comunidad de Heretics — hasta hacerse skin oficial de Valorant y la marca más relevante del ecosistema VCT: 60 piezas longform en 2025 (solo PRX hizo más en el mundo), campañas localizadas de China a Turquía y una facturación que crece exponencialmente año tras año, fundamental para el club gracias al mix de rendimiento deportivo y profundidad de marca.',
+    en: "A concept that wasn't born in a brainstorm but in a vlog. We turned it into the personality, emotion and cause of the Heretics community — all the way to an official Valorant skin and the most relevant brand in the VCT ecosystem: 60 longform pieces in 2025 (only PRX made more worldwide), localized campaigns from China to Turkey, and revenue growing exponentially year after year, fundamental to the club thanks to the mix of sporting performance and brand depth.",
+    media: '/assets/portfolio/los-ninos/los-ninos-palacio.jpg',
+    videos: [{ id: 'awLWOPpatI8', label: 'Los jugadores reaccionan a su skin — VCT Team Capsule' }],
   },
   {
     slug: 'club113',
@@ -39,6 +41,8 @@ const PROJECTS = [
       { id: 'yw4Wjv3advA', label: 'Club113 — Capítulo 15 con el Dudu' },
       { id: 'hIEoaWvZDZE', label: '113 Sessions × BarryB' },
     ],
+    mediaExtra: '/assets/portfolio/club113/club113-prensa.jpg',
+    mediaExtraLabel: 'Club113 en prensa y tendencias',
   },
   {
     slug: 'mansion',
@@ -64,6 +68,7 @@ const PROJECTS = [
     es: 'Contenidos originales entendiendo la fórmula de YouTube antes que nadie en el mercado hispanohablante. Más de 40 millones de visitas entre el contenido principal y los satélites. Especiales como el de San Valentín: +100M de impresiones, 29,7M de audiencia sumada y cinco días seguidos en tendencias nacionales de YouTube.',
     en: 'Original content built on an understanding of the YouTube formula before anyone else in the Spanish-speaking market. Over 40 million views across main and satellite content. Specials like San Valentín: +100M impressions, a combined audience of 29.7M and five straight days on national YouTube trending.',
     media: '/assets/portfolio/originals/heretics-originals.jpg',
+    videos: [{ id: 'DUmFVeMArXY', label: 'Adivina el: Calvo / Preso / Virgen — Heretics Originals' }],
   },
   {
     slug: 'hereticsxp',
@@ -322,25 +327,36 @@ function YTEmbed({ id, title }) {
 
 // ============ MEDIA BLOCK (placeholder-aware) ============
 function Media({ project, aspect, t }) {
-  if (project.videos) {
+  if (project.videos || project.media || project.video) {
     return (
       <div className="flex flex-col gap-4">
-        {project.videos.map((v) => (
+        {project.media && (
+          <div>
+            <div className={`img-clean ${aspect}`} style={{ border: '1px solid var(--hairline)' }}>
+              <img src={project.media} alt={project.mediaLabel || project.title} />
+            </div>
+            {project.mediaLabel && (
+              <div className="mono text-[10px] uppercase tracking-[0.14em] mt-2" style={{ color: 'var(--ink-35)' }}>{project.mediaLabel}</div>
+            )}
+          </div>
+        )}
+        {project.video && <YTEmbed id={project.video} title={project.title} />}
+        {(project.videos || []).map((v) => (
           <div key={v.id}>
             <YTEmbed id={v.id} title={v.label} />
             <div className="mono text-[10px] uppercase tracking-[0.14em] mt-2" style={{ color: 'var(--ink-35)' }}>{v.label}</div>
           </div>
         ))}
-      </div>
-    );
-  }
-  if (project.video) {
-    return <YTEmbed id={project.video} title={project.title} />;
-  }
-  if (project.media) {
-    return (
-      <div className={`img-clean ${aspect}`} style={{ border: '1px solid var(--hairline)' }}>
-        <img src={project.media} alt={project.title} />
+        {project.mediaExtra && (
+          <div>
+            <div className="img-clean" style={{ border: '1px solid var(--hairline)' }}>
+              <img src={project.mediaExtra} alt={project.mediaExtraLabel || project.title} style={{ height: 'auto' }} />
+            </div>
+            {project.mediaExtraLabel && (
+              <div className="mono text-[10px] uppercase tracking-[0.14em] mt-2" style={{ color: 'var(--ink-35)' }}>{project.mediaExtraLabel}</div>
+            )}
+          </div>
+        )}
       </div>
     );
   }
