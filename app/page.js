@@ -373,6 +373,15 @@ export default function Page() {
     setLang(browserLang.toLowerCase().startsWith('es') ? 'es' : 'en');
   }, []);
 
+  // allow /?go=cv|blog|contact deep links (used by /biblioteca and /blog navs)
+  useEffect(() => {
+    const go = new URLSearchParams(window.location.search).get('go');
+    if (go && ['home', 'cv', 'blog', 'contact'].includes(go)) {
+      setRoute(go);
+      window.history.replaceState({}, '', '/');
+    }
+  }, []);
+
   // scroll to top on route change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const T = {
   es: {
-    back: '← Home',
+    nav: { home: 'Home', cv: 'Trayectoria', blog: 'Blog', library: 'Biblioteca', contact: 'Contacto' },
     kicker: '/blog — pensamientos sueltos',
     title: 'Blog.',
     lead: 'Notas, ensayos cortos y observaciones sobre marca, comunidad e internet. Sincronizado con mi Substack.',
@@ -23,7 +23,7 @@ const T = {
     subBtn: 'Suscribirse en Substack',
   },
   en: {
-    back: '← Home',
+    nav: { home: 'Home', cv: 'Career', blog: 'Blog', library: 'Library', contact: 'Contact' },
     kicker: '/blog — loose thoughts',
     title: 'Blog.',
     lead: 'Notes, short essays and observations on brand, community and the internet. Synced with my Substack.',
@@ -78,12 +78,31 @@ export default function BlogPage() {
         className="fixed top-0 left-0 right-0 z-50 hairline-b"
         style={{ background: 'rgba(230,229,225,0.85)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
       >
-        <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-4">
-          <Link href="/" className="nav-link" style={{ color: 'var(--ink)' }}>{t.back}</Link>
-          <div className="mono text-[11px] flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
-            <button onClick={() => setLang('es')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'es' ? 'var(--ink)' : 'inherit' }}>ES</button>
-            <span>/</span>
-            <button onClick={() => setLang('en')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'en' ? 'var(--ink)' : 'inherit' }}>EN</button>
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-0 md:h-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 md:gap-2">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="flex items-baseline gap-0.5 shrink-0" style={{ textDecoration: 'none' }}>
+              <span className="display text-[16px] md:text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
+              <sup className="mono text-[9px]" style={{ color: 'var(--green)', filter: 'brightness(0.75)' }}>®</sup>
+            </Link>
+            <button
+              onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+              className="mono text-[11px] md:hidden"
+              style={{ background: 'none', border: '1px solid var(--hairline)', borderRadius: 999, padding: '4px 9px', cursor: 'pointer', color: 'var(--ink-50)' }}
+            >
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+          </div>
+          <div className="flex items-center gap-4 md:gap-7">
+            <Link href="/" className="nav-link hidden md:inline">{t.nav.home}</Link>
+            <Link href="/?go=cv" className="nav-link">{t.nav.cv}</Link>
+            <span className="nav-link active">{t.nav.blog}</span>
+            <Link href="/biblioteca" className="nav-link">{t.nav.library}</Link>
+            <Link href="/?go=contact" className="nav-link">{t.nav.contact}</Link>
+            <div className="mono text-[11px] hidden md:flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
+              <button onClick={() => setLang('es')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'es' ? 'var(--ink)' : 'inherit' }}>ES</button>
+              <span>/</span>
+              <button onClick={() => setLang('en')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'en' ? 'var(--ink)' : 'inherit' }}>EN</button>
+            </div>
           </div>
         </div>
       </nav>
