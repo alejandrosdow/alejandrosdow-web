@@ -534,7 +534,15 @@ function Rich({ parts, act }) {
 
 function Btn({ href, onClick, children, variant = '', external }) {
   const cls = `btn ${variant}`;
-  const arrow = <span className="arr" aria-hidden>{external ? '↗' : '→'}</span>;
+  const arrow = (
+    <svg className="arr" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+      {external ? (
+        <path d="M2.5 7.5 7.5 2.5M3.5 2.5h4v4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      ) : (
+        <path d="M1.5 5h7M5.5 2 8.5 5 5.5 8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+      )}
+    </svg>
+  );
   if (href) {
     return (
       <a href={href} className={cls} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}>
@@ -1080,7 +1088,7 @@ function Work({ t, u, lang, go }) {
               >
                 <div className="t-caption" style={{ color: 'rgba(0,0,0,.55)' }}>{p.year} · {p.type[lang]}</div>
                 <div>
-                  <div className="t-title">{p.title} {vid && <span className="t-caption" aria-hidden>↗</span>}</div>
+                  <div className="t-title">{p.title} {vid && <span className="t-caption" aria-hidden>↗&#xFE0E;</span>}</div>
                   <div className="t-small" style={{ color: 'rgba(0,0,0,.6)', marginTop: 2 }}>{p.metricText[lang]}</div>
                 </div>
               </Tag>
