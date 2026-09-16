@@ -376,6 +376,13 @@ const UI = {
           'Lanzamos nuestra propia fiesta, Algodón, junto al colectivo Antídoto. Lamentablemente, la pandemia anuló nuestros contratos y tratamos de pivotar el modelo, sin éxito.',
         ],
       },
+      julio: {
+        caption: 'Co-fundador: JULIO · Meme Corp · 2025',
+        body: [
+          'JULIO es la filosofía y la marca de la plenitud: una de las primeras memebrands hispanohablantes. Nace en 2025 del meme de Julio Iglesias para celebrar la buena vida y una masculinidad más luminosa, divertida y cuidadora, frente a los referentes oscuros que confunden a los más jóvenes.',
+          'La creamos desde Meme Corp, un colectivo de ocho personas que trabajamos en algunas de las marcas más relevantes de la cultura de internet. El primer lanzamiento fue sold out en 30 minutos: lo hicimos junto a MITO, la plataforma de vídeo con IA, para el contenido, y con Maxi para el producto.',
+        ],
+      },
       c113: {
         caption: 'Co-creador y dirección: Club113 × 113 Sessions · 2022—23',
         body: [
@@ -477,6 +484,13 @@ const UI = {
         body: [
           'Zhander was born to digitise the role of the nightlife promoter: an app to discover the best clubs, pubs and bars, compare prices and promotions, and buy tickets with perks. The founding team included Nil Ojeda, Paula Gonu, byCalitos, Hamza, Werlyb, Goorgo, Zulu and Alex Chiner.',
           'We launched our own party, Algodón, with the Antídoto collective. Unfortunately, the pandemic cancelled our contracts and we tried to pivot the model, without success.',
+        ],
+      },
+      julio: {
+        caption: 'Co-founder: JULIO · Meme Corp · 2025',
+        body: [
+          'JULIO is the philosophy and brand of living fully: one of the first Spanish-speaking memebrands. Born in 2025 from the Julio Iglesias meme to celebrate the good life and a brighter, funnier, more caring masculinity, in contrast to the dark role models confusing younger men.',
+          'We built it at Meme Corp, a collective of eight people working on some of the most relevant brands in internet culture. The first drop sold out in 30 minutes: we made it with MITO, the AI video platform, for the content, and with Maxi for the product.',
         ],
       },
       c113: {
@@ -931,6 +945,16 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.gl.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.gl.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="media" style={{ aspectRatio: '1800 / 801' }}>
+          <img src="/assets/hilos/julio.jpg" alt="JULIO — memebrand" loading="lazy" />
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.julio.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.julio.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
 
