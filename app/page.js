@@ -393,7 +393,7 @@ const UI = {
       hub: {
         caption: 'Team Heretics: HereticsHUB · 2021',
         body: [
-          'La experiencia de abrir dos espacios físicos fue muy bestia. Abrimos una tienda en X Madrid y otra en Isla Azul: espacios para juntar a la comunidad, hacer eventos y activaciones de marca, y desvirtualizar la marca.',
+          'La experiencia de abrir dos espacios físicos fue muy bestia. Abrimos una tienda en X Madrid y otra en Isla Azul: espacios para juntar a la comunidad, hacer eventos y activaciones, y desvirtualizar la marca. Todo acompañado de una campaña digital, con el apoyo de todos nuestros creadores de contenido, y otra física con soportes en metro, autobuses y espacios por todo Madrid.',
         ],
       },
       c113: {
@@ -516,7 +516,7 @@ const UI = {
       hub: {
         caption: 'Team Heretics: HereticsHUB · 2021',
         body: [
-          'Opening two physical spaces was a wild experience. We opened stores in X Madrid and Isla Azul: places to bring the community together, host events and brand activations, and take the brand offline.',
+          'Opening two physical spaces was a wild experience. We opened stores in X Madrid and Isla Azul: places to bring the community together, host events and activations, and take the brand offline. All backed by a digital campaign, supported by all our content creators, and an outdoor one with ads on the metro, buses and spaces across Madrid.',
         ],
       },
       c113: {
