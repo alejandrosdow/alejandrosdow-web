@@ -350,6 +350,12 @@ const UI = {
       soundOn: 'Activar sonido',
       soundOff: 'Silenciar',
       expand: 'Ampliar',
+      mv: {
+        caption: 'Productor y presentador: Movistar · GAME TV · 2016—17',
+        body: [
+          'Fui productor y presentador en el primer canal de gaming y esports en televisión para Movistar: producción especializada, contenidos y cara del canal. En el vídeo, un episodio de Actualidad eSports.',
+        ],
+      },
       zh: {
         caption: 'Co-fundador: Zhander App × Algodón · 2020—23',
         body: [
@@ -434,6 +440,12 @@ const UI = {
       soundOn: 'Sound on',
       soundOff: 'Sound off',
       expand: 'Expand',
+      mv: {
+        caption: 'Producer and host: Movistar · GAME TV · 2016—17',
+        body: [
+          'I was producer and host on Movistar’s first gaming and esports TV channel: specialised production, content and the face of the channel. In the video, an episode of Actualidad eSports.',
+        ],
+      },
       zh: {
         caption: 'Co-founder: Zhander App × Algodón · 2020—23',
         body: [
@@ -919,6 +931,14 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.zh.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.zh.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <ClipPlayer src="/assets/hilos/movistar.mp4" poster="/assets/hilos/movistar.jpg" label="Actualidad eSports — Movistar" t={s} />
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.mv.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.mv.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
     </div>
