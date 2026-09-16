@@ -829,7 +829,6 @@ function ClipPlayer({ src, poster, label, t }) {
 
 // Placeholder for the work column while it is being designed.
 function WorkSoon({ u }) {
-  const id = '9B-GBudM9jc';
   const s = u.soon;
   return (
     <div>
@@ -838,9 +837,6 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.caption}</div>
         <h3 className="t-title" style={{ marginTop: 24 }}>{s.title}</h3>
         <p style={{ marginTop: 6, maxWidth: '62ch' }}>{s.desc}</p>
-        <div style={{ marginTop: 16 }}>
-          <Btn href={`https://www.youtube.com/watch?v=${id}`} external>{s.btn}</Btn>
-        </div>
       </article>
 
       <article style={{ marginTop: 72 }}>
