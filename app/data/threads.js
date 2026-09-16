@@ -40,7 +40,7 @@ export const THREADS = {
       caption: 'La comunidad de Heretics.',
       body: [
         ['Desde 2018 lidero la marca y la comunidad global de Team Heretics: de marca de nicho en esports a referencia de entretenimiento en internet.'],
-        ['Ahí nacieron Los Niños, de un vlog a skin oficial de Valorant; La Mansión, la primera gran casa de creadores en España; HereticsXP, con más de 2.000 personas por edición; y dos HereticsHUB en Madrid.'],
+        ['El equipo top en ventas mundiales de skins en Valorant. +8M de seguidores y 200.000.000 de visitas en YouTube. Club113, uno de los podcasts más grandes de habla hispana; La Mansión, la primera gran casa de creadores en España; HereticsXP, un evento con más de 2.000 personas; y espacios físicos en Madrid como el HereticsHUB.'],
         ['Es un rol transversal dentro del Holding de Heretics, junto a PHTP, Nativo y MakeItHappen.'],
       ],
       close: ['Así es ', { k: 'x:como-trabajo', label: 'cómo trabajo' }, '.'],
@@ -50,7 +50,7 @@ export const THREADS = {
       caption: 'The Heretics community.',
       body: [
         ['Since 2018 I have led the global brand and community of Team Heretics: from a niche esports brand to an entertainment reference on the internet.'],
-        ['That is where Los Niños was born, from a vlog to an official Valorant skin; La Mansión, Spain’s first major creator house; HereticsXP, with over 2,000 people per edition; and two HereticsHUB spaces in Madrid.'],
+        ['The top team worldwide in Valorant skin sales. +8M followers and 200,000,000 views on YouTube. Club113, one of the biggest Spanish-language podcasts; La Mansión, Spain’s first major creator house; HereticsXP, an event with over 2,000 people; and physical spaces in Madrid like the HereticsHUB.'],
         ['It is a cross-functional role within the Heretics Holding, alongside PHTP, Nativo and MakeItHappen.'],
       ],
       close: ['This is ', { k: 'x:como-trabajo', label: 'how I work' }, '.'],
