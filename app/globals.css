@@ -696,3 +696,24 @@ a {
 .clip-btn:hover {
   background: rgba(0, 0, 0, 0.64);
 }
+
+.clip-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+@media (min-width: 640px) {
+  .clip-pair {
+    grid-template-columns: 1fr 1fr;
+  }
+  .clip-pair .clip-controls {
+    right: 6px;
+    bottom: 6px;
+    gap: 2px;
+  }
+  .clip-pair .clip-btn {
+    height: 28px;
+    padding: 0 8px;
+    font-size: 13px;
+  }
+}

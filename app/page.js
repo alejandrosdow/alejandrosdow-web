@@ -350,6 +350,14 @@ const UI = {
       soundOn: 'Activar sonido',
       soundOff: 'Silenciar',
       expand: 'Ampliar',
+      gl: {
+        caption: 'GenLayer · The adjudication layer for the agentic era',
+        body: [
+          'GenLayer quiere ser la corte de internet: una infraestructura de confianza para la era de la IA, en la intersección entre blockchain e inteligencia artificial.',
+          'Desde 2025 les asesoro en marca y comunidad internacional. Mi trabajo es aterrizar la narrativa y traducir un producto complejo a un idioma que la gente entienda y sienta como propio.',
+          'Campañas para las testnets, hackatones, comunidad internacional y el go-to-market del token.',
+        ],
+      },
       btn: 'Ver en YouTube',
     },
     allWork: 'Ver portfolio completo',
@@ -413,6 +421,14 @@ const UI = {
       soundOn: 'Sound on',
       soundOff: 'Sound off',
       expand: 'Expand',
+      gl: {
+        caption: 'GenLayer · The adjudication layer for the agentic era',
+        body: [
+          'GenLayer wants to be the court of the internet: trust infrastructure for the AI era, at the intersection of blockchain and artificial intelligence.',
+          'Since 2025 I have advised them on brand and international community. My job is to ground the narrative and translate a complex product into a language people understand and feel is their own.',
+          'Campaigns for the testnets, hackathons, international community and the token go-to-market.',
+        ],
+      },
       btn: 'Watch on YouTube',
     },
     allWork: 'See full portfolio',
@@ -766,6 +782,11 @@ function ClipPlayer({ src, poster, label, t }) {
   const toggleSound = () => {
     const v = videoRef.current;
     if (!v) return;
+    if (v.muted) {
+      document.querySelectorAll('.clip video').forEach((o) => {
+        if (o !== v) o.muted = true;
+      });
+    }
     v.muted = !v.muted;
     setMuted(v.muted);
     if (!v.muted && v.paused) {
@@ -809,21 +830,31 @@ function ClipPlayer({ src, poster, label, t }) {
 // Placeholder for the work column while it is being designed.
 function WorkSoon({ u }) {
   const id = '9B-GBudM9jc';
+  const s = u.soon;
   return (
-    <article>
-      <ClipPlayer
-        src="/assets/hilos/heretics-spot-2025.mp4"
-        poster="/assets/hilos/heretics-spot-2025.jpg"
-        label="Team Heretics Spot 2025"
-        t={u.soon}
-      />
-      <div className="t-caption" style={{ marginTop: 8 }}>{u.soon.caption}</div>
-      <h3 className="t-title" style={{ marginTop: 24 }}>{u.soon.title}</h3>
-      <p style={{ marginTop: 6, maxWidth: '62ch' }}>{u.soon.desc}</p>
-      <div style={{ marginTop: 16 }}>
-        <Btn href={`https://www.youtube.com/watch?v=${id}`} external>{u.soon.btn}</Btn>
-      </div>
-    </article>
+    <div>
+      <article>
+        <ClipPlayer src="/assets/hilos/heretics-spot-2025.mp4" poster="/assets/hilos/heretics-spot-2025.jpg" label="Team Heretics Spot 2025" t={s} />
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.caption}</div>
+        <h3 className="t-title" style={{ marginTop: 24 }}>{s.title}</h3>
+        <p style={{ marginTop: 6, maxWidth: '62ch' }}>{s.desc}</p>
+        <div style={{ marginTop: 16 }}>
+          <Btn href={`https://www.youtube.com/watch?v=${id}`} external>{s.btn}</Btn>
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="clip-pair">
+          <ClipPlayer src="/assets/hilos/genlayer-1.mp4" poster="/assets/hilos/genlayer-1.jpg" label="GenLayer — Agent Tank" t={s} />
+          <ClipPlayer src="/assets/hilos/genlayer-2.mp4" poster="/assets/hilos/genlayer-2.jpg" label="GenLayer" t={s} />
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.gl.caption}</div>
+        <h3 className="t-title" style={{ marginTop: 24 }}>GenLayer</h3>
+        <div className="flow" style={{ marginTop: 6, maxWidth: '62ch' }}>
+          {s.gl.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+    </div>
   );
 }
 
