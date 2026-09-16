@@ -341,8 +341,13 @@ const UI = {
     },
     moreLabel: 'Más proyectos',
     testing: 'En pruebas',
-    soonTitle: 'En pruebas.',
-    soonText: ['Estoy preparando esta sección con calma. Mientras tanto, lee ', { k: 'cv', label: 'mi trayectoria' }, '.'],
+    soon: {
+      caption: 'Team Heretics · Club de internet',
+      title: 'Team Heretics',
+      desc: 'Team Heretics forma parte de Heretics Holdings, donde trabajo como Chief Brand Officer del grupo. Uno de los clubs de esports más importantes del mundo, con gran presencia internacional, especialmente en Europa y Asia.',
+      play: 'Reproducir',
+      btn: 'Ver en YouTube',
+    },
     allWork: 'Ver portfolio completo',
     socials: 'Sígueme',
     booking: 'Reserva una sesión',
@@ -395,8 +400,13 @@ const UI = {
     },
     moreLabel: 'More projects',
     testing: 'In progress',
-    soonTitle: 'In progress.',
-    soonText: ["I'm putting this section together carefully. Meanwhile, read ", { k: 'cv', label: 'my career' }, '.'],
+    soon: {
+      caption: 'Team Heretics · Internet club',
+      title: 'Team Heretics',
+      desc: 'Team Heretics is part of Heretics Holdings, where I work as Chief Brand Officer of the group. One of the most important esports clubs in the world, with a strong international presence, especially in Europe and Asia.',
+      play: 'Play',
+      btn: 'Watch on YouTube',
+    },
     allWork: 'See full portfolio',
     socials: 'Follow',
     booking: 'Book a session',
@@ -642,7 +652,7 @@ export default function Page() {
             )}
           </header>
           <div key={`${route}-${lang}`} className="col-body route-in">
-            {route === 'home' && (WORK_PREVIEW ? <Work t={t} u={u} lang={lang} go={go} /> : <WorkSoon u={u} act={act} />)}
+            {route === 'home' && (WORK_PREVIEW ? <Work t={t} u={u} lang={lang} go={go} /> : <WorkSoon u={u} />)}
             {route === 'cv' && <CV t={t} />}
             {route === 'blog' && <Blog t={t} />}
             {route === 'contact' && <Contact t={t} u={u} />}
@@ -709,16 +719,44 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
   );
 }
 
-function WorkSoon({ u, act }) {
+// Placeholder for the work column while it is being designed.
+function WorkSoon({ u }) {
+  const [play, setPlay] = useState(false);
+  const id = '9B-GBudM9jc';
   return (
-    <div style={{ minHeight: '50vh', display: 'grid', alignContent: 'center', justifyItems: 'start', gap: 8 }}>
-      <div className="stat" style={{ gap: 6 }}>
-        <span className="pulse-dot" style={{ width: 6, height: 6, borderRadius: 9, background: 'var(--accent-deep)' }} />
-        {u.testing}
+    <article>
+      <div className="media" style={{ aspectRatio: '16 / 9', background: '#111' }}>
+        {play ? (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
+            title="Team Heretics"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowFullScreen
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
+          />
+        ) : (
+          <button
+            type="button"
+            onClick={() => setPlay(true)}
+            aria-label={u.soon.play}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', padding: 0, border: 0, cursor: 'pointer', background: 'none' }}
+          >
+            <img src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`} alt="" />
+            <span
+              style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', display: 'inline-flex', alignItems: 'center', gap: 8, height: 36, padding: '0 14px', borderRadius: 999, background: 'rgba(0,0,0,.55)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', color: '#fff', fontSize: 14 }}
+            >
+              <span aria-hidden style={{ color: 'var(--accent)', fontSize: 11 }}>▶</span> {u.soon.play}
+            </span>
+          </button>
+        )}
       </div>
-      <h2 className="t-title">{u.soonTitle}</h2>
-      <p className="muted" style={{ maxWidth: '44ch' }}><Rich parts={u.soonText} act={act} /></p>
-    </div>
+      <div className="t-caption" style={{ marginTop: 8 }}>{u.soon.caption}</div>
+      <h3 className="t-title" style={{ marginTop: 24 }}>{u.soon.title}</h3>
+      <p style={{ marginTop: 6, maxWidth: '62ch' }}>{u.soon.desc}</p>
+      <div style={{ marginTop: 16 }}>
+        <Btn href={`https://www.youtube.com/watch?v=${id}`} external>{u.soon.btn}</Btn>
+      </div>
+    </article>
   );
 }
 

@@ -45,7 +45,7 @@ export const THREADS = {
         ['Desde 2018 lidero la marca y la comunidad global de Team Heretics: de marca de nicho en esports a referencia de entretenimiento en internet.'],
         ['+7M de seguidores y 200.000.000 de visitas en YouTube; equipo top en ventas mundiales de skins en Valorant. Club113, uno de los podcasts más grandes de habla hispana; La Mansión, la primera gran casa de creadores en España; HereticsXP, un evento con más de 2.000 personas; y espacios físicos en Madrid como el HereticsHUB.'],
         ['Es un rol transversal dentro del Holding de Heretics, junto a PHTP, Nativo y MakeItHappen. Productos que van desde el MiniOpen de Tenis hasta ayudar en la carrera de algunos de los creadores más grandes de habla hispana o el programa Línea de Cal.'],
-        ['Activaciones y propuestas creativas para Red Bull, el grupo Mahou San Miguel, Samsung, Hyundai, Nestlé, Logitech, Lenovo, Socios.com, Motorola y prácticamente cualquier marca de gran consumo.'],
+        ['Activaciones y propuestas creativas para Red Bull, grupo Mahou San Miguel, Samsung, Hyundai, Nestlé, Logitech, Lenovo, Socios.com, Motorola y prácticamente cualquier marca de gran consumo.'],
       ],
       close: ['Así es ', { k: 'x:como-trabajo', label: 'cómo trabajo' }, '.'],
     },
