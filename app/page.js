@@ -313,7 +313,7 @@ const UI = {
       { k: 'x:origenes', label: 'dónde empezó' },
       '.',
     ],
-    place: 'Desde Madrid.',
+    place: 'BASED IN MADRID / SPAIN',
     threadsHead: 'Algunas ideas detrás del trabajo.',
     threads: [
       ['Una marca cultural ', { k: null, label: 'trasciende a su producto' }, '. Refleja el zeitgeist, una forma de ser y estar en el mundo.'],
@@ -354,7 +354,7 @@ const UI = {
         caption: 'Heretics Holdings · Club113',
         body: [
           'Club113 nació desayunando en la cafetería de debajo de la casa de Werlyb, Goorgo y Nil Ojeda. Un podcast de colegas para colegas que durante años fue uno de los más importantes de habla hispana, con frases que acabaron siendo cultura de internet.',
-          'Además creé 113 Sessions, un espacio musical para artistas emergentes que terminó comprando Samsung y donde pude traer a gente que admiraba.',
+          'Creamos 113 Sessions, un espacio musical para artistas emergentes que terminó comprando Samsung y donde pude traer a gente que admiraba.',
         ],
       },
       gl: {
@@ -390,7 +390,7 @@ const UI = {
       { k: 'x:origenes', label: 'where it began' },
       '.',
     ],
-    place: 'From Madrid.',
+    place: 'BASED IN MADRID / SPAIN',
     threadsHead: 'A few ideas behind the work.',
     threads: [
       ['A cultural brand ', { k: null, label: 'transcends its product' }, '. It reflects the zeitgeist, a way of being in the world.'],
@@ -431,7 +431,7 @@ const UI = {
         caption: 'Heretics Holdings · Club113',
         body: [
           'Club113 was born over breakfast at the café below the flat Werlyb, Goorgo and Nil Ojeda shared. A podcast by friends, for friends, that for years was one of the biggest in the Spanish-speaking world, with lines that became internet culture.',
-          'I also created 113 Sessions, a music space for emerging artists that Samsung ended up buying, and where I got to bring in people I admired.',
+          'We created 113 Sessions, a music space for emerging artists that Samsung ended up buying, and where I got to bring in people I admired.',
         ],
       },
       gl: {
@@ -487,6 +487,11 @@ function Reveal({ children, delay = 0, className = '' }) {
       {children}
     </div>
   );
+}
+
+// Console-style loading ring (lime, spinning) above the portrait.
+function Loader() {
+  return <span className="loader" role="img" aria-label="loading" />;
 }
 
 // Renders ['text', {k, label}, ...] — keyed parts become grey inline links.
@@ -631,7 +636,7 @@ export default function Page() {
           <div className="col-body" style={{ paddingTop: 8 }}>
             <div className="rise">
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: -6, position: 'relative', zIndex: 1 }}>
-                <Spark />
+                <Loader />
               </div>
               <div className="media" style={{ aspectRatio: '1 / 1' }}>
                 <img src="/assets/foto-alejandro.jpg" alt="Alejandro Marcos" />
@@ -740,7 +745,7 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
             <ol className="t-small" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
               {t.home.bookBullets.map((b, i) => (
                 <li key={i} className="muted" style={{ display: 'flex', gap: 12 }}>
-                  <span className="faint tnum">{String(i + 1).padStart(2, '0')}</span>{b}
+                  <span className="faint tnum meta">{String(i + 1).padStart(2, '0')}</span>{b}
                 </li>
               ))}
             </ol>
@@ -942,7 +947,7 @@ function Work({ t, u, lang, go }) {
           <ol className="t-small" style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 2 }}>
           {t.home.bookBullets.map((b, i) => (
             <li key={i} className="muted" style={{ display: 'flex', gap: 12 }}>
-              <span className="faint tnum">{String(i + 1).padStart(2, '0')}</span>{b}
+              <span className="faint tnum meta">{String(i + 1).padStart(2, '0')}</span>{b}
             </li>
           ))}
         </ol>
@@ -1075,7 +1080,7 @@ function CV({ t }) {
           {sec.items.map((it, i) => (
             <Reveal key={i} delay={Math.min(i * 40, 160)}>
               <div className="rule-b cv-row" style={{ padding: '16px 0', display: 'grid', gridTemplateColumns: '88px 1fr', gap: '4px 16px' }}>
-                <div className="t-small faint tnum" style={{ paddingTop: 2 }}>{it.date}</div>
+                <div className="faint tnum meta" style={{ paddingTop: 3 }}>{it.date}</div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
                     <span>{it.role}</span>

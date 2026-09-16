@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -81,11 +81,10 @@ body {
 }
 
 body {
-  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  font-feature-settings: 'ss01', 'cv11';
-  letter-spacing: -0.006em;
+  letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -770,5 +769,76 @@ a {
   }
   .dock-cta svg {
     display: none !important;
+  }
+}
+
+/* ---------- metadata in monospace ---------- */
+:root {
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.t-caption,
+.microlabel,
+.mono,
+.meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: 0.01em;
+}
+.stat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+/* ---------- loading ring above the portrait ---------- */
+.loader {
+  --size: 42px;
+  --ring: 6px;
+  position: relative;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  animation: loader-spin 1s linear infinite;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.18)) drop-shadow(0 0 8px rgba(190, 235, 30, 0.45));
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(200, 240, 49, 0) 0deg,
+    rgba(200, 240, 49, 0) 110deg,
+    rgba(200, 240, 49, 0.35) 170deg,
+    #c8f031 235deg,
+    #dff77e 290deg,
+    #fbffef 330deg,
+    rgba(255, 255, 255, 0) 331deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring)), #000 calc(100% - var(--ring) + 0.5px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring)), #000 calc(100% - var(--ring) + 0.5px));
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--ring);
+  height: var(--ring);
+  margin-left: calc(var(--ring) / -2);
+  border-radius: 50%;
+  background: #fbffef;
+  transform-origin: 50% calc(var(--size) / 2);
+  transform: rotate(330deg);
+}
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loader {
+    animation-duration: 4s;
   }
 }
