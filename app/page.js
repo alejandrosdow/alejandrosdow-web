@@ -369,6 +369,13 @@ const UI = {
           'En GAME lideraba las relaciones con publishers internacionales, creadores de contenido y equipos de esports. Con 24 años llevaba las activaciones y los contenidos de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun & Serious Bilbao, lo que incluía producir eventos como «El Gran Desafío» o incluso presentarlos delante de miles de personas.',
         ],
       },
+      cm: {
+        caption: 'Brand Manager: Cooler Master · 2017—19',
+        body: [
+          'Durante un año y medio trabajé para Cooler Master, una de las marcas más prestigiosas y reconocidas del mundo en hardware para PC. Como Brand Manager en España, ayudé a hacer crecer el negocio un 50% año tras año.',
+          'Fue la primera marca de gaming en España con un equipo de embajadores formado por creadores de contenido: IamCristinini, BlackEspanolito y UnBoxMe.',
+        ],
+      },
       mv: {
         caption: 'Productor y presentador: Movistar · 2017',
         body: [
@@ -490,6 +497,13 @@ const UI = {
         caption: 'Head of Publishers, Talents & Esports: GAME · 2015—16',
         body: [
           'At GAME I led relationships with international publishers, content creators and esports teams. At 24 I ran the activations and content for Madrid Gaming Experience (+120K attendees), Barcelona Games World and Fun & Serious Bilbao, which included producing events like «El Gran Desafío» and even hosting them in front of thousands of people.',
+        ],
+      },
+      cm: {
+        caption: 'Brand Manager: Cooler Master · 2017—19',
+        body: [
+          'For a year and a half I worked for Cooler Master, one of the most prestigious and recognised PC hardware brands in the world. As Brand Manager in Spain, I helped grow the business 50% year on year.',
+          'It was the first gaming brand in Spain with an ambassador team made up of content creators: IamCristinini, BlackEspanolito and UnBoxMe.',
         ],
       },
       mv: {
@@ -1024,6 +1038,14 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.zh.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.zh.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <ClipPlayer src="/assets/hilos/coolermaster.mp4" poster="/assets/hilos/coolermaster.jpg" label="Team Cooler Master" t={s} />
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.cm.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.cm.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
 
