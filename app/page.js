@@ -351,9 +351,9 @@ const UI = {
       soundOff: 'Silenciar',
       expand: 'Ampliar',
       mv: {
-        caption: 'Productor y presentador: Movistar · GAME TV · 2016—17',
+        caption: 'Movistar · 2017',
         body: [
-          'Fui productor y presentador en el primer canal de gaming y esports en televisión para Movistar: producción especializada, contenidos y cara del canal. En el vídeo, un episodio de Actualidad eSports.',
+          'Estuve trabajando como productor y presentador en el primer canal de gaming y esports en televisión para Movistar. En el plató más caro de la cadena, produciendo piezas de alta calidad cada semana, viajando y cubriendo toda la industria. La experiencia en cámara, divertida, pero no la repetiría.',
         ],
       },
       zh: {
@@ -441,9 +441,9 @@ const UI = {
       soundOff: 'Sound off',
       expand: 'Expand',
       mv: {
-        caption: 'Producer and host: Movistar · GAME TV · 2016—17',
+        caption: 'Movistar · 2017',
         body: [
-          'I was producer and host on Movistar’s first gaming and esports TV channel: specialised production, content and the face of the channel. In the video, an episode of Actualidad eSports.',
+          'I worked as a producer and host on Movistar’s first gaming and esports TV channel. On the network’s most expensive set, producing high-quality pieces every week, travelling and covering the whole industry. Being on camera was fun, but I wouldn’t do it again.',
         ],
       },
       zh: {
