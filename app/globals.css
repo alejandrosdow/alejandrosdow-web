@@ -717,3 +717,19 @@ a {
     font-size: 13px;
   }
 }
+
+/* book cover inside a square tinted frame — always whole, centred */
+.media.book-cover img {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  width: auto;
+  height: 84%;
+  object-fit: contain;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  box-shadow: 0 20px 40px -20px rgba(40, 60, 0, 0.45);
+}
+.media.book-cover:hover img {
+  transform: translateX(-50%) scale(1.015);
+}

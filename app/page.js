@@ -708,8 +708,8 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
         </figure>
       )}
       {th.book && (
-        <div className="media tint-lime" style={{ aspectRatio: '1 / 1', display: 'grid', placeItems: 'center', marginBottom: 16 }}>
-          <img src="/assets/internet-surfer-cover.png" alt="Internet Surfer" style={{ width: 'auto', height: '80%', objectFit: 'contain', boxShadow: '0 20px 40px -20px rgba(40,60,0,.45)' }} />
+        <div className="media tint-lime book-cover" style={{ aspectRatio: '1 / 1', marginBottom: 16 }}>
+          <img src="/assets/hilos/internet-surfer-cover.jpg" alt="Internet Surfer" width="900" height="1440" />
         </div>
       )}
       <div className="flow">
