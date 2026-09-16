@@ -390,6 +390,12 @@ const UI = {
           'A día de hoy es una cuenta de Twitter donde ponemos en práctica una visión del mundo, sin pensar en monetizar. Teníamos previsto seguir lanzando producto y un token en el futuro.',
         ],
       },
+      hub: {
+        caption: 'Team Heretics: HereticsHUB · 2021',
+        body: [
+          'La experiencia de abrir dos espacios físicos fue muy bestia. Abrimos una tienda en X Madrid y otra en Isla Azul: espacios para juntar a la comunidad, hacer eventos y activaciones de marca, y desvirtualizar la marca.',
+        ],
+      },
       c113: {
         caption: 'Co-creador y dirección: Club113 × 113 Sessions · 2022—23',
         body: [
@@ -505,6 +511,12 @@ const UI = {
           'JULIO is the philosophy and brand of living fully: the first Spanish-speaking memebrand. Born in 2025 from the Julio Iglesias meme to celebrate the good life and a brighter, funnier, more caring masculinity.',
           'The first drop sold out in 30 minutes: we made it with MITO, the AI video platform, for the content, and with Maxi for the product.',
           'Today it is a Twitter account where we put a worldview into practice, without thinking about monetising. We planned to keep launching products and a token in the future.',
+        ],
+      },
+      hub: {
+        caption: 'Team Heretics: HereticsHUB · 2021',
+        body: [
+          'Opening two physical spaces was a wild experience. We opened stores in X Madrid and Isla Azul: places to bring the community together, host events and brand activations, and take the brand offline.',
         ],
       },
       c113: {
@@ -989,6 +1001,14 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.c113.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.c113.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <ClipPlayer src="/assets/hilos/hub.mp4" poster="/assets/hilos/hub.jpg" label="Heretics se hace real — HereticsHUB" t={s} />
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.hub.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.hub.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
 
