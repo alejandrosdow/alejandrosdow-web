@@ -350,6 +350,13 @@ const UI = {
       soundOn: 'Activar sonido',
       soundOff: 'Silenciar',
       expand: 'Ampliar',
+      c113: {
+        caption: 'Heretics Holdings · Club113',
+        body: [
+          'Club113 nació desayunando en la cafetería de debajo de la casa de Werlyb, Goorgo y Nil Ojeda. Un podcast de colegas para colegas que durante años fue uno de los más importantes de habla hispana, con frases que acabaron siendo cultura de internet.',
+          'Además creé 113 Sessions, un espacio musical para artistas emergentes que terminó comprando Samsung y donde pude traer a gente que admiraba.',
+        ],
+      },
       gl: {
         caption: 'GenLayer · The adjudication layer for the agentic era',
         body: [
@@ -420,6 +427,13 @@ const UI = {
       soundOn: 'Sound on',
       soundOff: 'Sound off',
       expand: 'Expand',
+      c113: {
+        caption: 'Heretics Holdings · Club113',
+        body: [
+          'Club113 was born over breakfast at the café below the flat Werlyb, Goorgo and Nil Ojeda shared. A podcast by friends, for friends, that for years was one of the biggest in the Spanish-speaking world, with lines that became internet culture.',
+          'I also created 113 Sessions, a music space for emerging artists that Samsung ended up buying, and where I got to bring in people I admired.',
+        ],
+      },
       gl: {
         caption: 'GenLayer · The adjudication layer for the agentic era',
         body: [
@@ -748,7 +762,7 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
 }
 
 // Self-hosted video with minimal custom controls (no YouTube chrome).
-function ClipPlayer({ src, poster, label, t }) {
+function ClipPlayer({ src, poster, label, t, noAudio = false }) {
   const wrapRef = useRef(null);
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
@@ -824,7 +838,9 @@ function ClipPlayer({ src, poster, label, t }) {
       />
       <div className="clip-controls">
         <button type="button" className="clip-btn" onClick={toggle}>{playing ? t.pause : t.play}</button>
-        <button type="button" className="clip-btn" onClick={toggleSound}>{muted ? t.soundOn : t.soundOff}</button>
+        {!noAudio && (
+          <button type="button" className="clip-btn" onClick={toggleSound}>{muted ? t.soundOn : t.soundOff}</button>
+        )}
         <button type="button" className="clip-btn" onClick={expand}>{t.expand}</button>
       </div>
     </div>
@@ -850,6 +866,17 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.gl.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.gl.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="clip-pair">
+          <ClipPlayer src="/assets/hilos/club113-1.mp4" poster="/assets/hilos/club113-1.jpg" label="Club113 — mejores momentos" t={s} />
+          <ClipPlayer src="/assets/hilos/club113-2.mp4" poster="/assets/hilos/club113-2.jpg" label="113 Sessions powered by Samsung" t={s} noAudio />
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.c113.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.c113.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
     </div>
