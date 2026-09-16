@@ -877,7 +877,7 @@ function WorkSoon({ u }) {
       <article style={{ marginTop: 72 }}>
         <div className="clip-pair">
           <ClipPlayer src="/assets/hilos/club113-1.mp4" poster="/assets/hilos/club113-1.jpg" label="Club113 — mejores momentos" t={s} />
-          <ClipPlayer src="/assets/hilos/club113-2.mp4" poster="/assets/hilos/club113-2.jpg" label="113 Sessions powered by Samsung" t={s} noAudio />
+          <ClipPlayer src="/assets/hilos/club113-2.mp4" poster="/assets/hilos/club113-2.jpg" label="113 Sessions powered by Samsung" t={s} />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.c113.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>

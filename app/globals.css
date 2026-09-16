@@ -798,7 +798,7 @@ a {
   display: block;
   width: var(--size);
   height: var(--size);
-  animation: loader-spin 1s linear infinite;
+  animation: loader-spin 1.4s linear infinite;
   filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.18)) drop-shadow(0 0 8px rgba(190, 235, 30, 0.45));
 }
 .loader::before {
