@@ -1024,7 +1024,7 @@ function WorkSoon({ u }) {
       </article>
 
       <article style={{ marginTop: 72 }}>
-        <div className="media" style={{ aspectRatio: '1600 / 1161' }}>
+        <div className="media" style={{ aspectRatio: '1600 / 932' }}>
           <img src="/assets/hilos/xyon.jpg" alt="Si te ríes pierdes — ZellenDust" loading="lazy" />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.xyon.caption}</div>
