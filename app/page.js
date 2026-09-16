@@ -955,10 +955,7 @@ function WorkSoon({ u }) {
       </article>
 
       <article style={{ marginTop: 72 }}>
-        <div className="clip-pair">
-          <ClipPlayer src="/assets/hilos/game-mgx.mp4" poster="/assets/hilos/game-mgx.jpg" label="Madrid Gaming Experience 2016" t={s} />
-          <ClipPlayer src="/assets/hilos/game-bgw.mp4" poster="/assets/hilos/game-bgw.jpg" label="Barcelona Games World 2016" t={s} />
-        </div>
+        <ClipPlayer src="/assets/hilos/game-mgx.mp4" poster="/assets/hilos/game-mgx.jpg" label="Madrid Gaming Experience 2016" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.game.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.game.body.map((x, i) => <p key={i}>{x}</p>)}
