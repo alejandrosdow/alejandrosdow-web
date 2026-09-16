@@ -733,3 +733,42 @@ a {
 .media.book-cover:hover img {
   transform: translateX(-50%) scale(1.015);
 }
+
+.dock-short {
+  display: none;
+}
+@media (max-width: 640px) {
+  .dock-long {
+    display: none;
+  }
+  .dock-short {
+    display: inline;
+  }
+}
+
+@media (max-width: 420px) {
+  .dock-item {
+    padding: 0 8px;
+  }
+  .dock-lang {
+    padding: 0 8px;
+  }
+  .dock-cta {
+    padding: 0 12px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 380px) {
+  .dock-item,
+  .dock-cta {
+    font-size: 12px;
+  }
+  .dock-item,
+  .dock-lang {
+    padding: 0 7px;
+  }
+  .dock-cta svg {
+    display: none !important;
+  }
+}

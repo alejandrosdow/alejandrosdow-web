@@ -7,13 +7,14 @@ import Link from 'next/link';
 // on standalone pages it falls back to plain links (/?go=...).
 
 export const DOCK_LABELS = {
-  es: { home: 'Inicio', cv: 'Trayectoria', blog: 'Blog', library: 'Biblioteca', contact: 'Hablemos' },
-  en: { home: 'Home', cv: 'Career', blog: 'Blog', library: 'Library', contact: "Let's talk" },
+  es: { home: 'Inicio', cv: 'Trayectoria', book: 'Mi libro: Internet Surfer', bookShort: 'Mi libro', blog: 'Blog', library: 'Biblioteca', contact: 'Hablemos' },
+  en: { home: 'Home', cv: 'Career', book: 'My book: Internet Surfer', bookShort: 'My book', blog: 'Blog', library: 'Library', contact: "Let's talk" },
 };
 
 const ITEMS = [
-  { id: 'home', href: '/' },
+  { id: 'home', href: '/', hideSm: true },
   { id: 'cv', href: '/?go=cv' },
+  { id: 'book', href: '/#ideas/libro' },
   { id: 'blog', href: '/?go=blog', hideSm: true },
   { id: 'library', href: '/biblioteca' },
 ];
@@ -23,17 +24,26 @@ export default function Dock({ lang = 'es', setLang, active, onNavigate }) {
 
   const item = ({ id, href, hideSm }) => {
     const cls = `dock-item ${active === id ? 'is-active' : ''} ${hideSm ? 'dock-hide-sm' : ''}`;
+    const text =
+      id === 'book' ? (
+        <>
+          <span className="dock-long">{L.book}</span>
+          <span className="dock-short">{L.bookShort}</span>
+        </>
+      ) : (
+        L[id]
+      );
     const internal = onNavigate && id !== 'library';
     if (internal) {
       return (
         <button key={id} type="button" className={cls} aria-current={active === id ? 'page' : undefined} onClick={() => onNavigate(id)}>
-          {L[id]}
+          {text}
         </button>
       );
     }
     return (
       <Link key={id} href={href} className={cls} aria-current={active === id ? 'page' : undefined}>
-        {L[id]}
+        {text}
       </Link>
     );
   };

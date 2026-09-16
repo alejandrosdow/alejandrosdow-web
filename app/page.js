@@ -686,7 +686,12 @@ export default function Page() {
         </main>
       </div>
 
-      <Dock lang={lang} setLang={setLang} active={route} onNavigate={go} />
+      <Dock
+        lang={lang}
+        setLang={setLang}
+        active={thread === 'libro' ? 'book' : route}
+        onNavigate={(id) => (id === 'book' ? openThread('libro') : (openThread(null), go(id)))}
+      />
     </>
   );
 }
@@ -708,8 +713,8 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
         </figure>
       )}
       {th.book && (
-        <div className="media tint-lime book-cover" style={{ aspectRatio: '1 / 1', marginBottom: 16 }}>
-          <img src="/assets/hilos/internet-surfer-cover.jpg" alt="Internet Surfer" width="900" height="1440" />
+        <div className="media" style={{ aspectRatio: '4 / 3', marginBottom: 16 }}>
+          <img src="/assets/hilos/internet-surfer-cover-43.jpg" alt="Internet Surfer" width="1200" height="900" />
         </div>
       )}
       <div className="flow">
