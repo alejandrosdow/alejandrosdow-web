@@ -567,9 +567,19 @@ export default function Page() {
         {/* ============ COLUMN 1 — identity ============ */}
         <aside className="col col-identity">
           <header className="col-head">
-            <button type="button" onClick={() => go('home')} className="ilink" style={{ textDecoration: 'none' }}>
+            <a
+              href="/"
+              className="ilink"
+              style={{ textDecoration: 'none' }}
+              onClick={(e) => {
+                e.preventDefault();
+                openThread(null);
+                go('home');
+                window.scrollTo({ top: 0, behavior: 'instant' });
+              }}
+            >
               {u.name}
-            </button>
+            </a>
           </header>
           <div className="col-body" style={{ paddingTop: 8 }}>
             <div className="rise">
