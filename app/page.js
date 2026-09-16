@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Dock, { Spark } from './components/Dock';
+import { PROJECTS } from './data/projects';
 
 // =============================================
-// alejandrosdow.com — v0.5
-// retro-futurismo minimalista · brand director
+// alejandrosdow.com — v1.0 "quiet system"
+// three columns · small type · bottom dock · lime accent
 // =============================================
 
 // ============ I18N DICTIONARY ============
@@ -285,6 +287,134 @@ const I18N = {
 const CALENDLY = 'https://calendly.com/alejandro-marcos-teamheretics/30min';
 const SUBSTACK = 'https://substack.com/@alejandrosdow';
 
+// ============ LAYOUT COPY (new in v1.0) ============
+const UI = {
+  es: {
+    name: 'Alejandro Marcos',
+    bio: [
+      'Construyo marcas culturales en internet. Soy Chief Brand Officer de ',
+      { k: 'cv', label: 'Team Heretics' },
+      ', advisor de ',
+      { k: 'cv', label: 'GenLayer' },
+      ' y fundador de proyectos como ',
+      { k: 'work', label: 'JULIO' },
+      ' o ',
+      { k: 'work', label: 'Club113' },
+      '.',
+    ],
+    explore: [
+      'Explora ',
+      { k: 'cv', label: 'mi trayectoria' },
+      ', ',
+      { k: 'blog', label: 'lo que escribo' },
+      ', ',
+      { k: 'library', label: 'mi biblioteca' },
+      ' y ',
+      { k: 'book', label: 'mi libro' },
+      '.',
+    ],
+    place: 'Madrid, 2026',
+    threadsHead: 'Algunas ideas detrás del trabajo.',
+    threads: [
+      ['Una marca cultural ', { k: null, label: 'trasciende a su producto' }, '. Refleja el zeitgeist, una forma de ser y estar en el mundo.'],
+      ['Por eso la gente se identifica con ella, la defiende y ', { k: null, label: 'la convierte en parte de su identidad' }, '.'],
+      ['La mayoría de marcas no fallan por falta de producto, sino de ', { k: 'contact', label: 'narrativa clara' }, '. Confunden seguidores con ', { k: 'contact', label: 'comunidad' }, '.'],
+      ['Trabajo en tres capas: ', { k: 'contact', label: 'narrativa, comunidad y sistemas' }, '.'],
+      ['Dos regalos: ', { k: 'book', label: 'mi libro' }, ' y ', { k: 'library', label: 'una pequeña biblioteca' }, '.'],
+      ['Para historias más largas, ', { k: 'blog', label: 'lee mi blog' }, '.'],
+    ],
+    workHead: 'Una mirada al trabajo.',
+    workAll: 'Ver todo',
+    heads: { cv: 'Trayectoria.', blog: 'Blog.', contact: 'Hablemos.' },
+    back: 'Trabajo',
+    video: 'Ver vídeo',
+    download: 'Descargar gratis',
+    bookCaption: 'Libro · Gratis · PDF',
+    bookDesc: 'El arte de crear comunidades en la era digital.',
+    libCaption: 'Biblioteca personal · se actualiza constantemente',
+    libTitle: 'Para crear y pensar mejor',
+    heretics: {
+      caption: 'Team Heretics · 2018—',
+      title: 'Team Heretics',
+      desc: 'De marca de nicho en esports a referencia global de entretenimiento en internet.',
+      btn: 'Ver trayectoria',
+    },
+    moreLabel: 'Más proyectos',
+    allWork: 'Ver portfolio completo',
+    socials: 'Sígueme',
+    booking: 'Reservar sesión gratuita',
+  },
+  en: {
+    name: 'Alejandro Marcos',
+    bio: [
+      "I build cultural brands on the internet. I'm Chief Brand Officer at ",
+      { k: 'cv', label: 'Team Heretics' },
+      ', advisor at ',
+      { k: 'cv', label: 'GenLayer' },
+      ' and founder of projects like ',
+      { k: 'work', label: 'JULIO' },
+      ' and ',
+      { k: 'work', label: 'Club113' },
+      '.',
+    ],
+    explore: [
+      'Explore ',
+      { k: 'cv', label: 'my career' },
+      ', ',
+      { k: 'blog', label: 'my writing' },
+      ', ',
+      { k: 'library', label: 'my library' },
+      ' and ',
+      { k: 'book', label: 'my book' },
+      '.',
+    ],
+    place: 'Madrid, 2026',
+    threadsHead: 'A few ideas behind the work.',
+    threads: [
+      ['A cultural brand ', { k: null, label: 'transcends its product' }, '. It reflects the zeitgeist, a way of being in the world.'],
+      ["That's why people identify with it, defend it and ", { k: null, label: 'make it part of who they are' }, '.'],
+      ["Most brands don't fail for lack of product, but for lack of ", { k: 'contact', label: 'a clear narrative' }, '. They confuse followers with ', { k: 'contact', label: 'community' }, '.'],
+      ['I work across three layers: ', { k: 'contact', label: 'narrative, community and systems' }, '.'],
+      ['Two gifts: ', { k: 'book', label: 'my book' }, ' and ', { k: 'library', label: 'a small library' }, '.'],
+      ['For longer stories, ', { k: 'blog', label: 'read my blog' }, '.'],
+    ],
+    workHead: 'A closer look at the work.',
+    workAll: 'See all',
+    heads: { cv: 'Career.', blog: 'Blog.', contact: "Let's talk." },
+    back: 'Work',
+    video: 'Watch video',
+    download: 'Download free',
+    bookCaption: 'Book · Free · PDF',
+    bookDesc: 'The art of building communities in the digital era.',
+    libCaption: 'Personal library · updated constantly',
+    libTitle: 'To create and think better',
+    heretics: {
+      caption: 'Team Heretics · 2018—',
+      title: 'Team Heretics',
+      desc: 'From a niche esports brand to a global entertainment reference on the internet.',
+      btn: 'See career',
+    },
+    moreLabel: 'More projects',
+    allWork: 'See full portfolio',
+    socials: 'Follow',
+    booking: 'Book a free session',
+  },
+};
+
+const SOCIALS = [
+  { label: 'X', href: 'https://x.com/alejandrosdow' },
+  { label: 'Instagram', href: 'https://instagram.com/alejandrosdow' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/alejandromarcosmoraga' },
+  { label: 'Substack', href: SUBSTACK },
+];
+
+const TINTS = ['tint-lilac', 'tint-sky', 'tint-peach', 'tint-mint', 'tint-rose', 'tint-lime'];
+const yt = (id) => `https://www.youtube.com/watch?v=${id}`;
+const firstSentence = (s = '') => {
+  const m = s.match(/^.*?[.!?](\s|$)/);
+  return (m ? m[0] : s).trim();
+};
+
 // ============ SCROLL REVEAL ============
 function Reveal({ children, delay = 0, className = '' }) {
   const ref = useRef(null);
@@ -299,122 +429,76 @@ function Reveal({ children, delay = 0, className = '' }) {
           io.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.08 }
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
   return (
-    <div
-      ref={ref}
-      className={`reveal ${vis ? 'reveal-in' : ''} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+    <div ref={ref} className={`reveal ${vis ? 'reveal-in' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
       {children}
     </div>
   );
 }
 
-// ============ HERO PHOTO — 3D tilt + inner parallax ============
-function HeroPhoto({ label }) {
-  const wrapRef = useRef(null);
-  const [tilt, setTilt] = useState({ rx: 0, ry: 0 });
-  const [hover, setHover] = useState(false);
-  const reduced = useRef(false);
-
-  useEffect(() => {
-    reduced.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }, []);
-
-  const onMove = (e) => {
-    if (reduced.current || !wrapRef.current) return;
-    const r = wrapRef.current.getBoundingClientRect();
-    const px = (e.clientX - r.left) / r.width - 0.5;
-    const py = (e.clientY - r.top) / r.height - 0.5;
-    setTilt({ rx: -py * 9, ry: px * 9 });
-  };
-  const onLeave = () => {
-    setTilt({ rx: 0, ry: 0 });
-    setHover(false);
-  };
-
-  return (
-    <div>
-      <div
-        ref={wrapRef}
-        style={{ perspective: '900px' }}
-        onMouseMove={onMove}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={onLeave}
+// Renders ['text', {k, label}, ...] — keyed parts become grey inline links.
+function Rich({ parts, act }) {
+  return parts.map((p, i) => {
+    if (typeof p === 'string') return <React.Fragment key={i}>{p}</React.Fragment>;
+    if (!p.k) return <span key={i} className="muted">{p.label}</span>;
+    if (p.k === 'library') return <a key={i} href="/biblioteca" className="ilink">{p.label}</a>;
+    const href = p.k === 'book' ? '#book' : p.k === 'work' ? '#work-top' : `/?go=${p.k}`;
+    return (
+      <a
+        key={i}
+        href={href}
+        className="ilink"
+        onClick={(e) => {
+          e.preventDefault();
+          act(p.k);
+        }}
       >
-        <div
-          className="img-clean aspect-square max-w-[240px] md:max-w-none mx-auto"
-          style={{
-            transform: `rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg) scale(${hover ? 1.015 : 1})`,
-            transformStyle: 'preserve-3d',
-            transition: 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease',
-            boxShadow: hover
-              ? '0 34px 70px -34px rgba(22,21,19,0.4)'
-              : '0 16px 44px -28px rgba(22,21,19,0.28)',
-            willChange: 'transform',
-          }}
-        >
-          <img
-            src="/assets/foto-alejandro.jpg"
-            alt="Alejandro Marcos"
-            style={{
-              transform: `scale(1.08) translateX(${tilt.ry * 1.4}px) translateY(${-tilt.rx * 1.4}px)`,
-              transition: 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
-            }}
-          />
-        </div>
-      </div>
-      <div className="mono text-[10px] uppercase tracking-[0.16em] mt-4 text-center" style={{ color: 'var(--ink-35)' }}>
-        {label}
-      </div>
-    </div>
-  );
-}
-
-// ============ MANIFESTO BACKDROP — full-bleed collage behind the statement ============
-function ManifestoBackdrop() {
-  const ref = useRef(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShown(true);
-          io.disconnect();
-        }
-      },
-      { threshold: 0.1 }
+        {p.label}
+      </a>
     );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
+  });
+}
 
+function Btn({ href, onClick, children, variant = '', external }) {
+  const cls = `btn ${variant}`;
+  const arrow = <span className="arr" aria-hidden>{external ? '↗' : '→'}</span>;
+  if (href) {
+    return (
+      <a href={href} className={cls} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}>
+        {children} {arrow}
+      </a>
+    );
+  }
   return (
-    <div ref={ref} className={`mf-bg ${shown ? 'mf-bg-in' : ''}`} aria-hidden="true">
-      <img src="/assets/manifesto-bg.png" alt="" loading="lazy" decoding="async" />
-      <div className="mf-scrim" />
-    </div>
+    <button type="button" className={cls} onClick={onClick}>
+      {children} {arrow}
+    </button>
   );
 }
 
+// =============================================
+// PAGE
+// =============================================
 export default function Page() {
   const [route, setRoute] = useState('home');
   const [lang, setLang] = useState('es');
+  const workRef = useRef(null);
 
   useEffect(() => {
     const browserLang = (typeof navigator !== 'undefined' && navigator.language) || 'es';
     setLang(browserLang.toLowerCase().startsWith('es') ? 'es' : 'en');
   }, []);
 
-  // allow /?go=cv|blog|contact deep links (used by /biblioteca and /blog navs)
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
+  // /?go=cv|blog|contact deep links (used by the standalone pages)
   useEffect(() => {
     const go = new URLSearchParams(window.location.search).get('go');
     if (go && ['home', 'cv', 'blog', 'contact'].includes(go)) {
@@ -423,273 +507,284 @@ export default function Page() {
     }
   }, []);
 
-  // scroll to top on route change
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [route]);
-
   const t = I18N[lang];
-  const go = (r) => setRoute(r);
+  const u = UI[lang];
+
+
+  const go = (r) => {
+    setRoute(r);
+    requestAnimationFrame(() => {
+      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+      if (isDesktop) workRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+      else window.scrollTo({ top: r === 'home' ? 0 : (workRef.current?.offsetTop ?? 0), behavior: 'instant' });
+    });
+  };
+
+  // inline-link actions
+  const act = (k) => {
+    if (k === 'book' || k === 'work') {
+      if (route !== 'home') setRoute('home');
+      requestAnimationFrame(() => {
+        const el = document.getElementById(k === 'book' ? 'book' : 'work-top');
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      return;
+    }
+    go(k);
+  };
+
+  const onHome = route === 'home';
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* ============ NAV ============ */}
-      <nav
-        className="fixed top-0 left-0 right-0 z-50 hairline-b"
-        style={{ background: 'rgba(230,229,225,0.85)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
-      >
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-0 md:h-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 md:gap-2">
-          <div className="flex items-center justify-between">
-            <button onClick={() => go('home')} className="flex items-baseline gap-0.5 shrink-0" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
-              <span className="display text-[16px] md:text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
-              <sup className="mono text-[9px]" style={{ color: 'var(--green)', filter: 'brightness(0.75)' }}>®</sup>
+    <>
+      <div className="shell">
+        {/* ============ COLUMN 1 — identity ============ */}
+        <aside className="col col-identity">
+          <header className="col-head">
+            <button type="button" onClick={() => go('home')} className="ilink" style={{ textDecoration: 'none' }}>
+              {u.name}
             </button>
-            {/* mobile: single toggle to the other language */}
-            <button
-              onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-              className="mono text-[11px] md:hidden"
-              style={{ background: 'none', border: '1px solid var(--hairline)', borderRadius: 999, padding: '4px 9px', cursor: 'pointer', color: 'var(--ink-50)' }}
-            >
-              {lang === 'es' ? 'EN' : 'ES'}
-            </button>
-          </div>
-          <div className="flex items-center gap-4 md:gap-7">
-            {['home', 'cv', 'blog'].map((r) => (
-              <button key={r} onClick={() => go(r)} className={`nav-link ${route === r ? 'active' : ''} ${r === 'home' ? 'hidden md:inline' : ''}`}>
-                {t.nav[r]}
-              </button>
-            ))}
-            <a href="/biblioteca" className="nav-link">{t.nav.library}</a>
-            <button onClick={() => go('contact')} className={`nav-link ${route === 'contact' ? 'active' : ''}`}>
-              {t.nav.contact}
-            </button>
-            {/* desktop: ES / EN pair */}
-            <div className="mono text-[11px] hidden md:flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
-              <button onClick={() => setLang('es')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'es' ? 'var(--ink)' : 'inherit' }}>ES</button>
-              <span>/</span>
-              <button onClick={() => setLang('en')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'en' ? 'var(--ink)' : 'inherit' }}>EN</button>
+          </header>
+          <div className="col-body" style={{ paddingTop: 8 }}>
+            <div className="rise">
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: -6, position: 'relative', zIndex: 1 }}>
+                <Spark />
+              </div>
+              <div className="media" style={{ aspectRatio: '1 / 1' }}>
+                <img src="/assets/foto-alejandro.jpg" alt="Alejandro Marcos" />
+              </div>
+              <div className="t-caption" style={{ marginTop: 8 }}>{u.place}</div>
+            </div>
+            <div className="flow rise" style={{ marginTop: 32, animationDelay: '80ms' }}>
+              <p><Rich parts={u.bio} act={act} /></p>
+              <p><Rich parts={u.explore} act={act} /></p>
+            </div>
+            <div className="t-small rise" style={{ marginTop: 32, display: 'flex', flexWrap: 'wrap', gap: '4px 16px', animationDelay: '140ms' }}>
+              {SOCIALS.map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="ilink">{s.label}</a>
+              ))}
             </div>
           </div>
-        </div>
-      </nav>
+        </aside>
 
-      {/* ============ ROUTES ============ */}
-      <div key={`${route}-${lang}`} className="route-in flex-1 pt-[92px] md:pt-16">
-        {route === 'home' && <Home t={t} go={go} />}
-        {route === 'cv' && <CV t={t} />}
-        {route === 'blog' && <Blog t={t} />}
-        {route === 'contact' && <Contact t={t} />}
+        {/* ============ COLUMN 2 — threads (desktop always, mobile only on home) ============ */}
+        <section className={`col col-threads ${onHome ? '' : 'max-lg:hidden'}`}>
+          <header className="col-head ruled">
+            <h2 className="t-title">{u.threadsHead}</h2>
+          </header>
+          <div className="col-body flow rise" style={{ animationDelay: '120ms' }}>
+            {u.threads.map((parts, i) => (
+              <p key={i}><Rich parts={parts} act={act} /></p>
+            ))}
+            <div style={{ paddingTop: 8 }}>
+              <Btn href={CALENDLY} external variant="btn-accent">{u.booking}</Btn>
+            </div>
+          </div>
+        </section>
+
+        {/* ============ COLUMN 3 — work / routes ============ */}
+        <main ref={workRef} className="col col-work" id="work-top">
+          <header className="col-head ruled">
+            <h1 className="t-title">{onHome ? u.workHead : u.heads[route]}</h1>
+            {onHome ? (
+              <a href="/portfolio" className="ilink">{u.workAll}</a>
+            ) : (
+              <button type="button" className="ilink" onClick={() => go('home')}>← {u.back}</button>
+            )}
+          </header>
+          <div key={`${route}-${lang}`} className="col-body route-in">
+            {route === 'home' && <Work t={t} u={u} lang={lang} go={go} />}
+            {route === 'cv' && <CV t={t} />}
+            {route === 'blog' && <Blog t={t} />}
+            {route === 'contact' && <Contact t={t} u={u} />}
+            <footer className="t-caption" style={{ marginTop: 96, paddingTop: 16, borderTop: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
+              <span>alejandrosdow</span>
+              <span className="tnum">{t.footer.copy}</span>
+            </footer>
+          </div>
+        </main>
       </div>
 
-      {/* ============ FOOTER ============ */}
-      <footer className="hairline-t">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-wrap items-center justify-between gap-5">
-          <div className="flex items-center gap-5 mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-50)' }}>
-            <a href="https://x.com/alejandrosdow" target="_blank" rel="noreferrer" className="link-u">X</a>
-            <a href="https://instagram.com/alejandrosdow" target="_blank" rel="noreferrer" className="link-u">IG</a>
-            <a href="https://linkedin.com/in/alejandromarcosmoraga" target="_blank" rel="noreferrer" className="link-u">IN</a>
-            <a href={SUBSTACK} target="_blank" rel="noreferrer" className="link-u">Substack</a>
-          </div>
-          <div className="mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-35)' }}>
-            {t.footer.copy}
-          </div>
-        </div>
-      </footer>
-    </div>
+      <Dock lang={lang} setLang={setLang} active={route} onNavigate={go} />
+    </>
   );
 }
 
 // =============================================
-// HOME
+// WORK FEED
 // =============================================
-function Home({ t, go }) {
-  const scrollToId = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+function WorkItem({ id, caption, title, desc, stat, children, after, actions }) {
+  return (
+    <Reveal className="work-item">
+      <article id={id} style={{ scrollMarginTop: 72 }}>
+        {children}
+        {caption && <div className="t-caption caption">{caption}</div>}
+        <h3 className="t-title">{title}</h3>
+        {stat && <div style={{ marginTop: 6 }}><span className="stat tnum">{stat}</span></div>}
+        {desc && <p style={{ marginTop: 6 }}>{desc}</p>}
+        {after}
+        {actions && <div style={{ marginTop: 16, display: 'flex', flexWrap: 'wrap', gap: 8 }}>{actions}</div>}
+      </article>
+    </Reveal>
+  );
+}
+
+function statLabel(p, lang) {
+  const text = p.metricText?.[lang] || '';
+  if (!p.metric) return text || null;
+  const n = p.metric.n.toLocaleString(lang === 'es' ? 'es-ES' : 'en-US');
+  const num = `${p.metric.pre || ''}${n}${p.metric.post || ''}`;
+  return text.includes(num.trim()) ? text : `${num} · ${text}`;
+}
+
+function Work({ t, u, lang, go }) {
+  const by = Object.fromEntries(PROJECTS.map((p) => [p.slug, p]));
+  const cap = (p) => `${p.org} · ${p.type[lang]} · ${p.year}`;
+  const ninos = by['los-ninos'];
+  const club = by['club113'];
+  const ckm = by['cool-kids-machine'];
+  const orig = by['originals'];
+  const shown = new Set(['los-ninos', 'club113', 'cool-kids-machine', 'originals']);
+  const more = PROJECTS.filter((p) => !shown.has(p.slug));
 
   return (
-    <main>
-      {/* ===== HERO ===== */}
-      <section className="max-w-6xl mx-auto px-5 md:px-8 pt-14 md:pt-24 pb-16 md:pb-28">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-8 items-center">
-          <div className="md:col-span-8">
-            <div className="microlabel mb-8 rise" style={{ animationDelay: '50ms' }}>
-              {t.home.kicker}
-            </div>
-            <h1 className="display text-[clamp(48px,8.5vw,108px)]" style={{ color: 'var(--ink)' }}>
-              <span className="block rise" style={{ animationDelay: '120ms' }}>{t.home.title1}</span>
-              <span className="block serif-i rise" style={{ animationDelay: '220ms' }}>{t.home.title2}</span>
-              <span className="block rise" style={{ animationDelay: '320ms' }}>
-                {t.home.title3}
-                <span style={{ color: 'var(--green)', filter: 'brightness(0.8)' }}>*</span>
-              </span>
-            </h1>
-            <p className="rise text-[17px] md:text-[19px] leading-relaxed max-w-xl mt-8" style={{ animationDelay: '440ms', color: 'var(--ink-70)' }}>
-              {t.home.leadDesc}{' '}
-              {t.home.sub}{' '}
-              <button onClick={() => scrollToId('book-section')} className="link-u" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'var(--ink)', font: 'inherit', fontWeight: 500 }}>
-                {t.home.subA}
-              </button>{' '}
-              {t.home.subAnd}{' '}
-              <button onClick={() => scrollToId('library-section')} className="link-u" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'var(--ink)', font: 'inherit', fontWeight: 500 }}>
-                {t.home.subB}
-              </button>.
-            </p>
-            <div className="flex flex-wrap gap-3 mt-10 rise" style={{ animationDelay: '560ms' }}>
-              {t.home.pills.map((p) => (
-                <button key={p.target} onClick={() => go(p.target)} className="pill">
-                  {p.label}
-                </button>
-              ))}
-            </div>
+    <div>
+      {ninos && (
+        <WorkItem
+          caption={cap(ninos)}
+          title={ninos.title}
+          stat={statLabel(ninos, lang)}
+          desc={firstSentence(ninos[lang])}
+          actions={ninos.videos?.[0] && <Btn href={yt(ninos.videos[0].id)} external>{u.video}</Btn>}
+        >
+          <div className="media" style={{ aspectRatio: '16 / 10' }}>
+            <img src={ninos.media} alt={ninos.title} />
           </div>
-          <div className="md:col-span-4 rise" style={{ animationDelay: '400ms' }}>
-            <HeroPhoto label={t.home.photoLabel} />
-          </div>
-        </div>
-      </section>
+        </WorkItem>
+      )}
 
-      {/* ===== MANIFESTO (collage backdrop) ===== */}
-      <section className="mf-sec">
-        <ManifestoBackdrop />
-        <div className="mf-inner max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <Reveal>
-            <p className="mf-stmt display text-[clamp(28px,4.6vw,52px)]">
-              {t.home.stmtA}
-              <span className="serif-i">{t.home.stmtB}</span>
-              {t.home.stmtC}
-              <span className="serif-i">{t.home.stmtD}</span>
-              {t.home.stmtE}
-            </p>
-          </Reveal>
-          <Reveal delay={150}>
-            <p className="mf-quote text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto mt-12">
-              {t.home.manifesto}
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ===== BOOK ===== */}
-      <section id="book-section" className="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-32 scroll-mt-16">
-        <Reveal>
-          <div className="microlabel mb-12 hairline-t pt-6">{t.home.bookLabel}</div>
-        </Reveal>
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
-          <div className="md:col-span-4">
-            <Reveal>
-              <div className="img-clean max-w-[240px] md:max-w-none mx-auto md:mx-0" style={{ border: '1px solid var(--hairline)' }}>
-                <img src="/assets/internet-surfer-cover.png" alt="Internet Surfer — portada del libro" style={{ height: 'auto' }} />
-              </div>
-            </Reveal>
-          </div>
-          <div className="md:col-span-8">
-            <Reveal delay={100}>
-              <h2 className="display text-[clamp(34px,4.8vw,58px)]" style={{ color: 'var(--ink)' }}>
-                {t.home.bookTitle1}
-                <span className="serif-i block mt-1" style={{ fontSize: '0.72em', color: 'var(--ink-70)' }}>{t.home.bookTitle2}</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={180}>
-              <ul className="mt-8 space-y-3">
-                {t.home.bookBullets.map((b, i) => (
-                  <li key={i} className="flex items-baseline gap-4 text-[15px] md:text-[16px]" style={{ color: 'var(--ink-70)' }}>
-                    <span className="mono text-[11px] shrink-0" style={{ color: 'var(--ink-35)' }}>{String(i + 1).padStart(2, '0')}</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal delay={260}>
-              <div className="mt-10">
-                <a href="/assets/internet-surfer.pdf" download="Internet-Surfer-Alejandro-Marcos.pdf" className="pill-dark">
-                  {t.home.bookCTA} <span aria-hidden>↓</span>
-                </a>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== LIBRARY ===== */}
-      <section id="library-section" className="max-w-6xl mx-auto px-5 md:px-8 pb-20 md:pb-32 scroll-mt-16">
-        <Reveal>
-          <div className="microlabel mb-12 hairline-t pt-6">{t.home.libLabel}</div>
-        </Reveal>
-        <div className="grid md:grid-cols-12 gap-8 mb-14">
-          <div className="md:col-span-7">
-            <Reveal>
-              <h2 className="display text-[clamp(34px,4.8vw,58px)]" style={{ color: 'var(--ink)' }}>
-                {t.home.libTitle1} <span className="serif-i">{t.home.libTitle2}</span>
-              </h2>
-            </Reveal>
-          </div>
-          <div className="md:col-span-5 flex items-end">
-            <Reveal delay={120}>
-              <p className="text-[15px] leading-relaxed" style={{ color: 'var(--ink-70)' }}>{t.home.libDesc}</p>
-            </Reveal>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {t.library.map((b, i) => (
-            <Reveal key={i} delay={(i % 3) * 90}>
-              <article className="card p-6 h-full flex flex-col">
-                <div className="flex items-start gap-5 mb-5">
-                  {b.cover && (
-                    <div className="w-[84px] shrink-0 aspect-[2/3] overflow-hidden rounded-md" style={{ border: '1px solid var(--hairline)' }}>
-                      <img src={b.cover} alt={`${b.title} — portada`} className="w-full h-full object-cover" />
-                    </div>
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="mono text-[10px] mb-2" style={{ color: 'var(--ink-35)' }}>{String(i + 1).padStart(2, '0')}</div>
-                    <h3 className="serif-i text-[22px] leading-tight" style={{ color: 'var(--ink)' }}>{b.title}</h3>
-                    <div className="mono text-[10px] uppercase tracking-[0.14em] mt-1.5" style={{ color: 'var(--ink-50)' }}>{b.author}</div>
-                  </div>
-                </div>
-                <p className="text-[14px] leading-relaxed flex-1" style={{ color: 'var(--ink-70)' }}>{b.note}</p>
-                <div className="mono text-[10px] uppercase tracking-[0.14em] mt-5 pt-4 hairline-t" style={{ color: 'var(--ink-35)' }}>{b.tag}</div>
-              </article>
-            </Reveal>
+      <WorkItem
+        id="book"
+        after={
+          <ol className="t-small" style={{ margin: '12px 0 0', padding: 0, listStyle: 'none', display: 'grid', gap: 2 }}>
+          {t.home.bookBullets.map((b, i) => (
+            <li key={i} className="muted" style={{ display: 'flex', gap: 12 }}>
+              <span className="faint tnum">{String(i + 1).padStart(2, '0')}</span>{b}
+            </li>
           ))}
+        </ol>
+        }
+        caption={u.bookCaption}
+        title={t.home.bookTitle1}
+        desc={u.bookDesc}
+        actions={
+          <a href="/assets/internet-surfer.pdf" download="Internet-Surfer-Alejandro-Marcos.pdf" className="btn btn-accent">
+            {u.download} <span className="arr" aria-hidden>↓</span>
+          </a>
+        }
+      >
+        <div className="media tint-lime" style={{ aspectRatio: '16 / 10', display: 'grid', placeItems: 'center' }}>
+          <img
+            src="/assets/internet-surfer-cover.png"
+            alt={t.home.bookTitle1}
+            style={{ width: 'auto', height: '82%', objectFit: 'contain', boxShadow: '0 20px 40px -20px rgba(40,60,0,.45)' }}
+          />
         </div>
-        <Reveal>
-          <div className="mt-12 text-center">
-            <a href="/biblioteca" className="pill">
-              {t.home.libSeeAll} <span aria-hidden>→</span>
-            </a>
-          </div>
-        </Reveal>
-      </section>
+      </WorkItem>
 
-      {/* ===== CTA ===== */}
-      <section className="hairline-t">
-        <div className="max-w-4xl mx-auto px-5 md:px-8 py-24 md:py-36 text-center">
-          <Reveal>
-            <h2 className="display text-[clamp(26px,4.2vw,48px)] mb-8" style={{ color: 'var(--ink)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
-              {t.home.ctaA}
-              <span className="serif-i">{t.home.ctaB}</span>
-              {t.home.ctaC}
-            </h2>
-          </Reveal>
-          <Reveal delay={100}>
-            <p className="text-[15px] md:text-[16px] leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: 'var(--ink-50)' }}>
-              {t.home.ctaRole}
-            </p>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="serif-i text-[clamp(20px,2.6vw,28px)] mb-10" style={{ color: 'var(--ink-50)' }}>
-              {t.home.ctaSub}
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
-            <a href={CALENDLY} target="_blank" rel="noreferrer" className="pill-dark">
-              {t.home.ctaBtn} <span aria-hidden>→</span>
-            </a>
-          </Reveal>
+      {club && (
+        <WorkItem
+          caption={cap(club)}
+          title={club.title}
+          stat={statLabel(club, lang)}
+          desc={firstSentence(club[lang])}
+          actions={club.videos?.map((v) => (
+            <Btn key={v.id} href={yt(v.id)} external>{v.label.split('—')[0].trim()}</Btn>
+          ))}
+        >
+          <div className="media" style={{ aspectRatio: '16 / 9' }}>
+            <img src={club.mediaExtra} alt={club.mediaExtraLabel || club.title} />
+          </div>
+        </WorkItem>
+      )}
+
+      <WorkItem caption={u.heretics.caption} title={u.heretics.title} desc={u.heretics.desc} actions={<Btn onClick={() => go('cv')}>{u.heretics.btn}</Btn>}>
+        <div className="media" style={{ aspectRatio: '3 / 2' }}>
+          <img src="/assets/manifesto-bg.png" alt="Team Heretics" loading="lazy" />
         </div>
-      </section>
-    </main>
+      </WorkItem>
+
+      {ckm && (
+        <WorkItem caption={cap(ckm)} title={ckm.title} desc={ckm.metricText[lang] + '. ' + firstSentence(ckm[lang])}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 4 }}>
+            {ckm.collage.slice(0, 6).map((c, i) => (
+              <div key={i} className="media" style={{ aspectRatio: '1 / 1' }}>
+                <img src={c.src} alt="" loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </WorkItem>
+      )}
+
+      {orig && (
+        <WorkItem
+          caption={cap(orig)}
+          title={orig.title}
+          stat={statLabel(orig, lang)}
+          desc={firstSentence(orig[lang])}
+          actions={orig.videos?.[0] && <Btn href={yt(orig.videos[0].id)} external>{u.video}</Btn>}
+        >
+          <div className="media media-contain tint-lilac" style={{ aspectRatio: '16 / 9', display: 'grid', placeItems: 'center' }}>
+            <img src={orig.titleImg} alt={orig.title} loading="lazy" style={{ width: '46%', height: 'auto' }} />
+          </div>
+        </WorkItem>
+      )}
+
+      <WorkItem
+        caption={u.libCaption}
+        title={u.libTitle}
+        desc={t.home.libDesc}
+        actions={<Btn href="/biblioteca">{t.home.libSeeAll}</Btn>}
+      >
+        <div className="media tint-peach" style={{ padding: '6% 5%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '3%' }}>
+            {t.library.map((b) => (
+              <a key={b.title} href="/biblioteca" title={`${b.title} — ${b.author}`} style={{ display: 'block', aspectRatio: '2 / 3', overflow: 'hidden', borderRadius: 2, boxShadow: '0 10px 20px -12px rgba(80,30,0,.45)' }}>
+                <img src={b.cover} alt={b.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              </a>
+            ))}
+          </div>
+        </div>
+      </WorkItem>
+
+      {/* compact colour tiles for the rest */}
+      <Reveal className="work-item">
+        <div className="t-caption" style={{ marginBottom: 8 }}>{u.moreLabel}</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 4 }}>
+          {more.map((p, i) => {
+            const vid = p.video || p.videos?.[0]?.id;
+            const Tag = vid ? 'a' : 'div';
+            return (
+              <Tag
+                key={p.slug}
+                {...(vid ? { href: yt(vid), target: '_blank', rel: 'noreferrer' } : {})}
+                className={`media ${TINTS[i % TINTS.length]}`}
+                style={{ padding: 16, minHeight: 148, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: 16 }}
+              >
+                <div className="t-caption" style={{ color: 'rgba(0,0,0,.55)' }}>{p.year} · {p.type[lang]}</div>
+                <div>
+                  <div className="t-title">{p.title} {vid && <span className="t-caption" aria-hidden>↗</span>}</div>
+                  <div className="t-small" style={{ color: 'rgba(0,0,0,.6)', marginTop: 2 }}>{p.metricText[lang]}</div>
+                </div>
+              </Tag>
+            );
+          })}
+        </div>
+        <div style={{ marginTop: 16 }}>
+          <Btn href="/portfolio">{u.allWork}</Btn>
+        </div>
+      </Reveal>
+    </div>
   );
 }
 
@@ -698,97 +793,57 @@ function Home({ t, go }) {
 // =============================================
 function CV({ t }) {
   return (
-    <main className="max-w-5xl mx-auto px-5 md:px-8 pt-14 md:pt-24 pb-20 md:pb-28">
-      <div className="microlabel mb-8 rise">{t.cv.kicker}</div>
-      <h1 className="display text-[clamp(44px,7.5vw,96px)] rise" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.cv.title}</h1>
-      <p className="serif-i text-[clamp(20px,2.6vw,28px)] mt-4 mb-20 rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
-        {t.cv.lead}
-      </p>
+    <div>
+      <p className="muted" style={{ marginBottom: 48 }}>{t.cv.lead}</p>
 
       {t.cv.sections.map((sec) => (
-        <section key={sec.title} className="mb-16 md:mb-20">
-          <Reveal>
-            <div className="flex items-baseline gap-4 mb-8 hairline-b pb-4">
-              <span className="mono text-[11px]" style={{ color: 'var(--ink-35)' }}>{sec.num}</span>
-              <h2 className="serif-i text-[26px] md:text-[30px]" style={{ color: 'var(--ink)' }}>{sec.title}</h2>
-            </div>
-          </Reveal>
-          <div>
-            {sec.items.map((it, i) => (
-              <Reveal key={i} delay={Math.min(i * 60, 240)}>
-                <div className="grid md:grid-cols-12 gap-3 md:gap-6 py-6 hairline-b" style={{ borderColor: 'rgba(22,21,19,0.08)' }}>
-                  <div className="md:col-span-2 mono text-[12px] pt-1.5" style={{ color: 'var(--ink-35)' }}>{it.date}</div>
-                  <div className="md:col-span-4 flex items-start gap-4">
-                    {it.logo && (
-                      <div className="w-11 h-11 shrink-0 flex items-center justify-center logo-quiet">
-                        <img src={it.logo} alt={it.org} className="max-w-full max-h-full object-contain" onError={(e) => { e.currentTarget.parentElement.style.display = 'none'; }} />
-                      </div>
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <div className="display text-[19px] md:text-[21px]" style={{ color: 'var(--ink)', letterSpacing: '-0.02em' }}>{it.role}</div>
-                      {it.org && <div className="mono text-[10px] uppercase tracking-[0.14em] mt-1.5" style={{ color: 'var(--ink-50)' }}>{it.org}</div>}
-                    </div>
+        <section key={sec.title} style={{ marginBottom: 56 }}>
+          <h2 className="t-title rule-b" style={{ paddingBottom: 8 }}>{sec.title}</h2>
+          {sec.items.map((it, i) => (
+            <Reveal key={i} delay={Math.min(i * 40, 160)}>
+              <div className="rule-b cv-row" style={{ padding: '16px 0', display: 'grid', gridTemplateColumns: '88px 1fr', gap: '4px 16px' }}>
+                <div className="t-small faint tnum" style={{ paddingTop: 2 }}>{it.date}</div>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                    <span>{it.role}</span>
+                    {it.org && <span className="muted">{it.org}</span>}
                   </div>
-                  <div className="md:col-span-6 text-[14.5px] md:text-[15px] leading-relaxed" style={{ color: 'var(--ink-70)' }}>{it.desc}</div>
+                  <p className="t-small muted" style={{ marginTop: 4, maxWidth: '62ch' }}>{it.desc}</p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
+              </div>
+            </Reveal>
+          ))}
         </section>
       ))}
 
-      {/* Docencia */}
-      <section className="mb-16 md:mb-20">
-        <Reveal>
-          <div className="flex items-baseline gap-4 mb-8 hairline-b pb-4">
-            <span className="mono text-[11px]" style={{ color: 'var(--ink-35)' }}>04</span>
-            <h2 className="serif-i text-[26px] md:text-[30px]" style={{ color: 'var(--ink)' }}>{t.cv.docencia}</h2>
-          </div>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="text-[15px] leading-relaxed max-w-2xl mb-10" style={{ color: 'var(--ink-70)' }}>{t.cv.docenciaDesc}</p>
-        </Reveal>
-        <Reveal delay={180}>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
-            {[
-              { name: 'ISDI', logo: '/assets/logo-isdi.png' },
-              { name: 'ESADE', logo: '/assets/logo-esade.png' },
-              { name: 'Nebrija', logo: '/assets/logo-nebrija.png' },
-              { name: 'The Core', logo: '/assets/logo-thecore.png' },
-              { name: 'UNIE', logo: '/assets/logo-unie.png' },
-              { name: 'Mondragon', logo: '/assets/logo-mondragon.png' },
-            ].map((s) => (
-              <div key={s.name} className="logo-quiet flex items-center justify-center h-16">
-                <img
-                  src={s.logo}
-                  alt={s.name}
-                  className="max-h-10 max-w-full w-auto object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const span = document.createElement('span');
-                    span.textContent = s.name;
-                    span.className = 'mono text-xs uppercase tracking-widest';
-                    e.currentTarget.parentElement.appendChild(span);
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </Reveal>
+      <section style={{ marginBottom: 56 }}>
+        <h2 className="t-title rule-b" style={{ paddingBottom: 8 }}>{t.cv.docencia}</h2>
+        <p className="t-small muted" style={{ margin: '16px 0 24px', maxWidth: '62ch' }}>{t.cv.docenciaDesc}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(96px, 1fr))', gap: 4 }}>
+          {[
+            { name: 'ISDI', logo: '/assets/logo-isdi.png' },
+            { name: 'ESADE', logo: '/assets/logo-esade.png' },
+            { name: 'Nebrija', logo: '/assets/logo-nebrija.png' },
+            { name: 'The Core', logo: '/assets/logo-thecore.png' },
+            { name: 'UNIE', logo: '/assets/logo-unie.png' },
+            { name: 'Mondragon', logo: '/assets/logo-mondragon.png' },
+          ].map((s) => (
+            <div key={s.name} className="logo-quiet" style={{ height: 72, display: 'grid', placeItems: 'center', background: 'var(--surface-paper)', borderRadius: 2, padding: 16 }}>
+              <img src={s.logo} alt={s.name} style={{ maxHeight: 28, maxWidth: '100%', objectFit: 'contain' }} />
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Contact card */}
-      <Reveal>
-        <div className="card p-8 md:p-10">
-          <h3 className="serif-i text-[28px] md:text-[32px] mb-3" style={{ color: 'var(--ink)' }}>{t.cv.contactTitle}</h3>
-          <p className="text-[15px] leading-relaxed max-w-xl mb-8" style={{ color: 'var(--ink-70)' }}>{t.cv.contactDesc}</p>
-          <div className="flex flex-wrap gap-3">
-            <a href={CALENDLY} target="_blank" rel="noreferrer" className="pill-dark">{t.cv.contactBtn} <span aria-hidden>→</span></a>
-            <a href="https://linkedin.com/in/alejandromarcosmoraga" target="_blank" rel="noreferrer" className="pill">LinkedIn <span aria-hidden>→</span></a>
-          </div>
+      <section className="card" style={{ padding: 24 }}>
+        <h3 className="t-title">{t.cv.contactTitle}</h3>
+        <p className="muted" style={{ margin: '4px 0 16px' }}>{t.cv.contactDesc}</p>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <Btn href={CALENDLY} external variant="btn-accent">{t.cv.contactBtn}</Btn>
+          <Btn href="https://linkedin.com/in/alejandromarcosmoraga" external>LinkedIn</Btn>
         </div>
-      </Reveal>
-    </main>
+      </section>
+    </div>
   );
 }
 
@@ -815,161 +870,92 @@ function Blog({ t }) {
   }, []);
 
   return (
-    <main className="max-w-6xl mx-auto px-5 md:px-8 pt-14 md:pt-24 pb-20 md:pb-28">
-      <div className="microlabel mb-8 rise">{t.blog.kicker}</div>
-      <h1 className="display text-[clamp(44px,7.5vw,96px)] rise" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.blog.title}</h1>
-      <p className="serif-i text-[clamp(20px,2.6vw,28px)] mt-4 mb-20 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
-        {t.blog.lead}
-      </p>
+    <div>
+      <p className="muted" style={{ marginBottom: 32, maxWidth: '62ch' }}>{t.blog.lead}</p>
 
-      <div className="grid md:grid-cols-12 gap-10">
-        <div className="md:col-span-8">
-          {status === 'loading' && (
-            <div className="mono text-[11px] uppercase tracking-[0.16em] py-16 text-center" style={{ color: 'var(--ink-35)' }}>
-              {t.blog.loading}…
-            </div>
-          )}
+      {status === 'loading' && (
+        <div className="t-small faint" style={{ padding: '48px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span className="pulse-dot" style={{ width: 6, height: 6, borderRadius: 9, background: 'var(--accent)' }} />
+          {t.blog.loading}…
+        </div>
+      )}
 
-          {status === 'empty' && (
-            <Reveal>
-              <div className="card p-8">
-                <h3 className="serif-i text-[26px] mb-3" style={{ color: 'var(--ink)' }}>{t.blog.emptyTitle}</h3>
-                <p className="text-[15px] leading-relaxed mb-6" style={{ color: 'var(--ink-70)' }}>{t.blog.emptyDesc}</p>
-                <a href={SUBSTACK} target="_blank" rel="noreferrer" className="pill">{t.blog.emptyFollow} <span aria-hidden>→</span></a>
-              </div>
-            </Reveal>
-          )}
+      {(status === 'empty' || status === 'error') && (
+        <div className="card" style={{ padding: 24 }}>
+          {status === 'empty' && <h3 className="t-title">{t.blog.emptyTitle}</h3>}
+          <p className="muted" style={{ margin: '4px 0 16px' }}>{status === 'empty' ? t.blog.emptyDesc : t.blog.errorDesc}</p>
+          <Btn href={SUBSTACK} external>{status === 'empty' ? t.blog.emptyFollow : t.blog.errorOpen}</Btn>
+        </div>
+      )}
 
-          {status === 'error' && (
-            <Reveal>
-              <div className="card p-8">
-                <p className="text-[15px] leading-relaxed mb-6" style={{ color: 'var(--ink-70)' }}>{t.blog.errorDesc}</p>
-                <a href={SUBSTACK} target="_blank" rel="noreferrer" className="pill">{t.blog.errorOpen} <span aria-hidden>→</span></a>
-              </div>
-            </Reveal>
-          )}
-
-          {status === 'ready' && posts.map((p, i) => (
-            <Reveal key={i} delay={Math.min(i * 80, 240)}>
-              <article className="py-8 hairline-b group">
-                <div className="flex items-center gap-3 mono text-[10px] uppercase tracking-[0.14em] mb-4 flex-wrap" style={{ color: 'var(--ink-35)' }}>
-                  <span>{p.date}</span>
-                  <span>·</span>
-                  <span>{p.read} {t.blog.readMin}</span>
-                  {p.tag && (
-                    <>
-                      <span>·</span>
-                      <span className="px-2 py-0.5 rounded-full" style={{ border: '1px solid var(--hairline)', color: 'var(--ink-50)' }}>{p.tag}</span>
-                    </>
-                  )}
+      {status === 'ready' && (
+        <div style={{ borderTop: '1px solid var(--rule)' }}>
+          {posts.map((p, i) => (
+            <Reveal key={i} delay={Math.min(i * 40, 160)}>
+              <a href={p.link} target="_blank" rel="noreferrer" className="rule-b post-row" style={{ display: 'block', padding: '20px 0' }}>
+                <div className="t-caption tnum">
+                  {p.date} · {p.read} {t.blog.readMin}{p.tag ? ` · ${p.tag}` : ''}
                 </div>
-                <a href={p.link} target="_blank" rel="noreferrer" className="block">
-                  <h2 className="serif-i text-[26px] md:text-[32px] leading-tight mb-3 transition-opacity group-hover:opacity-70" style={{ color: 'var(--ink)' }}>
-                    {p.title}
-                  </h2>
-                </a>
-                <p className="text-[15px] leading-relaxed mb-4 max-w-2xl" style={{ color: 'var(--ink-70)' }}>{p.excerpt}…</p>
-                <a href={p.link} target="_blank" rel="noreferrer" className="mono text-[11px] uppercase tracking-[0.14em] link-u" style={{ color: 'var(--ink-50)' }}>{t.blog.readMore} →</a>
-              </article>
+                <h2 className="t-title" style={{ marginTop: 4 }}>
+                  <span className="ilink" style={{ color: 'var(--ink)' }}>{p.title}</span>
+                </h2>
+                <p className="t-small muted" style={{ marginTop: 4, maxWidth: '62ch' }}>{p.excerpt}…</p>
+              </a>
             </Reveal>
           ))}
         </div>
+      )}
 
-        <aside className="md:col-span-4">
-          <Reveal delay={150}>
-            <div className="rounded-[18px] p-8 sticky top-24" style={{ background: 'var(--dark)' }}>
-              <div className="microlabel mb-5" style={{ color: 'var(--dark-muted)' }}>{t.blog.subLabel}</div>
-              <h3 className="serif-i text-[26px] mb-4" style={{ color: 'var(--dark-text)' }}>{t.blog.subTitle}</h3>
-              <p className="text-[14px] leading-relaxed mb-7" style={{ color: 'var(--dark-muted)' }}>{t.blog.subDesc}</p>
-              <a href={SUBSTACK} target="_blank" rel="noreferrer" className="pill-invert w-full justify-center">
-                {t.blog.subBtn}
-              </a>
-            </div>
-          </Reveal>
-        </aside>
-      </div>
-    </main>
+      <section className="card" style={{ padding: 24, marginTop: 48 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <Spark small className="" />
+          <h3 className="t-title">{t.blog.subTitle}</h3>
+        </div>
+        <p className="muted" style={{ margin: '4px 0 16px' }}>{t.blog.subDesc}</p>
+        <Btn href={SUBSTACK} external variant="btn-ink">{t.blog.subBtn}</Btn>
+      </section>
+    </div>
   );
 }
 
 // =============================================
 // CONTACT
 // =============================================
-function Contact({ t }) {
+function Contact({ t, u }) {
+  const c = t.contact;
   return (
-    <main className="max-w-5xl mx-auto px-5 md:px-8 pt-14 md:pt-24 pb-20 md:pb-28">
-      <div className="microlabel mb-8 rise">{t.contact.kicker}</div>
-      <h1 className="display text-[clamp(44px,7.5vw,96px)] rise" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.contact.title}</h1>
-      <p className="serif-i text-[clamp(20px,2.6vw,28px)] mt-4 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
-        {t.contact.lead}
-      </p>
-      <p className="display text-[clamp(22px,3vw,32px)] mt-5 mb-20 rise" style={{ animationDelay: '300ms', color: 'var(--ink)', fontWeight: 600, letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>
-        {t.contact.leadEmph}
-      </p>
+    <div>
+      <div className="flow">
+        <p style={{ maxWidth: '62ch' }}>
+          {c.lead} <span style={{ background: 'var(--tint-lime)', padding: '0 4px', borderRadius: 2 }}>{c.leadEmph}</span>
+        </p>
+        <p style={{ maxWidth: '62ch' }}>
+          {c.roleA}<span className="muted">{c.roleB}</span>{c.roleC}
+        </p>
+        <p className="muted" style={{ maxWidth: '62ch' }}>{c.workIntro}</p>
+        <p style={{ maxWidth: '62ch' }}>{c.workIntroHighlight}</p>
+      </div>
 
-      {/* Work */}
-      <section className="mb-20">
-        <Reveal>
-          <div className="microlabel mb-10 hairline-t pt-6">{t.contact.workLabel}</div>
-        </Reveal>
-        <Reveal delay={60}>
-          <p className="text-[17px] md:text-[19px] leading-relaxed max-w-3xl mb-8" style={{ color: 'var(--ink)' }}>
-            {t.contact.roleA}
-            <span className="serif-i">{t.contact.roleB}</span>
-            {t.contact.roleC}
-          </p>
-        </Reveal>
-        <Reveal delay={120}>
-          <p className="text-[16px] md:text-[17px] leading-relaxed max-w-3xl mb-6" style={{ color: 'var(--ink-70)' }}>
-            {t.contact.workIntro}
-          </p>
-        </Reveal>
-        <Reveal delay={140}>
-          <p className="display text-[clamp(22px,3vw,32px)] max-w-3xl mb-16" style={{ color: 'var(--ink)', lineHeight: 1.25, letterSpacing: '-0.02em' }}>
-            {t.contact.workIntroHighlight}
-          </p>
-        </Reveal>
+      <div style={{ margin: '48px 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 4 }}>
+        {c.pillars.map((p, i) => (
+          <Reveal key={p.title} delay={i * 60}>
+            <div className={`media ${['tint-lime', 'tint-lilac', 'tint-sky'][i]}`} style={{ padding: 16, height: '100%' }}>
+              <div className="t-caption tnum" style={{ color: 'rgba(0,0,0,.5)' }}>{String(i + 1).padStart(2, '0')}</div>
+              <h3 className="t-title" style={{ marginTop: 24 }}>{p.title}</h3>
+              <p className="t-small" style={{ color: 'rgba(0,0,0,.62)', marginTop: 4 }}>{p.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-5 mb-14">
-          {t.contact.pillars.map((p, i) => (
-            <Reveal key={i} delay={i * 100}>
-              <article className="card p-7 h-full">
-                <div className="mono text-[11px] mb-6" style={{ color: 'var(--ink-35)' }}>{String(i + 1).padStart(2, '0')}</div>
-                <h3 className="serif-i text-[26px] mb-3" style={{ color: 'var(--ink)' }}>{p.title}</h3>
-                <p className="text-[14.5px] leading-relaxed" style={{ color: 'var(--ink-70)' }}>{p.desc}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+      <p className="t-small muted" style={{ maxWidth: '62ch', paddingLeft: 12, borderLeft: '2px solid var(--accent)' }}>{c.workNote}</p>
 
-        <Reveal>
-          <p className="text-[15px] leading-relaxed max-w-3xl pl-6" style={{ color: 'var(--ink-70)', borderLeft: '2px solid var(--green)' }}>
-            {t.contact.workNote}
-          </p>
-        </Reveal>
+      <section style={{ marginTop: 56, padding: 24, borderRadius: 2, background: 'var(--ink)', color: '#f5f5f5' }}>
+        <div className="t-caption" style={{ color: 'var(--accent)' }}>{c.sessionLabel}</div>
+        <h2 className="t-title" style={{ marginTop: 4 }}>{c.sessionTitle}</h2>
+        <p style={{ color: '#a8a8a8', margin: '4px 0 20px', maxWidth: '56ch' }}>{c.sessionLead}</p>
+        <Btn href={CALENDLY} external variant="btn-accent">{c.sessionBtn}</Btn>
       </section>
-
-      {/* Session */}
-      <section>
-        <Reveal>
-          <div className="microlabel mb-10 hairline-t pt-6">{t.contact.sessionLabel}</div>
-        </Reveal>
-        <Reveal delay={80}>
-          <h2 className="display text-[clamp(32px,5vw,56px)] mb-6" style={{ color: 'var(--ink)' }}>
-            {t.contact.sessionTitle}
-          </h2>
-        </Reveal>
-        <Reveal delay={160}>
-          <p className="text-[16px] leading-relaxed max-w-2xl mb-10" style={{ color: 'var(--ink-70)' }}>
-            {t.contact.sessionLead}
-          </p>
-        </Reveal>
-        <Reveal delay={240}>
-          <a href={CALENDLY} target="_blank" rel="noreferrer" className="pill-dark">
-            {t.contact.sessionBtn} <span aria-hidden>→</span>
-          </a>
-        </Reveal>
-      </section>
-    </main>
+    </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Dock from '../components/Dock';
 
 // =============================================
 // /biblioteca — la biblioteca viva
@@ -251,60 +252,30 @@ export default function BibliotecaPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* nav */}
-      <nav
-        className="fixed top-0 left-0 right-0 z-50 hairline-b"
-        style={{ background: 'rgba(230,229,225,0.85)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
-      >
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-0 md:h-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 md:gap-2">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-baseline gap-0.5 shrink-0" style={{ textDecoration: 'none' }}>
-              <span className="display text-[16px] md:text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
-              <sup className="mono text-[9px]" style={{ color: 'var(--green)', filter: 'brightness(0.75)' }}>®</sup>
-            </Link>
-            <button
-              onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-              className="mono text-[11px] md:hidden"
-              style={{ background: 'none', border: '1px solid var(--hairline)', borderRadius: 999, padding: '4px 9px', cursor: 'pointer', color: 'var(--ink-50)' }}
-            >
-              {lang === 'es' ? 'EN' : 'ES'}
-            </button>
-          </div>
-          <div className="flex items-center gap-4 md:gap-7">
-            <Link href="/" className="nav-link hidden md:inline">{t.nav.home}</Link>
-            <Link href="/?go=cv" className="nav-link">{t.nav.cv}</Link>
-            <Link href="/?go=blog" className="nav-link">{t.nav.blog}</Link>
-            <span className="nav-link active">{t.nav.library}</span>
-            <Link href="/?go=contact" className="nav-link">{t.nav.contact}</Link>
-            <div className="mono text-[11px] hidden md:flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
-              <button onClick={() => setLang('es')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'es' ? 'var(--ink)' : 'inherit' }}>ES</button>
-              <span>/</span>
-              <button onClick={() => setLang('en')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'en' ? 'var(--ink)' : 'inherit' }}>EN</button>
-            </div>
-          </div>
-        </div>
-      </nav>
 
-      <main className="flex-1 max-w-5xl mx-auto w-full px-5 md:px-8 pb-20" style={{ paddingTop: 120 }}>
-        <div className="microlabel mb-8 rise">{t.kicker}</div>
-        <h1 className="display text-[clamp(44px,7.5vw,96px)] rise" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.title}</h1>
-        <p className="serif-i text-[clamp(20px,2.6vw,28px)] mt-4 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
+      <main className="flex-1 w-full page">
+        <header className="page-head">
+          <Link href="/" className="ilink">Alejandro Marcos</Link>
+          <Link href="/" className="ilink">{lang === 'es' ? '← Inicio' : '← Home'}</Link>
+        </header>
+        <h1 className="t-title rise mt-10" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.title}</h1>
+        <p className="serif-i text-[16px] leading-6 mt-4 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
           {t.lead}
         </p>
-        <p className="text-[15px] md:text-[16px] leading-relaxed max-w-2xl mt-8 mb-6 rise" style={{ animationDelay: '300ms', color: 'var(--ink-70)' }}>
+        <p className="text-[16px] leading-relaxed max-w-2xl mt-8 mb-6 rise" style={{ animationDelay: '300ms', color: 'var(--ink-70)' }}>
           {t.intro}
         </p>
-        <div className="mono text-[11px] uppercase tracking-[0.16em] mb-20 rise flex items-center gap-2.5" style={{ animationDelay: '380ms', color: 'var(--ink-35)' }}>
+        <div className="text-[12px] leading-[18px] mb-20 rise flex items-center gap-2.5" style={{ animationDelay: '380ms', color: 'var(--ink-35)' }}>
           <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: 'var(--green)', filter: 'brightness(0.85)' }} />
           {total} {t.booksLabel} · {t.updated}
         </div>
 
         {CATS.map((cat, ci) => (
-          <section key={cat.id} className="mb-16 md:mb-20">
+          <section key={cat.id} className="mb-12">
             <div className="hairline-b pb-5 mb-2">
               <div className="flex items-baseline gap-4">
                 <span className="mono text-[11px]" style={{ color: 'var(--ink-35)' }}>{String(ci + 1).padStart(2, '0')}</span>
-                <h2 className="display text-[22px] md:text-[28px]" style={{ color: 'var(--ink)', fontWeight: 600 }}>{cat[lang].title}</h2>
+                <h2 className="display text-[18px]" style={{ color: 'var(--ink)', fontWeight: 400 }}>{cat[lang].title}</h2>
               </div>
               <p className="text-[14px] leading-relaxed mt-2 max-w-2xl md:pl-10" style={{ color: 'var(--ink-50)' }}>{cat[lang].desc}</p>
             </div>
@@ -313,18 +284,18 @@ export default function BibliotecaPage() {
                 <div key={i} className="py-5 hairline-b grid md:grid-cols-12 gap-2 md:gap-6" style={{ borderColor: 'rgba(22,21,19,0.08)' }}>
                   <div className="md:col-span-5">
                     {b.url ? (
-                      <a href={withTag(b.url)} target="_blank" rel="noreferrer" className="link-u serif-i text-[19px] md:text-[21px] leading-snug" style={{ color: 'var(--ink)' }}>
+                      <a href={withTag(b.url)} target="_blank" rel="noreferrer" className="link-u serif-i text-[16px] leading-snug" style={{ color: 'var(--ink)' }}>
                         {b.t}
                       </a>
                     ) : (
-                      <span className="serif-i text-[19px] md:text-[21px] leading-snug" style={{ color: 'var(--ink)' }}>{b.t}</span>
+                      <span className="serif-i text-[16px] leading-snug" style={{ color: 'var(--ink)' }}>{b.t}</span>
                     )}
-                    {b.a && <div className="mono text-[10px] uppercase tracking-[0.14em] mt-1.5" style={{ color: 'var(--ink-50)' }}>{b.a}</div>}
+                    {b.a && <div className="text-[12px] leading-[18px] mt-1.5" style={{ color: 'var(--ink-50)' }}>{b.a}</div>}
                   </div>
                   <div className="md:col-span-7 flex items-start justify-between gap-4">
-                    <p className="text-[14px] md:text-[14.5px] leading-relaxed" style={{ color: 'var(--ink-70)' }}>{b[lang]}</p>
+                    <p className="text-[14px] md:text-[14px] leading-relaxed" style={{ color: 'var(--ink-70)' }}>{b[lang]}</p>
                     {b.url && (
-                      <a href={withTag(b.url)} target="_blank" rel="noreferrer" className="mono text-[10px] uppercase tracking-[0.14em] link-u shrink-0 hidden md:inline" style={{ color: 'var(--ink-35)' }}>
+                      <a href={withTag(b.url)} target="_blank" rel="noreferrer" className="text-[12px] leading-[18px] link-u shrink-0 hidden md:inline" style={{ color: 'var(--ink-35)' }}>
                         {t.get} →
                       </a>
                     )}
@@ -336,11 +307,7 @@ export default function BibliotecaPage() {
         ))}
       </main>
 
-      <footer className="hairline-t">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-wrap items-center justify-between gap-4 mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-35)' }}>
-          <span>© 2008–2026 alejandro marcos</span>
-        </div>
-      </footer>
+      <Dock lang={lang} setLang={setLang} active={"library"} />
     </div>
   );
 }

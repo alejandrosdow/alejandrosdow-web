@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Dock from '../components/Dock';
 
 const T = {
   es: {
@@ -73,73 +74,43 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* nav */}
-      <nav
-        className="fixed top-0 left-0 right-0 z-50 hairline-b"
-        style={{ background: 'rgba(230,229,225,0.85)', backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)' }}
-      >
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 md:py-0 md:h-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 md:gap-2">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-baseline gap-0.5 shrink-0" style={{ textDecoration: 'none' }}>
-              <span className="display text-[16px] md:text-[17px] tracking-tight" style={{ color: 'var(--ink)' }}>alejandrosdow</span>
-              <sup className="mono text-[9px]" style={{ color: 'var(--green)', filter: 'brightness(0.75)' }}>®</sup>
-            </Link>
-            <button
-              onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-              className="mono text-[11px] md:hidden"
-              style={{ background: 'none', border: '1px solid var(--hairline)', borderRadius: 999, padding: '4px 9px', cursor: 'pointer', color: 'var(--ink-50)' }}
-            >
-              {lang === 'es' ? 'EN' : 'ES'}
-            </button>
-          </div>
-          <div className="flex items-center gap-4 md:gap-7">
-            <Link href="/" className="nav-link hidden md:inline">{t.nav.home}</Link>
-            <Link href="/?go=cv" className="nav-link">{t.nav.cv}</Link>
-            <span className="nav-link active">{t.nav.blog}</span>
-            <Link href="/biblioteca" className="nav-link">{t.nav.library}</Link>
-            <Link href="/?go=contact" className="nav-link">{t.nav.contact}</Link>
-            <div className="mono text-[11px] hidden md:flex items-center gap-1.5" style={{ color: 'var(--ink-35)' }}>
-              <button onClick={() => setLang('es')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'es' ? 'var(--ink)' : 'inherit' }}>ES</button>
-              <span>/</span>
-              <button onClick={() => setLang('en')} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: lang === 'en' ? 'var(--ink)' : 'inherit' }}>EN</button>
-            </div>
-          </div>
-        </div>
-      </nav>
 
-      <main className="flex-1 max-w-6xl mx-auto w-full px-5 md:px-8 pt-30 md:pt-40 pb-20" style={{ paddingTop: 120 }}>
-        <div className="microlabel mb-8 rise">{t.kicker}</div>
-        <h1 className="display text-[clamp(44px,7.5vw,96px)] rise" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.title}</h1>
-        <p className="serif-i text-[clamp(20px,2.6vw,28px)] mt-4 mb-20 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
+      <main className="flex-1 w-full page">
+        <header className="page-head">
+          <Link href="/" className="ilink">Alejandro Marcos</Link>
+          <Link href="/" className="ilink">{lang === 'es' ? '← Inicio' : '← Home'}</Link>
+        </header>
+        <h1 className="t-title rise mt-10" style={{ animationDelay: '100ms', color: 'var(--ink)' }}>{t.title}</h1>
+        <p className="serif-i text-[16px] leading-6 mt-4 mb-20 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
           {t.lead}
         </p>
 
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-8">
             {status === 'loading' && (
-              <div className="mono text-[11px] uppercase tracking-[0.16em] py-16 text-center" style={{ color: 'var(--ink-35)' }}>
+              <div className="text-[12px] leading-[18px] py-16 text-center" style={{ color: 'var(--ink-35)' }}>
                 {t.loading}…
               </div>
             )}
 
             {status === 'empty' && (
               <div className="card p-8">
-                <h3 className="serif-i text-[26px] mb-3" style={{ color: 'var(--ink)' }}>{t.emptyTitle}</h3>
-                <p className="text-[15px] leading-relaxed mb-6" style={{ color: 'var(--ink-70)' }}>{t.emptyDesc}</p>
+                <h3 className="serif-i text-[18px] mb-3" style={{ color: 'var(--ink)' }}>{t.emptyTitle}</h3>
+                <p className="text-[16px] leading-relaxed mb-6" style={{ color: 'var(--ink-70)' }}>{t.emptyDesc}</p>
                 <a href={SUBSTACK} target="_blank" rel="noreferrer" className="pill">{t.emptyFollow} <span aria-hidden>→</span></a>
               </div>
             )}
 
             {status === 'error' && (
               <div className="card p-8">
-                <p className="text-[15px] leading-relaxed mb-6" style={{ color: 'var(--ink-70)' }}>{t.errorDesc}</p>
+                <p className="text-[16px] leading-relaxed mb-6" style={{ color: 'var(--ink-70)' }}>{t.errorDesc}</p>
                 <a href={SUBSTACK} target="_blank" rel="noreferrer" className="pill">{t.errorOpen} <span aria-hidden>→</span></a>
               </div>
             )}
 
             {status === 'ready' && posts.map((p, i) => (
               <article key={i} className="py-8 hairline-b group">
-                <div className="flex items-center gap-3 mono text-[10px] uppercase tracking-[0.14em] mb-4 flex-wrap" style={{ color: 'var(--ink-35)' }}>
+                <div className="flex items-center gap-3 text-[12px] leading-[18px] mb-4 flex-wrap" style={{ color: 'var(--ink-35)' }}>
                   <span>{p.date}</span>
                   <span>·</span>
                   <span>{p.read} {t.readMin}</span>
@@ -151,20 +122,20 @@ export default function BlogPage() {
                   )}
                 </div>
                 <a href={p.link} target="_blank" rel="noreferrer" className="block">
-                  <h2 className="serif-i text-[26px] md:text-[32px] leading-tight mb-3 transition-opacity group-hover:opacity-70" style={{ color: 'var(--ink)' }}>
+                  <h2 className="serif-i text-[18px] leading-tight mb-3 transition-opacity group-hover:opacity-70" style={{ color: 'var(--ink)' }}>
                     {p.title}
                   </h2>
                 </a>
-                <p className="text-[15px] leading-relaxed mb-4 max-w-2xl" style={{ color: 'var(--ink-70)' }}>{p.excerpt}…</p>
-                <a href={p.link} target="_blank" rel="noreferrer" className="mono text-[11px] uppercase tracking-[0.14em] link-u" style={{ color: 'var(--ink-50)' }}>{t.readMore} →</a>
+                <p className="text-[16px] leading-relaxed mb-4 max-w-2xl" style={{ color: 'var(--ink-70)' }}>{p.excerpt}…</p>
+                <a href={p.link} target="_blank" rel="noreferrer" className="text-[12px] leading-[18px] link-u" style={{ color: 'var(--ink-50)' }}>{t.readMore} →</a>
               </article>
             ))}
           </div>
 
           <aside className="md:col-span-4">
-            <div className="rounded-[18px] p-8 sticky top-24" style={{ background: 'var(--dark)' }}>
+            <div className="rounded-[2px] p-8 sticky top-24" style={{ background: 'var(--dark)' }}>
               <div className="microlabel mb-5" style={{ color: 'var(--dark-muted)' }}>{t.subLabel}</div>
-              <h3 className="serif-i text-[26px] mb-4" style={{ color: 'var(--dark-text)' }}>{t.subTitle}</h3>
+              <h3 className="serif-i text-[18px] mb-4" style={{ color: 'var(--dark-text)' }}>{t.subTitle}</h3>
               <p className="text-[14px] leading-relaxed mb-7" style={{ color: 'var(--dark-muted)' }}>{t.subDesc}</p>
               <a href={SUBSTACK} target="_blank" rel="noreferrer" className="pill-invert w-full justify-center">
                 {t.subBtn}
@@ -174,11 +145,7 @@ export default function BlogPage() {
         </div>
       </main>
 
-      <footer className="hairline-t">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-wrap items-center justify-between gap-4 mono text-[11px] uppercase tracking-[0.14em]" style={{ color: 'var(--ink-35)' }}>
-          <span>© 2008–2026 alejandro marcos</span>
-        </div>
-      </footer>
+      <Dock lang={lang} setLang={setLang} active={"blog"} />
     </div>
   );
 }
