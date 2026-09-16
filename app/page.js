@@ -370,10 +370,10 @@ const UI = {
         ],
       },
       cm: {
-        caption: 'Brand Manager: Cooler Master · 2017—19',
+        caption: 'Brand Manager Iberia: Cooler Master · 2017—19',
         body: [
-          'Durante un año y medio trabajé para Cooler Master, una de las marcas más prestigiosas y reconocidas del mundo en hardware para PC. Como Brand Manager en España, ayudé a hacer crecer el negocio un 50% año tras año.',
-          'Fue la primera marca de gaming en España con un equipo de embajadores formado por creadores de contenido: IamCristinini, BlackEspanolito y UnBoxMe.',
+          'Durante un año y medio trabajé como Brand Manager de Iberia para Cooler Master, una de las marcas más prestigiosas y reconocidas del mundo en hardware para PC.',
+          'Fue la primera marca de gaming en España con un equipo de embajadores formado por creadores de contenido: IamCristinini, BlackEspanolito y UnBoxMe. Logramos hacer crecer la facturación de la marca un 50% YoY.',
         ],
       },
       mv: {
@@ -500,10 +500,10 @@ const UI = {
         ],
       },
       cm: {
-        caption: 'Brand Manager: Cooler Master · 2017—19',
+        caption: 'Brand Manager Iberia: Cooler Master · 2017—19',
         body: [
-          'For a year and a half I worked for Cooler Master, one of the most prestigious and recognised PC hardware brands in the world. As Brand Manager in Spain, I helped grow the business 50% year on year.',
-          'It was the first gaming brand in Spain with an ambassador team made up of content creators: IamCristinini, BlackEspanolito and UnBoxMe.',
+          'For a year and a half I worked as Brand Manager for Iberia at Cooler Master, one of the most prestigious and recognised PC hardware brands in the world.',
+          'It was the first gaming brand in Spain with an ambassador team made up of content creators: IamCristinini, BlackEspanolito and UnBoxMe. We grew the brand’s revenue 50% YoY.',
         ],
       },
       mv: {
