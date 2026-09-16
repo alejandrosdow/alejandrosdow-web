@@ -841,8 +841,8 @@ function WorkSoon({ u }) {
 
       <article style={{ marginTop: 72 }}>
         <div className="clip-pair">
-          <ClipPlayer src="/assets/hilos/genlayer-1.mp4" poster="/assets/hilos/genlayer-1.jpg" label="GenLayer — Agent Tank" t={s} />
           <ClipPlayer src="/assets/hilos/genlayer-2.mp4" poster="/assets/hilos/genlayer-2.jpg" label="GenLayer" t={s} />
+          <ClipPlayer src="/assets/hilos/genlayer-1.mp4" poster="/assets/hilos/genlayer-1.jpg" label="GenLayer — Agent Tank" t={s} />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.gl.caption}</div>
         <h3 className="t-title" style={{ marginTop: 24 }}>GenLayer</h3>
