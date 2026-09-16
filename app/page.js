@@ -354,8 +354,7 @@ const UI = {
         caption: 'GenLayer · The adjudication layer for the agentic era',
         body: [
           'GenLayer quiere ser la corte de internet: una infraestructura de confianza para la era de la IA, en la intersección entre blockchain e inteligencia artificial.',
-          'Desde 2025 les asesoro en marca y comunidad internacional. Mi trabajo es aterrizar la narrativa y traducir un producto complejo a un idioma que la gente entienda y sienta como propio.',
-          'Campañas para las testnets, hackatones, comunidad internacional y el go-to-market del token.',
+          'Mi trabajo como advisor es aterrizar la narrativa y traducir un producto complejo a un idioma que la gente entienda y sienta como propio. Campañas para las testnets, hackatones, comunidad internacional y el go-to-market del token.',
         ],
       },
       btn: 'Ver en YouTube',
@@ -425,8 +424,7 @@ const UI = {
         caption: 'GenLayer · The adjudication layer for the agentic era',
         body: [
           'GenLayer wants to be the court of the internet: trust infrastructure for the AI era, at the intersection of blockchain and artificial intelligence.',
-          'Since 2025 I have advised them on brand and international community. My job is to ground the narrative and translate a complex product into a language people understand and feel is their own.',
-          'Campaigns for the testnets, hackathons, international community and the token go-to-market.',
+          'My work as an advisor is to ground the narrative and translate a complex product into a language people understand and feel is their own. Campaigns for the testnets, hackathons, international community and the token go-to-market.',
         ],
       },
       btn: 'Watch on YouTube',
@@ -835,8 +833,7 @@ function WorkSoon({ u }) {
       <article>
         <ClipPlayer src="/assets/hilos/heretics-spot-2025.mp4" poster="/assets/hilos/heretics-spot-2025.jpg" label="Team Heretics Spot 2025" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.caption}</div>
-        <h3 className="t-title" style={{ marginTop: 24 }}>{s.title}</h3>
-        <p style={{ marginTop: 6, maxWidth: '62ch' }}>{s.desc}</p>
+        <p style={{ marginTop: 16, maxWidth: '62ch' }}>{s.desc}</p>
       </article>
 
       <article style={{ marginTop: 72 }}>
@@ -845,8 +842,7 @@ function WorkSoon({ u }) {
           <ClipPlayer src="/assets/hilos/genlayer-1.mp4" poster="/assets/hilos/genlayer-1.jpg" label="GenLayer — Agent Tank" t={s} />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.gl.caption}</div>
-        <h3 className="t-title" style={{ marginTop: 24 }}>GenLayer</h3>
-        <div className="flow" style={{ marginTop: 6, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.gl.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
