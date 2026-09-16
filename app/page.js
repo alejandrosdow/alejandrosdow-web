@@ -296,7 +296,7 @@ const UI = {
   es: {
     name: 'Alejandro Marcos',
     bio: [
-      'Construyo marcas culturales. Soy Chief Brand Officer en ',
+      'Construyo marca, comunidad y cultura desde la estrategia creativa. Chief Brand Officer en ',
       { k: 'x:heretics', label: 'Team Heretics' },
       ' y colaboro en varios ',
       { k: 'x:proyectos', label: 'proyectos' },
@@ -350,9 +350,9 @@ const UI = {
   en: {
     name: 'Alejandro Marcos',
     bio: [
-      "I build cultural brands. I'm Chief Brand Officer at ",
+      'I build brand, community and culture through creative strategy. Chief Brand Officer at ',
       { k: 'x:heretics', label: 'Team Heretics' },
-      ' and collaborate on several ',
+      ', and I collaborate on several ',
       { k: 'x:proyectos', label: 'projects' },
       ' as a freelancer throughout the year.',
     ],
