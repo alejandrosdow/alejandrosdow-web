@@ -87,20 +87,20 @@ export const THREADS = {
     es: {
       title: 'Lo que viene',
       body: [
-        ['Desde 2025 asesoro a GenLayer, infraestructura de confianza humana para la era de la IA, en la intersección entre blockchain e IA.'],
-        ['Con Rally hago lo mismo en clave B2C: narrativa, equipo y campañas.'],
-        ['El reto común es traducir productos complejos a un idioma que la gente entienda.'],
+        ['Lo que viene está en la intersección entre entretenimiento, tecnología y cultura digital.'],
+        ['El entretenimiento es nuestro campo de juego para la convergencia.'],
+        ['También quiero ', { k: 'blog', label: 'escribir más y compartir lo que aprendo' }, '.'],
       ],
-      close: ['Todo empezó ', { k: 'x:origenes', label: 'aquí' }, '.'],
+      close: ['Desde aquí puedes ver ', { k: 'x:origenes', label: 'dónde empezó' }, '.'],
     },
     en: {
       title: 'What’s next',
       body: [
-        ['Since 2025 I have advised GenLayer, human trust infrastructure for the AI era, at the intersection of blockchain and AI.'],
-        ['With Rally I do the same in a B2C key: narrative, team and campaigns.'],
-        ['The shared challenge is translating complex products into a language people understand.'],
+        ['What’s next sits at the intersection of entertainment, technology and digital culture.'],
+        ['Entertainment is our playing field for convergence.'],
+        ['I also want to ', { k: 'blog', label: 'write more and share what I learn' }, '.'],
       ],
-      close: ['It all began ', { k: 'x:origenes', label: 'here' }, '.'],
+      close: ['From here, you can see ', { k: 'x:origenes', label: 'where it began' }, '.'],
     },
   },
 
@@ -154,7 +154,7 @@ export const THREADS_INTRO = {
     back: 'Todos los hilos',
     paras: [
       ['Narrativa, comunidad y creatividad dan forma a ', { k: 'x:como-trabajo', label: 'cómo trabajo' }, ', de ', { k: 'x:heretics', label: 'Team Heretics' }, ' a ', { k: 'x:proyectos', label: 'mis propios proyectos' }, '.'],
-      [{ k: 'x:lo-que-viene', label: 'Lo que viene' }, ' cruza marca, IA y blockchain. ', { k: 'x:origenes', label: 'Dónde empezó' }, ' junta gaming, esports y contenido.'],
+      [{ k: 'x:lo-que-viene', label: 'Lo que viene' }, ' cruza entretenimiento, tecnología y cultura digital. ', { k: 'x:origenes', label: 'Dónde empezó' }, ' junta gaming, esports y contenido.'],
       ['Dos regalos: ', { k: 'x:libro', label: 'mi libro' }, ' y ', { k: 'library', label: 'una pequeña biblioteca' }, '.'],
       ['Para historias más largas, ', { k: 'blog', label: 'lee mi blog' }, '.'],
     ],
@@ -165,7 +165,7 @@ export const THREADS_INTRO = {
     back: 'All threads',
     paras: [
       ['Narrative, community and creativity shape ', { k: 'x:como-trabajo', label: 'how I work' }, ', from ', { k: 'x:heretics', label: 'Team Heretics' }, ' to ', { k: 'x:proyectos', label: 'my own projects' }, '.'],
-      [{ k: 'x:lo-que-viene', label: 'What’s next' }, ' connects brand, AI and blockchain. ', { k: 'x:origenes', label: 'Where it began' }, ' brings together gaming, esports and content.'],
+      [{ k: 'x:lo-que-viene', label: 'What’s next' }, ' connects entertainment, technology and digital culture. ', { k: 'x:origenes', label: 'Where it began' }, ' brings together gaming, esports and content.'],
       ['Two gifts: ', { k: 'x:libro', label: 'my book' }, ' and ', { k: 'library', label: 'a small library' }, '.'],
       ['For longer stories, ', { k: 'blog', label: 'read my blog' }, '.'],
     ],
