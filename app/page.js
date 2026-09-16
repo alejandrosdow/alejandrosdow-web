@@ -537,6 +537,7 @@ export default function Page() {
     window.history.replaceState({}, '', slug ? `#ideas/${slug}` : window.location.pathname);
     const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
     if (!isDesktop) setRoute('home');
+    if (!slug && !isDesktop) return; // closing a thread on mobile: let the caller decide the scroll
     requestAnimationFrame(() => {
       if (isDesktop) threadsRef.current?.scrollTo({ top: 0, behavior: 'instant' });
       else threadsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
