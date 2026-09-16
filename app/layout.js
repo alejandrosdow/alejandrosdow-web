@@ -1,11 +1,11 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Alejandro Marcos — alejandrosdow.com',
+  title: 'Alejandro Marcos · Creative strategy',
   description: 'Soy Alejandro Marcos, Chief Brand Officer de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
   metadataBase: new URL('https://alejandrosdow.com'),
   openGraph: {
-    title: 'Alejandro Marcos — alejandrosdow.com',
+    title: 'Alejandro Marcos · Creative strategy',
     description: 'Soy Alejandro Marcos, Chief Brand Officer de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
     url: 'https://alejandrosdow.com',
     siteName: 'alejandrosdow',
@@ -14,7 +14,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alejandro Marcos — alejandrosdow.com',
+    title: 'Alejandro Marcos · Creative strategy',
     description: 'Soy Alejandro Marcos, Chief Brand Officer de Team Heretics. Trabajo en la intersección entre entretenimiento, tecnología y cultura digital.',
     creator: '@alejandrosdow',
   },
