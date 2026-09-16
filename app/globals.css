@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -37,10 +37,10 @@
   --tint-mint: #d9f5e8;
 
   /* type scale (px / line) */
-  --fs-title: 18px;
+  --fs-title: 20px;
   --lh-title: 28px;
-  --fs-body: 16px;
-  --lh-body: 24px;
+  --fs-body: 17px;
+  --lh-body: 25px;
   --fs-small: 14px;
   --lh-small: 20px;
   --fs-caption: 12px;
@@ -81,10 +81,10 @@ body {
 }
 
 body {
-  font-family: 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Schibsted Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  letter-spacing: -0.005em;
+  letter-spacing: -0.012em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -110,6 +110,7 @@ a {
   font-size: var(--fs-title);
   line-height: var(--lh-title);
   font-weight: 400;
+  letter-spacing: -0.02em;
 }
 .t-body {
   font-size: var(--fs-body);
@@ -774,7 +775,7 @@ a {
 
 /* ---------- metadata in monospace ---------- */
 :root {
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 .t-caption,
 .microlabel,
@@ -783,7 +784,7 @@ a {
   font-family: var(--font-mono);
   font-size: 11px;
   line-height: 18px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
 }
 .stat {
   font-family: var(--font-mono);
