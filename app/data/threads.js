@@ -153,8 +153,9 @@ export const THREADS_INTRO = {
     crumb: 'Hilos',
     back: 'Todos los hilos',
     paras: [
-      ['Narrativa, comunidad y creatividad dan forma a ', { k: 'x:como-trabajo', label: 'cómo trabajo' }, ', de ', { k: 'x:heretics', label: 'Team Heretics' }, ' a ', { k: 'x:proyectos', label: 'mis propios proyectos' }, '.'],
-      [{ k: 'x:lo-que-viene', label: 'Lo que viene' }, ' cruza entretenimiento, tecnología y cultura digital. ', { k: 'x:origenes', label: 'Dónde empezó' }, ' junta gaming, esports y contenido.'],
+      ['Narrativa, comunidad y creatividad dan forma a ', { k: 'x:como-trabajo', label: 'cómo trabajo' }, '.'],
+      [{ k: 'x:lo-que-viene', label: 'Lo que viene' }, ' cruza entretenimiento, tecnología y cultura digital.'],
+      [{ k: 'x:origenes', label: 'Dónde empezó' }, ' junta gaming y contenido.'],
       ['Dos regalos: ', { k: 'x:libro', label: 'mi libro' }, ' y ', { k: 'library', label: 'una pequeña biblioteca' }, '.'],
       ['Para historias más largas, ', { k: 'blog', label: 'lee mi blog' }, '.'],
     ],
@@ -164,8 +165,9 @@ export const THREADS_INTRO = {
     crumb: 'Threads',
     back: 'All threads',
     paras: [
-      ['Narrative, community and creativity shape ', { k: 'x:como-trabajo', label: 'how I work' }, ', from ', { k: 'x:heretics', label: 'Team Heretics' }, ' to ', { k: 'x:proyectos', label: 'my own projects' }, '.'],
-      [{ k: 'x:lo-que-viene', label: 'What’s next' }, ' connects entertainment, technology and digital culture. ', { k: 'x:origenes', label: 'Where it began' }, ' brings together gaming, esports and content.'],
+      ['Narrative, community and creativity shape ', { k: 'x:como-trabajo', label: 'how I work' }, '.'],
+      [{ k: 'x:lo-que-viene', label: 'What’s next' }, ' connects entertainment, technology and digital culture.'],
+      [{ k: 'x:origenes', label: 'Where it began' }, ' brings together gaming and content.'],
       ['Two gifts: ', { k: 'x:libro', label: 'my book' }, ' and ', { k: 'library', label: 'a small library' }, '.'],
       ['For longer stories, ', { k: 'blog', label: 'read my blog' }, '.'],
     ],
