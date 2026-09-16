@@ -87,7 +87,7 @@ export const THREADS = {
     es: {
       title: 'Lo que viene',
       body: [
-        ['Lo que viene está en la intersección entre entretenimiento, tecnología y cultura digital.'],
+        ['Tres hilos abiertos: entretenimiento, tecnología y cultura digital.'],
         ['El entretenimiento es nuestro campo de juego para la convergencia.'],
         ['También quiero ', { k: 'blog', label: 'escribir más y compartir lo que aprendo' }, '.'],
       ],
@@ -96,7 +96,7 @@ export const THREADS = {
     en: {
       title: 'What’s next',
       body: [
-        ['What’s next sits at the intersection of entertainment, technology and digital culture.'],
+        ['Three open threads: entertainment, technology and digital culture.'],
         ['Entertainment is our playing field for convergence.'],
         ['I also want to ', { k: 'blog', label: 'write more and share what I learn' }, '.'],
       ],
