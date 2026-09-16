@@ -62,7 +62,7 @@ const I18N = {
       ctaC: '.',
       ctaRole: 'Mi rol podría definirse como alguien que construye marca, cultura y comunidad desde la estrategia creativa. Lo he hecho liderando la marca de Team Heretics, asesorando a empresas y creadores, y fundando mis propios proyectos.',
       ctaSub: '¿Charlamos 30 minutos?',
-      ctaBtn: 'Reservar sesión gratuita',
+      ctaBtn: 'Reserva una sesión',
     },
     cv: {
       kicker: '/cv — the long version',
@@ -198,7 +198,7 @@ const I18N = {
       ctaC: '.',
       ctaRole: "My role could be defined as someone who builds brand, culture and community through creative strategy. I've done it leading the Team Heretics brand, advising companies and creators, and founding my own projects.",
       ctaSub: 'Shall we talk for 30 minutes?',
-      ctaBtn: 'Book a free session',
+      ctaBtn: 'Book a session',
     },
     cv: {
       kicker: '/cv — the long version',
@@ -345,7 +345,7 @@ const UI = {
     soonText: ['Estoy preparando esta sección con calma. Mientras tanto, lee ', { k: 'x:proyectos', label: 'lo que construyo' }, ' o ', { k: 'cv', label: 'mi trayectoria' }, '.'],
     allWork: 'Ver portfolio completo',
     socials: 'Sígueme',
-    booking: 'Reservar sesión gratuita',
+    booking: 'Reserva una sesión',
   },
   en: {
     name: 'Alejandro Marcos',
@@ -399,7 +399,7 @@ const UI = {
     soonText: ["I'm putting this section together carefully. Meanwhile, read ", { k: 'x:proyectos', label: 'what I’m building' }, ' or ', { k: 'cv', label: 'my career' }, '.'],
     allWork: 'See full portfolio',
     socials: 'Follow',
-    booking: 'Book a free session',
+    booking: 'Book a session',
   },
 };
 

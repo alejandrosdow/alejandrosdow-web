@@ -21,7 +21,7 @@ const UI = {
     lead: 'Una selección de lo construido: marca, cultura y comunidad. 2015—2026.',
     soon: 'visual en camino',
     ctaLabel: '¿Construimos algo juntos?',
-    ctaBtn: 'Reservar sesión gratuita',
+    ctaBtn: 'Reserva una sesión',
   },
   en: {
     nav: { home: 'Home', cv: 'Career', blog: 'Blog', library: 'Library', contact: 'Contact' },
@@ -30,7 +30,7 @@ const UI = {
     lead: 'A selection of what has been built: brand, culture and community. 2015—2026.',
     soon: 'visual coming soon',
     ctaLabel: 'Shall we build something together?',
-    ctaBtn: 'Book a free session',
+    ctaBtn: 'Book a session',
   },
 };
 
