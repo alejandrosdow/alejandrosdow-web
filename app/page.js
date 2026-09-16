@@ -928,7 +928,7 @@ function CV({ t }) {
         </section>
       ))}
 
-      <section style={{ marginBottom: 56 }}>
+      <section>
         <h2 className="t-title rule-b" style={{ paddingBottom: 8 }}>{t.cv.docencia}</h2>
         <p className="t-small muted" style={{ margin: '16px 0 24px', maxWidth: '62ch' }}>{t.cv.docenciaDesc}</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(96px, 1fr))', gap: 4 }}>
@@ -947,14 +947,6 @@ function CV({ t }) {
         </div>
       </section>
 
-      <section className="card" style={{ padding: 24 }}>
-        <h3 className="t-title">{t.cv.contactTitle}</h3>
-        <p className="muted" style={{ margin: '4px 0 16px' }}>{t.cv.contactDesc}</p>
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          <Btn href={CALENDLY} external variant="btn-accent">{t.cv.contactBtn}</Btn>
-          <Btn href="https://linkedin.com/in/alejandromarcosmoraga" external>LinkedIn</Btn>
-        </div>
-      </section>
     </div>
   );
 }
