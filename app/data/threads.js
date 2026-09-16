@@ -5,6 +5,8 @@
 // Cada párrafo es un array: texto normal + enlaces { k, label } + negritas { b: 'texto' }.
 //   k: 'x:<slug>' abre otro hilo · 'cv' | 'blog' | 'contact' | 'library'
 //   k: null → texto en gris sin enlace
+// Fotos: public/assets/hilos/ → image: '/assets/hilos/<archivo>'. Cuadradas por
+// defecto; para otro formato añade aspect: '3 / 2' (o el que sea).
 // Todos los datos salen de tu trayectoria y portfolio: revísalos y
 // reescríbelos con tu voz cuando quieras.
 // =============================================
@@ -34,10 +36,11 @@ export const THREADS = {
   },
 
   heretics: {
-    image: '/assets/fan/08-gamergy.jpg',
+    image: '/assets/hilos/heretics-arena.jpg',
+    aspect: '3 / 2',
     es: {
       title: 'Team Heretics',
-      caption: 'La comunidad de Heretics.',
+      caption: 'Team Heretics en el escenario.',
       body: [
         ['Desde 2018 lidero la marca y la comunidad global de Team Heretics: de marca de nicho en esports a referencia de entretenimiento en internet.'],
         ['El equipo top en ventas mundiales de skins en Valorant. +8M de seguidores y 200.000.000 de visitas en YouTube. Club113, uno de los podcasts más grandes de habla hispana; La Mansión, la primera gran casa de creadores en España; HereticsXP, un evento con más de 2.000 personas; y espacios físicos en Madrid como el HereticsHUB.'],
@@ -48,7 +51,7 @@ export const THREADS = {
     },
     en: {
       title: 'Team Heretics',
-      caption: 'The Heretics community.',
+      caption: 'Team Heretics on stage.',
       body: [
         ['Since 2018 I have led the global brand and community of Team Heretics: from a niche esports brand to an entertainment reference on the internet.'],
         ['The top team worldwide in Valorant skin sales. +8M followers and 200,000,000 views on YouTube. Club113, one of the biggest Spanish-language podcasts; La Mansión, Spain’s first major creator house; HereticsXP, an event with over 2,000 people; and physical spaces in Madrid like the HereticsHUB.'],

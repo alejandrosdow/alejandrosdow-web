@@ -658,7 +658,7 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
     <div className="col-body route-in">
       {th.image && (
         <figure style={{ margin: '0 0 16px' }}>
-          <div className="media" style={{ aspectRatio: '1 / 1' }}>
+          <div className="media" style={{ aspectRatio: th.aspect || '1 / 1' }}>
             <img src={th.image} alt={c.caption || c.title} />
           </div>
           {c.caption && <figcaption className="t-caption" style={{ marginTop: 8 }}>{c.caption}</figcaption>}
