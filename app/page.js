@@ -351,10 +351,10 @@ const UI = {
       soundOff: 'Silenciar',
       expand: 'Ampliar',
       zh: {
-        caption: 'Proyecto propio · Zhander App × Algodón · 2020—23',
+        caption: 'Co-fundador: Zhander App × Algodón · 2020—23',
         body: [
-          'Zhander nació para digitalizar el papel del relaciones públicas: una app para descubrir las mejores discotecas, pubs y bares de copas, comparar precios y promociones y comprar la entrada con beneficios.',
-          'Lanzamos nuestra propia fiesta, Algodón, junto al colectivo Antídoto. La pandemia anuló nuestros contratos y tratamos de pivotar el modelo, sin éxito.',
+          'Zhander nació para digitalizar el papel del relaciones públicas: una app para descubrir las mejores discotecas, pubs y bares de copas, comparar precios y promociones y comprar la entrada con beneficios. En el equipo de fundadores contábamos con Nil Ojeda, Paula Gonu, byCalitos, Hamza, Werlyb, Goorgo, Zulu o Alex Chiner.',
+          'Lanzamos nuestra propia fiesta, Algodón, junto al colectivo Antídoto. Lamentablemente, la pandemia anuló nuestros contratos y tratamos de pivotar el modelo, sin éxito.',
         ],
       },
       c113: {
@@ -435,10 +435,10 @@ const UI = {
       soundOff: 'Sound off',
       expand: 'Expand',
       zh: {
-        caption: 'Own project · Zhander App × Algodón · 2020—23',
+        caption: 'Co-founder: Zhander App × Algodón · 2020—23',
         body: [
-          'Zhander was born to digitise the role of the nightlife promoter: an app to discover the best clubs, pubs and bars, compare prices and promotions, and buy tickets with perks.',
-          'We launched our own party, Algodón, with the Antídoto collective. The pandemic cancelled our contracts and we tried to pivot the model, without success.',
+          'Zhander was born to digitise the role of the nightlife promoter: an app to discover the best clubs, pubs and bars, compare prices and promotions, and buy tickets with perks. The founding team included Nil Ojeda, Paula Gonu, byCalitos, Hamza, Werlyb, Goorgo, Zulu and Alex Chiner.',
+          'We launched our own party, Algodón, with the Antídoto collective. Unfortunately, the pandemic cancelled our contracts and we tried to pivot the model, without success.',
         ],
       },
       c113: {
