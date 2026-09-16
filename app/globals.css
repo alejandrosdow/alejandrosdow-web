@@ -297,7 +297,7 @@ a {
 
 /* ---------- shell: three quiet columns on desktop ---------- */
 .shell {
-  min-height: 100dvh;
+  min-height: calc(100dvh / var(--z, 1));
 }
 .col {
   position: relative;
@@ -343,11 +343,11 @@ a {
   .shell {
     display: grid;
     grid-template-columns: var(--col) var(--col) minmax(0, 1fr);
-    height: 100dvh;
+    height: calc(100dvh / var(--z, 1));
     overflow: hidden;
   }
   .col {
-    height: 100dvh;
+    height: calc(100dvh / var(--z, 1));
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
@@ -361,7 +361,7 @@ a {
     padding-bottom: 140px;
   }
   .col-work .col-body {
-    max-width: 760px;
+    max-width: none;
   }
 }
 
@@ -841,4 +841,18 @@ a {
   .loader {
     animation-duration: 4s;
   }
+}
+
+/* ---------- large & 4K screens: scale the whole interface ---------- */
+@media (min-width: 1800px) {
+  html { zoom: 1.15; --z: 1.15; }
+}
+@media (min-width: 2200px) {
+  html { zoom: 1.35; --z: 1.35; }
+}
+@media (min-width: 2800px) {
+  html { zoom: 1.7; --z: 1.7; }
+}
+@media (min-width: 3400px) {
+  html { zoom: 2; --z: 2; }
 }
