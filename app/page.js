@@ -730,11 +730,12 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
                 </li>
               ))}
             </ol>
+            {/* Download button — restore when public/assets/internet-surfer.pdf exists:
             <div>
               <a href="/assets/internet-surfer.pdf" download="Internet-Surfer-Alejandro-Marcos.pdf" className="btn btn-accent">
                 {t.home.bookCTA} <span className="arr" aria-hidden>↓</span>
               </a>
-            </div>
+            </div> */}
           </>
         )}
         {c.close && <p><Rich parts={c.close} act={act} /></p>}

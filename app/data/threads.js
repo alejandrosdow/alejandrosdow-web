@@ -144,14 +144,14 @@ export const THREADS = {
     es: {
       title: 'Internet Surfer',
       body: [
-        ['Mi libro sobre el arte de crear comunidades en la era digital. Es gratis.'],
+        ['El arte de crear comunidades. Pronto disponible.'],
       ],
       close: ['Y si te quedas con ganas, ', { k: 'library', label: 'mi biblioteca' }, '.'],
     },
     en: {
       title: 'Internet Surfer',
       body: [
-        ['My book on the art of building communities in the digital era. It’s free.'],
+        ['The art of building communities. Coming soon.'],
       ],
       close: ['If you want more, ', { k: 'library', label: 'my library' }, '.'],
     },
