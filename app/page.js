@@ -376,6 +376,35 @@ function HeroPhoto({ label }) {
   );
 }
 
+// ============ MANIFESTO BACKDROP — full-bleed collage behind the statement ============
+function ManifestoBackdrop() {
+  const ref = useRef(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={`mf-bg ${shown ? 'mf-bg-in' : ''}`} aria-hidden="true">
+      <img src="/assets/manifesto-bg.png" alt="" loading="lazy" decoding="async" />
+      <div className="mf-scrim" />
+    </div>
+  );
+}
+
 export default function Page() {
   const [route, setRoute] = useState('home');
   const [lang, setLang] = useState('es');
@@ -521,11 +550,12 @@ function Home({ t, go }) {
         </div>
       </section>
 
-      {/* ===== MANIFESTO (dark) ===== */}
-      <section style={{ background: 'var(--dark)' }}>
-        <div className="max-w-4xl mx-auto px-5 md:px-8 py-24 md:py-36 text-center">
+      {/* ===== MANIFESTO (collage backdrop) ===== */}
+      <section className="mf-sec">
+        <ManifestoBackdrop />
+        <div className="mf-inner max-w-4xl mx-auto px-5 md:px-8 text-center">
           <Reveal>
-            <p className="display text-[clamp(28px,4.6vw,52px)]" style={{ color: 'var(--dark-text)', lineHeight: 1.15, letterSpacing: '-0.02em' }}>
+            <p className="mf-stmt display text-[clamp(28px,4.6vw,52px)]">
               {t.home.stmtA}
               <span className="serif-i">{t.home.stmtB}</span>
               {t.home.stmtC}
@@ -534,7 +564,7 @@ function Home({ t, go }) {
             </p>
           </Reveal>
           <Reveal delay={150}>
-            <p className="text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto mt-12" style={{ color: 'var(--dark-muted)' }}>
+            <p className="mf-quote text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto mt-12">
               {t.home.manifesto}
             </p>
           </Reveal>
