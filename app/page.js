@@ -353,8 +353,8 @@ const UI = {
       pro: {
         caption: 'Creador de contenido y jugador profesional: Machinima · Pain Gaming · 2008—13',
         body: [
-          'Todo empieza aquí. Fui jugador profesional de Call of Duty con Pain Gaming: campeón nacional, 9º en el Mundial de Los Ángeles 2011 y uno de los primeros contratos como jugador profesional en España.',
-          'A la vez creaba contenido: firmé uno de los primeros contratos de Machinima en España y colaboré con LVP y ESL.',
+          'Todo empieza en 2008 con Call of Duty y YouTube. Campeón nacional y 9º en el Mundial de Los Ángeles 2011. Subía a YouTube partidas, viajes y series de contenido.',
+          'Firmé uno de los primeros contratos de Machinima en España para monetizar mis vídeos y colaboraba con empresas emergentes de la industria del entretenimiento digital.',
         ],
       },
       game: {
@@ -456,8 +456,8 @@ const UI = {
       pro: {
         caption: 'Content creator and pro player: Machinima · Pain Gaming · 2008—13',
         body: [
-          'This is where it all begins. I was a professional Call of Duty player with Pain Gaming: national champion, 9th at the 2011 Los Angeles World Championship and one of the first pro player contracts in Spain.',
-          'At the same time I made content: I signed one of the first Machinima contracts in Spain and worked with LVP and ESL.',
+          'It all starts in 2008 with Call of Duty and YouTube. National champion and 9th at the 2011 Los Angeles World Championship. I uploaded matches, trips and content series to YouTube.',
+          'I signed one of the first Machinima contracts in Spain to monetise my videos, and worked with emerging companies in the digital entertainment industry.',
         ],
       },
       game: {
