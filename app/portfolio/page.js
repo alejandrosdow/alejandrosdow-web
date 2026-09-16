@@ -208,6 +208,7 @@ function Media({ project, aspect, t, lang }) {
 
 export default function PortfolioPage() {
   const [lang, setLang] = useState('es');
+  const hidden = process.env.NODE_ENV === 'production'; // en pruebas: solo visible en `npm run dev`
 
   useEffect(() => {
     const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
@@ -215,6 +216,21 @@ export default function PortfolioPage() {
   }, []);
 
   const t = UI[lang];
+  if (hidden) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-1 w-full page">
+          <header className="page-head">
+            <Link href="/" className="ilink">Alejandro Marcos</Link>
+            <Link href="/" className="ilink">{lang === 'es' ? '← Inicio' : '← Home'}</Link>
+          </header>
+          <h1 className="t-title mt-10">{lang === 'es' ? 'En pruebas.' : 'In progress.'}</h1>
+          <p className="muted mt-2">{lang === 'es' ? 'Esta sección aún no está lista.' : 'This section is not ready yet.'}</p>
+        </main>
+        <Dock lang={lang} setLang={setLang} />
+      </div>
+    );
+  }
   const featured = PROJECTS.filter((p) => p.featured);
   const rest = PROJECTS.filter((p) => !p.featured);
 

@@ -3,6 +3,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Dock, { Spark } from './components/Dock';
 import { PROJECTS } from './data/projects';
+import { THREADS, THREADS_INTRO } from './data/threads';
+
+// The work column is still being designed: visible in `npm run dev`, hidden in production.
+const WORK_PREVIEW = process.env.NODE_ENV !== 'production';
 
 // =============================================
 // alejandrosdow.com — v1.0 "quiet system"
@@ -293,24 +297,24 @@ const UI = {
     name: 'Alejandro Marcos',
     bio: [
       'Construyo marcas culturales en internet. Soy Chief Brand Officer de ',
-      { k: 'cv', label: 'Team Heretics' },
+      { k: 'x:heretics', label: 'Team Heretics' },
       ', advisor de ',
-      { k: 'cv', label: 'GenLayer' },
+      { k: 'x:lo-que-viene', label: 'GenLayer' },
       ' y fundador de proyectos como ',
-      { k: 'work', label: 'JULIO' },
+      { k: 'x:proyectos', label: 'JULIO' },
       ' o ',
-      { k: 'work', label: 'Club113' },
+      { k: 'x:proyectos', label: 'Club113' },
       '.',
     ],
     explore: [
       'Explora ',
-      { k: 'cv', label: 'mi trayectoria' },
+      { k: 'x:como-trabajo', label: 'cómo trabajo' },
       ', ',
-      { k: 'blog', label: 'lo que escribo' },
+      { k: 'x:proyectos', label: 'lo que construyo' },
       ', ',
-      { k: 'library', label: 'mi biblioteca' },
+      { k: 'x:lo-que-viene', label: 'lo que viene' },
       ' y ',
-      { k: 'book', label: 'mi libro' },
+      { k: 'x:origenes', label: 'dónde empezó' },
       '.',
     ],
     place: 'Madrid, 2026',
@@ -340,6 +344,9 @@ const UI = {
       btn: 'Ver trayectoria',
     },
     moreLabel: 'Más proyectos',
+    testing: 'En pruebas',
+    soonTitle: 'En pruebas.',
+    soonText: ['Estoy preparando esta sección con calma. Mientras tanto, lee ', { k: 'x:proyectos', label: 'lo que construyo' }, ' o ', { k: 'cv', label: 'mi trayectoria' }, '.'],
     allWork: 'Ver portfolio completo',
     socials: 'Sígueme',
     booking: 'Reservar sesión gratuita',
@@ -348,24 +355,24 @@ const UI = {
     name: 'Alejandro Marcos',
     bio: [
       "I build cultural brands on the internet. I'm Chief Brand Officer at ",
-      { k: 'cv', label: 'Team Heretics' },
+      { k: 'x:heretics', label: 'Team Heretics' },
       ', advisor at ',
-      { k: 'cv', label: 'GenLayer' },
+      { k: 'x:lo-que-viene', label: 'GenLayer' },
       ' and founder of projects like ',
-      { k: 'work', label: 'JULIO' },
+      { k: 'x:proyectos', label: 'JULIO' },
       ' and ',
-      { k: 'work', label: 'Club113' },
+      { k: 'x:proyectos', label: 'Club113' },
       '.',
     ],
     explore: [
       'Explore ',
-      { k: 'cv', label: 'my career' },
+      { k: 'x:como-trabajo', label: 'how I work' },
       ', ',
-      { k: 'blog', label: 'my writing' },
+      { k: 'x:proyectos', label: 'what I’m building' },
       ', ',
-      { k: 'library', label: 'my library' },
+      { k: 'x:lo-que-viene', label: 'what’s next' },
       ' and ',
-      { k: 'book', label: 'my book' },
+      { k: 'x:origenes', label: 'where it began' },
       '.',
     ],
     place: 'Madrid, 2026',
@@ -395,6 +402,9 @@ const UI = {
       btn: 'See career',
     },
     moreLabel: 'More projects',
+    testing: 'In progress',
+    soonTitle: 'In progress.',
+    soonText: ["I'm putting this section together carefully. Meanwhile, read ", { k: 'x:proyectos', label: 'what I’m building' }, ' or ', { k: 'cv', label: 'my career' }, '.'],
     allWork: 'See full portfolio',
     socials: 'Follow',
     booking: 'Book a free session',
@@ -447,7 +457,7 @@ function Rich({ parts, act }) {
     if (typeof p === 'string') return <React.Fragment key={i}>{p}</React.Fragment>;
     if (!p.k) return <span key={i} className="muted">{p.label}</span>;
     if (p.k === 'library') return <a key={i} href="/biblioteca" className="ilink">{p.label}</a>;
-    const href = p.k === 'book' ? '#book' : p.k === 'work' ? '#work-top' : `/?go=${p.k}`;
+    const href = p.k.startsWith('x:') ? `#ideas/${p.k.slice(2)}` : `/?go=${p.k}`;
     return (
       <a
         key={i}
@@ -507,8 +517,38 @@ export default function Page() {
     }
   }, []);
 
+  const [thread, setThread] = useState(null);
+  const threadsRef = useRef(null);
+
+  // #ideas/<slug> deep links
+  useEffect(() => {
+    const read = () => {
+      const m = window.location.hash.match(/^#ideas\/([\w-]+)/);
+      const slug = m && THREADS[m[1]] ? m[1] : null;
+      setThread(slug);
+      if (slug && !window.matchMedia('(min-width: 1024px)').matches) {
+        setTimeout(() => threadsRef.current?.scrollIntoView({ block: 'start' }), 60);
+      }
+    };
+    read();
+    window.addEventListener('hashchange', read);
+    return () => window.removeEventListener('hashchange', read);
+  }, []);
+
   const t = I18N[lang];
   const u = UI[lang];
+  const ti = THREADS_INTRO[lang];
+
+  const openThread = (slug) => {
+    setThread(slug);
+    window.history.replaceState({}, '', slug ? `#ideas/${slug}` : window.location.pathname);
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop) setRoute('home');
+    requestAnimationFrame(() => {
+      if (isDesktop) threadsRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+      else threadsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
 
 
   const go = (r) => {
@@ -522,14 +562,7 @@ export default function Page() {
 
   // inline-link actions
   const act = (k) => {
-    if (k === 'book' || k === 'work') {
-      if (route !== 'home') setRoute('home');
-      requestAnimationFrame(() => {
-        const el = document.getElementById(k === 'book' ? 'book' : 'work-top');
-        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-      return;
-    }
+    if (k.startsWith('x:')) return openThread(k.slice(2));
     go(k);
   };
 
@@ -568,18 +601,30 @@ export default function Page() {
         </aside>
 
         {/* ============ COLUMN 2 — threads (desktop always, mobile only on home) ============ */}
-        <section className={`col col-threads ${onHome ? '' : 'max-lg:hidden'}`}>
+        <section ref={threadsRef} className={`col col-threads ${onHome ? '' : 'max-lg:hidden'}`}>
           <header className="col-head ruled">
-            <h2 className="t-title">{u.threadsHead}</h2>
+            {thread ? (
+              <h2 className="t-title" style={{ minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                <button type="button" className="ilink" onClick={() => openThread(null)}>{ti.crumb}</button>
+                <span className="faint" style={{ margin: '0 8px' }}>/</span>
+                {THREADS[thread][lang].title}
+              </h2>
+            ) : (
+              <h2 className="t-title">{ti.head}</h2>
+            )}
           </header>
-          <div className="col-body flow rise" style={{ animationDelay: '120ms' }}>
-            {u.threads.map((parts, i) => (
-              <p key={i}><Rich parts={parts} act={act} /></p>
-            ))}
-            <div style={{ paddingTop: 8 }}>
-              <Btn href={CALENDLY} external variant="btn-accent">{u.booking}</Btn>
+          {thread ? (
+            <ThreadView key={`${thread}-${lang}`} slug={thread} lang={lang} t={t} act={act} back={ti.back} onBack={() => openThread(null)} />
+          ) : (
+            <div key={`intro-${lang}`} className="col-body flow route-in">
+              {ti.paras.map((parts, i) => (
+                <p key={i}><Rich parts={parts} act={act} /></p>
+              ))}
+              <div style={{ paddingTop: 8 }}>
+                <Btn href={CALENDLY} external variant="btn-accent">{u.booking}</Btn>
+              </div>
             </div>
-          </div>
+          )}
         </section>
 
         {/* ============ COLUMN 3 — work / routes ============ */}
@@ -587,13 +632,13 @@ export default function Page() {
           <header className="col-head ruled">
             <h1 className="t-title">{onHome ? u.workHead : u.heads[route]}</h1>
             {onHome ? (
-              <a href="/portfolio" className="ilink">{u.workAll}</a>
+              WORK_PREVIEW ? <a href="/portfolio" className="ilink">{u.workAll}</a> : <span className="t-caption">{u.testing}</span>
             ) : (
               <button type="button" className="ilink" onClick={() => go('home')}>← {u.back}</button>
             )}
           </header>
           <div key={`${route}-${lang}`} className="col-body route-in">
-            {route === 'home' && <Work t={t} u={u} lang={lang} go={go} />}
+            {route === 'home' && (WORK_PREVIEW ? <Work t={t} u={u} lang={lang} go={go} /> : <WorkSoon u={u} act={act} />)}
             {route === 'cv' && <CV t={t} />}
             {route === 'blog' && <Blog t={t} />}
             {route === 'contact' && <Contact t={t} u={u} />}
@@ -607,6 +652,69 @@ export default function Page() {
 
       <Dock lang={lang} setLang={setLang} active={route} onNavigate={go} />
     </>
+  );
+}
+
+// =============================================
+// THREAD (middle column essay)
+// =============================================
+function ThreadView({ slug, lang, t, act, back, onBack }) {
+  const th = THREADS[slug];
+  const c = th[lang];
+  return (
+    <div className="col-body route-in">
+      {th.image && (
+        <figure style={{ margin: '0 0 16px' }}>
+          <div className="media" style={{ aspectRatio: '1 / 1' }}>
+            <img src={th.image} alt={c.caption || c.title} />
+          </div>
+          {c.caption && <figcaption className="t-caption" style={{ marginTop: 8 }}>{c.caption}</figcaption>}
+        </figure>
+      )}
+      {th.book && (
+        <div className="media tint-lime" style={{ aspectRatio: '1 / 1', display: 'grid', placeItems: 'center', marginBottom: 16 }}>
+          <img src="/assets/internet-surfer-cover.png" alt="Internet Surfer" style={{ width: 'auto', height: '80%', objectFit: 'contain', boxShadow: '0 20px 40px -20px rgba(40,60,0,.45)' }} />
+        </div>
+      )}
+      <div className="flow">
+        {c.body.map((parts, i) => (
+          <p key={i}><Rich parts={parts} act={act} /></p>
+        ))}
+        {th.book && (
+          <>
+            <ol className="t-small" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 4 }}>
+              {t.home.bookBullets.map((b, i) => (
+                <li key={i} className="muted" style={{ display: 'flex', gap: 12 }}>
+                  <span className="faint tnum">{String(i + 1).padStart(2, '0')}</span>{b}
+                </li>
+              ))}
+            </ol>
+            <div>
+              <a href="/assets/internet-surfer.pdf" download="Internet-Surfer-Alejandro-Marcos.pdf" className="btn btn-accent">
+                {t.home.bookCTA} <span className="arr" aria-hidden>↓</span>
+              </a>
+            </div>
+          </>
+        )}
+        {c.close && <p><Rich parts={c.close} act={act} /></p>}
+        <p className="t-small">
+          <button type="button" className="ilink" onClick={onBack}>← {back}</button>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function WorkSoon({ u, act }) {
+  return (
+    <div style={{ minHeight: '50vh', display: 'grid', alignContent: 'center', justifyItems: 'start', gap: 8 }}>
+      <div className="stat" style={{ gap: 6 }}>
+        <span className="pulse-dot" style={{ width: 6, height: 6, borderRadius: 9, background: 'var(--accent-deep)' }} />
+        {u.testing}
+      </div>
+      <h2 className="t-title">{u.soonTitle}</h2>
+      <p className="muted" style={{ maxWidth: '44ch' }}><Rich parts={u.soonText} act={act} /></p>
+    </div>
   );
 }
 
