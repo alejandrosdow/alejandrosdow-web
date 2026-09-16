@@ -13,10 +13,10 @@ export const DOCK_LABELS = {
 
 const ITEMS = [
   { id: 'home', href: '/', hideSm: true },
-  { id: 'cv', href: '/?go=cv' },
   { id: 'book', href: '/#ideas/libro' },
   { id: 'blog', href: '/?go=blog', hideSm: true },
   { id: 'library', href: '/biblioteca' },
+  { id: 'cv', href: '/?go=cv' },
 ];
 
 export default function Dock({ lang = 'es', setLang, active, onNavigate }) {

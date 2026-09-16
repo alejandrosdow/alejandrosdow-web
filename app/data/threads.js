@@ -18,7 +18,6 @@ export const THREADS = {
       body: [
         ['Escucho, busco la narrativa y la convierto en algo que la gente entienda, recuerde y quiera hacer suyo.'],
         ['Trabajo en tres capas: ', { b: 'narrativa' }, ', tu posición en el mundo; ', { b: 'comunidad' }, ', pertenencia y no seguidores; y ', { b: 'creatividad' }, ', estructuras creativas para crecer con criterio.'],
-        ['Lo aplico en ', { k: 'x:heretics', label: 'Team Heretics' }, ' y ', { k: 'x:proyectos', label: 'proyectos donde ayudo' }, '.'],
         ['Colaboro de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida.'],
       ],
       close: ['Si encaja, ', { k: 'contact', label: 'hablemos' }, '.'],
@@ -28,7 +27,6 @@ export const THREADS = {
       body: [
         ['I listen, find the narrative and turn it into something people understand, remember and want to make their own.'],
         ['I work across three layers: ', { b: 'narrative' }, ', your position in the world; ', { b: 'community' }, ', belonging rather than followers; and ', { b: 'creativity' }, ', creative structures to grow with judgment.'],
-        ['I apply it at ', { k: 'x:heretics', label: 'Team Heretics' }, ' and in ', { k: 'x:proyectos', label: 'projects I help with' }, '.'],
         ['I collaborate in three ways: one-off sessions, joining your project part-time, or building a custom team.'],
       ],
       close: ['If it fits, ', { k: 'contact', label: "let's talk" }, '.'],

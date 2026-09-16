@@ -306,7 +306,7 @@ const UI = {
       'Explora ',
       { k: 'x:como-trabajo', label: 'cómo trabajo' },
       ', ',
-      { k: 'cv', label: 'lo que construyo' },
+      { k: 'work', label: 'lo que construyo' },
       ', ',
       { k: 'x:lo-que-viene', label: 'lo que viene' },
       ' y ',
@@ -355,6 +355,12 @@ const UI = {
         body: [
           'Todo empieza en 2008 con Call of Duty y YouTube. Campeón nacional y 9º en el Mundial de Los Ángeles 2011. Subía a YouTube partidas, viajes y series de contenido.',
           'Firmé uno de los primeros contratos de Machinima en España para monetizar mis vídeos y colaboraba con empresas emergentes de la industria del entretenimiento digital.',
+        ],
+      },
+      xyon: {
+        caption: 'Co-fundador: XYON Agency · 2015—16',
+        body: [
+          'Una de las primeras agencias especializadas en creadores de contenido de gaming, cuando el sector aún estaba muy poco profesionalizado. Hicimos campañas y acuerdos con grandes marcas, pero no supimos escalarlo.',
         ],
       },
       game: {
@@ -417,7 +423,7 @@ const UI = {
       'Explore ',
       { k: 'x:como-trabajo', label: 'how I work' },
       ', ',
-      { k: 'cv', label: 'what I’m building' },
+      { k: 'work', label: 'what I’m building' },
       ', ',
       { k: 'x:lo-que-viene', label: 'what’s next' },
       ' and ',
@@ -466,6 +472,12 @@ const UI = {
         body: [
           'It all starts in 2008 with Call of Duty and YouTube. National champion and 9th at the 2011 Los Angeles World Championship. I uploaded matches, trips and content series to YouTube.',
           'I signed one of the first Machinima contracts in Spain to monetise my videos, and worked with emerging companies in the digital entertainment industry.',
+        ],
+      },
+      xyon: {
+        caption: 'Co-founder: XYON Agency · 2015—16',
+        body: [
+          'One of the first agencies specialised in gaming content creators, back when the industry was barely professionalised. We ran campaigns and deals with major brands, but we didn’t manage to scale it.',
         ],
       },
       game: {
@@ -569,7 +581,7 @@ function Rich({ parts, act }) {
     if (p.b) return <strong key={i} style={{ fontWeight: 600, color: 'var(--ink)' }}>{p.b}</strong>;
     if (!p.k) return <span key={i} className="muted">{p.label}</span>;
     if (p.k === 'library') return <a key={i} href="/biblioteca" className="ilink">{p.label}</a>;
-    const href = p.k.startsWith('x:') ? `#ideas/${p.k.slice(2)}` : `/?go=${p.k}`;
+    const href = p.k.startsWith('x:') ? `#ideas/${p.k.slice(2)}` : p.k === 'work' ? '#work-top' : `/?go=${p.k}`;
     return (
       <a
         key={i}
@@ -684,6 +696,15 @@ export default function Page() {
   // inline-link actions
   const act = (k) => {
     if (k.startsWith('x:')) return openThread(k.slice(2));
+    if (k === 'work') {
+      setRoute('home');
+      requestAnimationFrame(() => {
+        const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+        if (isDesktop) workRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+        else workRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      return;
+    }
     go(k);
   };
 
@@ -999,6 +1020,16 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.game.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.game.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="media" style={{ aspectRatio: '1600 / 1161' }}>
+          <img src="/assets/hilos/xyon.jpg" alt="Si te ríes pierdes — ZellenDust" loading="lazy" />
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.xyon.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.xyon.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
 
