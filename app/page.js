@@ -350,6 +350,13 @@ const UI = {
       soundOn: 'Activar sonido',
       soundOff: 'Silenciar',
       expand: 'Ampliar',
+      zh: {
+        caption: 'Proyecto propio · Zhander App × Algodón · 2020—23',
+        body: [
+          'Zhander nació para digitalizar el papel del relaciones públicas: una app para descubrir las mejores discotecas, pubs y bares de copas, comparar precios y promociones y comprar la entrada con beneficios.',
+          'Lanzamos nuestra propia fiesta, Algodón, junto al colectivo Antídoto. La pandemia anuló nuestros contratos y tratamos de pivotar el modelo, sin éxito.',
+        ],
+      },
       c113: {
         caption: 'Heretics Holdings · Club113',
         body: [
@@ -427,6 +434,13 @@ const UI = {
       soundOn: 'Sound on',
       soundOff: 'Sound off',
       expand: 'Expand',
+      zh: {
+        caption: 'Own project · Zhander App × Algodón · 2020—23',
+        body: [
+          'Zhander was born to digitise the role of the nightlife promoter: an app to discover the best clubs, pubs and bars, compare prices and promotions, and buy tickets with perks.',
+          'We launched our own party, Algodón, with the Antídoto collective. The pandemic cancelled our contracts and we tried to pivot the model, without success.',
+        ],
+      },
       c113: {
         caption: 'Heretics Holdings · Club113',
         body: [
@@ -882,6 +896,21 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.c113.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.c113.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="clip-pair">
+          <div className="media" style={{ aspectRatio: '16 / 10' }}>
+            <img src="/assets/hilos/zhander.jpg" alt="Zhander App" loading="lazy" />
+          </div>
+          <div className="media" style={{ aspectRatio: '16 / 10' }}>
+            <img src="/assets/hilos/algodon.jpg" alt="Algodón" loading="lazy" />
+          </div>
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.zh.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.zh.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
     </div>
