@@ -2,7 +2,7 @@
 // Hilos — textos cortos que se abren en la columna central
 // (como los "threads" de dsaltaren.com). URL: /#ideas/<slug>
 //
-// Cada párrafo es un array: texto normal + enlaces { k, label }.
+// Cada párrafo es un array: texto normal + enlaces { k, label } + negritas { b: 'texto' }.
 //   k: 'x:<slug>' abre otro hilo · 'cv' | 'blog' | 'contact' | 'library'
 //   k: null → texto en gris sin enlace
 // Todos los datos salen de tu trayectoria y portfolio: revísalos y
@@ -14,9 +14,9 @@ export const THREADS = {
     es: {
       title: 'Cómo trabajo',
       body: [
-        ['Escucho, busco la narrativa y la convierto en algo que la gente ', { k: null, label: 'entienda, recuerde y quiera hacer suyo' }, '.'],
-        ['Trabajo en tres capas: narrativa, tu posición en el mundo; comunidad, pertenencia y no seguidores; y sistemas, estructura para crecer con criterio sin perder el alma.'],
-        ['Lo aplico en ', { k: 'x:heretics', label: 'Team Heretics' }, ', en ', { k: 'x:proyectos', label: 'mis propios proyectos' }, ' y con empresas y creadores.'],
+        ['Escucho, busco la narrativa y la convierto en algo que la gente entienda, recuerde y quiera hacer suyo.'],
+        ['Trabajo en tres capas: ', { b: 'narrativa' }, ', tu posición en el mundo; ', { b: 'comunidad' }, ', pertenencia y no seguidores; y ', { b: 'creatividad' }, ', estructuras creativas para crecer con criterio.'],
+        ['Lo aplico en ', { k: 'x:heretics', label: 'Team Heretics' }, ' y ', { k: 'x:proyectos', label: 'proyectos donde ayudo' }, '.'],
         ['Colaboro de tres formas: sesiones individuales, integrándome part-time en tu proyecto o formando un equipo a medida.'],
       ],
       close: ['Si encaja, ', { k: 'contact', label: 'hablemos' }, '.'],
@@ -24,9 +24,9 @@ export const THREADS = {
     en: {
       title: 'How I work',
       body: [
-        ['I listen, find the narrative and turn it into something people ', { k: null, label: 'understand, remember and want to make their own' }, '.'],
-        ['I work across three layers: narrative, your position in the world; community, belonging rather than followers; and systems, structure to grow with judgment without losing the soul.'],
-        ['I apply it at ', { k: 'x:heretics', label: 'Team Heretics' }, ', in ', { k: 'x:proyectos', label: 'my own projects' }, ' and with companies and creators.'],
+        ['I listen, find the narrative and turn it into something people understand, remember and want to make their own.'],
+        ['I work across three layers: ', { b: 'narrative' }, ', your position in the world; ', { b: 'community' }, ', belonging rather than followers; and ', { b: 'creativity' }, ', creative structures to grow with judgment.'],
+        ['I apply it at ', { k: 'x:heretics', label: 'Team Heretics' }, ' and in ', { k: 'x:proyectos', label: 'projects I help with' }, '.'],
         ['I collaborate in three ways: one-off sessions, joining your project part-time, or building a custom team.'],
       ],
       close: ['If it fits, ', { k: 'contact', label: "let's talk" }, '.'],
@@ -153,7 +153,7 @@ export const THREADS_INTRO = {
     crumb: 'Hilos',
     back: 'Todos los hilos',
     paras: [
-      ['Narrativa, comunidad y sistemas dan forma a ', { k: 'x:como-trabajo', label: 'cómo trabajo' }, ', de ', { k: 'x:heretics', label: 'Team Heretics' }, ' a ', { k: 'x:proyectos', label: 'mis propios proyectos' }, '.'],
+      ['Narrativa, comunidad y creatividad dan forma a ', { k: 'x:como-trabajo', label: 'cómo trabajo' }, ', de ', { k: 'x:heretics', label: 'Team Heretics' }, ' a ', { k: 'x:proyectos', label: 'mis propios proyectos' }, '.'],
       [{ k: 'x:lo-que-viene', label: 'Lo que viene' }, ' cruza marca, IA y blockchain. ', { k: 'x:origenes', label: 'Dónde empezó' }, ' junta gaming, esports y contenido.'],
       ['Dos regalos: ', { k: 'x:libro', label: 'mi libro' }, ' y ', { k: 'library', label: 'una pequeña biblioteca' }, '.'],
       ['Para historias más largas, ', { k: 'blog', label: 'lee mi blog' }, '.'],
@@ -164,7 +164,7 @@ export const THREADS_INTRO = {
     crumb: 'Threads',
     back: 'All threads',
     paras: [
-      ['Narrative, community and systems shape ', { k: 'x:como-trabajo', label: 'how I work' }, ', from ', { k: 'x:heretics', label: 'Team Heretics' }, ' to ', { k: 'x:proyectos', label: 'my own projects' }, '.'],
+      ['Narrative, community and creativity shape ', { k: 'x:como-trabajo', label: 'how I work' }, ', from ', { k: 'x:heretics', label: 'Team Heretics' }, ' to ', { k: 'x:proyectos', label: 'my own projects' }, '.'],
       [{ k: 'x:lo-que-viene', label: 'What’s next' }, ' connects brand, AI and blockchain. ', { k: 'x:origenes', label: 'Where it began' }, ' brings together gaming, esports and content.'],
       ['Two gifts: ', { k: 'x:libro', label: 'my book' }, ' and ', { k: 'library', label: 'a small library' }, '.'],
       ['For longer stories, ', { k: 'blog', label: 'read my blog' }, '.'],

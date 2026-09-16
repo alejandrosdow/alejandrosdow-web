@@ -296,15 +296,11 @@ const UI = {
   es: {
     name: 'Alejandro Marcos',
     bio: [
-      'Construyo marcas culturales en internet. Soy Chief Brand Officer de ',
+      'Construyo marcas culturales. Soy Chief Brand Officer en ',
       { k: 'x:heretics', label: 'Team Heretics' },
-      ', advisor de ',
-      { k: 'x:lo-que-viene', label: 'GenLayer' },
-      ' y fundador de proyectos como ',
-      { k: 'x:proyectos', label: 'JULIO' },
-      ' o ',
-      { k: 'x:proyectos', label: 'Club113' },
-      '.',
+      ' y colaboro en varios ',
+      { k: 'x:proyectos', label: 'proyectos' },
+      ' como freelance durante el año.',
     ],
     explore: [
       'Explora ',
@@ -354,15 +350,11 @@ const UI = {
   en: {
     name: 'Alejandro Marcos',
     bio: [
-      "I build cultural brands on the internet. I'm Chief Brand Officer at ",
+      "I build cultural brands. I'm Chief Brand Officer at ",
       { k: 'x:heretics', label: 'Team Heretics' },
-      ', advisor at ',
-      { k: 'x:lo-que-viene', label: 'GenLayer' },
-      ' and founder of projects like ',
-      { k: 'x:proyectos', label: 'JULIO' },
-      ' and ',
-      { k: 'x:proyectos', label: 'Club113' },
-      '.',
+      ' and collaborate on several ',
+      { k: 'x:proyectos', label: 'projects' },
+      ' as a freelancer throughout the year.',
     ],
     explore: [
       'Explore ',
@@ -455,6 +447,7 @@ function Reveal({ children, delay = 0, className = '' }) {
 function Rich({ parts, act }) {
   return parts.map((p, i) => {
     if (typeof p === 'string') return <React.Fragment key={i}>{p}</React.Fragment>;
+    if (p.b) return <strong key={i} style={{ fontWeight: 600, color: 'var(--ink)' }}>{p.b}</strong>;
     if (!p.k) return <span key={i} className="muted">{p.label}</span>;
     if (p.k === 'library') return <a key={i} href="/biblioteca" className="ilink">{p.label}</a>;
     const href = p.k.startsWith('x:') ? `#ideas/${p.k.slice(2)}` : `/?go=${p.k}`;
