@@ -115,8 +115,8 @@ export const THREADS = {
       title: 'Dónde empezó',
       caption: 'Mi contrato con Machinima.',
       body: [
-        ['Todo empieza en 2008 con Call of Duty y YouTube. Fui campeón nacional con Pain Gaming y quedé 9º en el Mundial de Los Ángeles 2011, y subía a YouTube: partidas, viajes y series de contenido.'],
-        ['Firmé uno de los primeros contratos de Machinima en España y colaboraba con la Liga de Videojuegos Profesional, ESL y empresas emergentes de entretenimiento.'],
+        ['Todo empieza en 2008 con Call of Duty y YouTube. Campeón nacional y 9º en el Mundial de Los Ángeles 2011. Subía a YouTube partidas, viajes y series de contenido.'],
+        ['Firmé uno de los primeros contratos de Machinima en España para monetizar mis vídeos y colaboraba con empresas emergentes de la industria del entretenimiento digital.'],
         ['Me formé en Publicidad y Relaciones Públicas, aunque no llegué a terminar la carrera: estuve trabajando sin parar en distintas empresas y lanzando proyectos personales.'],
         ['Con 23 años en GAME, lideraba las relaciones con publishers, creadores, y las activaciones en eventos masivos como Madrid Gaming Experience, Barcelona Games World o Fun & Serious. En un año vinieron empresas como Movistar o Cooler Master, donde seguí creciendo mientras me apuntaba a otras aventuras.'],
         ['Llegó Team Heretics y pasamos de ser tres personas en Google Campus a casi ochenta en 2026, surfeando la ola de los esports, el gaming y las tendencias digitales. Mientras, como siempre, he seguido lanzándome a trabajar y colaborar en proyectos de tecnología, creación de contenido y plataformas.'],
@@ -128,8 +128,8 @@ export const THREADS = {
       title: 'Where it began',
       caption: 'My Machinima contract.',
       body: [
-        ['It all starts in 2008 with Call of Duty and YouTube. I was national champion with Pain Gaming and finished 9th at the 2011 Los Angeles World Championship, and I uploaded my matches, trips and content series to YouTube.'],
-        ['I signed one of the first Machinima contracts in Spain and worked with the Liga de Videojuegos Profesional, ESL and emerging entertainment companies.'],
+        ['It all starts in 2008 with Call of Duty and YouTube. National champion and 9th at the 2011 Los Angeles World Championship. I uploaded matches, trips and content series to YouTube.'],
+        ['I signed one of the first Machinima contracts in Spain to monetise my videos, and worked with emerging companies in the digital entertainment industry.'],
         ['I studied Advertising and Public Relations, though I never finished the degree: I was working non-stop at different companies and launching personal projects.'],
         ['At 23, at GAME, I led relationships with publishers and creators, and activations at major events like Madrid Gaming Experience, Barcelona Games World and Fun & Serious. Within a year came companies like Movistar and Cooler Master, where I kept growing while signing up for other adventures.'],
         ['Then Team Heretics arrived, and we went from three people at Google Campus to almost eighty in 2026, riding the wave of esports, gaming and digital trends. Meanwhile, as always, I kept jumping into work and collaborations in technology, content creation and platforms.'],
