@@ -353,7 +353,7 @@ const UI = {
       game: {
         caption: 'Head of Publishers, Talents & Esports: GAME · 2015—16',
         body: [
-          'En GAME lideraba las relaciones con publishers internacionales, creadores de contenido y equipos de esports. Con 23 años llevé las activaciones y contenidos de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun & Serious Bilbao.',
+          'En GAME lideraba las relaciones con publishers internacionales, creadores de contenido y equipos de esports. Con 24 años llevaba las activaciones y los contenidos de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun & Serious Bilbao, lo que incluía producir eventos como «El Gran Desafío» o incluso presentarlos delante de miles de personas.',
         ],
       },
       mv: {
@@ -449,7 +449,7 @@ const UI = {
       game: {
         caption: 'Head of Publishers, Talents & Esports: GAME · 2015—16',
         body: [
-          'At GAME I led relationships with international publishers, content creators and esports teams. At 23 I ran the activations and content for Madrid Gaming Experience (+120K attendees), Barcelona Games World and Fun & Serious Bilbao.',
+          'At GAME I led relationships with international publishers, content creators and esports teams. At 24 I ran the activations and content for Madrid Gaming Experience (+120K attendees), Barcelona Games World and Fun & Serious Bilbao, which included producing events like «El Gran Desafío» and even hosting them in front of thousands of people.',
         ],
       },
       mv: {
