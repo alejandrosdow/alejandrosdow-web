@@ -350,6 +350,13 @@ const UI = {
       soundOn: 'Activar sonido',
       soundOff: 'Silenciar',
       expand: 'Ampliar',
+      pro: {
+        caption: 'Creador de contenido y jugador profesional: Machinima · Pain Gaming · 2008—13',
+        body: [
+          'Todo empieza aquí. Fui jugador profesional de Call of Duty con Pain Gaming: campeón nacional, 9º en el Mundial de Los Ángeles 2011 y uno de los primeros contratos como jugador profesional en España.',
+          'A la vez creaba contenido: firmé uno de los primeros contratos de Machinima en España y colaboré con LVP y ESL.',
+        ],
+      },
       game: {
         caption: 'Head of Publishers, Talents & Esports: GAME · 2015—16',
         body: [
@@ -446,6 +453,13 @@ const UI = {
       soundOn: 'Sound on',
       soundOff: 'Sound off',
       expand: 'Expand',
+      pro: {
+        caption: 'Content creator and pro player: Machinima · Pain Gaming · 2008—13',
+        body: [
+          'This is where it all begins. I was a professional Call of Duty player with Pain Gaming: national champion, 9th at the 2011 Los Angeles World Championship and one of the first pro player contracts in Spain.',
+          'At the same time I made content: I signed one of the first Machinima contracts in Spain and worked with LVP and ESL.',
+        ],
+      },
       game: {
         caption: 'Head of Publishers, Talents & Esports: GAME · 2015—16',
         body: [
@@ -959,6 +973,16 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.game.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.game.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="media" style={{ aspectRatio: '16 / 9' }}>
+          <img src="/assets/hilos/machinima.jpg" alt="Contrato con Machinima, 2011" loading="lazy" />
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.pro.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.pro.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
     </div>
