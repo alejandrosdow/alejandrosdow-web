@@ -300,7 +300,7 @@ const UI = {
       { k: 'x:heretics', label: 'Team Heretics' },
       ' y colaboro en varios ',
       { k: 'x:proyectos', label: 'proyectos' },
-      ' como freelance durante el año.',
+      ' como freelance.',
     ],
     explore: [
       'Explora ',
@@ -313,7 +313,7 @@ const UI = {
       { k: 'x:origenes', label: 'dónde empezó' },
       '.',
     ],
-    place: 'Madrid, 2026',
+    place: 'Desde Madrid.',
     threadsHead: 'Algunas ideas detrás del trabajo.',
     threads: [
       ['Una marca cultural ', { k: null, label: 'trasciende a su producto' }, '. Refleja el zeitgeist, una forma de ser y estar en el mundo.'],
@@ -370,7 +370,7 @@ const UI = {
       { k: 'x:heretics', label: 'Team Heretics' },
       ', and I collaborate on several ',
       { k: 'x:proyectos', label: 'projects' },
-      ' as a freelancer throughout the year.',
+      ' as a freelancer.',
     ],
     explore: [
       'Explore ',
@@ -383,7 +383,7 @@ const UI = {
       { k: 'x:origenes', label: 'where it began' },
       '.',
     ],
-    place: 'Madrid, 2026',
+    place: 'From Madrid.',
     threadsHead: 'A few ideas behind the work.',
     threads: [
       ['A cultural brand ', { k: null, label: 'transcends its product' }, '. It reflects the zeitgeist, a way of being in the world.'],
