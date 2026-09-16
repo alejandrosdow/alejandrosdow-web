@@ -342,7 +342,7 @@ const UI = {
     moreLabel: 'Más proyectos',
     testing: 'En pruebas',
     soon: {
-      caption: 'Team Heretics · Club de internet',
+      caption: 'Chief Brand Officer: Team Heretics · 2018—',
       title: 'Team Heretics',
       desc: 'Team Heretics forma parte de Heretics Holdings, donde trabajo como Chief Brand Officer del grupo. Uno de los clubs de esports más importantes del mundo, con gran presencia internacional, especialmente en Europa y Asia.',
       play: 'Reproducir',
@@ -351,7 +351,7 @@ const UI = {
       soundOff: 'Silenciar',
       expand: 'Ampliar',
       mv: {
-        caption: 'Movistar · 2017',
+        caption: 'Productor y presentador: Movistar · 2017',
         body: [
           'Estuve trabajando como productor y presentador en el primer canal de gaming y esports en televisión para Movistar. En el plató más caro de la cadena, produciendo piezas de alta calidad cada semana, viajando y cubriendo toda la industria. La experiencia en cámara, divertida, pero no la repetiría.',
         ],
@@ -364,14 +364,14 @@ const UI = {
         ],
       },
       c113: {
-        caption: 'Heretics Holdings · Club113',
+        caption: 'Co-creador y dirección: Club113 × 113 Sessions · 2022—23',
         body: [
           'Club113 nació desayunando en la cafetería de debajo de la casa de Werlyb, Goorgo y Nil Ojeda. Un podcast de colegas para colegas que durante años fue uno de los más importantes de habla hispana, con frases que acabaron siendo cultura de internet. Lo sacamos adelante in house y con cuatro palos, pero con mucha sensibilidad por el ecosistema: estrategia de clippers desde el minuto uno y buscando esos momentos sin perder la naturalidad.',
           'Creamos 113 Sessions, un espacio musical para artistas emergentes que terminó comprando Samsung y donde pude traer a gente que admiraba.',
         ],
       },
       gl: {
-        caption: 'GenLayer · The adjudication layer for the agentic era',
+        caption: 'Brand Advisor: GenLayer · 2025—',
         body: [
           'GenLayer quiere ser la corte de internet: una infraestructura de confianza para la era de la IA, en la intersección entre blockchain e inteligencia artificial.',
           'Mi trabajo como advisor es aterrizar la narrativa y traducir un producto complejo a un idioma que la gente entienda y sienta como propio. Campañas para las testnets, hackatones, comunidad internacional y el go-to-market del token.',
@@ -432,7 +432,7 @@ const UI = {
     moreLabel: 'More projects',
     testing: 'In progress',
     soon: {
-      caption: 'Team Heretics · Internet club',
+      caption: 'Chief Brand Officer: Team Heretics · 2018—',
       title: 'Team Heretics',
       desc: 'Team Heretics is part of Heretics Holdings, where I work as Chief Brand Officer of the group. One of the most important esports clubs in the world, with a strong international presence, especially in Europe and Asia.',
       play: 'Play',
@@ -441,7 +441,7 @@ const UI = {
       soundOff: 'Sound off',
       expand: 'Expand',
       mv: {
-        caption: 'Movistar · 2017',
+        caption: 'Producer and host: Movistar · 2017',
         body: [
           'I worked as a producer and host on Movistar’s first gaming and esports TV channel. On the network’s most expensive set, producing high-quality pieces every week, travelling and covering the whole industry. Being on camera was fun, but I wouldn’t do it again.',
         ],
@@ -454,14 +454,14 @@ const UI = {
         ],
       },
       c113: {
-        caption: 'Heretics Holdings · Club113',
+        caption: 'Co-creator and direction: Club113 × 113 Sessions · 2022—23',
         body: [
           'Club113 was born over breakfast at the café below the flat Werlyb, Goorgo and Nil Ojeda shared. A podcast by friends, for friends, that for years was one of the biggest in the Spanish-speaking world, with lines that became internet culture. We built it in-house on a shoestring, but with a real feel for the ecosystem: a clipper strategy from day one, chasing those moments without losing the naturalness.',
           'We created 113 Sessions, a music space for emerging artists that Samsung ended up buying, and where I got to bring in people I admired.',
         ],
       },
       gl: {
-        caption: 'GenLayer · The adjudication layer for the agentic era',
+        caption: 'Brand Advisor: GenLayer · 2025—',
         body: [
           'GenLayer wants to be the court of the internet: trust infrastructure for the AI era, at the intersection of blockchain and artificial intelligence.',
           'My work as an advisor is to ground the narrative and translate a complex product into a language people understand and feel is their own. Campaigns for the testnets, hackathons, international community and the token go-to-market.',
