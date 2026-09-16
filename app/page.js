@@ -353,7 +353,7 @@ const UI = {
       c113: {
         caption: 'Heretics Holdings · Club113',
         body: [
-          'Club113 nació desayunando en la cafetería de debajo de la casa de Werlyb, Goorgo y Nil Ojeda. Un podcast de colegas para colegas que durante años fue uno de los más importantes de habla hispana, con frases que acabaron siendo cultura de internet.',
+          'Club113 nació desayunando en la cafetería de debajo de la casa de Werlyb, Goorgo y Nil Ojeda. Un podcast de colegas para colegas que durante años fue uno de los más importantes de habla hispana, con frases que acabaron siendo cultura de internet. Lo sacamos adelante in house y con cuatro palos, pero con mucha sensibilidad por el ecosistema: estrategia de clippers desde el minuto uno y buscando esos momentos sin perder la naturalidad.',
           'Creamos 113 Sessions, un espacio musical para artistas emergentes que terminó comprando Samsung y donde pude traer a gente que admiraba.',
         ],
       },
@@ -430,7 +430,7 @@ const UI = {
       c113: {
         caption: 'Heretics Holdings · Club113',
         body: [
-          'Club113 was born over breakfast at the café below the flat Werlyb, Goorgo and Nil Ojeda shared. A podcast by friends, for friends, that for years was one of the biggest in the Spanish-speaking world, with lines that became internet culture.',
+          'Club113 was born over breakfast at the café below the flat Werlyb, Goorgo and Nil Ojeda shared. A podcast by friends, for friends, that for years was one of the biggest in the Spanish-speaking world, with lines that became internet culture. We built it in-house on a shoestring, but with a real feel for the ecosystem: a clipper strategy from day one, chasing those moments without losing the naturalness.',
           'We created 113 Sessions, a music space for emerging artists that Samsung ended up buying, and where I got to bring in people I admired.',
         ],
       },
