@@ -379,8 +379,9 @@ const UI = {
       julio: {
         caption: 'Co-fundador: JULIO · Meme Corp · 2025',
         body: [
-          'JULIO es la filosofía y la marca de la plenitud: una de las primeras memebrands hispanohablantes. Nace en 2025 del meme de Julio Iglesias para celebrar la buena vida y una masculinidad más luminosa, divertida y cuidadora, frente a los referentes oscuros que confunden a los más jóvenes.',
-          'La creamos desde Meme Corp, un colectivo de ocho personas que trabajamos en algunas de las marcas más relevantes de la cultura de internet. El primer lanzamiento fue sold out en 30 minutos: lo hicimos junto a MITO, la plataforma de vídeo con IA, para el contenido, y con Maxi para el producto.',
+          'JULIO es la filosofía y la marca de la plenitud: la primera memebrand hispanohablante. Nace en 2025 del meme de Julio Iglesias para celebrar la buena vida y una masculinidad más luminosa, divertida y cuidadora.',
+          'El primer lanzamiento fue sold out en 30 minutos: lo hicimos junto a MITO, la plataforma de vídeo con IA, para el contenido, y con Maxi para el producto.',
+          'A día de hoy es una cuenta de Twitter donde ponemos en práctica una visión del mundo, sin pensar en monetizar. Teníamos previsto seguir lanzando producto y un token en el futuro.',
         ],
       },
       c113: {
@@ -489,8 +490,9 @@ const UI = {
       julio: {
         caption: 'Co-founder: JULIO · Meme Corp · 2025',
         body: [
-          'JULIO is the philosophy and brand of living fully: one of the first Spanish-speaking memebrands. Born in 2025 from the Julio Iglesias meme to celebrate the good life and a brighter, funnier, more caring masculinity, in contrast to the dark role models confusing younger men.',
-          'We built it at Meme Corp, a collective of eight people working on some of the most relevant brands in internet culture. The first drop sold out in 30 minutes: we made it with MITO, the AI video platform, for the content, and with Maxi for the product.',
+          'JULIO is the philosophy and brand of living fully: the first Spanish-speaking memebrand. Born in 2025 from the Julio Iglesias meme to celebrate the good life and a brighter, funnier, more caring masculinity.',
+          'The first drop sold out in 30 minutes: we made it with MITO, the AI video platform, for the content, and with Maxi for the product.',
+          'Today it is a Twitter account where we put a worldview into practice, without thinking about monetising. We planned to keep launching products and a token in the future.',
         ],
       },
       c113: {
