@@ -350,6 +350,12 @@ const UI = {
       soundOn: 'Activar sonido',
       soundOff: 'Silenciar',
       expand: 'Ampliar',
+      game: {
+        caption: 'Head of Publishers, Talents & Esports: GAME · 2015—16',
+        body: [
+          'En GAME lideraba las relaciones con publishers internacionales, creadores de contenido y equipos de esports. Con 23 años llevé las activaciones y contenidos de Madrid Gaming Experience (+120K asistentes), Barcelona Games World y Fun & Serious Bilbao.',
+        ],
+      },
       mv: {
         caption: 'Productor y presentador: Movistar · 2017',
         body: [
@@ -440,6 +446,12 @@ const UI = {
       soundOn: 'Sound on',
       soundOff: 'Sound off',
       expand: 'Expand',
+      game: {
+        caption: 'Head of Publishers, Talents & Esports: GAME · 2015—16',
+        body: [
+          'At GAME I led relationships with international publishers, content creators and esports teams. At 23 I ran the activations and content for Madrid Gaming Experience (+120K attendees), Barcelona Games World and Fun & Serious Bilbao.',
+        ],
+      },
       mv: {
         caption: 'Producer and host: Movistar · 2017',
         body: [
@@ -939,6 +951,17 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.mv.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.mv.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="clip-pair">
+          <ClipPlayer src="/assets/hilos/game-mgx.mp4" poster="/assets/hilos/game-mgx.jpg" label="Madrid Gaming Experience 2016" t={s} />
+          <ClipPlayer src="/assets/hilos/game-bgw.mp4" poster="/assets/hilos/game-bgw.jpg" label="Barcelona Games World 2016" t={s} />
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.game.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.game.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
     </div>
