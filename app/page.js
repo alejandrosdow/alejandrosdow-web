@@ -346,6 +346,10 @@ const UI = {
       title: 'Team Heretics',
       desc: 'Team Heretics forma parte de Heretics Holdings, donde trabajo como Chief Brand Officer del grupo. Uno de los clubs de esports más importantes del mundo, con gran presencia internacional, especialmente en Europa y Asia.',
       play: 'Reproducir',
+      pause: 'Pausa',
+      soundOn: 'Activar sonido',
+      soundOff: 'Silenciar',
+      expand: 'Ampliar',
       btn: 'Ver en YouTube',
     },
     allWork: 'Ver portfolio completo',
@@ -405,6 +409,10 @@ const UI = {
       title: 'Team Heretics',
       desc: 'Team Heretics is part of Heretics Holdings, where I work as Chief Brand Officer of the group. One of the most important esports clubs in the world, with a strong international presence, especially in Europe and Asia.',
       play: 'Play',
+      pause: 'Pause',
+      soundOn: 'Sound on',
+      soundOff: 'Sound off',
+      expand: 'Expand',
       btn: 'Watch on YouTube',
     },
     allWork: 'See full portfolio',
@@ -719,37 +727,96 @@ function ThreadView({ slug, lang, t, act, back, onBack }) {
   );
 }
 
+// Self-hosted video with minimal custom controls (no YouTube chrome).
+function ClipPlayer({ src, poster, label, t }) {
+  const wrapRef = useRef(null);
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const userPaused = useRef(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    const el = wrapRef.current;
+    if (!v || !el) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) userPaused.current = true;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !userPaused.current) v.play().catch(() => {});
+        else if (!entry.isIntersecting) v.pause();
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const toggle = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      userPaused.current = false;
+      v.play().catch(() => {});
+    } else {
+      userPaused.current = true;
+      v.pause();
+    }
+  };
+  const toggleSound = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setMuted(v.muted);
+    if (!v.muted && v.paused) {
+      userPaused.current = false;
+      v.play().catch(() => {});
+    }
+  };
+  const expand = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.requestFullscreen) v.requestFullscreen();
+    else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+  };
+
+  return (
+    <div ref={wrapRef} className="media clip" style={{ aspectRatio: '16 / 9', background: '#111' }}>
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-label={label}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onVolumeChange={(e) => setMuted(e.currentTarget.muted)}
+        onClick={toggle}
+        style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
+      />
+      <div className="clip-controls">
+        <button type="button" className="clip-btn" onClick={toggle}>{playing ? t.pause : t.play}</button>
+        <button type="button" className="clip-btn" onClick={toggleSound}>{muted ? t.soundOn : t.soundOff}</button>
+        <button type="button" className="clip-btn" onClick={expand}>{t.expand}</button>
+      </div>
+    </div>
+  );
+}
+
 // Placeholder for the work column while it is being designed.
 function WorkSoon({ u }) {
-  const [play, setPlay] = useState(false);
   const id = '9B-GBudM9jc';
   return (
     <article>
-      <div className="media" style={{ aspectRatio: '16 / 9', background: '#111' }}>
-        {play ? (
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
-            title="Team Heretics"
-            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowFullScreen
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
-          />
-        ) : (
-          <button
-            type="button"
-            onClick={() => setPlay(true)}
-            aria-label={u.soon.play}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', padding: 0, border: 0, cursor: 'pointer', background: 'none' }}
-          >
-            <img src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`} alt="" />
-            <span
-              style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', display: 'inline-flex', alignItems: 'center', gap: 8, height: 36, padding: '0 14px', borderRadius: 999, background: 'rgba(0,0,0,.55)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', color: '#fff', fontSize: 14 }}
-            >
-              <span aria-hidden style={{ color: 'var(--accent)', fontSize: 11 }}>▶</span> {u.soon.play}
-            </span>
-          </button>
-        )}
-      </div>
+      <ClipPlayer
+        src="/assets/hilos/heretics-spot-2025.mp4"
+        poster="/assets/hilos/heretics-spot-2025.jpg"
+        label="Team Heretics Spot 2025"
+        t={u.soon}
+      />
       <div className="t-caption" style={{ marginTop: 8 }}>{u.soon.caption}</div>
       <h3 className="t-title" style={{ marginTop: 24 }}>{u.soon.title}</h3>
       <p style={{ marginTop: 6, maxWidth: '62ch' }}>{u.soon.desc}</p>

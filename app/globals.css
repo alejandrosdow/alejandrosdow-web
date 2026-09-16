@@ -660,3 +660,39 @@ a {
 .nav-link.active {
   color: var(--ink);
 }
+
+/* ---------- self-hosted clip controls ---------- */
+.clip-controls {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
+@media (hover: hover) {
+  .clip:not(:hover) .clip-controls {
+    opacity: 0;
+  }
+  .clip:focus-within .clip-controls {
+    opacity: 1;
+  }
+}
+.clip-btn {
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  color: #fff;
+  font: inherit;
+  font-size: var(--fs-small);
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+.clip-btn:hover {
+  background: rgba(0, 0, 0, 0.64);
+}
