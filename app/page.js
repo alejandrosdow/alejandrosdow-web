@@ -403,6 +403,12 @@ const UI = {
           'A día de hoy es una cuenta de Twitter donde ponemos en práctica una visión del mundo, sin pensar en monetizar. Teníamos previsto seguir lanzando producto y un token en el futuro.',
         ],
       },
+      prod: {
+        caption: 'Producto: Team Heretics · 2021—',
+        body: [
+          'Me encanta la moda. En Team Heretics hice mucho foco en crecer a través de ella, con productos que transmitan la cultura de los videojuegos y se puedan llevar al espacio físico. Con la visión de que en España estaban naciendo marcas icónicas, apostamos por colaborar con ellas y mirar juntos al mundo: Two Jeys (2021), Scrapworld (2021), Belaguer (2022), EME Studios (2023), Kaotico (2023), Warburton (2024) y Esenzia (2026). Gracias a ello aprendimos cómo se crea un producto y un proceso de trabajo para hacer prácticamente cualquier cosa.',
+        ],
+      },
       hub: {
         caption: 'Team Heretics: HereticsHUB · 2021',
         body: [
@@ -537,6 +543,12 @@ const UI = {
           'JULIO is the philosophy and brand of living fully: the first Spanish-speaking memebrand. Born in 2025 from the Julio Iglesias meme to celebrate the good life and a brighter, funnier, more caring masculinity.',
           'The first drop sold out in 30 minutes: we made it with MITO, the AI video platform, for the content, and with Maxi for the product.',
           'Today it is a Twitter account where we put a worldview into practice, without thinking about monetising. We planned to keep launching products and a token in the future.',
+        ],
+      },
+      prod: {
+        caption: 'Product: Team Heretics · 2021—',
+        body: [
+          'I love fashion. At Team Heretics I put a lot of focus on growing through it, with products that carry gaming culture and can be taken into the physical world. Seeing that iconic brands were being born in Spain, we chose to collaborate with them and look at the world together: Two Jeys (2021), Scrapworld (2021), Belaguer (2022), EME Studios (2023), Kaotico (2023), Warburton (2024) and Esenzia (2026). Thanks to this we learned how a product is made, and a working process to build practically anything.',
         ],
       },
       hub: {
@@ -1027,6 +1039,25 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.c113.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.c113.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="clip-pair">
+          <ClipPlayer src="/assets/hilos/heretics-belaguer.mp4" poster="/assets/hilos/heretics-belaguer.jpg" label="Heretics × Belaguer" t={s} />
+          <ClipPlayer src="/assets/hilos/heretics-warburton.mp4" poster="/assets/hilos/heretics-warburton.jpg" label="Heretics × Warburton" t={s} noAudio />
+        </div>
+        <div className="clip-pair" style={{ marginTop: 4 }}>
+          <div className="media" style={{ aspectRatio: '3 / 2' }}>
+            <img src="/assets/hilos/heretics-anillo.jpg" alt="Anillo Team Heretics" loading="lazy" />
+          </div>
+          <div className="media" style={{ aspectRatio: '3 / 2' }}>
+            <img src="/assets/hilos/heretics-chaqueta.jpg" alt="Ficha técnica chaqueta Team Heretics" loading="lazy" />
+          </div>
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.prod.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.prod.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
 
