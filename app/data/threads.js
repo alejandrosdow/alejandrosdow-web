@@ -41,7 +41,7 @@ export const THREADS = {
       caption: 'Team Heretics en el escenario.',
       body: [
         ['Desde 2018 lidero la marca y la comunidad global de Team Heretics: de marca de nicho en esports a referencia de entretenimiento en internet.'],
-        ['+7M de seguidores y 200.000.000 de visitas en YouTube; equipo top en ventas mundiales de skins en Valorant. Club113, uno de los podcasts más grandes de habla hispana; La Mansión, la primera gran casa de creadores en España; HereticsXP, un evento con más de 2.000 personas; y espacios físicos en Madrid como el HereticsHUB.'],
+        ['+7M de seguidores y +200.000.000 de visitas en YouTube; equipo top en ventas mundiales de skins en Valorant. Club113, uno de los podcasts más grandes de habla hispana; La Mansión, la primera gran casa de creadores en España; HereticsXP, un evento con más de 2.000 personas; o espacios físicos en Madrid como el HereticsHUB.'],
         ['Es un rol transversal dentro del Holding de Heretics, junto a PHTP, Nativo y MakeItHappen. Productos que van desde el MiniOpen de Tenis hasta ayudar en la carrera de algunos de los creadores más grandes de habla hispana o el programa Línea de Cal.'],
         ['Activaciones y propuestas creativas para Red Bull, grupo Mahou San Miguel, Samsung, Hyundai, Nestlé, Logitech, Lenovo, Socios.com, Motorola y prácticamente cualquier marca de gran consumo.'],
       ],
@@ -52,7 +52,7 @@ export const THREADS = {
       caption: 'Team Heretics on stage.',
       body: [
         ['Since 2018 I have led the global brand and community of Team Heretics: from a niche esports brand to an entertainment reference on the internet.'],
-        ['+7M followers and 200,000,000 views on YouTube; a top team worldwide in Valorant skin sales. Club113, one of the biggest Spanish-language podcasts; La Mansión, Spain’s first major creator house; HereticsXP, an event with over 2,000 people; and physical spaces in Madrid like the HereticsHUB.'],
+        ['+7M followers and +200,000,000 views on YouTube; a top team worldwide in Valorant skin sales. Club113, one of the biggest Spanish-language podcasts; La Mansión, Spain’s first major creator house; HereticsXP, an event with over 2,000 people; or physical spaces in Madrid like the HereticsHUB.'],
         ['It is a cross-functional role within the Heretics Holding, alongside PHTP, Nativo and MakeItHappen. Products ranging from the MiniOpen tennis tournament to helping grow the careers of some of the biggest Spanish-language creators, or the show Línea de Cal.'],
         ['Activations and creative proposals for Red Bull, the Mahou San Miguel group, Samsung, Hyundai, Nestlé, Logitech, Lenovo, Socios.com, Motorola and practically every major consumer brand.'],
       ],

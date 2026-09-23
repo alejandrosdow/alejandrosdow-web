@@ -357,6 +357,12 @@ const UI = {
           'Firmé uno de los primeros contratos de Machinima en España para monetizar mis vídeos y colaboraba con empresas emergentes de la industria del entretenimiento digital.',
         ],
       },
+      socialnat: {
+        caption: 'Marketing Manager: SocialNAT · 2013—15',
+        body: [
+          'Durante mis años de universidad trabajé en SocialNAT, una red social de esports que organizaba competiciones online y eventos presenciales. Me encargaba de crear comunidad y de las campañas con creadores de contenido, y era comentarista y presentador en sus eventos. En 2015 fue adquirida por GAME.',
+        ],
+      },
       xyon: {
         caption: 'Co-fundador: XYON Agency · 2015—16',
         body: [
@@ -485,6 +491,12 @@ const UI = {
         body: [
           'It all starts in 2008 with Call of Duty and YouTube. National champion and 9th at the 2011 Los Angeles World Championship. I uploaded matches, trips and content series to YouTube.',
           'I signed one of the first Machinima contracts in Spain to monetise my videos, and worked with emerging companies in the digital entertainment industry.',
+        ],
+      },
+      socialnat: {
+        caption: 'Marketing Manager: SocialNAT · 2013—15',
+        body: [
+          'During my university years I worked at SocialNAT, an esports social network that ran online competitions and live events. I handled community building and campaigns with content creators, and was a commentator and host at its events. It was acquired by GAME in 2015.',
         ],
       },
       xyon: {
@@ -1072,6 +1084,16 @@ function WorkSoon({ u }) {
         <div className="t-caption" style={{ marginTop: 8 }}>{s.xyon.caption}</div>
         <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
           {s.xyon.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
+      </article>
+
+      <article style={{ marginTop: 72 }}>
+        <div className="media" style={{ aspectRatio: '1666 / 944' }}>
+          <img src="/assets/hilos/socialnat.jpg" alt="SocialNAT en SocialVAT, Bilbao 2015" loading="lazy" />
+        </div>
+        <div className="t-caption" style={{ marginTop: 8 }}>{s.socialnat.caption}</div>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.socialnat.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
 
