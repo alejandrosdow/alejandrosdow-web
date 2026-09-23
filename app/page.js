@@ -1045,7 +1045,7 @@ function WorkSoon({ u }) {
       <article style={{ marginTop: 72 }}>
         <div className="clip-pair">
           <ClipPlayer src="/assets/hilos/heretics-belaguer.mp4" poster="/assets/hilos/heretics-belaguer.jpg" label="Heretics × Belaguer" t={s} />
-          <ClipPlayer src="/assets/hilos/heretics-warburton.mp4" poster="/assets/hilos/heretics-warburton.jpg" label="Heretics × Warburton" t={s} noAudio />
+          <ClipPlayer src="/assets/hilos/heretics-warburton.mp4" poster="/assets/hilos/heretics-warburton.jpg" label="Heretics × Warburton" t={s} />
         </div>
         <div className="clip-pair" style={{ marginTop: 4 }}>
           <div className="media" style={{ aspectRatio: '3 / 2' }}>
