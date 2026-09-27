@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -36,10 +36,14 @@
   --tint-rose: #ffdfe8;
   --tint-mint: #d9f5e8;
 
+  /* fonts */
+  --font-body: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-title: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
   /* type scale (px / line) */
   --fs-title: 19px;
   --lh-title: 27px;
-  --fs-body: 16px;
+  --fs-body: 14px;
   --lh-body: 24px;
   --fs-small: 14px;
   --lh-small: 20px;
@@ -81,10 +85,11 @@ body {
 }
 
 body {
-  font-family: 'Schibsted Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
-  letter-spacing: -0.012em;
+  letter-spacing: 0;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -775,7 +780,7 @@ a {
 
 /* ---------- metadata in monospace ---------- */
 :root {
-  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 .t-caption,
 .microlabel,
@@ -857,3 +862,20 @@ a {
 @media (min-width: 3400px) {
   html { zoom: 2; --z: 2; }
 }
+
+/* ---------- titles: uppercase mono, wide tracking (VETA-style) ---------- */
+.t-title,
+.display,
+h1.serif-i, h2.serif-i, h3.serif-i,
+.col-head {
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+.t-title,
+.col-head {
+  font-size: 15px;
+  line-height: 24px;
+}
+strong, b { font-weight: 500; }

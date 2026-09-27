@@ -268,7 +268,7 @@ export default function PortfolioPage() {
                   {p.titleImg ? (
                     <img src={p.titleImg} alt={p.title} style={{ height: p.titleImgH || 64, width: 'auto', maxWidth: '100%', ...(p.titleImgBlend ? { mixBlendMode: 'multiply' } : {}) }} />
                   ) : (
-                    <h2 className="display text-[18px]" style={{ color: 'var(--ink)', letterSpacing: '-0.025em' }}>
+                    <h2 className="display text-[18px]" style={{ color: 'var(--ink)' }}>
                       {p.title}
                     </h2>
                   )}
@@ -305,7 +305,7 @@ export default function PortfolioPage() {
                   <span>·</span>
                   <span>{p.org}</span>
                 </div>
-                <h2 className="display text-[18px]" style={{ color: 'var(--ink)', letterSpacing: '-0.02em' }}>{p.title}</h2>
+                <h2 className="display text-[18px]" style={{ color: 'var(--ink)' }}>{p.title}</h2>
                 <div className="text-[12px] leading-[18px] mt-2 mb-3" style={{ color: 'var(--ink-50)' }}>
                   {p.metric ? (
                     <>
