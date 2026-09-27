@@ -879,3 +879,18 @@ h1.serif-i, h2.serif-i, h3.serif-i,
   line-height: 24px;
 }
 strong, b { font-weight: 500; }
+
+/* column headers: title always on one line, scales with the column */
+.col-head .t-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  letter-spacing: 0.1em;
+}
+@media (min-width: 1024px) {
+  .col-head,
+  .col-head .t-title {
+    font-size: clamp(11px, 0.95vw, 14px);
+  }
+}
