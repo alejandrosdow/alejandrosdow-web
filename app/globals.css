@@ -1176,3 +1176,152 @@ strong, b { font-weight: 500; }
     top: calc(var(--header-row) + 24px);
   }
 }
+
+/* =============================================
+   Portada: el titular se convierte en el diagrama
+   (cultura + comunidad = marca, entre tecnología y negocio)
+   ============================================= */
+.home-stage {
+  --h1: clamp(24px, 6vw, 48px);
+  --lab: clamp(8px, 2.1vw, 13px);
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(var(--h1) * 1.25);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: height 800ms var(--ease);
+}
+.home-stage.is-venn {
+  height: min(360px, calc((100vw - 48px) * 0.563));
+}
+.stage-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.stage-c {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition: stroke-dashoffset 500ms var(--ease), opacity 200ms ease;
+}
+.is-venn .stage-c {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: stroke-dashoffset 1100ms var(--ease), opacity 200ms ease;
+}
+.is-venn .c3 { transition-delay: 150ms; }
+.is-venn .c4 { transition-delay: 250ms; }
+.is-venn .c1 { transition-delay: 400ms; }
+.is-venn .c2 { transition-delay: 500ms; }
+.stage-lens {
+  fill: var(--accent);
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.is-venn .stage-lens {
+  opacity: 1;
+  transition: opacity 500ms ease 450ms;
+}
+.stage-lead,
+.stage-word {
+  position: absolute;
+  top: 50%;
+  font-size: var(--h1);
+  line-height: 1.25;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.stage-lead {
+  right: calc(50% + 0.175em);
+  transform: translateY(-50%);
+  transition: opacity 400ms ease 250ms, transform 700ms var(--ease);
+}
+.is-venn .stage-lead {
+  opacity: 0;
+  transform: translate(-24px, -50%);
+  transition: opacity 250ms ease, transform 700ms var(--ease);
+}
+.stage-word {
+  left: calc(50% + 0.175em);
+  transform: translate(0, -50%);
+  padding: 0 10px;
+  background-color: var(--accent);
+  opacity: 0;
+  transition:
+    left 800ms var(--ease),
+    top 800ms var(--ease),
+    transform 800ms var(--ease),
+    font-size 800ms var(--ease),
+    letter-spacing 800ms var(--ease),
+    padding 800ms var(--ease),
+    background-color 350ms ease,
+    opacity 350ms ease;
+}
+.stage-word.is-active {
+  opacity: 1;
+}
+.is-venn .stage-word {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  font-size: var(--lab);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background-color: transparent;
+  opacity: 1;
+}
+.is-venn .w-cultura { top: 32.5%; }
+.is-venn .w-marca { top: 50%; }
+.is-venn .w-comunidad { top: 67.5%; }
+.is-venn .stage-dot { display: none; }
+.stage-side {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--lab);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+.s-tech { left: 27%; }
+.s-biz { left: 73%; }
+.is-venn .stage-side {
+  opacity: 1;
+  transition: opacity 500ms ease 700ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-stage,
+  .home-stage * {
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+@media (max-width: 480px) {
+  .is-venn .stage-word,
+  .stage-side {
+    letter-spacing: 0.06em;
+  }
+  .s-tech { left: 27.5%; }
+  .s-biz { left: 72.5%; }
+}

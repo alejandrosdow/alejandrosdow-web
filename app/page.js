@@ -14,6 +14,7 @@ import useLang from './components/useLang';
 
 const CALENDLY = 'https://calendly.com/alejandro-marcos-teamheretics/30min';
 const ROTATE_MS = 1800;
+const WORD_KEYS = ['marca', 'comunidad', 'cultura']; // mismo orden que UI.*.words
 
 const SOCIALS = [
   { label: 'X', href: 'https://x.com/alejandrosdow' },
@@ -35,6 +36,10 @@ const UI = {
     ],
     lead: 'Construyo',
     words: ['marca.', 'comunidad.', 'cultura.'],
+    tech: 'Tecnología',
+    biz: 'Negocio',
+    vennOpen: 'Ver cómo se cruzan marca, comunidad y cultura con tecnología y negocio',
+    vennClose: 'Volver al titular',
     full: 'Construyo marca, comunidad y cultura.',
     tabs: { cosmo: 'Cómo pienso', hago: 'Lo que hago', biblio: 'Biblioteca' },
     talk: 'Hablemos',
@@ -51,6 +56,10 @@ const UI = {
     ],
     lead: 'I build',
     words: ['brand.', 'community.', 'culture.'],
+    tech: 'Technology',
+    biz: 'Business',
+    vennOpen: 'See how brand, community and culture meet technology and business',
+    vennClose: 'Back to the headline',
     full: 'I build brand, community and culture.',
     tabs: { cosmo: 'How I think', hago: 'What I do', biblio: 'Library' },
     talk: 'Let’s talk',
@@ -94,6 +103,7 @@ export default function Page() {
   const [lang, setLang] = useLang();
   const [open, setOpen] = useState(null); // null | heretics | origen
   const [i, setI] = useState(0);
+  const [venn, setVenn] = useState(false); // titular <-> diagrama
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -102,8 +112,36 @@ export default function Page() {
 
   // palabra que rota
   useEffect(() => {
+    if (venn) return; // en el diagrama las tres palabras están a la vez: no rota
     const id = setInterval(() => setI((n) => (n + 1) % 3), ROTATE_MS);
     return () => clearInterval(id);
+  }, [venn]);
+
+  // Deslizar hacia abajo desde arriba del todo abre el diagrama; hacia arriba, lo cierra.
+  useEffect(() => {
+    let y0 = null;
+    const atTop = () => window.scrollY < 8;
+    const onWheel = (e) => {
+      if (!atTop()) return;
+      if (e.deltaY > 24) setVenn(true);
+      else if (e.deltaY < -24) setVenn(false);
+    };
+    const onStart = (e) => { y0 = atTop() ? e.touches[0].clientY : null; };
+    const onEnd = (e) => {
+      if (y0 === null) return;
+      const dy = y0 - e.changedTouches[0].clientY;
+      if (dy > 48) setVenn(true);
+      else if (dy < -48) setVenn(false);
+      y0 = null;
+    };
+    window.addEventListener('wheel', onWheel, { passive: true });
+    window.addEventListener('touchstart', onStart, { passive: true });
+    window.addEventListener('touchend', onEnd, { passive: true });
+    return () => {
+      window.removeEventListener('wheel', onWheel);
+      window.removeEventListener('touchstart', onStart);
+      window.removeEventListener('touchend', onEnd);
+    };
   }, []);
 
   // Enlaces heredados: /?go=cv|blog|contact y /#ideas/<slug>
@@ -181,10 +219,31 @@ export default function Page() {
           )}
         </p>
 
-        <h1 className="home-h1 rise" style={{ animationDelay: '80ms' }} aria-label={u.full}>
-          <span className="home-h1-lead" aria-hidden="true">{u.lead}</span>
-          <span className="home-h1-word" aria-hidden="true">{u.words[i]}</span>
-        </h1>
+        <h1 className="sr-only">{u.full}</h1>
+        <button
+          type="button"
+          className={`home-stage rise ${venn ? 'is-venn' : ''}`}
+          style={{ animationDelay: '80ms' }}
+          aria-pressed={venn}
+          aria-label={venn ? u.vennClose : u.vennOpen}
+          onClick={() => setVenn(!venn)}
+        >
+          <svg className="stage-svg" viewBox="0 0 1000 563" aria-hidden="true">
+            <path className="stage-lens" d="M391.2 281.5 A128 128 0 0 1 608.8 281.5 A128 128 0 0 1 391.2 281.5 Z" />
+            <circle className="stage-c c1" cx="411" cy="281.5" r="236" pathLength="1" />
+            <circle className="stage-c c2" cx="589" cy="281.5" r="236" pathLength="1" />
+            <circle className="stage-c c3" cx="500" cy="214" r="128" pathLength="1" />
+            <circle className="stage-c c4" cx="500" cy="349" r="128" pathLength="1" />
+          </svg>
+          <span className="stage-lead" aria-hidden="true">{u.lead}</span>
+          {WORD_KEYS.map((k, n) => (
+            <span key={k} className={`stage-word w-${k} ${i === n ? 'is-active' : ''}`} aria-hidden="true">
+              {u.words[n].replace(/\.$/, '')}<span className="stage-dot">.</span>
+            </span>
+          ))}
+          <span className="stage-side s-tech" aria-hidden="true">{u.tech}</span>
+          <span className="stage-side s-biz" aria-hidden="true">{u.biz}</span>
+        </button>
 
         <nav className="home-nav rise" style={{ animationDelay: '140ms' }}>
           <div className="home-pill">
