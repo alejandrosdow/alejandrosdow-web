@@ -930,8 +930,24 @@ strong, b { font-weight: 500; }
 .home-main {
   max-width: 640px;
   margin: 0 auto;
-  padding-top: 120px;
+  padding-top: 32px;
   text-align: center;
+}
+.home-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.home-photo .loader {
+  --size: 28px;
+  --ring: 4px;
+  margin-bottom: -5px;
+  z-index: 1;
+}
+.home-photo .media {
+  width: 92px;
+  height: 92px;
 }
 .home-intro {
   margin: 0 auto 64px;
@@ -1095,7 +1111,7 @@ strong, b { font-weight: 500; }
   color: var(--accent-ink);
 }
 @media (max-width: 480px) {
-  .home-main { padding-top: 72px; }
+  .home-main { padding-top: 16px; }
 }
 
 /* ---------- páginas "Cómo pienso" y "Lo que hago" ---------- */

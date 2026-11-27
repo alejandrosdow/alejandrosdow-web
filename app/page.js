@@ -166,6 +166,12 @@ export default function Page() {
       </header>
 
       <main className="home-main">
+        <div className="home-photo rise">
+          <span className="loader" />
+          <div className="media">
+            <img src="/assets/foto-alejandro.jpg" alt="Alejandro Marcos" />
+          </div>
+        </div>
         <p className="home-intro rise">
           <span className="home-name">{u.name}</span> ·{' '}
           {u.intro.map((p, n) =>

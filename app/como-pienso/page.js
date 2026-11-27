@@ -62,6 +62,16 @@ export default function ComoPiensoPage() {
           <Link href="/" className="ilink">{t.home}</Link>
         </header>
 
+        <div className="rise" style={{ marginTop: 32, maxWidth: 300 }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: -6, position: 'relative', zIndex: 1 }}>
+            <span className="loader" role="img" aria-label="loading" />
+          </div>
+          <div className="media" style={{ aspectRatio: '1 / 1' }}>
+            <img src="/assets/foto-alejandro.jpg" alt="Alejandro Marcos" />
+          </div>
+          <div className="t-caption" style={{ marginTop: 8 }}>BASED IN MADRID / SPAIN</div>
+        </div>
+
         <div className="page-title-row rise">
           <h1 className="t-title">{t.title}.</h1>
         </div>
