@@ -108,7 +108,9 @@ export const THREADS = {
   },
 
   origenes: {
-    image: '/assets/fan/06-machinima.jpg',
+    image: '/assets/hilos/origenes-machinima.jpg',
+    aspect: '16 / 9',
+    small: true,
     es: {
       title: 'Dónde empezó',
       caption: 'Mi contrato con Machinima.',

@@ -197,7 +197,7 @@ export default function Page() {
         {thread && (
           <Section key={`${open}-${lang}`} innerRef={sectionRef} title={`${thread.title}.`}>
             {th.image && (
-              <figure style={{ margin: '0 0 24px' }}>
+              <figure style={{ margin: '0 0 24px', maxWidth: th.small ? 360 : undefined }}>
                 <div className="media" style={{ aspectRatio: th.aspect || '1 / 1' }}>
                   <img src={th.image} alt={thread.caption || thread.title} />
                 </div>
