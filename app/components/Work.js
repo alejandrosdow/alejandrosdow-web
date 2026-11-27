@@ -345,8 +345,9 @@ const UI = {
       caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo · 2018—',
       title: 'Team Heretics',
       body: [
-        'Trabajo como Chief Brand Officer del grupo, liderando la marca de Team Heretics y apoyando a las compañías del grupo, PHTP, Make it Happen y Nativo, con sus productos, marcas y creadores.',
-        'Como director de marca, mi rol es liderar los departamentos de redes sociales y comunidad, contenidos, diseño, ecommerce/producto y talentos, un equipo fijo de unas 18 personas. En el día a día, mi trabajo es la dirección estratégica y creativa de todo el grupo: tener mucha sensibilidad y criterio sobre todo lo que rodea a la cultura digital y las nuevas tendencias, y la capacidad no solo de dirigir, sino de ejecutar dentro del equipo.',
+        'Trabajo como Chief Brand Officer, liderando la marca de Team Heretics y apoyando a las compañías del grupo, PHTP, Make it Happen y Nativo, con sus productos, marcas y creadores.',
+        'Como director de marca, mi rol es liderar los departamentos de redes sociales y comunidad, contenidos, diseño, ecommerce/producto y talentos, un equipo fijo de unas 18 personas.',
+        'En el día a día, mi trabajo es la dirección estratégica y creativa de todo el grupo: tener mucha sensibilidad y criterio sobre todo lo que rodea a la cultura digital y las nuevas tendencias, y la capacidad no solo de dirigir, sino de ejecutar dentro del equipo.',
       ],
       play: 'Reproducir',
       pause: 'Pausa',
@@ -490,8 +491,9 @@ const UI = {
       caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo · 2018—',
       title: 'Team Heretics',
       body: [
-        'I work as Chief Brand Officer of the group, leading the Team Heretics brand and supporting the group’s companies, PHTP, Make it Happen and Nativo, with their products, brands and creators.',
-        'As brand director, my role is to lead the social media and community, content, design, ecommerce/product and talent departments, a core team of around 18 people. Day to day, my job is the strategic and creative direction of the whole group: having a strong sensibility and judgment about everything around digital culture and new trends, and the ability not only to direct but to execute within the team.',
+        'I work as Chief Brand Officer, leading the Team Heretics brand and supporting the group’s companies, PHTP, Make it Happen and Nativo, with their products, brands and creators.',
+        'As brand director, my role is to lead the social media and community, content, design, ecommerce/product and talent departments, a core team of around 18 people.',
+        'Day to day, my job is the strategic and creative direction of the whole group: having a strong sensibility and judgment about everything around digital culture and new trends, and the ability not only to direct but to execute within the team.',
       ],
       play: 'Play',
       pause: 'Pause',
@@ -744,7 +746,7 @@ function WorkSoon({ u }) {
       <article>
         <ClipPlayer src="/assets/hilos/heretics-spot-2027.mp4" poster="/assets/hilos/heretics-spot-2027.jpg" label="Team Heretics Spot 2027" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -755,7 +757,7 @@ function WorkSoon({ u }) {
           <ClipPlayer src="/assets/hilos/genlayer-1.mp4" poster="/assets/hilos/genlayer-1.jpg" label="GenLayer — Agent Tank" t={s} />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.gl.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.gl.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -765,7 +767,7 @@ function WorkSoon({ u }) {
           <img src="/assets/hilos/julio.jpg" alt="JULIO — memebrand" loading="lazy" />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.julio.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.julio.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -776,7 +778,7 @@ function WorkSoon({ u }) {
           <ClipPlayer src="/assets/hilos/club113-2.mp4" poster="/assets/hilos/club113-2.jpg" label="113 Sessions powered by Samsung" t={s} />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.c113.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.c113.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -795,7 +797,7 @@ function WorkSoon({ u }) {
           </div>
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.prod.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.prod.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -803,7 +805,7 @@ function WorkSoon({ u }) {
       <article style={{ marginTop: 72 }}>
         <ClipPlayer src="/assets/hilos/hub.mp4" poster="/assets/hilos/hub.jpg" label="Heretics se hace real — HereticsHUB" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.hub.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.hub.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -818,7 +820,7 @@ function WorkSoon({ u }) {
           </div>
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.zh.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.zh.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -826,7 +828,7 @@ function WorkSoon({ u }) {
       <article style={{ marginTop: 72 }}>
         <ClipPlayer src="/assets/hilos/coolermaster.mp4" poster="/assets/hilos/coolermaster.jpg" label="Team Cooler Master" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.cm.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.cm.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -834,7 +836,7 @@ function WorkSoon({ u }) {
       <article style={{ marginTop: 72 }}>
         <ClipPlayer src="/assets/hilos/movistar.mp4" poster="/assets/hilos/movistar.jpg" label="Actualidad eSports — Movistar" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.mv.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.mv.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -842,7 +844,7 @@ function WorkSoon({ u }) {
       <article style={{ marginTop: 72 }}>
         <ClipPlayer src="/assets/hilos/game-mgx.mp4" poster="/assets/hilos/game-mgx.jpg" label="Madrid Gaming Experience 2016" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.game.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.game.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -852,7 +854,7 @@ function WorkSoon({ u }) {
           <img src="/assets/hilos/xyon.jpg" alt="Si te ríes pierdes — ZellenDust" loading="lazy" />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.xyon.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.xyon.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -862,7 +864,7 @@ function WorkSoon({ u }) {
           <img src="/assets/hilos/socialnat.jpg" alt="SocialNAT en SocialVAT, Bilbao 2015" loading="lazy" />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.socialnat.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.socialnat.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
@@ -872,7 +874,7 @@ function WorkSoon({ u }) {
           <img src="/assets/hilos/machinima.jpg" alt="Contrato con Machinima, 2011" loading="lazy" />
         </div>
         <div className="t-caption" style={{ marginTop: 8 }}>{s.pro.caption}</div>
-        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+        <div className="flow" style={{ marginTop: 16 }}>
           {s.pro.body.map((x, i) => <p key={i}>{x}</p>)}
         </div>
       </article>
