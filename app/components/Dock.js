@@ -4,17 +4,19 @@ import Link from 'next/link';
 
 // Floating bottom navigation shared by every page.
 // On the home SPA pass `onNavigate` so routes switch without a reload;
-// on standalone pages it falls back to plain links (/?go=...).
+// on standalone pages it falls back to plain links (/libro, /blog, /?go=cv).
 
 export const DOCK_LABELS = {
   es: { home: 'Inicio', cv: 'Trayectoria', book: 'Mi libro: Internet Surfer', bookShort: 'Mi libro', blog: 'Blog', library: 'Biblioteca', contact: 'Hablemos' },
   en: { home: 'Home', cv: 'Career', book: 'My book: Internet Surfer', bookShort: 'My book', blog: 'Blog', library: 'Library', contact: "Let's talk" },
 };
 
+const CALENDLY = 'https://calendly.com/alejandro-marcos-teamheretics/30min';
+
 const ITEMS = [
   { id: 'home', href: '/', hideSm: true },
-  { id: 'book', href: '/#ideas/libro' },
-  { id: 'blog', href: '/?go=blog', hideSm: true },
+  { id: 'book', href: '/libro' },
+  { id: 'blog', href: '/blog', hideSm: true },
   { id: 'library', href: '/biblioteca' },
   { id: 'cv', href: '/?go=cv' },
 ];
@@ -72,9 +74,9 @@ export default function Dock({ lang = 'es', setLang, active, onNavigate }) {
             <Spark small /> {L.contact}
           </button>
         ) : (
-          <Link href="/?go=contact" className={ctaCls}>
+          <a href={CALENDLY} target="_blank" rel="noreferrer" className={ctaCls}>
             <Spark small /> {L.contact}
-          </Link>
+          </a>
         )}
       </nav>
     </>

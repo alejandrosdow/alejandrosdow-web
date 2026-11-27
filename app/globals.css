@@ -894,3 +894,203 @@ strong, b { font-weight: 500; }
     font-size: clamp(11px, 0.95vw, 14px);
   }
 }
+
+/* =============================================
+   Portada v2.0 — una columna centrada (app/page.js)
+   ============================================= */
+.home {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 24px 96px;
+  background: var(--surface-base);
+  color: var(--ink);
+}
+.home-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  font-size: 11.4px;
+  letter-spacing: 1.14px;
+}
+.home-lang {
+  background: none;
+  border: 0;
+  padding: 12px 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: color 180ms ease;
+}
+.home-lang:hover { color: var(--ink); }
+.home-lang.is-current { font-weight: 700; color: var(--ink); cursor: default; }
+
+.home-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 120px;
+  text-align: center;
+}
+.home-intro {
+  margin: 0 auto 64px;
+  max-width: 460px;
+  font-size: 11px;
+  line-height: 18px;
+  color: var(--ink-muted);
+}
+.home-name { color: var(--ink); }
+
+/* enlaces subrayados dentro del texto */
+.home-ulink {
+  display: inline;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 180ms ease, color 180ms ease;
+}
+.home-ulink:hover { text-decoration-color: var(--accent); }
+.home-ulink-muted { color: var(--ink-muted); }
+.home-ulink-muted:hover { color: var(--ink); }
+
+.home-link { color: var(--ink-muted); transition: color 180ms ease; }
+.home-link:hover { color: var(--ink); }
+
+.home-h1 {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 0.35em;
+  align-items: center;
+  font-size: clamp(24px, 6vw, 48px);
+  line-height: 1.25;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+.home-h1-lead { justify-self: end; }
+.home-h1-word { justify-self: start; background: var(--accent); padding: 0 10px; white-space: nowrap; }
+
+.home-nav {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.home-pill {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 24px;
+  background: rgba(237, 237, 237, 0.72);
+}
+.home-tab {
+  height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+.home-tab:hover { background: rgba(255, 255, 255, 0.6); }
+.home-tab.is-active { background: #ffffff; }
+
+.home-section {
+  margin-top: 32px;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 24px;
+  text-align: left;
+  scroll-margin-top: 24px;
+}
+.home-h2 {
+  margin: 0 0 16px;
+  font-size: 11.4px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 1.14px;
+  text-transform: uppercase;
+}
+.home-prose { display: flex; flex-direction: column; gap: 16px; font-size: 15px; }
+.home-prose p { margin: 0; }
+.home-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15px;
+}
+.home-now { display: flex; flex-direction: column; gap: 12px; }
+.home-now p { margin: 0; font-size: 15px; }
+.home-cvbtn {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--control-rest);
+  border: 0;
+  border-radius: 2px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+  color: inherit;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+.home-cvbtn:hover { background: var(--control-hover); }
+.home-cv {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  line-height: 22px;
+}
+.home-cv li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.home-foot {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 20px;
+  font-size: 11px;
+  line-height: 18px;
+}
+.home-social { padding: 13px 0; }
+.home-talk {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+@media (max-width: 480px) {
+  .home-main { padding-top: 72px; }
+}
