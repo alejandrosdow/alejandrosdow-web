@@ -62,7 +62,7 @@ export default function ComoPiensoPage() {
           <Link href="/" className="ilink">{t.home}</Link>
         </header>
 
-        <div className="rise" style={{ marginTop: 32, maxWidth: 300 }}>
+        <div className="rise" style={{ marginTop: 32, maxWidth: 160 }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: -6, position: 'relative', zIndex: 1 }}>
             <span className="loader" role="img" aria-label="loading" />
           </div>
