@@ -342,9 +342,12 @@ const UI = {
     moreLabel: 'Más proyectos',
     testing: 'En pruebas',
     soon: {
-      caption: 'Chief Brand Officer: Team Heretics · 2018—',
+      caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo',
       title: 'Team Heretics',
-      desc: 'Team Heretics forma parte de Heretics Holdings, donde trabajo como Chief Brand Officer del grupo. Uno de los clubs de esports más importantes del mundo, con gran presencia internacional, especialmente en Europa y Asia.',
+      body: [
+        'Trabajo como Chief Brand Officer del grupo, liderando la marca de Team Heretics y apoyando a las compañías del grupo, PHTP, Make it Happen y Nativo, con sus productos, marcas y creadores.',
+        'Como director de marca, mi rol es liderar los departamentos de redes sociales y comunidad, contenidos, diseño, ecommerce/producto y talentos, un equipo fijo de unas 18 personas. En el día a día, mi trabajo es la dirección estratégica y creativa de todo el grupo: tener mucha sensibilidad y criterio sobre todo lo que rodea a la cultura digital y las nuevas tendencias, y la capacidad no solo de dirigir, sino de ejecutar dentro del equipo.',
+      ],
       play: 'Reproducir',
       pause: 'Pausa',
       soundOn: 'Activar sonido',
@@ -484,9 +487,12 @@ const UI = {
     moreLabel: 'More projects',
     testing: 'In progress',
     soon: {
-      caption: 'Chief Brand Officer: Team Heretics · 2018—',
+      caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo',
       title: 'Team Heretics',
-      desc: 'Team Heretics is part of Heretics Holdings, where I work as Chief Brand Officer of the group. One of the most important esports clubs in the world, with a strong international presence, especially in Europe and Asia.',
+      body: [
+        'I work as Chief Brand Officer of the group, leading the Team Heretics brand and supporting the group’s companies, PHTP, Make it Happen and Nativo, with their products, brands and creators.',
+        'As brand director, my role is to lead the social media and community, content, design, ecommerce/product and talent departments, a core team of around 18 people. Day to day, my job is the strategic and creative direction of the whole group: having a strong sensibility and judgment about everything around digital culture and new trends, and the ability not only to direct but to execute within the team.',
+      ],
       play: 'Play',
       pause: 'Pause',
       soundOn: 'Sound on',
@@ -736,9 +742,11 @@ function WorkSoon({ u }) {
   return (
     <div>
       <article>
-        <ClipPlayer src="/assets/hilos/heretics-spot-2025.mp4" poster="/assets/hilos/heretics-spot-2025.jpg" label="Team Heretics Spot 2025" t={s} />
+        <ClipPlayer src="/assets/hilos/heretics-spot-2027.mp4" poster="/assets/hilos/heretics-spot-2027.jpg" label="Team Heretics Spot 2027" t={s} />
         <div className="t-caption" style={{ marginTop: 8 }}>{s.caption}</div>
-        <p style={{ marginTop: 16, maxWidth: '62ch' }}>{s.desc}</p>
+        <div className="flow" style={{ marginTop: 16, maxWidth: '62ch' }}>
+          {s.body.map((x, i) => <p key={i}>{x}</p>)}
+        </div>
       </article>
 
       <article style={{ marginTop: 72 }}>
