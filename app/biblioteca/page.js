@@ -262,13 +262,9 @@ export default function BibliotecaPage() {
         <p className="serif-i text-[16px] leading-6 mt-4 max-w-3xl rise" style={{ animationDelay: '200ms', color: 'var(--ink-50)' }}>
           {t.lead}
         </p>
-        <p className="text-[16px] leading-relaxed max-w-2xl mt-8 mb-6 rise" style={{ animationDelay: '300ms', color: 'var(--ink-70)' }}>
+        <p className="text-[16px] leading-relaxed max-w-2xl mt-8 mb-20 rise" style={{ animationDelay: '300ms', color: 'var(--ink-70)' }}>
           {t.intro}
         </p>
-        <div className="text-[12px] leading-[18px] mb-20 rise flex items-center gap-2.5" style={{ animationDelay: '380ms', color: 'var(--ink-35)' }}>
-          <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: 'var(--green)', filter: 'brightness(0.85)' }} />
-          {total} {t.booksLabel} · {t.updated}
-        </div>
 
         {CATS.map((cat, ci) => (
           <section key={cat.id} className="mb-12">

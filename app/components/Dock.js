@@ -4,21 +4,20 @@ import Link from 'next/link';
 
 // Floating bottom navigation shared by every page.
 // On the home SPA pass `onNavigate` so routes switch without a reload;
-// on standalone pages it falls back to plain links (/libro, /blog, /lo-que-hago#trayectoria).
+// on standalone pages it falls back to plain links (/como-pienso, /lo-que-hago, /biblioteca) — the same three options as the home pill.
 
 export const DOCK_LABELS = {
-  es: { home: 'Inicio', cv: 'Trayectoria', book: 'Mi libro: Internet Surfer', bookShort: 'Mi libro', blog: 'Blog', library: 'Biblioteca', contact: 'Hablemos' },
-  en: { home: 'Home', cv: 'Career', book: 'My book: Internet Surfer', bookShort: 'My book', blog: 'Blog', library: 'Library', contact: "Let's talk" },
+  es: { home: 'Inicio', think: 'Cómo pienso', work: 'Lo que hago', cv: 'Trayectoria', book: 'Mi libro: Internet Surfer', bookShort: 'Mi libro', blog: 'Blog', library: 'Biblioteca', contact: 'Hablemos' },
+  en: { home: 'Home', think: 'How I think', work: 'What I do', cv: 'Career', book: 'My book: Internet Surfer', bookShort: 'My book', blog: 'Blog', library: 'Library', contact: "Let's talk" },
 };
 
 const CALENDLY = 'https://calendly.com/alejandro-marcos-teamheretics/30min';
 
 const ITEMS = [
   { id: 'home', href: '/', hideSm: true },
-  { id: 'book', href: '/libro' },
-  { id: 'blog', href: '/blog', hideSm: true },
+  { id: 'think', href: '/como-pienso' },
+  { id: 'work', href: '/lo-que-hago' },
   { id: 'library', href: '/biblioteca' },
-  { id: 'cv', href: '/lo-que-hago#trayectoria' },
 ];
 
 export default function Dock({ lang = 'es', setLang, active, onNavigate }) {
@@ -71,11 +70,11 @@ export default function Dock({ lang = 'es', setLang, active, onNavigate }) {
         </div>
         {onNavigate ? (
           <button type="button" className={ctaCls} onClick={() => onNavigate('contact')}>
-            <Spark small /> {L.contact}
+            <Spark small /> <span className="dock-cta-label">{L.contact}</span>
           </button>
         ) : (
-          <a href={CALENDLY} target="_blank" rel="noreferrer" className={ctaCls}>
-            <Spark small /> {L.contact}
+          <a href={CALENDLY} target="_blank" rel="noreferrer" className={ctaCls} aria-label={L.contact}>
+            <Spark small /> <span className="dock-cta-label">{L.contact}</span>
           </a>
         )}
       </nav>

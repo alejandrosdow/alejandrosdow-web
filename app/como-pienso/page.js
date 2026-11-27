@@ -77,7 +77,7 @@ export default function ComoPiensoPage() {
         </section>
       </main>
 
-      <Dock lang={lang} setLang={setLang} />
+      <Dock lang={lang} setLang={setLang} active="think" />
     </div>
   );
 }

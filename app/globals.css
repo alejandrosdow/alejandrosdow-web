@@ -1107,3 +1107,31 @@ strong, b { font-weight: 500; }
   margin: 40px 0 32px;
 }
 .page-title-row .t-title { margin: 0; }
+
+/* ---------- dock en móvil: tres opciones + idioma; "Hablemos" queda en icono ---------- */
+@media (max-width: 480px) {
+  .dock-item,
+  .dock-lang {
+    padding: 0 7px;
+    font-size: 12px;
+  }
+  .dock-cta {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .dock-cta-label {
+    display: none;
+  }
+  .dock-cta svg {
+    display: inline-block !important;
+  }
+}
+@media (max-width: 360px) {
+  .dock-item,
+  .dock-lang {
+    padding: 0 5px;
+    font-size: 11px;
+  }
+}

@@ -30,9 +30,7 @@ export default function LoQueHagoPage() {
     const read = () => setCv(window.location.hash === '#trayectoria');
     read();
     window.addEventListener('hashchange', read);
-    // El enlace "Trayectoria" de la barra inferior cambia el # sin disparar hashchange.
-    const id = setInterval(read, 250);
-    return () => { window.removeEventListener('hashchange', read); clearInterval(id); };
+    return () => window.removeEventListener('hashchange', read);
   }, []);
 
   const show = (on) => {
@@ -63,7 +61,7 @@ export default function LoQueHagoPage() {
         </div>
       </main>
 
-      <Dock lang={lang} setLang={setLang} active={cv ? 'cv' : undefined} />
+      <Dock lang={lang} setLang={setLang} active="work" />
     </div>
   );
 }

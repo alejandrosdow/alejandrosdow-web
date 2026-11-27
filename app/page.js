@@ -28,9 +28,9 @@ const UI = {
     intro: [
       'Hacía vídeos en YouTube, ',
       { open: 'origen', label: 'me clasifiqué para el primer mundial de Call of Duty' },
-      ' y ahora soy ',
+      '. Trabajo como ',
       { open: 'heretics', label: 'Chief Brand Officer en Team Heretics' },
-      '.',
+      ' desde 2018.',
     ],
     lead: 'Construyo',
     words: ['marca.', 'comunidad.', 'cultura.'],
@@ -44,9 +44,9 @@ const UI = {
     intro: [
       'I used to make YouTube videos, ',
       { open: 'origen', label: 'qualified for the first Call of Duty world championship' },
-      ' and now I’m ',
+      '. I’ve worked as ',
       { open: 'heretics', label: 'Chief Brand Officer at Team Heretics' },
-      '.',
+      ' since 2018.',
     ],
     lead: 'I build',
     words: ['brand.', 'community.', 'culture.'],
@@ -145,7 +145,8 @@ export default function Page() {
     const slug = next && THREAD_OF[next];
     window.history.replaceState({}, '', slug ? `#ideas/${slug}` : window.location.pathname);
   };
-  const thread = open && THREAD_OF[open] ? THREADS[THREAD_OF[open]][lang] : null;
+  const th = open && THREAD_OF[open] ? THREADS[THREAD_OF[open]] : null;
+  const thread = th ? th[lang] : null;
 
   return (
     <div className="home">
@@ -195,6 +196,14 @@ export default function Page() {
 
         {thread && (
           <Section key={`${open}-${lang}`} innerRef={sectionRef} title={`${thread.title}.`}>
+            {th.image && (
+              <figure style={{ margin: '0 0 24px' }}>
+                <div className="media" style={{ aspectRatio: th.aspect || '1 / 1' }}>
+                  <img src={th.image} alt={thread.caption || thread.title} />
+                </div>
+                {thread.caption && <figcaption className="t-caption" style={{ marginTop: 8 }}>{thread.caption}</figcaption>}
+              </figure>
+            )}
             <div className="home-prose">
               {thread.body.map((parts, n) => (
                 <p key={n}><Para parts={parts} /></p>
