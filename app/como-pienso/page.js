@@ -95,6 +95,7 @@ export default function ComoPiensoPage() {
             <div className="media" style={{ aspectRatio: '1 / 1' }}>
               <img src="/assets/foto-alejandro.jpg" alt="Alejandro Marcos" />
             </div>
+            <div className="t-caption" style={{ marginTop: 8 }}>BASED IN MADRID / SPAIN</div>
           </div>
 
           <div>
