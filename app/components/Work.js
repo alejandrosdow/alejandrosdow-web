@@ -1159,15 +1159,6 @@ function Blog({ t }) {
           ))}
         </div>
       )}
-
-      <section className="card" style={{ padding: 24, marginTop: 48 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <Spark small className="" />
-          <h3 className="t-title">{t.blog.subTitle}</h3>
-        </div>
-        <p className="muted" style={{ margin: '4px 0 16px' }}>{t.blog.subDesc}</p>
-        <Btn href={SUBSTACK} external variant="btn-ink">{t.blog.subBtn}</Btn>
-      </section>
     </div>
   );
 }
