@@ -899,7 +899,8 @@ strong, b { font-weight: 500; }
    Portada v2.0 — una columna centrada (app/page.js)
    ============================================= */
 .home {
-  min-height: 100vh;
+  --hz: 1;
+  min-height: calc(100vh / var(--z, 1) / var(--hz));
   box-sizing: border-box;
   padding: 0 24px 96px;
   background: var(--surface-base);
@@ -1345,5 +1346,13 @@ strong, b { font-weight: 500; }
   .home-stage * {
     transition-duration: 1ms !important;
     transition-delay: 0ms !important;
+  }
+}
+
+/* ---------- portada en escritorio: un 10% más grande ---------- */
+@media (min-width: 1024px) {
+  .home {
+    --hz: 1.1;
+    zoom: 1.1;
   }
 }
