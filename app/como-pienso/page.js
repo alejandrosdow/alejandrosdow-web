@@ -82,7 +82,7 @@ export default function ComoPiensoPage() {
         </ol>
 
         <section id="blog" style={{ marginTop: 96, scrollMarginTop: 72 }}>
-          <h2 className="t-title rule-b" style={{ paddingBottom: 8, marginBottom: 24 }}>{t.blog}.</h2>
+          <h2 className="t-title" style={{ marginBottom: 16 }}>{t.blog}.</h2>
           <BlogFeed key={lang} lang={lang} />
         </section>
       </main>

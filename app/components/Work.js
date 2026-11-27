@@ -1125,7 +1125,6 @@ function Blog({ t }) {
 
   return (
     <div>
-      <p className="muted" style={{ marginBottom: 32, maxWidth: '62ch' }}>{t.blog.lead}</p>
 
       {status === 'loading' && (
         <div className="t-small faint" style={{ padding: '48px 0', display: 'flex', alignItems: 'center', gap: 8 }}>
