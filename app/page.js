@@ -120,13 +120,17 @@ export default function Page() {
   // Deslizar hacia abajo desde arriba del todo abre el diagrama; hacia arriba, lo cierra.
   useEffect(() => {
     let y0 = null;
+    // Al llegar desde otra página, la inercia del trackpad sigue mandando "scroll"
+    // un momento: se ignora el primer segundo para no abrir el diagrama sin querer.
+    const t0 = Date.now();
+    const settled = () => Date.now() - t0 > 1000;
     const atTop = () => window.scrollY < 8;
     const onWheel = (e) => {
-      if (!atTop()) return;
+      if (!settled() || !atTop()) return;
       if (e.deltaY > 24) setVenn(true);
       else if (e.deltaY < -24) setVenn(false);
     };
-    const onStart = (e) => { y0 = atTop() ? e.touches[0].clientY : null; };
+    const onStart = (e) => { y0 = settled() && atTop() ? e.touches[0].clientY : null; };
     const onEnd = (e) => {
       if (y0 === null) return;
       const dy = y0 - e.changedTouches[0].clientY;
