@@ -228,21 +228,26 @@ export default function Page() {
           aria-label={venn ? u.vennClose : u.vennOpen}
           onClick={() => setVenn(!venn)}
         >
-          <svg className="stage-svg" viewBox="0 0 1000 563" aria-hidden="true">
-            <path className="stage-lens" d="M391.2 281.5 A128 128 0 0 1 608.8 281.5 A128 128 0 0 1 391.2 281.5 Z" />
-            <circle className="stage-c c1" cx="411" cy="281.5" r="236" pathLength="1" />
-            <circle className="stage-c c2" cx="589" cy="281.5" r="236" pathLength="1" />
-            <circle className="stage-c c3" cx="500" cy="214" r="128" pathLength="1" />
-            <circle className="stage-c c4" cx="500" cy="349" r="128" pathLength="1" />
-          </svg>
           <span className="stage-lead" aria-hidden="true">{u.lead}</span>
           {WORD_KEYS.map((k, n) => (
             <span key={k} className={`stage-word w-${k} ${i === n ? 'is-active' : ''}`} aria-hidden="true">
-              {u.words[n].replace(/\.$/, '')}<span className="stage-dot">.</span>
+              {u.words[n]}
             </span>
           ))}
-          <span className="stage-side s-tech" aria-hidden="true">{u.tech}</span>
-          <span className="stage-side s-biz" aria-hidden="true">{u.biz}</span>
+          <span className="stage-venn" aria-hidden="true">
+            <svg className="stage-svg" viewBox="0 0 1000 563">
+              <path className="stage-lens" d="M391.2 281.5 A128 128 0 0 1 608.8 281.5 A128 128 0 0 1 391.2 281.5 Z" />
+              <circle className="stage-c c1" cx="411" cy="281.5" r="236" pathLength="1" />
+              <circle className="stage-c c2" cx="589" cy="281.5" r="236" pathLength="1" />
+              <circle className="stage-c c3" cx="500" cy="214" r="128" pathLength="1" />
+              <circle className="stage-c c4" cx="500" cy="349" r="128" pathLength="1" />
+            </svg>
+            {WORD_KEYS.map((k, n) => (
+              <span key={k} className={`stage-lab l-${k}`}>{u.words[n].replace(/\.$/, '')}</span>
+            ))}
+            <span className="stage-lab l-tech">{u.tech}</span>
+            <span className="stage-lab l-biz">{u.biz}</span>
+          </span>
         </button>
 
         <nav className="home-nav rise" style={{ animationDelay: '140ms' }}>
