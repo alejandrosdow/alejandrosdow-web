@@ -1151,3 +1151,28 @@ strong, b { font-weight: 500; }
     font-size: 11px;
   }
 }
+
+/* ---------- "Cómo pienso": foto a la izquierda, texto a la derecha ---------- */
+.page-wide {
+  max-width: 1040px;
+}
+.think-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.think-photo {
+  max-width: 160px;
+}
+@media (min-width: 820px) {
+  .think-grid {
+    grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
+    gap: 72px;
+    align-items: start;
+  }
+  .think-photo {
+    max-width: none;
+    position: sticky;
+    top: calc(var(--header-row) + 24px);
+  }
+}

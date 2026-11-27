@@ -80,35 +80,36 @@ export default function ComoPiensoPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-1 w-full page">
+      <main className="flex-1 w-full page page-wide">
         <header className="page-head">
           <Link href="/" className="ilink">Alejandro Marcos</Link>
           <Link href="/" className="ilink">{t.home}</Link>
         </header>
 
-        <div className="rise" style={{ marginTop: 32, maxWidth: 160 }}>
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: -6, position: 'relative', zIndex: 1 }}>
-            <span className="loader" role="img" aria-label="loading" />
-          </div>
-          <div className="media" style={{ aspectRatio: '1 / 1' }}>
-            <img src="/assets/foto-alejandro.jpg" alt="Alejandro Marcos" />
-          </div>
-          <div className="t-caption" style={{ marginTop: 8 }}>BASED IN MADRID / SPAIN</div>
-        </div>
-
         <div className="page-title-row rise">
           <h1 className="t-title">{t.title}.</h1>
         </div>
-        <div className="home-prose rise" style={{ animationDelay: '80ms', maxWidth: '62ch' }}>
-          {t.paras.map((x, n) => (
-            <p key={n}>{x}</p>
-          ))}
-        </div>
 
-        <section id="blog" style={{ marginTop: 96, scrollMarginTop: 72 }}>
-          <h2 className="t-title" style={{ marginBottom: 16 }}>{t.blog}.</h2>
-          <BlogFeed key={lang} lang={lang} />
-        </section>
+        <div className="think-grid">
+          <div className="think-photo rise">
+            <div className="media" style={{ aspectRatio: '1 / 1' }}>
+              <img src="/assets/foto-alejandro.jpg" alt="Alejandro Marcos" />
+            </div>
+          </div>
+
+          <div>
+            <div className="home-prose rise" style={{ animationDelay: '80ms', maxWidth: '62ch' }}>
+              {t.paras.map((x, n) => (
+                <p key={n}>{x}</p>
+              ))}
+            </div>
+
+            <section id="blog" style={{ marginTop: 96, scrollMarginTop: 72 }}>
+              <h2 className="t-title" style={{ marginBottom: 16 }}>{t.blog}.</h2>
+              <BlogFeed key={lang} lang={lang} />
+            </section>
+          </div>
+        </div>
       </main>
 
       <Dock lang={lang} setLang={setLang} active="think" />
