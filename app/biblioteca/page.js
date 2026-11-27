@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Dock from '../components/Dock';
+import useLang from '../components/useLang';
 
 // =============================================
 // /biblioteca — la biblioteca viva
@@ -240,12 +241,7 @@ const UI = {
 };
 
 export default function BibliotecaPage() {
-  const [lang, setLang] = useState('es');
-
-  useEffect(() => {
-    const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
-    setLang(bl.toLowerCase().startsWith('es') ? 'es' : 'en');
-  }, []);
+  const [lang, setLang] = useLang();
 
   const t = UI[lang];
   const total = CATS.reduce((n, c) => n + c.books.length, 0);

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Dock from '../components/Dock';
+import useLang from '../components/useLang';
 
 const T = {
   es: {
@@ -46,14 +47,9 @@ const T = {
 const SUBSTACK = 'https://substack.com/@alejandrosdow';
 
 export default function BlogPage() {
-  const [lang, setLang] = useState('es');
+  const [lang, setLang] = useLang();
   const [posts, setPosts] = useState([]);
   const [status, setStatus] = useState('loading'); // loading | ready | empty | error
-
-  useEffect(() => {
-    const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
-    setLang(bl.toLowerCase().startsWith('es') ? 'es' : 'en');
-  }, []);
 
   useEffect(() => {
     let cancelled = false;

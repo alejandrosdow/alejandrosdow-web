@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Dock from '../components/Dock';
 import { PROJECTS } from '../data/projects';
+import useLang from '../components/useLang';
 
 // =============================================
 // /portfolio — selected work
@@ -207,13 +208,8 @@ function Media({ project, aspect, t, lang }) {
 }
 
 export default function PortfolioPage() {
-  const [lang, setLang] = useState('es');
+  const [lang, setLang] = useLang();
   const hidden = process.env.NODE_ENV === 'production'; // en pruebas: solo visible en `npm run dev`
-
-  useEffect(() => {
-    const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
-    setLang(bl.toLowerCase().startsWith('es') ? 'es' : 'en');
-  }, []);
 
   const t = UI[lang];
   if (hidden) {

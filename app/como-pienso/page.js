@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Dock from '../components/Dock';
 import { BlogFeed } from '../components/Work';
+import useLang from '../components/useLang';
 
 // "Cómo pienso": texto en bloques cortos + los artículos del blog (Substack).
 
@@ -65,12 +66,7 @@ const T = {
 };
 
 export default function ComoPiensoPage() {
-  const [lang, setLang] = useState('es');
-
-  useEffect(() => {
-    const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
-    setLang(bl.toLowerCase().startsWith('es') ? 'es' : 'en');
-  }, []);
+  const [lang, setLang] = useLang();
 
   useEffect(() => {
     document.documentElement.lang = lang;

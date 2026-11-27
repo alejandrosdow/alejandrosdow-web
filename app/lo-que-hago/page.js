@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Dock from '../components/Dock';
 import { WorkSection, Trayectoria } from '../components/Work';
+import useLang from '../components/useLang';
 
 // "Lo que hago": la antigua "Una mirada al trabajo".
 // Arriba a la derecha, el botón que abre la trayectoria completa (/lo-que-hago#trayectoria).
@@ -14,13 +15,8 @@ const T = {
 };
 
 export default function LoQueHagoPage() {
-  const [lang, setLang] = useState('es');
+  const [lang, setLang] = useLang();
   const [cv, setCv] = useState(false);
-
-  useEffect(() => {
-    const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
-    setLang(bl.toLowerCase().startsWith('es') ? 'es' : 'en');
-  }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;

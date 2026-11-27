@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Dock from '../components/Dock';
 import { THREADS } from '../data/threads';
+import useLang from '../components/useLang';
 
 // Mi libro: Internet Surfer. Antes vivía dentro de la portada (/#ideas/libro);
 // el contenido es el mismo, ahora en su propia página.
@@ -24,12 +25,7 @@ const BULLETS = {
 };
 
 export default function LibroPage() {
-  const [lang, setLang] = useState('es');
-
-  useEffect(() => {
-    const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
-    setLang(bl.toLowerCase().startsWith('es') ? 'es' : 'en');
-  }, []);
+  const [lang, setLang] = useLang();
 
   useEffect(() => {
     document.documentElement.lang = lang;

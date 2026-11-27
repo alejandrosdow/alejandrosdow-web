@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Spark } from './components/Dock';
 import { THREADS } from './data/threads';
+import useLang from './components/useLang';
 
 // =============================================
 // alejandrosdow.com — v2.0 portada
@@ -90,15 +91,10 @@ function Section({ title, children, innerRef }) {
 }
 
 export default function Page() {
-  const [lang, setLang] = useState('es');
+  const [lang, setLang] = useLang();
   const [open, setOpen] = useState(null); // null | heretics | origen
   const [i, setI] = useState(0);
   const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const bl = (typeof navigator !== 'undefined' && navigator.language) || 'es';
-    setLang(bl.toLowerCase().startsWith('es') ? 'es' : 'en');
-  }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;

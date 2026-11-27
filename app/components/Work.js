@@ -342,7 +342,7 @@ const UI = {
     moreLabel: 'Más proyectos',
     testing: 'En pruebas',
     soon: {
-      caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo',
+      caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo · 2018—',
       title: 'Team Heretics',
       body: [
         'Trabajo como Chief Brand Officer del grupo, liderando la marca de Team Heretics y apoyando a las compañías del grupo, PHTP, Make it Happen y Nativo, con sus productos, marcas y creadores.',
@@ -487,7 +487,7 @@ const UI = {
     moreLabel: 'More projects',
     testing: 'In progress',
     soon: {
-      caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo',
+      caption: 'Chief Brand Officer: Team Heretics · PHTP · Make it Happen · Nativo · 2018—',
       title: 'Team Heretics',
       body: [
         'I work as Chief Brand Officer of the group, leading the Team Heretics brand and supporting the group’s companies, PHTP, Make it Happen and Nativo, with their products, brands and creators.',
