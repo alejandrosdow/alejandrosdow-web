@@ -7,7 +7,7 @@ import { THREADS } from './data/threads';
 
 // =============================================
 // alejandrosdow.com — v2.0 portada
-// una columna centrada · titular con palabra que rota · píldora con tres secciones
+// una columna centrada · titular con palabra que rota · píldora que lleva a tres páginas
 // Los textos largos ("Dónde empezó", "Team Heretics") salen de app/data/threads.js.
 // =============================================
 
@@ -36,39 +36,6 @@ const UI = {
     words: ['marca.', 'comunidad.', 'cultura.'],
     full: 'Construyo marca, comunidad y cultura.',
     tabs: { cosmo: 'Cómo pienso', hago: 'Lo que hago', biblio: 'Biblioteca' },
-    principles: [
-      ['Dar sin esperar nada a cambio.', 'Es el principio universal para construir mi vida y relaciones de verdad.'],
-      ['Ver el mundo siempre desde el optimismo,', 'no concibo otra forma de verlo.'],
-      ['Familia y amistades,', 'siempre son prioridad.'],
-      ['Quiero comerme el mundo.', 'Y repetir.'],
-      ['El miedo se quita haciéndolo.'],
-      ['Sé admirable,', 'eres tu mejor ejemplo al mundo.'],
-      ['La curiosidad mueve el mundo.'],
-      ['Si haces cosas, pasan cosas.'],
-    ],
-    now: [
-      ['Team Heretics', 'Chief Brand Officer · 2018–'],
-      ['GenLayer', 'Brand Advisor · 2025–'],
-      ['Freelance', 'Creadores y empresas · 2018–'],
-    ],
-    cvBtn: 'Trayectoria completa',
-    cv: [
-      ['Team Heretics', 'Chief Brand Officer', '2018–'],
-      ['GenLayer', 'Brand Advisor', '2025–'],
-      ['JULIO', 'Co-fundador', '2025'],
-      ['Club113 × 113 Sessions', 'Co-creador', '2022–23'],
-      ['Producto Team Heretics', '', '2021–'],
-      ['HereticsHUB', '', '2021'],
-      ['Zhander × Algodón', 'Co-fundador', '2020–23'],
-      ['Cooler Master', 'Brand Manager Iberia', '2017–19'],
-      ['Movistar', 'Productor y presentador', '2017'],
-      ['GAME', 'Head of Publishers, Talents & Esports', '2015–16'],
-      ['XYON Agency', 'Co-fundador', '2015–16'],
-      ['SocialNAT', 'Marketing Manager', '2013–15'],
-      ['Machinima / Pain Gaming', 'Creador y jugador profesional', '2008–13'],
-    ],
-    library: 'Una pequeña biblioteca.',
-    enter: 'Entrar',
     talk: 'Hablemos',
     langLabel: 'Idioma',
   },
@@ -85,60 +52,28 @@ const UI = {
     words: ['brand.', 'community.', 'culture.'],
     full: 'I build brand, community and culture.',
     tabs: { cosmo: 'How I think', hago: 'What I do', biblio: 'Library' },
-    principles: [
-      ['Give without expecting anything in return.', 'It is the universal principle for building my life and real relationships.'],
-      ['Always see the world through optimism,', 'I can’t conceive of any other way to see it.'],
-      ['Family and friends,', 'always the priority.'],
-      ['I want to take on the world.', 'And then do it again.'],
-      ['Fear goes away by doing it.'],
-      ['Be admirable,', 'you are your best example to the world.'],
-      ['Curiosity moves the world.'],
-      ['If you do things, things happen.'],
-    ],
-    now: [
-      ['Team Heretics', 'Chief Brand Officer · 2018–'],
-      ['GenLayer', 'Brand Advisor · 2025–'],
-      ['Freelance', 'Creators and companies · 2018–'],
-    ],
-    cvBtn: 'Full career',
-    cv: [
-      ['Team Heretics', 'Chief Brand Officer', '2018–'],
-      ['GenLayer', 'Brand Advisor', '2025–'],
-      ['JULIO', 'Co-founder', '2025'],
-      ['Club113 × 113 Sessions', 'Co-creator', '2022–23'],
-      ['Team Heretics Product', '', '2021–'],
-      ['HereticsHUB', '', '2021'],
-      ['Zhander × Algodón', 'Co-founder', '2020–23'],
-      ['Cooler Master', 'Brand Manager Iberia', '2017–19'],
-      ['Movistar', 'Producer and host', '2017'],
-      ['GAME', 'Head of Publishers, Talents & Esports', '2015–16'],
-      ['XYON Agency', 'Co-founder', '2015–16'],
-      ['SocialNAT', 'Marketing Manager', '2013–15'],
-      ['Machinima / Pain Gaming', 'Creator and pro player', '2008–13'],
-    ],
-    library: 'A small library.',
-    enter: 'Enter',
     talk: 'Let’s talk',
     langLabel: 'Language',
   },
 };
 
 // sección abierta -> hilo de threads.js (y su #ideas/<slug>)
+const TABS = [
+  ['cosmo', '/como-pienso'],
+  ['hago', '/lo-que-hago'],
+  ['biblio', '/biblioteca'],
+];
+const CV_URL = '/lo-que-hago#trayectoria';
+
 const THREAD_OF = { origen: 'origenes', heretics: 'heretics' };
 const SECTION_OF = { origenes: 'origen', heretics: 'heretics' };
 
 // Párrafos de threads.js: texto + { b } negrita + { k, label } enlace.
-function Para({ parts, onCv }) {
+function Para({ parts }) {
   return parts.map((p, i) => {
     if (typeof p === 'string') return <React.Fragment key={i}>{p}</React.Fragment>;
     if (p.b) return <strong key={i}>{p.b}</strong>;
-    if (p.k === 'cv') {
-      return (
-        <button key={i} type="button" className="home-ulink home-ulink-muted" onClick={onCv}>
-          {p.label}
-        </button>
-      );
-    }
+    if (p.k === 'cv') return <Link key={i} href={CV_URL} className="home-ulink home-ulink-muted">{p.label}</Link>;
     if (p.k === 'library') return <Link key={i} href="/biblioteca" className="home-ulink home-ulink-muted">{p.label}</Link>;
     if (p.k === 'blog') return <Link key={i} href="/blog" className="home-ulink home-ulink-muted">{p.label}</Link>;
     return <React.Fragment key={i}>{p.label}</React.Fragment>;
@@ -156,8 +91,7 @@ function Section({ title, children, innerRef }) {
 
 export default function Page() {
   const [lang, setLang] = useState('es');
-  const [open, setOpen] = useState(null); // null | heretics | origen | cosmo | hago | biblio
-  const [cv, setCv] = useState(false);
+  const [open, setOpen] = useState(null); // null | heretics | origen
   const [i, setI] = useState(0);
   const sectionRef = useRef(null);
 
@@ -180,7 +114,7 @@ export default function Page() {
   useEffect(() => {
     const go = new URLSearchParams(window.location.search).get('go');
     if (go === 'blog') { window.location.replace('/blog'); return; }
-    if (go === 'cv') { setOpen('hago'); setCv(true); }
+    if (go === 'cv') { window.location.replace(CV_URL); return; }
     if (go) window.history.replaceState({}, '', '/');
 
     const read = () => {
@@ -211,12 +145,6 @@ export default function Page() {
     const slug = next && THREAD_OF[next];
     window.history.replaceState({}, '', slug ? `#ideas/${slug}` : window.location.pathname);
   };
-  const goCv = () => {
-    setOpen('hago');
-    setCv(true);
-    window.history.replaceState({}, '', window.location.pathname);
-  };
-
   const thread = open && THREAD_OF[open] ? THREADS[THREAD_OF[open]][lang] : null;
 
   return (
@@ -257,10 +185,10 @@ export default function Page() {
 
         <nav className="home-nav rise" style={{ animationDelay: '140ms' }}>
           <div className="home-pill">
-            {['cosmo', 'hago', 'biblio'].map((k) => (
-              <button key={k} type="button" className={`home-tab ${open === k ? 'is-active' : ''}`} aria-expanded={open === k} onClick={() => toggle(k)}>
+            {TABS.map(([k, href]) => (
+              <Link key={k} href={href} className="home-tab">
                 {u.tabs[k]}
-              </button>
+              </Link>
             ))}
           </div>
         </nav>
@@ -269,54 +197,10 @@ export default function Page() {
           <Section key={`${open}-${lang}`} innerRef={sectionRef} title={`${thread.title}.`}>
             <div className="home-prose">
               {thread.body.map((parts, n) => (
-                <p key={n}><Para parts={parts} onCv={goCv} /></p>
+                <p key={n}><Para parts={parts} /></p>
               ))}
-              {open === 'origen' && thread.close && <p><Para parts={thread.close} onCv={goCv} /></p>}
+              {open === 'origen' && thread.close && <p><Para parts={thread.close} /></p>}
             </div>
-          </Section>
-        )}
-
-        {open === 'cosmo' && (
-          <Section key={`cosmo-${lang}`} innerRef={sectionRef} title={`${u.tabs.cosmo}.`}>
-            <ol className="home-list">
-              {u.principles.map(([a, b], n) => (
-                <li key={n}>{a}{b && <> <span className="muted">{b}</span></>}</li>
-              ))}
-            </ol>
-          </Section>
-        )}
-
-        {open === 'hago' && (
-          <Section key={`hago-${lang}`} innerRef={sectionRef} title={`${u.tabs.hago}.`}>
-            <div className="home-now">
-              {u.now.map(([a, b]) => (
-                <p key={a}>{a} <span className="muted">· {b}</span></p>
-              ))}
-              <div style={{ marginTop: 8 }}>
-                <button type="button" className="home-cvbtn" aria-expanded={cv} onClick={() => setCv(!cv)}>
-                  <span>{u.cvBtn}</span>
-                  <span aria-hidden="true">{cv ? '−' : '+'}</span>
-                </button>
-                {cv && (
-                  <ul className="home-cv route-in">
-                    {u.cv.map(([org, role, date]) => (
-                      <li key={org}>
-                        <span>{org}{role && <> <span className="muted">· {role}</span></>}</span>
-                        <span className="muted tnum" style={{ whiteSpace: 'nowrap' }}>{date}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {open === 'biblio' && (
-          <Section key={`biblio-${lang}`} innerRef={sectionRef} title={`${u.tabs.biblio}.`}>
-            <p className="home-prose" style={{ margin: 0 }}>
-              {u.library} <Link href="/biblioteca" className="home-link">{u.enter} ↗</Link>
-            </p>
           </Section>
         )}
 

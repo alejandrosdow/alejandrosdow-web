@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 // Floating bottom navigation shared by every page.
 // On the home SPA pass `onNavigate` so routes switch without a reload;
-// on standalone pages it falls back to plain links (/libro, /blog, /?go=cv).
+// on standalone pages it falls back to plain links (/libro, /blog, /lo-que-hago#trayectoria).
 
 export const DOCK_LABELS = {
   es: { home: 'Inicio', cv: 'Trayectoria', book: 'Mi libro: Internet Surfer', bookShort: 'Mi libro', blog: 'Blog', library: 'Biblioteca', contact: 'Hablemos' },
@@ -18,7 +18,7 @@ const ITEMS = [
   { id: 'book', href: '/libro' },
   { id: 'blog', href: '/blog', hideSm: true },
   { id: 'library', href: '/biblioteca' },
-  { id: 'cv', href: '/?go=cv' },
+  { id: 'cv', href: '/lo-que-hago#trayectoria' },
 ];
 
 export default function Dock({ lang = 'es', setLang, active, onNavigate }) {
